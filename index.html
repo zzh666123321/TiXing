@@ -3,63 +3,1064 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>考公备考手册 · 目录</title>
+<title>考公备考手册 · 资料分析 / 天津市考</title>
 <style>
-:root{--ink:#1c2330;--muted:#5c6675;--hint:#8a93a2;--line:#e3e7ee;--bg:#f5f8fc;--blue:#185fa5;--blue-s:#e6f1fb;--purple:#534ab7;--purple-s:#eeedfe}
+
+:root{
+  --ink:#1c2330; --muted:#5c6675; --hint:#8a93a2; --line:#e3e7ee;
+  --bg:#ffffff; --soft:#f7f9fc; --soft2:#eff3f9;
+  --blue:#185fa5; --blue-s:#e6f1fb;
+  --amber:#854f0b; --amber-s:#faeeda;
+  --red:#a32d2d; --red-s:#fcebeb;
+  --green:#0f6e56; --green-s:#e1f5ee;
+  --purple:#534ab7; --purple-s:#eeedfe;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,sans-serif;font-size:14px;line-height:1.75}
-.page{max-width:1000px;margin:0 auto;padding:64px 28px 40px}
-.eyebrow{font-size:12px;color:var(--hint);letter-spacing:2px;margin-bottom:10px}
-h1{margin:0;font-size:30px;font-weight:600;letter-spacing:.5px}
-.intro{margin:10px 0 0;color:var(--muted);font-size:14px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
-.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 26px 22px;min-height:340px;transition:border-color .15s,transform .15s}
-.card:hover{border-color:#85b7eb;transform:translateY(-2px)}
-.card.b:hover{border-color:#afa9ec}
-.card-top{display:flex;align-items:center;gap:10px;margin-bottom:20px}
-.no{font-family:Consolas,monospace;font-size:12px;font-weight:600;color:#fff;background:var(--blue);border-radius:6px;padding:3px 9px}
-.card.b .no{background:var(--purple)}
-.kind{font-size:12px;color:var(--hint)}
-.card h2{margin:0;font-size:21px;font-weight:600}
-.sub{font-size:13px;color:var(--blue);margin:2px 0 14px}
-.card.b .sub{color:var(--purple)}
-.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.85;flex:1}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 18px}
-.tags span{font-size:11.5px;color:var(--muted);background:var(--blue-s);border-radius:5px;padding:2px 8px}
-.card.b .tags span{background:var(--purple-s)}
-.go{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;font-size:13.5px;font-weight:600;color:var(--blue)}
-.card.b .go{color:var(--purple)}
-.go span{font-size:17px}
-footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);text-align:center;color:var(--hint);font-size:12.5px}
-@media(max-width:760px){.page{padding:36px 18px 28px}.grid{grid-template-columns:1fr;margin-top:28px}.card{min-height:0}h1{font-size:24px}}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,sans-serif;
+  font-size:14px;line-height:1.75}
+a{color:var(--blue);text-decoration:none}
+code,.f,.mono{font-family:"Cascadia Code",Consolas,"SF Mono",Menlo,monospace}
+
+/* header */
+header{background:var(--bg);border-bottom:1px solid var(--line);padding:22px 30px 18px}
+header h1{margin:0;font-size:22px;font-weight:600;letter-spacing:.5px}
+header p{margin:6px 0 0;color:var(--muted);font-size:13px}
+.hdr-tags{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:12px;padding:3px 10px;border-radius:20px;background:var(--soft2);color:var(--muted)}
+.tag.b{background:var(--blue-s);color:var(--blue)}
+
+/* layout */
+.wrap{display:grid;grid-template-columns:216px minmax(0,1fr);gap:36px;max-width:1240px;margin:0 auto;padding:26px 30px 80px}
+nav{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;font-size:13px}
+nav .nt{font-size:12px;color:var(--hint);letter-spacing:1px;margin:0 0 10px}
+nav a{display:block;padding:5px 10px;border-radius:6px;color:var(--muted)}
+nav a:hover{background:var(--soft2);color:var(--blue)}
+nav .grp{margin-top:14px}
+main{min-width:0}
+
+section{margin-bottom:48px;scroll-margin-top:16px}
+h2{font-size:19px;font-weight:600;margin:0 0 6px;padding-bottom:10px;border-bottom:2px solid var(--blue)}
+h2 .num{display:inline-block;min-width:30px;color:var(--blue);font-family:Consolas,monospace}
+.lead{color:var(--muted);font-size:13px;margin:10px 0 20px}
+h3{font-size:15px;font-weight:600;margin:26px 0 10px}
+h4{font-size:14px;font-weight:600;margin:18px 0 8px;color:var(--blue)}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 18px}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--soft2);font-weight:600;color:var(--ink);white-space:nowrap}
+tbody tr:nth-child(even){background:var(--soft)}
+tbody tr:hover{background:var(--blue-s)}
+td.k{font-weight:600;color:var(--blue);white-space:nowrap}
+td.f{f;font-size:12.5px;white-space:nowrap;color:#1a3a5c}
+.tbl-scroll{overflow-x:auto}
+
+/* formula box */
+.fbox{background:var(--blue-s);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;
+  padding:11px 16px;margin:10px 0 14px;font-family:Consolas,"SF Mono",Menlo,monospace;
+  font-size:13.5px;line-height:2;color:#103a63;overflow-x:auto}
+.fbox b{font-weight:600;color:var(--blue)}
+.fbox .cm{color:#5b7a99;font-family:inherit;font-size:12px}
+
+/* cards */
+.card{border:1px solid var(--line);border-radius:12px;padding:0;margin:20px 0;overflow:hidden}
+.card-h{background:var(--soft);border-bottom:1px solid var(--line);padding:11px 18px;display:flex;align-items:center;gap:11px}
+.badge{width:28px;height:28px;border-radius:8px;background:var(--blue);color:#fff;
+  display:grid;place-items:center;font-family:Consolas,monospace;font-size:13px;flex:none}
+.card-h .ttl{font-size:15px;font-weight:600}
+.card-h .sub{font-size:12px;color:var(--hint);margin-left:auto}
+.card-b{padding:14px 18px 18px}
+.lbl{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:5px;margin-right:7px;vertical-align:2px}
+.lbl.i{background:var(--blue-s);color:var(--blue)}
+.lbl.f{background:var(--purple-s);color:var(--purple)}
+.lbl.e{background:var(--green-s);color:var(--green)}
+.lbl.s{background:var(--amber-s);color:var(--amber)}
+.lbl.w{background:var(--red-s);color:var(--red)}
+.row{margin:11px 0;line-height:1.85}
+.row.eq{background:var(--soft);border-radius:7px;padding:8px 12px;font-family:Consolas,monospace;font-size:13px;color:#1a3a5c}
+.q{background:var(--green-s);border-radius:8px;padding:10px 14px;font-size:13px;color:#173f33}
+.a{background:var(--soft);border-radius:8px;padding:10px 14px;font-size:13px;margin-top:8px}
+.warn{background:var(--red-s);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:9px 14px;font-size:13px;margin-top:10px;color:#7a2828}
+.tip{background:var(--amber-s);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:9px 14px;font-size:13px;margin-top:10px;color:#6b440b}
+
+/* search */
+.searchbar{display:flex;gap:10px;align-items:center;margin:14px 0 10px}
+.searchbar input{flex:1;padding:9px 13px;border:1px solid var(--line);border-radius:8px;font-size:13px;outline:none;font-family:inherit}
+.searchbar input:focus{border-color:var(--blue)}
+.cnt{font-size:12px;color:var(--hint)}
+.hide{display:none}
+
+/* misc */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini{border:1px solid var(--line);border-radius:9px;padding:12px 15px;background:var(--soft)}
+.mini .mh{font-weight:600;font-size:13.5px;margin-bottom:6px;color:var(--blue)}
+.mini p{margin:0;font-size:12.5px;color:var(--muted)}
+ul.clean{margin:8px 0;padding-left:20px}
+ul.clean li{margin:5px 0}
+.pill{display:inline-block;padding:1px 7px;border:1px solid var(--line);border-radius:5px;font-size:12px;margin:2px 3px 2px 0;background:#fff}
+kbd{background:var(--soft2);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:1px 5px;font-size:12px}
+.note{font-size:12.5px;color:var(--hint)}
+footer{border-top:1px solid var(--line);padding:18px 30px;text-align:center;color:var(--hint);font-size:12px}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:7px;padding:7px 14px;font-size:12.5px;cursor:pointer;font-family:inherit}
+@media(max-width:860px){.wrap{grid-template-columns:1fr;gap:18px}nav{position:static;max-height:none;display:none}.grid2{grid-template-columns:1fr}}
+@media print{
+  nav,.searchbar,.btn,header .hdr-tags{display:none}
+  .wrap{display:block;padding:0;max-width:none}
+  header{padding:0 0 10px}
+  body{font-size:11.5px}
+  .card,.mini,table,.fbox{break-inside:avoid}
+  section{break-before:auto}
+  h2{font-size:15px}
+}
+
+
+:root{
+  --ink:#1c2330; --muted:#5c6675; --hint:#8a93a2; --line:#e3e7ee;
+  --bg:#ffffff; --soft:#f7f9fc; --soft2:#eff3f9;
+  --blue:#185fa5; --blue-s:#e6f1fb;
+  --amber:#854f0b; --amber-s:#faeeda;
+  --red:#a32d2d; --red-s:#fcebeb;
+  --green:#0f6e56; --green-s:#e1f5ee;
+  --purple:#534ab7; --purple-s:#eeedfe;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,sans-serif;
+  font-size:14px;line-height:1.75}
+a{color:var(--blue);text-decoration:none}
+code,.f{font-family:"Cascadia Code",Consolas,"SF Mono",Menlo,monospace}
+header{background:var(--bg);border-bottom:1px solid var(--line);padding:22px 30px 18px}
+header h1{margin:0;font-size:22px;font-weight:600;letter-spacing:.5px}
+header p{margin:6px 0 0;color:var(--muted);font-size:13px}
+.hdr-tags{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tag{font-size:12px;padding:3px 10px;border-radius:20px;background:var(--soft2);color:var(--muted)}
+.tag.b{background:var(--blue-s);color:var(--blue)}
+.tag.r{background:var(--red-s);color:var(--red)}
+.wrap{display:grid;grid-template-columns:216px minmax(0,1fr);gap:36px;max-width:1240px;margin:0 auto;padding:26px 30px 80px}
+nav{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;font-size:13px}
+nav .nt{font-size:12px;color:var(--hint);letter-spacing:1px;margin:0 0 10px}
+nav a{display:block;padding:5px 10px;border-radius:6px;color:var(--muted)}
+nav a:hover{background:var(--soft2);color:var(--blue)}
+nav .grp{margin-top:14px}
+main{min-width:0}
+section{margin-bottom:48px;scroll-margin-top:16px}
+h2{font-size:19px;font-weight:600;margin:0 0 6px;padding-bottom:10px;border-bottom:2px solid var(--blue)}
+h2 .num{display:inline-block;min-width:30px;color:var(--blue);font-family:Consolas,monospace}
+.lead{color:var(--muted);font-size:13px;margin:10px 0 20px}
+h3{font-size:15px;font-weight:600;margin:26px 0 10px}
+h4{font-size:14px;font-weight:600;margin:18px 0 8px;color:var(--blue)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 18px}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--soft2);font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:var(--soft)}
+tbody tr:hover{background:var(--blue-s)}
+td.k{font-weight:600;color:var(--blue);white-space:nowrap}
+.tbl-scroll{overflow-x:auto}
+.fbox{background:var(--blue-s);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;
+  padding:11px 16px;margin:10px 0 14px;font-family:Consolas,monospace;
+  font-size:13.5px;line-height:2;color:#103a63;overflow-x:auto}
+.fbox b{font-weight:600;color:var(--blue)}
+.card{border:1px solid var(--line);border-radius:12px;padding:0;margin:20px 0;overflow:hidden}
+.card-h{background:var(--soft);border-bottom:1px solid var(--line);padding:11px 18px;display:flex;align-items:center;gap:11px}
+.badge{width:28px;height:28px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center;font-family:Consolas,monospace;font-size:13px;flex:none}
+.card-h .ttl{font-size:15px;font-weight:600}
+.card-h .sub{font-size:12px;color:var(--hint);margin-left:auto}
+.card-b{padding:14px 18px 18px}
+.lbl{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:5px;margin-right:7px;vertical-align:2px}
+.lbl.i{background:var(--blue-s);color:var(--blue)}
+.lbl.e{background:var(--green-s);color:var(--green)}
+.lbl.s{background:var(--amber-s);color:var(--amber)}
+.lbl.w{background:var(--red-s);color:var(--red)}
+.lbl.tj{background:var(--purple-s);color:var(--purple)}
+.row{margin:11px 0;line-height:1.85}
+.q{background:var(--green-s);border-radius:8px;padding:10px 14px;font-size:13px;color:#173f33}
+.a{background:var(--soft);border-radius:8px;padding:10px 14px;font-size:13px;margin-top:8px}
+.warn{background:var(--red-s);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:9px 14px;font-size:13px;margin-top:10px;color:#7a2828}
+.tip{background:var(--amber-s);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:9px 14px;font-size:13px;margin-top:10px;color:#6b440b}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini{border:1px solid var(--line);border-radius:9px;padding:12px 15px;background:var(--soft)}
+.mini .mh{font-weight:600;font-size:13.5px;margin-bottom:6px;color:var(--blue)}
+.mini p{margin:0;font-size:12.5px;color:var(--muted)}
+ul.clean{margin:8px 0;padding-left:20px}
+ul.clean li{margin:5px 0}
+.pill{display:inline-block;padding:1px 7px;border:1px solid var(--line);border-radius:5px;font-size:12px;margin:2px 3px 2px 0;background:#fff}
+.note{font-size:12.5px;color:var(--hint)}
+.searchbar{display:flex;gap:10px;align-items:center;margin:14px 0 10px}
+.searchbar input{flex:1;padding:9px 13px;border:1px solid var(--line);border-radius:8px;font-size:13px;outline:none;font-family:inherit}
+.searchbar input:focus{border-color:var(--blue)}
+.cnt{font-size:12px;color:var(--hint)}
+.hide{display:none}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:7px;padding:7px 14px;font-size:12.5px;cursor:pointer;font-family:inherit}
+footer{border-top:1px solid var(--line);padding:18px 30px;text-align:center;color:var(--hint);font-size:12px}
+@media(max-width:860px){.wrap{grid-template-columns:1fr;gap:18px}nav{display:none}.grid2{grid-template-columns:1fr}}
+@media print{
+  nav,.searchbar,.btn,header .hdr-tags{display:none}
+  .wrap{display:block;padding:0;max-width:none}
+  header{padding:0 0 10px}
+  body{font-size:11.5px}
+  .card,.mini,table,.fbox{break-inside:avoid}
+  h2{font-size:15px}
+}
+
+.top-nav{max-width:1240px;margin:0 auto;padding:28px 30px 24px}
+.top-nav h1{margin:0;font-size:24px;font-weight:600}
+.top-nav .intro{margin:8px 0 0;color:var(--muted);font-size:13px}
+.jump{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.jump a{text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:10px 16px;background:#fff;font-size:13px;color:var(--blue);min-width:230px}
+.jump a:hover{background:var(--blue-s)}
+.jump a .jn{display:block;font-family:Consolas,monospace;font-size:11px;color:var(--hint);margin-bottom:2px}
+.jump a.b{color:var(--purple)}
+.jump a.b:hover{background:var(--purple-s)}
+.module{scroll-margin-top:12px}
+.mod-bar{max-width:1240px;margin:0 auto;padding:12px 30px;border-top:2px solid var(--blue);background:var(--blue-s);display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--blue)}
+.mod-bar.b{border-top-color:var(--purple);background:var(--purple-s);color:var(--purple)}
+.mod-bar .mno{font-family:Consolas,monospace;font-size:12px;background:var(--blue);color:#fff;border-radius:5px;padding:2px 8px}
+.mod-bar.b .mno{background:var(--purple)}
+.mod-bar .mnote{margin-left:auto;font-weight:400;font-size:12px;color:var(--muted)}
+@media(max-width:860px){.top-nav{padding:20px 18px 16px}.mod-bar{padding:10px 18px}.mod-bar .mnote{display:none}.jump a{min-width:0;flex:1}}
+@media print{
+  .top-nav,.jump,.mod-bar{display:none!important}
+  body.print-a .module-b{display:none!important}
+  body.print-b .module-a{display:none!important}
+  .module{break-before:page}
+}
 </style>
 </head>
 <body>
-<div class="page">
-  <header>
-    <div class="eyebrow">行测备考资料</div>
-    <h1>考公备考手册</h1>
-    <p class="intro">两个模块各自独立成册，点击卡片直接打开，互不干扰。</p>
-  </header>
-  <main class="grid">
-    <a class="card a" href="%E8%B5%84%E6%96%99%E5%88%86%E6%9E%90%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.html">
-      <div class="card-top"><span class="no">01</span><span class="kind">通用模块</span></div>
-      <h2>资料分析</h2>
-      <div class="sub">公式与题型全解</div>
-      <p>按问法找公式、按题型看解析。以「现期 = 基期 ×(1+r)」为根，覆盖增长、比重、平均数、倍数、年均、隔年、混合增长等全部考法。</p>
-      <div class="tags"><span>60+ 问法映射</span><span>15 类题型</span><span>12 组公式族</span><span>速算工具箱</span><span>十大陷阱</span></div>
-      <div class="go">打开手册 <span>&rarr;</span></div>
-    </a>
-    <a class="card b" href="%E5%A4%A9%E6%B4%A5%E5%B8%82%E8%80%83%E7%89%B9%E8%89%B2%E9%A2%98%E5%9E%8B%E4%B8%8E%E4%BA%8C%E7%BA%A7%E8%BE%A8%E6%9E%90%E5%85%A8%E8%A7%A3.html">
-      <div class="card-top"><span class="no">02</span><span class="kind">天津市考专项</span></div>
-      <h2>天津市考</h2>
-      <div class="sub">特色题型与二级辨析</div>
-      <p>按 2026 最新考情整理天津卷特色：类比推理二级辨析 24 角度、图形推理立体空间、定义判断诗词选项、政治理论新模块与天津市情素材。</p>
-      <div class="tags"><span>2026 考情</span><span>二级辨析 24 角度</span><span>7 道真题解析</span><span>图形/定义/逻辑</span><span>天津市情</span></div>
-      <div class="go">打开手册 <span>&rarr;</span></div>
-    </a>
-  </main>
-  <footer>两份手册均为独立单文件 · 可离线打开 · 各手册内自带「打印 / 存 PDF」按钮</footer>
+<div class="top-nav">
+  <h1>考公备考手册</h1>
+  <p class="intro">两个模块上下分开、各自独立；页内直达，点模块内的「打印 / 存 PDF」只打印该模块。本文件自包含，无需任何其他文件。</p>
+  <div class="jump">
+    <a href="#mod-a"><span class="jn">模块 01</span>资料分析 · 公式与题型</a>
+    <a class="b" href="#mod-b"><span class="jn">模块 02</span>天津市考 · 特色题型</a>
+  </div>
 </div>
+<div class="module module-a" id="mod-a">
+<div class="mod-bar"><span class="mno">01</span>模块一 · 资料分析<span class="mnote">通用公式与题型 · 问法速查</span></div>
+
+
+<header>
+  <h1>行测 · 资料分析公式与题型全解</h1>
+  <p>按「问法」找公式 · 按「题型」看解析 · 按「陷阱」避失分。核心只有一条链：<b>现期 = 基期 × (1 + r)</b>，其余全是它的变形。</p>
+  <div class="hdr-tags">
+    <span class="tag b">15 类题型</span><span class="tag">60+ 问法映射</span><span class="tag">12 组公式族</span>
+    <span class="tag">例题逐题解析</span><span class="tag">速算工具箱</span><span class="tag">高频陷阱</span>
+    <button class="btn" onclick="printModule('a')">打印 / 存 PDF</button>
+  </div>
+</header>
+
+<div class="wrap">
+<nav>
+  <p class="nt">目录</p>
+  <a href="#a-s0">0 符号约定与总纲</a>
+  <a href="#a-s1">1 问法 → 公式速查表</a>
+  <a href="#a-s2">2 十二组公式族</a>
+  <div class="grp"><a href="#a-s2a">2.1 增长三兄弟</a>
+  <a href="#a-s2b">2.2 基期与隔年</a>
+  <a href="#a-s2c">2.3 比重</a>
+  <a href="#a-s2d">2.4 平均数</a>
+  <a href="#a-s2e">2.5 倍数与比值</a>
+  <a href="#a-s2f">2.6 年均增长</a>
+  <a href="#a-s2g">2.7 混合增长</a>
+  <a href="#a-s2h">2.8 贡献与拉动</a>
+  <a href="#a-s2i">2.9 百分点 / 百分数</a>
+  <a href="#a-s2j">2.10 番数、成数、指数</a>
+  <a href="#a-s2k">2.11 专用统计术语</a>
+  <a href="#a-s2l">2.12 增长量 / 率比较</a></div>
+  <div class="grp"><a href="#a-s3">3 十五类题型与解析</a></div>
+  <div class="grp"><a href="#a-s4">4 速算工具箱</a></div>
+  <div class="grp"><a href="#a-s5">5 十大高频陷阱</a></div>
+  <div class="grp"><a href="#a-s6">6 考场做题顺序</a></div>
+</nav>
+
+<main>
+
+<!-- ============ 0 ============ -->
+<section id="a-s0">
+<h2><span class="num">0</span>符号约定与总纲</h2>
+<p class="lead">先统一记号，后面所有公式都不再解释字母含义。</p>
+<table>
+<tr><th style="width:90px">记号</th><th>含义</th><th style="width:90px">记号</th><th>含义</th></tr>
+<tr><td class="k">A（现期）</td><td>本期 / 报告期的量</td><td class="k">a</td><td>分子（部分、总数）的增长率</td></tr>
+<tr><td class="k">B（基期）</td><td>对比期 / 上年同期的量</td><td class="k">b</td><td>分母（整体、份数）的增长率</td></tr>
+<tr><td class="k">r</td><td>增长率（可为负，下降时 r &lt; 0）</td><td class="k">n</td><td>年份差 = 末年 − 首年</td></tr>
+<tr><td class="k">Δ</td><td>增长量 = A − B</td><td class="k">pp</td><td>百分点（百分数的绝对差）</td></tr>
+</table>
+<div class="fbox">
+<b>母公式</b>　A = B × (1 + r)　　<span class="cm">一切公式的根</span><br>
+<b>变形一</b>　B = A ÷ (1 + r)<br>
+<b>变形二</b>　Δ = A − B = B × r = A × r/(1 + r)<br>
+<b>变形三</b>　r = (A − B) ÷ B = A/B − 1<br>
+<b>比值通式</b>　C = A/B（部分/整体、总数/份数、A是B的几倍，全是它）<br>
+　　C 的基期值 = C<sub>现</sub> × (1 + b)/(1 + a)<br>
+　　C 的增长率 = (a − b)/(1 + b)<br>
+　　C 的两期绝对差 = C<sub>现</sub> × (a − b)/(1 + a)
+</div>
+<div class="tip"><b>一句话记住三个「两期」：</b>求<b>基期值</b>统一乘 (1+b)/(1+a)；求<b>增长率</b>统一除 (1+b)；求<b>差多少个百分点</b>统一除 (1+a)。分母是分子增长率还是分母增长率，取决于你要的是「相对增速」还是「绝对差」。</div>
+<div class="row"><span class="lbl i">适用</span>增长率、比重、平均数、倍数这四类题，本质是同一个 A/B 结构，所以三个通式可以一套打天下。遇到任何「两期比较」的题，先认清 A（分子）和 a（分子增速），套完再算。</div>
+</section>
+
+<!-- ============ 1 ============ -->
+<section id="a-s1">
+<h2><span class="num">1</span>问法 → 公式速查表</h2>
+<p class="lead">这是整份手册最常用的一页。做题时先用题干关键词定位这一行，再回第 2、3 节看细节。可直接输入关键词过滤。</p>
+<div class="searchbar"><input id="a-q" type="text" placeholder="输入问法关键词，如：比重、年均、增长量、拉动、百分点…"><span class="cnt" id="a-cnt"></span></div>
+<div class="tbl-scroll">
+<table id="a-qtable">
+<thead><tr><th style="width:210px">题干问法（关键词）</th><th style="width:120px">题型判定</th><th>直接套用</th><th style="width:170px">关键提醒</th></tr></thead>
+<tbody>
+<tr><td class="k">「XX年为多少」「上年同期为多少」</td><td>求基期值</td><td class="f">B = A/(1+r)</td><td>r 为负时除以 (1−|r|)</td></tr>
+<tr><td class="k">「按此增速，明年为多少」</td><td>求现期值</td><td class="f">A = B×(1+r)</td><td>注意「保持增速」还是「保持增量」</td></tr>
+<tr><td class="k">「比上年增长了多少亿元/万人」</td><td>求增长量</td><td class="f">Δ = A×r/(1+r) = A − A/(1+r)</td><td>化 r 为 1/n → Δ = A/(n+1)</td></tr>
+<tr><td class="k">「同比增长了百分之几」「增速为」</td><td>求增长率</td><td class="f">r = (A−B)/B = A/B − 1</td><td>分母是基期，不是现期</td></tr>
+<tr><td class="k">「增长最快 / 最慢」</td><td>比较增长率</td><td class="f">比较 (A−B)/B 或 (A/B − 1)</td><td>看「率」不看「量」</td></tr>
+<tr><td class="k">「增长最多 / 最少」「增量最大」</td><td>比较增长量</td><td class="f">比较 A×r/(1+r)</td><td>看「量」不看「率」；大大则大</td></tr>
+<tr><td class="k">「降幅收窄 / 扩大 X 个百分点」</td><td>增长率还原</td><td class="f">原增速 = −(现降幅 ∓ X)</td><td>降幅是增长率绝对值，用加减</td></tr>
+<tr><td class="k">「增速比上月提高/回落 X 个百分点」</td><td>百分点加减</td><td class="f">上期增速 = 本期增速 ∓ X</td><td>绝不是乘除</td></tr>
+<tr><td class="k">「占……的比重 / 占比为」</td><td>现期比重</td><td class="f">A/B × 100%</td><td>找准「占」后面的整体</td></tr>
+<tr><td class="k">「上年同期占比约为」</td><td>基期比重</td><td class="f">A/B × (1+b)/(1+a)</td><td>a 部分增速，b 整体增速</td></tr>
+<tr><td class="k">「比重同比上升/下降多少个百分点」</td><td>两期比重差</td><td class="f">A/B × (a−b)/(1+a)</td><td>结果单位是百分点</td></tr>
+<tr><td class="k">「比重上升/下降了」（只问方向）</td><td>比重升降判断</td><td class="f">a &gt; b 升；a &lt; b 降；a = b 不变</td><td>无需计算，秒选</td></tr>
+<tr><td class="k">「比重高于上年的有几个」</td><td>比重比较</td><td class="f">逐个比 a 与 b</td><td>常考排序/计数题</td></tr>
+<tr><td class="k">「平均每……」「人均……」「单位面积产量」</td><td>现期平均数</td><td class="f">A/B（总数/份数）</td><td>确认谁是分子谁是分母</td></tr>
+<tr><td class="k">「上年平均每……为多少」</td><td>基期平均数</td><td class="f">A/B × (1+b)/(1+a)</td><td>形式同基期比重</td></tr>
+<tr><td class="k">「平均每……同比增长百分之几」</td><td>平均数增长率</td><td class="f">(a−b)/(1+b)</td><td>分母是 (1+b) 份数增速</td></tr>
+<tr><td class="k">「平均每……比上年增加多少元」</td><td>平均数增长量</td><td class="f">A/B × (a−b)/(1+a)</td><td>绝对差，分母 (1+a)</td></tr>
+<tr><td class="k">「A 是 B 的多少倍」</td><td>现期倍数</td><td class="f">A/B</td><td>含「是」= 直接除</td></tr>
+<tr><td class="k">「A 比 B 多 / 高几倍」</td><td>多几倍</td><td class="f">A/B − 1</td><td>比「是几倍」少 1</td></tr>
+<tr><td class="k">「上年 A 是 B 的多少倍」</td><td>基期倍数</td><td class="f">A/B × (1+b)/(1+a)</td><td>比值通式</td></tr>
+<tr><td class="k">「A 与 B 的比值比上年提高/下降」</td><td>比值增长率</td><td class="f">(a−b)/(1+b)</td><td>与平均数增长率同构</td></tr>
+<tr><td class="k">「年均增长量」「平均每年增加」</td><td>年均增长量</td><td class="f">(A<sub>末</sub> − A<sub>初</sub>)/n</td><td>n = 末年 − 首年</td></tr>
+<tr><td class="k">「年均增长率」「年均增速约为」</td><td>年均增长率</td><td class="f">(1+x)<sup>n</sup> = A<sub>末</sub>/A<sub>初</sub></td><td>x 略小于 (A<sub>末</sub>/A<sub>初</sub>−1)/n</td></tr>
+<tr><td class="k">「XX 年比前年增长」（隔一年）</td><td>隔年增长率</td><td class="f">R = r₁ + r₂ + r₁r₂</td><td>r₁ 前一年，r₂ 本年</td></tr>
+<tr><td class="k">「两年前为多少」（隔年基期）</td><td>隔年基期</td><td class="f">A/[(1+r₁)(1+r₂)] = A/(1+R)</td><td>别只除一次</td></tr>
+<tr><td class="k">「进出口总额增速介于…」「求两部分之比」</td><td>混合增长</td><td class="f">A基 : B基 = (r−b) : (a−r)</td><td>十字交叉，权重是基期量</td></tr>
+<tr><td class="k">「对……的增长贡献率为」</td><td>贡献率</td><td class="f">部分Δ / 整体Δ × 100%</td><td>分母是整体增长量</td></tr>
+<tr><td class="k">「拉动……增长 X 个百分点」</td><td>拉动增长</td><td class="f">部分Δ / 整体基期 = 贡献率 × 整体r</td><td>分母是整体基期量</td></tr>
+<tr><td class="k">「翻了几番」「翻 n 番后为」</td><td>番数</td><td class="f">翻 n 番 = 2<sup>n</sup> 倍</td><td>翻两番 = 4 倍，不是 2 倍</td></tr>
+<tr><td class="k">「增长了三成」「几成」</td><td>成数</td><td class="f">1 成 = 10%</td><td>「增长三成」= r 为 30%</td></tr>
+<tr><td class="k">「指数为 105」「CPI 上涨」</td><td>指数</td><td class="f">r = 指数/100 − 1；两期比用指数相除</td><td>以上年=100 才可直接减 100</td></tr>
+<tr><td class="k">「贸易顺差 / 逆差为多少」</td><td>进出口</td><td class="f">顺差 = 出口 − 进口</td><td>总额 = 出口 + 进口</td></tr>
+<tr><td class="k">「利润率 / 产销率 / 城镇化率」</td><td>专用比率</td><td class="f">按定义直接除</td><td>见 2.11 节</td></tr>
+<tr><td class="k">「能 / 不能从资料中推出的是」</td><td>综合判断</td><td class="f">逐项验证，先易后难</td><td>警惕数据不足、无中生有</td></tr>
+<tr><td class="k">「以下排序正确的是」</td><td>排序比较</td><td class="f">分数比较：直除 / 化同 / 差分</td><td>先定首尾两项即可排除</td></tr>
+<tr><td class="k">「约为」「最接近」「不足 / 超过」</td><td>估算放缩</td><td class="f">截位直除 + 放缩定方向</td><td>看选项差距决定截几位</td></tr>
+</tbody></table>
+</div>
+<p class="note">表格可直接在上方输入框过滤，例如输入「比重」只显示 6 行比重相关问法。</p>
+</section>
+
+<!-- ============ 2 ============ -->
+<section id="a-s2">
+<h2><span class="num">2</span>十二组公式族</h2>
+<p class="lead">按知识点拆分，每组给出完整公式、推导口径和使用条件。这节是「字典」，第 3 节是「怎么用它做题」。</p>
+
+<h3 id="a-s2a">2.1 增长三兄弟：现期、基期、增长量、增长率</h3>
+<div class="fbox">
+A = B(1+r)　　B = A/(1+r)　　Δ = Br = A·r/(1+r) = A − B　　r = Δ/B = A/B − 1<br>
+<span class="cm">由 Δ 反推：</span> B = Δ/r　　A = Δ(1+r)/r<br>
+<span class="cm">下降时：</span> r 取负值，「同比下降 8%」→ r = −8%，B = A/(1−8%) = A/0.92
+</div>
+<div class="tip"><b>最重要的一条变形</b>：<code>Δ = A × r/(1+r)</code>。资料里通常给「现期值 + 增长率」，求增长量时用它一步到位，不必先算基期。<br>把 r 化成分数 1/n，则 <code>Δ = A/(n+1)</code>、<code>B = A·n/(n+1)</code>。例：r = 25% = 1/4，Δ = A/5，B = 4A/5；r = 20% = 1/5，Δ = A/6。</div>
+
+<h3 id="a-s2b">2.2 同比、环比与隔年增长</h3>
+<table>
+<tr><th style="width:110px">概念</th><th>定义</th><th>易错点</th></tr>
+<tr><td class="k">同比</td><td>与<b>上年同期</b>比（2023年3月 vs 2022年3月）</td><td>跨年、消除季节性</td></tr>
+<tr><td class="k">环比</td><td>与<b>上一个相邻周期</b>比（3月 vs 2月）</td><td>「比上月」= 环比</td></tr>
+<tr><td class="k">隔年增长率</td><td class="f">R = r₁ + r₂ + r₁·r₂</td><td>不能简单相加，交叉项必须算</td></tr>
+<tr><td class="k">隔年基期</td><td class="f">两年前 = A/[(1+r₁)(1+r₂)] = A/(1+R)</td><td>r₁ 是前年→去年的增速</td></tr>
+</table>
+<div class="tip">速算：r₁r₂ 很小可先忽略估个大概，再结合选项。如 r₁=10%、r₂=20% → R = 32%（10+20+2）；若 r₂ 为负（−5%），R = 10% − 5% − 0.5% = 4.5%。</div>
+
+<h3 id="a-s2c">2.3 比重（现期 / 基期 / 两期差 / 升降判断）</h3>
+<p>设部分现期 A、整体现期 B，部分增速 a、整体增速 b。</p>
+<div class="fbox">
+<b>现期比重</b>　A/B × 100%<br>
+<b>部分 = </b>整体 × 比重　　<b>整体 = </b>部分 ÷ 比重<br>
+<b>基期比重</b>　(A/B) × (1+b)/(1+a)<br>
+<b>两期比重差</b>　(A/B) × (a−b)/(1+a)　<span class="cm">单位：百分点，正为升、负为降</span><br>
+<b>升降判断</b>　a &gt; b → 上升；a &lt; b → 下降；a = b → 不变
+</div>
+<div class="tip"><b>考场秒杀技巧</b>：两期比重差的题，先判方向（a 与 b 比大小）排除一半选项；再用「结果一定小于 |a−b|」定范围（因为 A/B &lt; 1 且除以 1+a 会再缩小），往往不用动笔就能选出答案。只有选项都非常接近时才需要精算。</div>
+
+<h3 id="a-s2d">2.4 平均数（现期 / 基期 / 增长率 / 增长量）</h3>
+<p>设总数 A（增速 a）、份数 B（增速 b），平均数 C = A/B。</p>
+<div class="fbox">
+<b>现期平均数</b>　A/B<br>
+<b>基期平均数</b>　(A/B) × (1+b)/(1+a)<br>
+<b>平均数增长率</b>　(a−b)/(1+b)　　　<span class="cm">相对变化，分母是份数增速</span><br>
+<b>平均数增长量</b>　(A/B) × (a−b)/(1+a)　<span class="cm">绝对差，分母是总数增速</span><br>
+<b>升降判断</b>　a &gt; b → 平均数上升；a &lt; b → 下降
+</div>
+<div class="warn"><b>最容易混的一组</b>：两期比重差与平均数增长量形式相同（都除 1+a），但「平均数<b>增长率</b>」和「比值增长率」除的是 <b>(1+b)</b>。判断标准：题目问「百分之几」→ 求增长率 → 除 (1+b)；问「多少个百分点 / 多少元」→ 求绝对差 → 除 (1+a)。</div>
+
+<h3 id="a-s2e">2.5 倍数与比值</h3>
+<div class="fbox">
+<b>A 是 B 的几倍</b>　A/B　　　　<b>A 比 B 多几倍</b>　A/B − 1<br>
+<b>A 比 B 多百分之几</b>　(A−B)/B = A/B − 1　<span class="cm">与「多几倍」同式，只是换单位</span><br>
+<b>基期倍数</b>　(A/B) × (1+b)/(1+a)<br>
+<b>倍数 / 比值的增长率</b>　(a−b)/(1+b)<br>
+<b>「A 是 B 的 3 倍」</b> ⇔ A 比 B 多 2 倍 ⇔ B 比 A 少 2/3
+</div>
+<div class="tip">「A 是 B 的 n 倍」与「A 比 B 多 n 倍」相差 1，是资料分析最高频的文字陷阱之一。另外注意「A 不足 B 的一半」「超过 B 的两成」这类需要放缩的表述。</div>
+
+<h3 id="a-s2f">2.6 年均增长量与年均增长率</h3>
+<div class="fbox">
+<b>n = 末年 − 首年</b>　<span class="cm">年份差，不是年份个数</span><br>
+<b>年均增长量</b>　(A<sub>末</sub> − A<sub>初</sub>)/n<br>
+<b>年均增长率</b>　(1+x)<sup>n</sup> = A<sub>末</sub>/A<sub>初</sub>　→　x = ⁿ√(A<sub>末</sub>/A<sub>初</sub>) − 1<br>
+<b>估算</b>　x &lt; (A<sub>末</sub>/A<sub>初</sub> − 1)/n　<span class="cm">复利效应使真实值略小，n 越大偏差越大</span><br>
+<b>代入验证</b>　用选项中间值算 (1+x)<sup>n</sup>，与 A<sub>末</sub>/A<sub>初</sub> 比对
+</div>
+<div class="warn"><b>「五年规划」口径的坑</b>：若题目说「十三五期间（2016—2020）年均增长量」，资料通常给 2016—2020 各年数值 + 2015 年数值，此时基期取 2015，n = 5，用 (2020−2015)/5；若只给 2016—2020 五年数值并问「这五年年均增长量」，则 n = 4，用 (2020−2016)/4。<b>以题干给的年份跨度和可比基期为准</b>，别死记 4 或 5。</div>
+
+<h3 id="a-s2g">2.7 混合增长（十字交叉 / 线段法）</h3>
+<p>整体由两部分构成，各部分基期量 A、B，增长率 a、b（设 a &gt; r &gt; b），整体增长率 r。</p>
+<div class="fbox">
+<b>整体增长率范围</b>　min(a,b) &lt; r &lt; max(a,b)，且偏向<b>基期量大</b>的一方<br>
+<b>十字交叉</b>　A<sub>基期</sub> : B<sub>基期</sub> = (r − b) : (a − r)<br>
+<b>推导</b>　Aa + Bb = (A+B)r　⇒　A(a−r) = B(r−b)<br>
+<b>常用场景</b>　进出口总额 = 进口 + 出口；城乡合计 = 城镇 + 乡村；一二三产合计；男女性别合计
+</div>
+<div class="tip">注意交叉比出来的是<b>基期量</b>之比，不是现期量之比。若题目问现期量之比，需再各自乘 (1+a)、(1+b) 换算。</div>
+
+<h3 id="a-s2h">2.8 贡献率与拉动增长</h3>
+<div class="fbox">
+<b>贡献率</b> = 部分增长量 / 整体增长量 × 100%<br>
+<b>拉动增长（百分点）</b> = 部分增长量 / 整体基期量 × 100%<br>
+<b>二者关系</b>　拉动点数 = 贡献率 × 整体增长率<br>
+<b>推论</b>　各部分贡献率之和 = 100%；各部分拉动点数之和 = 整体增长率
+</div>
+<div class="tip">区分分母：贡献率分母是「整体的<b>增长量</b>」，拉动增长分母是「整体的<b>基期量</b>」。记「贡献分增量，拉动分基期」。</div>
+
+<h3 id="a-s2i">2.9 百分数与百分点</h3>
+<table>
+<tr><th style="width:110px"></th><th>百分数</th><th>百分点</th></tr>
+<tr><td class="k">本质</td><td>两个数的比值</td><td>两个百分数的差值</td></tr>
+<tr><td class="k">运算</td><td>乘除</td><td>加减</td></tr>
+<tr><td class="k">典型问法</td><td>「占比为 20%」「增长 8%」</td><td>「比重提高 2 个百分点」「增速回落 3 个百分点」</td></tr>
+</table>
+<div class="tip">「增速由 10% 提高到 12%」= 提高 2 个百分点，但增速本身提高了 20%（(12−10)/10）。「降幅收窄 3 个百分点」= 增长率由 −8% 变成 −5%，不是 −8%×(1−3%)。</div>
+
+<h3 id="a-s2j">2.10 番数、成数、指数</h3>
+<div class="fbox">
+<b>翻 n 番</b> = 2<sup>n</sup> 倍（翻一番 2 倍、翻两番 4 倍、翻三番 8 倍）<br>
+<b>成数</b>　1 成 = 10%；「增长三成」= r = 30%；「三成多」= 30%~40%<br>
+<b>指数</b>　指数 = 现期值/基期值 × 100；增长率 = 指数/100 − 1<br>
+<b>两期指数比较</b>　增长率 = I₂/I₁ − 1　<span class="cm">不能直接把指数相减当增长率</span>
+</div>
+<div class="warn">定基指数（如「以 2015 年 = 100」）中，2022 年 102、2023 年 105，则 2023 年同比增速是 105/102 − 1 ≈ 2.94%，<b>不是 3%</b>；「比上年 = 100」的指数才能直接减 100。</div>
+
+<h3 id="a-s2k">2.11 专用统计术语速记</h3>
+<div class="grid2">
+<div class="mini"><div class="mh">贸易类</div><p>进出口总额 = 进口 + 出口；顺差 = 出口 − 进口；逆差 = 进口 − 出口；顺差额 = 出口 − 进口。求「顺差同比增长」用 Δ/基期顺差，注意顺差基数可能很小甚至是负。</p></div>
+<div class="mini"><div class="mh">企业经营类</div><p>利润率 = 利润/营业收入；成本利润率 = 利润/成本；产销率 = 销量/产量；资产负债率 = 负债/资产；产能利用率 = 实际产量/产能。</p></div>
+<div class="mini"><div class="mh">人口与社会类</div><p>城镇化率 = 城镇人口/总人口；自然增长率 = 出生率 − 死亡率；恩格尔系数 = 食品支出/消费支出；人均 = 总量/人口数。</p></div>
+<div class="mini"><div class="mh">结构类</div><p>比重 = 部分/整体；三大产业增加值之和 = GDP；「占比较上年提高」用 2.3 节公式；「拉动」「贡献」用 2.8 节公式。</p></div>
+</div>
+<p class="note">这些术语本身不是公式，考的是「能否把文字翻译成分数」。翻译对了，剩下的都是除法。</p>
+
+<h3 id="a-s2l">2.12 增长量 / 增长率的大小比较</h3>
+<div class="fbox">
+<b>大大则大</b>　现期大且增长率大 → 增长量一定大（无需计算）<br>
+<b>一大一小</b>　比较 A×r/(1+r)，把 r 化 1/n 后比较 A/(n+1)<br>
+<b>增长率比较</b>　比较 A/B − 1，本质是分数比大小：直除 / 化同 / 差分法<br>
+<b>倍数法</b>　Δ₁/Δ₂ = (A₁/A₂) × [r₁/(1+r₁)] ÷ [r₂/(1+r₂)]
+</div>
+<div class="tip">例：甲 1200 增 8%，乙 900 增 25%。乙现期小但增速大：甲 Δ ≈ 1200/13.5 ≈ 89，乙 Δ = 900/5 = 180，乙大。凡「大大则大」不成立，就必须算，别凭直觉选现期大的。</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section id="a-s3">
+<h2><span class="num">3</span>十五类题型与逐题解析</h2>
+<p class="lead">每类给出：识别标志 → 公式 → 例题 → 分步解析 → 易错点。例题数字均为便于口算的设计值，重点在看方法。</p>
+
+<div class="card"><div class="card-h"><span class="badge">01</span><span class="ttl">基期值计算</span><span class="sub">最高频</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>题干出现「XX 年为多少」「上年同期为多少」，资料给的是<b>本期值 + 同比增速</b>。</div>
+<div class="row eq">B = A / (1 + r)</div>
+<div class="q"><span class="lbl e">例</span>2023 年某省 GDP 为 6.3 万亿元，同比增长 5.0%。2022 年该省 GDP 约为多少万亿元？</div>
+<div class="a"><b>解析</b>：B = 6.3/1.05 = 6.0 万亿元。<br>速算：1/1.05 ≈ 1 − 5% + 0.25% ≈ 0.9524，6.3 × 0.9524 = 6.0。<b>化除为乘</b>：<code>A/(1+r) ≈ A(1−r)</code>，r 小时误差仅 r²（此处 0.25%）。</div>
+<div class="warn">坑：r 为负时是「除以 1−|r|」，即「同比下降 5%」→ 6.3/0.95 ≈ 6.63，基期比现期<b>大</b>。很多人误乘 (1+r) 直接算成现期。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">02</span><span class="ttl">现期值 / 预测值计算</span><span class="sub">基础</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「按此增速，下一年为多少」「若保持该增长量，将达到」。</div>
+<div class="row eq">A = B(1 + r)　或　A = B + Δ（保持增量时）</div>
+<div class="q"><span class="lbl e">例</span>2022 年 A 产品产量 800 万吨，2023 年同比增长 12%，2024 年若保持该增速，产量约为多少？</div>
+<div class="a"><b>解析</b>：2023 = 800 × 1.12 = 896；2024 = 896 × 1.12 = 1003.52 万吨。<br>若题干是「保持<b>增量</b>不变」，则每年加 96 万吨，2024 = 992 万吨。<b>增速不变 ≠ 增量不变</b>，这是本题唯一考点。</div>
+<div class="warn">坑：多年预测要用复利 (1+r)ⁿ，不能写成 B(1+nr)。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">03</span><span class="ttl">增长量计算</span><span class="sub">必考</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>问「增长了多少 <b>亿元 / 万人 / 吨</b>」，答案带具体单位。</div>
+<div class="row eq">Δ = A × r/(1 + r) = A/(n + 1)　（r = 1/n 时）</div>
+<div class="q"><span class="lbl e">例</span>2023 年某企业营收 420 亿元，同比增长 20%。2023 年营收比上年增加多少亿元？</div>
+<div class="a"><b>解析</b>：r = 20% = 1/5 → Δ = 420/(5+1) = 70 亿元。<br>验证：B = 420/1.2 = 350，Δ = 420 − 350 = 70。<br>若 r = 25%，Δ = A/5；r = 33.3%，Δ = A/4；r = 10%，Δ = A/11。<b>百化分是这一题型的秒杀钥匙。</b></div>
+<div class="warn">坑：别用 420 × 20% = 84。乘现期得到的是「基期 × r 的高估值」，正确分母必须是基期。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">04</span><span class="ttl">增长率计算</span><span class="sub">基础</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>问「同比增长百分之几」「增速 / 增幅为」。</div>
+<div class="row eq">r = (A − B)/B = A/B − 1</div>
+<div class="q"><span class="lbl e">例</span>2022 年某指标 1300，2023 年 1560。2023 年同比增长百分之几？</div>
+<div class="a"><b>解析</b>：Δ = 260，r = 260/1300 = 20%。或 1560/1300 − 1 = 1.2 − 1 = 20%。</div>
+<div class="warn">坑：分母必须是<b>基期</b>。若问「2022 年比 2023 年少百分之几」，分母换成 1560 → 260/1560 ≈ 16.7%，答案完全不同。看准「比」字后面是谁。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">05</span><span class="ttl">增长量 / 增长率比较</span><span class="sub">常考排序</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「增长最多 / 最少」「增速最快 / 最慢」「增量最大的是」。</div>
+<div class="row eq">比增长率：A/B − 1　　比增长量：A × r/(1+r)</div>
+<div class="q"><span class="lbl e">例</span>甲：现期 1200，同比增 8%；乙：现期 900，同比增 25%。谁的增量更大？</div>
+<div class="a"><b>解析</b>：8% ≈ 1/12.5 → 甲 Δ ≈ 1200/13.5 ≈ 89；25% = 1/4 → 乙 Δ = 900/5 = 180。<b>乙大</b>。<br>思路：现期大、增速也大 → 直接判（大大则大）；一大一小必须算，且用「现期 ÷ (n+1)」最快。</div>
+<div class="tip">四个选项时要先扫一眼有没有「大大则大」能直接排除的；增长率比较题优先用直除取首位，不必算完整小数。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">06</span><span class="ttl">现期比重与部分/整体还原</span><span class="sub">必考</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「A 占 B 的比重」「占比为多少」；或反向「已知比重求部分/整体」。</div>
+<div class="row eq">比重 = A/B　　部分 = 整体 × 比重　　整体 = 部分 ÷ 比重</div>
+<div class="q"><span class="lbl e">例</span>2023 年某省第一产业增加值 2.4 万亿元，GDP 为 12 万亿元。第一产业占 GDP 的比重为多少？</div>
+<div class="a"><b>解析</b>：2.4/12 = 20%。反向：若已知第二产业占比 40%、GDP 12 万亿，则第二产业 = 12 × 40% = 4.8 万亿；若已知某产业 3 万亿、占比 25%，则 GDP = 3/0.25 = 12 万亿。</div>
+<div class="warn">坑：「A 占 B」与「B 占 A」分母相反；饼图中「其它」项常需 100% 减去已知各项之和。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">07</span><span class="ttl">基期比重</span><span class="sub">高频难点</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「上年同期 A 占 B 的比重约为」。</div>
+<div class="row eq">基期比重 = (A/B) × (1 + b)/(1 + a)</div>
+<div class="q"><span class="lbl e">例</span>2023 年 A 产业增加值 2.4 万亿（同比增 8%），GDP 12 万亿（同比增 5%）。2022 年 A 产业占 GDP 比重约为？</div>
+<div class="a"><b>解析</b>：现期比重 = 2.4/12 = 20%；<br>基期比重 = 20% × 1.05/1.08 ≈ 20% × 0.9722 ≈ <b>19.44%</b>。<br>验算：基期 A = 2.4/1.08 ≈ 2.222，基期 GDP = 12/1.05 ≈ 11.429，2.222/11.429 ≈ 19.44%。</div>
+<div class="tip">速判：a(8%) &gt; b(5%)，部分长得比整体快 → 比重上升 → 基期比重一定<b>小于</b> 20%，可先排除大于 20% 的选项。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">08</span><span class="ttl">两期比重差 / 比重升降判断</span><span class="sub">秒杀题</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「比重比上年提高 / 下降多少个百分点」「比重上升的有几个」。</div>
+<div class="row eq">Δ比重 = (A/B) × (a − b)/(1 + a)　　方向：a &gt; b 升，a &lt; b 降</div>
+<div class="q"><span class="lbl e">例</span>承上例（现期比重 20%，a = 8%，b = 5%），2023 年 A 产业占 GDP 比重比上年约提高多少个百分点？</div>
+<div class="a"><b>解析</b>：Δ = 20% × (8% − 5%)/(1 + 8%) = 20% × 3%/1.08 ≈ <b>0.56 个百分点</b>。<br>与题型 07 结果对照：20% − 19.44% = 0.56pp，一致。<br><b>三级秒杀</b>：① a &gt; b → 上升，排除所有「下降」选项；② 结果必小于 |a−b| = 3pp；③ 因乘了 20%，结果远小于 3pp，通常只有 0.5~0.6 量级，直接锁定。</div>
+<div class="warn">坑：答案单位是<b>百分点</b>不是百分数；选项常同时放「0.56%」和「0.56 个百分点」混淆。另外分母是 (1+a) 而不是 (1+b)。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">09</span><span class="ttl">平均数（现期 / 基期 / 增长率 / 增长量）</span><span class="sub">高频难点</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「平均每家 / 人均 / 单位面积产量 / 每万人拥有」。</div>
+<div class="row eq">C = A/B　基期 C = (A/B)·(1+b)/(1+a)　增长率 = (a−b)/(1+b)　增长量 = (A/B)·(a−b)/(1+a)</div>
+<div class="q"><span class="lbl e">例</span>2023 年某行业营收 3600 亿元（同比 +20%），企业 1200 家（同比 +10%）。2023 年平均每家企业营收同比增长约百分之几？</div>
+<div class="a"><b>解析</b>：a = 20%（总数增速），b = 10%（份数增速）。<br>平均数增长率 = (20% − 10%)/(1 + 10%) = 10%/1.1 ≈ <b>9.1%</b>。<br>验算：现均 = 3600/1200 = 3 亿；基期营收 = 3000，基期企业 = 1090.9，基均 ≈ 2.75 亿；3/2.75 − 1 ≈ 9.1%。<br>若改问「平均每家比上年增加多少亿元」：Δ = 3 × (20%−10%)/(1+20%) = 3 × 0.1/1.2 = <b>0.25 亿元</b>。</div>
+<div class="warn">坑：<b>问百分之几除 (1+b)，问多少元除 (1+a)</b>，这是与题型 08 并列的第一大失分点。另外分子分母别搞反（人均 = 总量/人数，不是人数/总量）。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">10</span><span class="ttl">倍数与「多几倍」</span><span class="sub">文字陷阱</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「A 是 B 的几倍」「A 比 B 多几倍」「上年 A 是 B 的几倍」。</div>
+<div class="row eq">是几倍 = A/B　多几倍 = A/B − 1　基期倍数 = (A/B)·(1+b)/(1+a)</div>
+<div class="q"><span class="lbl e">例</span>2023 年 A = 600（同比 +10%），B = 150（同比 +5%）。2022 年 A 是 B 的多少倍？</div>
+<div class="a"><b>解析</b>：现期倍数 = 600/150 = 4 倍；<br>基期倍数 = 4 × 1.05/1.10 ≈ <b>3.82 倍</b>。<br>验算：基期 A = 545.45，基期 B = 142.86，比值 = 3.82。<br>若问「A 比 B 多几倍」：现期多 3 倍；若问「A 与 B 的比值比上年提高百分之几」：(10%−5%)/(1+5%) ≈ 4.76%。</div>
+<div class="warn">坑：「是几倍」和「多几倍」差 1；「A 是 B 的 3 倍」≠「B 是 A 的 1/3 倍」的口语误用；基期倍数要乘增速修正因子，不能直接拿现期倍数作答。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">11</span><span class="ttl">年均增长量 / 年均增长率</span><span class="sub">必考</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「XX—XX 年年均增长」「平均每年增加」。</div>
+<div class="row eq">n = 末年 − 首年　年均增量 = (A末 − A初)/n　(1+x)ⁿ = A末/A初</div>
+<div class="q"><span class="lbl e">例</span>某指标 2018 年 500，2022 年 800。2018—2022 年年均增长量与年均增长率分别约为？</div>
+<div class="a"><b>解析</b>：n = 2022 − 2018 = <b>4</b>（不是 5）。<br>年均增量 = (800 − 500)/4 = <b>75</b>。<br>年均增速：(1+x)⁴ = 800/500 = 1.6。线性估算 60%/4 = 15%，真实值必小于 15%；代入 12.5%：1.125⁴ ≈ 1.602，故 x ≈ <b>12.5%</b>。</div>
+<div class="warn">坑：① n 用年份差；② 五年规划类题目基期可能要前推一年（见 2.6）；③ 年均增速不是各年增速的算术平均；④ 选项接近时用代入验证，不要用开方硬算。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">12</span><span class="ttl">隔年增长</span><span class="sub">中频</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「2023 年比 2021 年增长」「两年前为多少」，材料给了连续两年同比增速。</div>
+<div class="row eq">R = r₁ + r₂ + r₁r₂　　两年前 = A/[(1+r₁)(1+r₂)] = A/(1+R)</div>
+<div class="q"><span class="lbl e">例</span>2022 年同比增 10%，2023 年同比增 20%。2023 年比 2021 年增长百分之几？若 2023 年为 660，2021 年为多少？</div>
+<div class="a"><b>解析</b>：R = 10% + 20% + 10%×20% = <b>32%</b>。<br>2021 年 = 660/1.32 = <b>500</b>。<br>验算：500 × 1.1 = 550，550 × 1.2 = 660。</div>
+<div class="warn">坑：漏掉交叉项 r₁r₂，误答 30%；求两年前只除一次 (1+r)。若 r 为负（下降）交叉项符号也要跟着变。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">13</span><span class="ttl">混合增长 / 十字交叉</span><span class="sub">中频难点</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>整体由两部分构成，给了各部分增速和整体增速，求「两者之比」「判断整体增速范围」。</div>
+<div class="row eq">A基 : B基 = (r − b) : (a − r)，其中 a &gt; r &gt; b</div>
+<div class="q"><span class="lbl e">例</span>某年出口同比增 8%，进口同比增 4%，进出口总额同比增 6%。上年出口额与进口额之比约为？</div>
+<div class="a"><b>解析</b>：a = 8%，b = 4%，r = 6%。<br>出口基期 : 进口基期 = (6−4) : (8−6) = 2 : 2 = <b>1 : 1</b>。<br>验算：设各 100，则整体基期 200，整体增量 100×8% + 100×4% = 12，r = 12/200 = 6%。<br>若 r = 7%，则比值 = 3 : 1，说明整体增速偏向权重大的一方（出口）。</div>
+<div class="warn">坑：交叉比是<b>基期</b>量之比；整体增速必在两部分之间，若选项给 9% 或 3% 可直接排除。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">14</span><span class="ttl">贡献率、拉动增长与专用术语</span><span class="sub">概念题</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「贡献率」「拉动…增长 X 个百分点」；或利润率、产销率、顺差、指数等陌生名词。</div>
+<div class="row eq">贡献率 = 部分Δ/整体Δ　拉动 = 部分Δ/整体基期 = 贡献率 × 整体r</div>
+<div class="q"><span class="lbl e">例</span>某省 GDP 同比增长 5%，全年 GDP 增量 500 亿元，其中工业增加值增量 200 亿元。工业对 GDP 增长的贡献率？拉动 GDP 增长多少个百分点？</div>
+<div class="a"><b>解析</b>：贡献率 = 200/500 = <b>40%</b>；拉动 = 40% × 5% = <b>2 个百分点</b>。<br>验算：整体基期 = 500/5% = 10000，200/10000 = 2%。</div>
+<div class="tip">陌生术语一律「翻译成分数」：产销率 = 销量/产量，利润率 = 利润/营收，顺差 = 出口−进口，城镇化率 = 城镇人口/总人口。翻译对了就是除法题。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">15</span><span class="ttl">综合判断与「无法推出」</span><span class="sub">压轴题</span></div><div class="card-b">
+<div class="row"><span class="lbl i">识别</span>「能够从资料中推出的是」「下列说法正确的是」，四个选项各考一个知识点。</div>
+<div class="row eq">策略：先易后难 → 先判方向/范围类，后算需要精算的 → 排除到剩一个即停</div>
+<div class="q"><span class="lbl e">例</span>材料给 2023 年 A 产业增加值 2.4 万亿（+8%）、GDP 12 万亿（+5%）、上年 A 产业增速 6%。判断：① 2023 年 A 占 GDP 比重高于上年；② 2022 年 A 产业增加值为 2.4/1.06；③ A 产业 2023 年增速比上年提高 2 个百分点；④ 2021 年 A 产业占比必低于 2022 年。</div>
+<div class="a"><b>解析</b>：① 8% &gt; 5% → 比重上升，<b>正确</b>（秒判，不用算）。② 2022 年应为 2.4/1.08，错。③ 8% − 6% = <b>2 个百分点</b>，正确（注意不是「提高 2%」）。④ 2022 年增速 6% 与当年 GDP 增速未知，无法比较 a 与 b，<b>无法推出</b>。<br>此类题正确的做法是先做 ① 这种一眼能判的，再逐项排，别一上来就硬算。</div>
+<div class="warn">坑：④ 这种「数据不足」选项是命题人专门设的；「必」「一定」「均」等绝对化表述要格外警惕；选项里偷换同比/环比、百分数/百分点、增长量/增长率是三大常规干扰。</div>
+</div></div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section id="a-s4">
+<h2><span class="num">4</span>速算工具箱</h2>
+<p class="lead">资料分析考的是「算得快且准」，不是算得精。下面五件工具覆盖了绝大多数计算。</p>
+
+<h3>4.1 特征分数表（务必背到条件反射）</h3>
+<div class="tbl-scroll"><table>
+<tr><th>分数</th><th>百分数</th><th>分数</th><th>百分数</th><th>分数</th><th>百分数</th><th>分数</th><th>百分数</th></tr>
+<tr><td class="k">1/2</td><td>50%</td><td class="k">1/7</td><td>14.3%</td><td class="k">1/12</td><td>8.3%</td><td class="k">1/17</td><td>5.9%</td></tr>
+<tr><td class="k">1/3</td><td>33.3%</td><td class="k">1/8</td><td>12.5%</td><td class="k">1/13</td><td>7.7%</td><td class="k">1/18</td><td>5.6%</td></tr>
+<tr><td class="k">1/4</td><td>25%</td><td class="k">1/9</td><td>11.1%</td><td class="k">1/14</td><td>7.1%</td><td class="k">1/19</td><td>5.3%</td></tr>
+<tr><td class="k">1/5</td><td>20%</td><td class="k">1/10</td><td>10%</td><td class="k">1/15</td><td>6.7%</td><td class="k">1/20</td><td>5%</td></tr>
+<tr><td class="k">1/6</td><td>16.7%</td><td class="k">1/11</td><td>9.1%</td><td class="k">1/16</td><td>6.25%</td><td class="k">1/25</td><td>4%</td></tr>
+</table></div>
+<div class="tip">配套用法：r ≈ 1/n → <b>增长量 = 现期/(n+1)</b>，<b>基期 = 现期 × n/(n+1)</b>。例：增速 14.3% ≈ 1/7 → 增量 = 现期/8。反向也练：看到 9.1% 立刻想到 1/11。</div>
+
+<h3>4.2 截位直除</h3>
+<div class="row"><b>看选项差距定截位</b>：选项首位不同 → 分子分母各截 2 位；首位相同、次位不同 → 截 3 位；选项非常接近 → 截 4 位或精算。</div>
+<div class="row">例：3568/12345 → 36/12 ≈ 3.0（若选项 2.1 / 2.9 / 3.6 / 4.2，直接选 2.9 附近）；分母截位时「四舍五入」，分子可同向微调以抵消误差。</div>
+
+<h3>4.3 化除为乘</h3>
+<div class="fbox">A/(1+r) ≈ A × (1 − r)　　A/(1−r) ≈ A × (1 + r)　　<span class="cm">误差约 r²，r &lt; 10% 时基本可忽略</span></div>
+<div class="row">例：6.3/1.05 ≈ 6.3 × 0.95 = 5.985 ≈ 6.0；6.3/0.95 ≈ 6.3 × 1.05 = 6.615。增速超过 15% 时改用直除，避免误差累计。</div>
+
+<h3>4.4 分数比大小三法</h3>
+<div class="grid2">
+<div class="mini"><div class="mh">直除法</div><p>各自除出首位/前两位，直接比。最通用，优先用。</p></div>
+<div class="mini"><div class="mh">化同法</div><p>把分子或分母化成相同（或相近）再比另一个。适合分子成倍数关系。</p></div>
+<div class="mini"><div class="mh">差分法</div><p>两分数 a/b 与 c/d（a&gt;c, b&gt;d），用「差分数」(a−c)/(b−d) 与大分数比较：差分数 &gt; 小分数则大分数更大。适合两分数非常接近。</p></div>
+<div class="mini"><div class="mh">放缩法</div><p>问「超过/不足」时把分子放大或分母缩小定方向，不必算精确值。</p></div>
+</div>
+
+<h3>4.5 估算与选项意识</h3>
+<ul class="clean">
+<li>先扫选项：差距大就大胆估，差距小才精算。<b>资料分析 80% 的题不需要算到底</b>。</li>
+<li>两期比重差：先判方向 → 再用「小于 |a−b|」定范围 → 多数情况直接出答案。</li>
+<li>年均增长率：用「小于 (总增速/n)」排除偏大选项，再代入中间值验证。</li>
+<li>综合判断题：先做能秒判的选项（方向、范围、单位），算到唯一答案立刻停，别把四项全算完。</li>
+<li>单位换算：亿元/万元、%/‰、美元/人民币、同比/环比，动笔前先圈出来。</li>
+</ul>
+</section>
+
+<!-- ============ 5 ============ -->
+<section id="a-s5">
+<h2><span class="num">5</span>十大高频陷阱</h2>
+<p class="lead">错了不是不会算，是没看清。考前过一遍这十条，比多刷十套题有用。</p>
+<table>
+<tr><th style="width:44px">#</th><th style="width:180px">陷阱</th><th>正确做法</th></tr>
+<tr><td class="k">01</td><td>时间错位</td><td>看清「同比 / 环比」「比上年 / 比上月」；基期年份要准确前推；五年规划基期可能前推一年。</td></tr>
+<tr><td class="k">02</td><td>百分点 vs 百分数</td><td>「提高 2 个百分点」用加减；「提高 2%」用乘除。降幅收窄/扩大同理。</td></tr>
+<tr><td class="k">03</td><td>增长量 vs 增长率</td><td>「增长最多」比 Δ，「增长最快」比 r；带单位的是量，带 % 的是率。</td></tr>
+<tr><td class="k">04</td><td>是几倍 vs 多几倍</td><td>是几倍 = A/B；多几倍 = A/B − 1。</td></tr>
+<tr><td class="k">05</td><td>两期公式分母搞反</td><td>求「增长率 / 百分之几」除 (1+b)；求「百分点 / 多少元」除 (1+a)；求基期值乘 (1+b)/(1+a)。</td></tr>
+<tr><td class="k">06</td><td>分母用现期</td><td>r = Δ/基期，不是 Δ/现期；增长量不能乘现期值。</td></tr>
+<tr><td class="k">07</td><td>年均 n 数错</td><td>n = 末年 − 首年；看清材料是否给出前一年作为可比基期。</td></tr>
+<tr><td class="k">08</td><td>下降时符号错</td><td>「同比下降 8%」→ r = −8%，基期 = 现期/0.92（基期更大）。</td></tr>
+<tr><td class="k">09</td><td>「占」的主体反了</td><td>「A 占 B」= A/B；饼图/表格中先圈出整体是谁；多个整体别混用。</td></tr>
+<tr><td class="k">10</td><td>无中生有 / 数据不足</td><td>综合判断中「一定」「均」「必然」要验证；材料没给基期数据就别硬推基期结论。</td></tr>
+</table>
+<div class="tip"><b>还有两个隐蔽的</b>：① 十字交叉得出的是基期量之比；② 定基指数两期相减不等于增长率，要相除。</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section id="a-s6">
+<h2><span class="num">6</span>考场做题顺序</h2>
+<div class="fbox">
+① 读题干<b>圈关键词</b>：时间、主体、问的是「量」还是「率」、单位。<br>
+② 判定题型 → 在第 1 节速查表定位公式。<br>
+③ 回材料<b>抄准数</b>：现期 A、增速 r/a/b，注意单位统一。<br>
+④ <b>先看选项</b>决定计算精度（能估就估，能判方向就判方向）。<br>
+⑤ 套公式 → 截位/百化分 → 出结果 → 对照选项。<br>
+⑥ 综合判断题按「先易后难、排除即停」处理。
+</div>
+<div class="row"><span class="lbl s">节奏</span>一篇材料 5 题建议控制在 6~7 分钟：4 道单题各约 1 分钟，最后 1 道综合判断约 2 分钟。个别计算量极大的题可先跳过，做完本套再回补。</div>
+<div class="row"><span class="lbl f">背诵优先级</span>
+<span class="pill">Δ = A·r/(1+r) = A/(n+1)</span>
+<span class="pill">基期值 = (A/B)·(1+b)/(1+a)</span>
+<span class="pill">比重差 = (A/B)·(a−b)/(1+a)</span>
+<span class="pill">平均数增速 = (a−b)/(1+b)</span>
+<span class="pill">R = r₁+r₂+r₁r₂</span>
+<span class="pill">(1+x)ⁿ = A末/A初</span>
+<span class="pill">特征分数表</span>
+</div>
+</section>
+
+</main>
+</div>
+
+<footer>行测 · 资料分析公式与题型全解　|　公式以「现期 = 基期 ×(1+r)」为根，其余皆为变形　|　建议打印后配合真题使用</footer>
+
+<script>
+(function(){
+  var q=document.getElementById('a-q'),tb=document.getElementById('a-qtable'),cnt=document.getElementById('a-cnt');
+  var rows=[].slice.call(tb.tBodies[0].rows);
+  function run(){
+    var v=(q.value||'').trim().toLowerCase(),n=0;
+    rows.forEach(function(r){
+      var hit=!v||r.textContent.toLowerCase().indexOf(v)>-1;
+      r.className=hit?'':'hide'; if(hit)n++;
+    });
+    cnt.textContent=v?(n+' / '+rows.length+' 条'):(rows.length+' 条问法');
+  }
+  q.addEventListener('input',run); run();
+})();
+</script>
+
+</div>
+<div class="module module-b" id="mod-b">
+<div class="mod-bar b"><span class="mno">02</span>模块二 · 天津市考<span class="mnote">特色题型 · 类比推理二级辨析</span></div>
+
+
+<header>
+  <h1>天津市考 · 特色题型与类比推理二级辨析全解</h1>
+  <p>核心判断：天津卷的「特色」不在题量，而在<b>类比推理的辨析深度</b>和<b>素材的本地化</b>。判断推理 35 题十年基本没变，变的是每道题要拐几个弯。</p>
+  <div class="hdr-tags">
+    <span class="tag b">2026 最新考情</span><span class="tag r">政治理论独立成模块</span>
+    <span class="tag">类比二级辨析 24 角度</span><span class="tag">判断推理 35 题拆解</span>
+    <span class="tag">图形 / 定义 / 逻辑特色</span><span class="tag">天津市情素材</span>
+    <button class="btn" onclick="printModule('b')">打印 / 存 PDF</button>
+  </div>
+</header>
+
+<div class="wrap">
+<nav>
+  <p class="nt">目录</p>
+  <div class="grp"><a href="#b-s0">0 一句话结论</a></div>
+  <div class="grp"><a href="#b-s1">1 最新考情与题量结构</a></div>
+  <div class="grp"><a href="#b-s2">2 天津卷七大特色</a></div>
+  <div class="grp"><a href="#b-s3">3 类比推理：一级关系框架</a></div>
+  <div class="grp"><a href="#b-s4">4 二级辨析全表（核心）</a>
+    <a href="#b-s4a">4.1 辨析优先级</a>
+    <a href="#b-s4b">4.2 全角度速查表</a>
+    <a href="#b-s4c">4.3 天津真题逐题解析</a>
+    <a href="#b-s4d">4.4 成语题专攻</a>
+    <a href="#b-s4e">4.5 三词型 / 括号型</a></div>
+  <div class="grp"><a href="#b-s5">5 图形推理天津特色</a></div>
+  <div class="grp"><a href="#b-s6">6 定义判断天津特色</a></div>
+  <div class="grp"><a href="#b-s7">7 逻辑判断天津特色</a></div>
+  <div class="grp"><a href="#b-s8">8 其他模块本地化与申论</a></div>
+  <div class="grp"><a href="#b-s9">9 备考优先级与时间分配</a></div>
+  <div class="grp"><a href="#b-s10">10 天津卷专属陷阱清单</a></div>
+</nav>
+
+<main>
+
+<!-- 0 -->
+<section id="b-s0">
+<h2><span class="num">0</span>一句话结论</h2>
+<div class="fbox">
+天津卷 = <b>联考框架</b> + <b>六个模块</b>（2025 起政治理论独立）+ <b>判断推理 35 题恒定</b><br>
+　　　　+ <b>类比推理「二级辨析 + 常识化 + 成语结构」三重叠加</b><br>
+　　　　+ <b>图形推理偏爱立体空间</b> + <b>素材大量取自天津市情 / 京津冀</b>
+</div>
+<div class="row"><span class="lbl tj">最该下功夫的</span>不是把一级关系背熟（谁都会），而是<b>纠结两个选项时，按固定顺序把二级角度试一遍</b>。天津卷类比推理近年的区分度几乎全在这里。</div>
+<div class="warn"><b>先说清楚数据口径</b>：网上关于政治理论 / 常识题量的说法互相打架（考前预测多为「政治 10 + 常识 15」，2026 考后考生回忆版为「政治 15 + 常识 10」）。<b>六大模块、总题量 120、判断推理 35、资料分析 20 是稳定的</b>；政治理论与常识的具体拆分每年会调，以当年真题为准，别把某一年的数字背死。</div>
+</section>
+
+<!-- 1 -->
+<section id="b-s1">
+<h2><span class="num">1</span>最新考情与题量结构</h2>
+<p class="lead">2026 年度天津市考大纲已把「政治理论」正式写入试卷构成，笔试 2025 年 12 月 6—7 日。下表为 2026 考后回忆版口径（与考前预测并列给出）。</p>
+<div class="tbl-scroll"><table>
+<tr><th>模块</th><th style="width:110px">2026 回忆版</th><th style="width:110px">考前预测</th><th style="width:100px">参考用时</th><th>稳定性</th></tr>
+<tr><td class="k">政治理论</td><td>15 题</td><td>10 题</td><td>12 分钟</td><td>2025 起新增独立模块，题量仍在调</td></tr>
+<tr><td class="k">常识判断</td><td>10 题</td><td>15 题</td><td>8 分钟</td><td>与政治理论合计约 25 题</td></tr>
+<tr><td class="k">言语理解与表达</td><td>25 题</td><td>25 题</td><td>20 分钟</td><td>由 35 题缩减，逻辑填空约占四成</td></tr>
+<tr><td class="k">数量关系</td><td>15 题</td><td>15 题</td><td>20 分钟</td><td>由 10 题增加，难度下调</td></tr>
+<tr><td class="k">判断推理</td><td><b>35 题</b></td><td><b>35 题</b></td><td>35 分钟</td><td><b>极稳定</b>：图 5 / 定 10 / 类 10 / 逻 10</td></tr>
+<tr><td class="k">资料分析</td><td>20 题</td><td>20 题</td><td>25 分钟</td><td><b>极稳定</b>：4 篇 × 5 题</td></tr>
+<tr><td class="k">合计</td><td colspan="2">120 题 / 120 分钟 / 100 分</td><td>120 分钟</td><td>全单选，不设单模块合格线</td></tr>
+</table></div>
+<div class="tip"><b>历史稳定性</b>：2017 年以来判断推理基本恒定 35 题，仅 2022 年因疫情压缩到 30 题。类比推理常年 10 题，2026 依旧 10 题。<b>这意味着天津卷的备考重点可以放心押在判断推理上，不会白费。</b></div>
+<div class="row"><span class="lbl i">分值参考</span>图形推理约 0.9 分/题、定义判断与类比推理约 0.8 分/题、逻辑判断约 0.9 分/题、资料分析约 1 分/题、常识约 0.5 分/题。判断推理整块约 26~30 分。</div>
+</section>
+
+<!-- 2 -->
+<section id="b-s2">
+<h2><span class="num">2</span>天津卷七大特色</h2>
+<p class="lead">与联考通用卷对比，天津真正「不一样」的地方：</p>
+<div class="grid2">
+<div class="mini"><div class="mh">01 政治理论独立成模块</div><p>2026 大纲明确列出「政治理论、常识判断、言语、数量、判断、资料分析」六部分。考党的创新理论、二十大报告、中国式现代化，且常结合<b>京津冀协同发展中天津的定位</b>。这是近两年最大结构变化。</p></div>
+<div class="mini"><div class="mh">02 判断推理 35 题十年不动</div><p>图形 5 / 定义 10 / 类比 10 / 逻辑 10。题量固定意味着考点必须往细里考，<b>「考点细化」是天津命题的主线</b>。</p></div>
+<div class="mini"><div class="mh">03 类比推理三重叠加</div><p>一级关系只是入场券；<b>二级辨析</b>（词性、感情色彩、必然/或然、物理/化学）＋<b>学科常识</b>（物理化学生物文学）＋<b>成语结构</b>（主谓宾、典故主客体）叠加出题。2026 考后评价是「每个字都认识，凑一块儿不知道啥关系」。</p></div>
+<div class="mini"><div class="mh">04 图形推理偏爱立体空间</div><p>除数量、位置、样式、六面体外，<b>截面图、三视图、立体拼合、不规则立体「外表面折叠」</b>考查逐年增多。常规考点也细化：数点结合内外结构、数面看最大面/相同面、多个小元素对称轴之间的关系。</p></div>
+<div class="mini"><div class="mh">05 定义判断爱用诗词成语做选项</div><p>给一个心理学 / 管理学定义，四个选项直接是古诗词或成语，要求判断哪句符合定义。光会拆「主体客体」不够，还得读懂诗句。单定义远多于多定义。</p></div>
+<div class="mini"><div class="mh">06 素材高度本地化</div><p>常识考杨柳青年画、海河治理、渤海湾生态、自贸区政策；资料分析用天津港吞吐量、制造业产值、进出口额、京津冀统计公报；言语材料涉及天津城市发展与文化传承。</p></div>
+<div class="mini"><div class="mh">07 申论分类命制 + 专业科目</div><p>申论按<b>市级区级综合管理类 / 乡镇街道综合管理类 / 行政执法类</b>分别命制，专业技术类同市级区级。公安、审计、统计、外事等职位加试专业科目，成绩按 40:30:30 或 25:25:50 合成。</p></div>
+<div class="mini"><div class="mh">补充：数量关系不考数字推理</div><p>天津数量关系<b>以数学运算为主，数字推理基本不考</b>（近年高频：几何、排列组合、基础应用题、工程、利润、概率）。别按保留数推的省份去准备。</p></div>
+</div>
+</section>
+
+<!-- 3 -->
+<section id="b-s3">
+<h2><span class="num">3</span>类比推理：一级关系框架</h2>
+<p class="lead">二级辨析必须建立在一级关系判断正确之上。天津卷一级考点集中在「概念外延关系」和「概念内涵对应」，语义关系次之，语法关系较少，但<b>成语题</b>会专门考语法结构。</p>
+<div class="fbox">
+<b>语义关系</b>　近义 / 反义 / 比喻象征义　　　<b>判据</b>：看词义本身<br>
+<b>逻辑关系</b>　全同 · 并列（矛盾/反对）· 包容（种属/组成）· 交叉 · 对应<br>
+<b>语法关系</b>　主谓 / 动宾 / 偏正 / 主宾　　　<b>判据</b>：造句，句式与题干一致<br>
+<b>对应关系的常见子类</b>　原材料 · 工艺 · 功能 · 属性 · 因果 · 方式目的 · 时间顺承 · 职业 · 场所 · 依据 · 工具
+</div>
+<h4>三个必背判定口诀</h4>
+<table>
+<tr><th style="width:150px">易混点</th><th>判定方法</th><th>例</th></tr>
+<tr><td class="k">种属 vs 组成</td><td>用「<b>是</b>」造句：说得通是种属，说不通是组成</td><td>苹果<b>是</b>水果（种属）；轮胎<b>是</b>汽车 ✗（组成）</td></tr>
+<tr><td class="k">矛盾 vs 反对</td><td>看有没有「第三者」</td><td>生∶死（无第三者，矛盾）；玉米油∶花生油（还有橄榄油，反对）</td></tr>
+<tr><td class="k">交叉关系</td><td>四句话全成立：有的 A 是 B、有的 A 不是 B、有的 B 是 A、有的 B 不是 A</td><td>医生∶女性；党员∶教师</td></tr>
+</table>
+<div class="warn"><b>天津卷的一级关系不难，难在「多个选项一级关系都对」。</b>此时立刻进入二级辨析，且必须<b>按固定优先级顺序</b>试，不能挑自己顺眼的角度试——否则同一道题会得出不同答案。</div>
+</section>
+
+<!-- 4 -->
+<section id="b-s4">
+<h2><span class="num">4</span>二级辨析全表（本手册核心）</h2>
+<p class="lead">二级辨析 = 一级关系无法排除到唯一答案时，对词语做的第二层比较。下面 24 个角度覆盖了天津卷近年全部考法。</p>
+
+<h3 id="b-s4a">4.1 辨析优先级（按顺序试，别跳）</h3>
+<div class="fbox">
+① <b>词性 / 词语结构</b>（名词 vs 动词、主谓宾 vs 动宾、语序）<br>
+② <b>感情色彩</b>（褒 / 贬 / 中）与<b>程度递进</b><br>
+③ <b>主体</b>（是否同一主体、是否职业、主动/被动）<br>
+④ <b>必然 / 或然</b>（组成、原材料、属性、因果）<br>
+⑤ <b>物理变化 / 化学变化</b>（工艺类专属）<br>
+⑥ <b>主要 / 次要功能</b>、<b>内在 / 外在属性</b>、<b>核心 / 非核心部件</b><br>
+⑦ <b>特指 / 泛指</b>、<b>人工 / 天然</b>、<b>命名方式</b>、<b>时间先后</b>、<b>场所是否唯一</b><br>
+⑧ <b>纵向同类比较</b>（与题干属于同一类别的优先）——最主观，放最后用
+</div>
+<div class="tip"><b>为什么必须按序</b>：一道题往往同时满足多个二级角度，但出题人只认一个。天津 / 国考通用的命题惯例是「先客观后主观」——词性、色彩、主体是硬事实，人工天然、命名方式属软判断，纵向同类最软。按顺序试到第一个能分出胜负的就停。</div>
+
+<h3 id="b-s4b">4.2 全角度速查表</h3>
+<div class="searchbar"><input id="b-q" type="text" placeholder="输入关键词过滤，如：工艺、感情色彩、主体、成语、场所…"><span class="cnt" id="b-cnt"></span></div>
+<div class="tbl-scroll"><table id="b-qtable">
+<thead><tr><th style="width:150px">一级关系</th><th style="width:170px">二级辨析角度</th><th>判据 / 典型例</th></tr></thead>
+<tbody>
+<tr><td class="k">语义 · 近反义 / 象征</td><td>感情色彩</td><td>褒 / 贬 / 中性。<b>大义凛然∶卑躬屈膝</b>＝褒∶贬 → 选「持之以恒∶虎头蛇尾」，排除含中性词的选项。</td></tr>
+<tr><td class="k">语义 · 近义</td><td>程度递进</td><td>语义由轻到重。<b>流星赶月∶风驰电掣</b>（2026 天津第 85 题相关）→ 选「忧心∶惴惴∶惶惶不可终日」。</td></tr>
+<tr><td class="k">语义 · 象征</td><td>词性</td><td><b>荆棘∶困难</b>：荆棘象征困难且为名词 → 选「桎梏∶束缚」（名词），排除「折柳∶惜别」（折柳是动词）。</td></tr>
+<tr><td class="k">语义 · 成语</td><td>语法结构</td><td><b>愚公移山∶郑人买履</b>均为主谓宾 → 选「杞人忧天∶庖丁解牛」；「凿壁偷光」「弄巧成拙」是动宾+动宾，排除。</td></tr>
+<tr><td class="k">语义 · 典故成语</td><td>典故主客体 / 主要人物</td><td>三顾茅庐的主要人物是刘备（非诸葛亮）；结合主客体关系破题。</td></tr>
+<tr><td class="k">并列</td><td>矛盾 vs 反对</td><td>有无第三者。<b>呼吸系统∶生殖系统</b>（并列）→ 选「简牍公文∶纸质公文」，排除交叉 / 种属项。</td></tr>
+<tr><td class="k">并列</td><td>命名方式</td><td>按形状 / 原材料 / 功能 / 产地命名。灯笼椒∶金针菇（形状）；物体并列常与命名方式结合考。</td></tr>
+<tr><td class="k">并列</td><td>出现时间先后</td><td>纸质书早于电子书；简牍公文早于纸质公文。</td></tr>
+<tr><td class="k">并列</td><td>人工 vs 天然</td><td>鲜花（天然）∶塑料花（人工）；檀香（植物）∶麝香（动物）→ 选木材（天然）∶钢筋（人造）。</td></tr>
+<tr><td class="k">包容 · 种属</td><td>特指 vs 泛指</td><td>地球是特指（具体星球），公路是泛指（一类道路）。</td></tr>
+<tr><td class="k">包容 · 组成</td><td>必然 vs 或然组成</td><td>发动机∶汽车（必备）；导航仪∶汽车（可有可无）。</td></tr>
+<tr><td class="k">包容 · 组成</td><td>核心 vs 非核心部件</td><td><b>建筑∶房子∶房间</b>（2026 天津「人造物」题）：房间是核心组成 → 选「电器∶电视机∶屏幕」，排除「汽车∶越野车∶车窗」。</td></tr>
+<tr><td class="k">包容（通用）</td><td>纵向同类比较</td><td>把选项与题干纵向比，同类别优选。如「城市公园∶公共设施∶休闲娱乐」→ 选「医用口罩∶卫生用品∶过滤空气」。</td></tr>
+<tr><td class="k">对应 · 原材料</td><td>必然 vs 或然材料</td><td>木门∶木头（必需）；花瓶∶塑料（可选）。</td></tr>
+<tr><td class="k">对应 · 原材料</td><td>人工 vs 天然 / 动植物来源</td><td><b>檀香∶麝香∶香料</b>：植物香料 + 动物香料 → 选「木材∶钢筋∶建材」（天然 + 人造），排除「薯条∶粉条」（可同为马铃薯）。</td></tr>
+<tr><td class="k">对应 · 工艺</td><td>物理变化 vs 化学变化</td><td><b>最常考的二级角度之一</b>。物理：雕刻、打磨、编织、捆绑、蒸馏、裁剪；化学：发酵、燃烧、冶炼、锻造、酿造。<b>冰块∶雕刻∶冰雕</b> → 选「原油∶蒸馏∶煤油」。</td></tr>
+<tr><td class="k">对应 · 功能</td><td>主要功能 vs 次要功能</td><td>灯具∶照明（主）／灯具∶装饰（次）。<b>电磁感应∶发电机∶电能转换</b>（2026 天津）考的就是「核心功能」而非附带功能。</td></tr>
+<tr><td class="k">对应 · 属性</td><td>必然 vs 或然属性</td><td>盐∶咸（必然）；花∶红（或然）。</td></tr>
+<tr><td class="k">对应 · 属性</td><td>内在 vs 外在属性</td><td>火∶火热（内在必然）→ 排除「金∶金黄」（外在）。</td></tr>
+<tr><td class="k">对应 · 因果</td><td>必然 vs 或然因果</td><td>下雨∶地湿（较必然）；淋雨∶感冒（或然）。</td></tr>
+<tr><td class="k">对应 · 方式目的</td><td>目的能否达成</td><td>刻舟<b>无法</b>求剑；凿壁<b>能</b>偷光。两者都是方式目的，靠这一层区分。</td></tr>
+<tr><td class="k">对应 · 时间顺承</td><td>主体是否一致</td><td><b>购票∶乘车∶到达</b>三动作同一主体 → 选「报名∶参赛∶领奖」，排除「下单∶付款∶送达」（送达主体不同）。顺承关系常与主客体结合考。</td></tr>
+<tr><td class="k">对应 · 场所</td><td>场所是否唯一</td><td><b>鸭子∶河</b>（不唯一，还能在岸上）→ 选「飞机∶飞机场」（还能在天上），排除「火车∶轨道」（唯一）。</td></tr>
+<tr><td class="k">语法 · 主体</td><td>是否为职业</td><td><b>舞台∶道具∶演员</b>：演员在舞台用道具且是<b>职业</b> → 选「工厂∶机器∶工人」，排除学生 / 消费者（身份）。</td></tr>
+<tr><td class="k">语法 · 偏正</td><td>词性 / 语序</td><td><b>空前∶规模</b>（偏正，规模为名词）→ 选「有序∶市场」；排除「配合∶默契」（语序反）、「激烈∶挑衅」（挑衅是动词）。</td></tr>
+<tr><td class="k">三词型 / 复合</td><td>词项结构对应</td><td>先定每一对的关系再整体比。<b>城市公园∶公共设施∶休闲娱乐</b>＝种属 + 功能；<b>电磁感应∶发电机∶电能转换</b>＝原理 + 应用设备 + 核心功能。</td></tr>
+</tbody></table>
+</div>
+
+<h3 id="b-s4c">4.3 天津真题风格逐题解析</h3>
+
+<div class="card"><div class="card-h"><span class="badge">1</span><span class="ttl">2026 天津 · 学科常识型三词题</span><span class="sub">最难的一类</span></div><div class="card-b">
+<div class="q"><span class="lbl e">题</span>电磁感应∶发电机∶电能转换<br>A. 光电效应∶太阳能电池∶光能转换　B. 压电效应∶传感器∶振动检测<br>C. 热电效应∶温差发电∶热能转换　D. 磁滞现象∶变压器∶能量损耗</div>
+<div class="a"><b>解析</b>：题干结构＝<b>科学原理 → 应用设备 → 设备的核心功能</b>。发电机以电磁感应为工作原理，核心功能是电能转换。<br>A：太阳能电池以光电效应为原理，核心功能光能转换，<b>完全对应，当选</b>。<br>B：传感器是一类设备统称，振动检测只是部分传感器的功能，非核心通用功能，排除。<br>C：「温差发电」是技术应用而非具体设备，词项类别不符，排除。<br>D：磁滞现象是变压器运行中的<b>负面现象</b>（非工作原理），能量损耗是其<b>结果</b>而非功能，两层错位，排除。<br><b>答案 A</b>。</div>
+<div class="warn"><span class="lbl tj">天津特色</span>这题「逻辑是骨架，常识是血肉」——光知道电磁感应是物理词没用，得知道它是发电机的技术依据。<b>2026 类比整体偏常识化，涉及物理、化学、文学、生活常识</b>，需专门积累科学原理与器件的对应（电磁感应/发电机、光电效应/太阳能电池、压电效应/传感器、热电效应/温差发电）。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">2</span><span class="ttl">2026 天津 · 人造物 + 核心部件</span><span class="sub">二级辨析典型</span></div><div class="card-b">
+<div class="q"><span class="lbl e">题</span>建筑∶房子∶房间<br>A. 汽车∶越野车∶车窗　B. 电器∶电视机∶屏幕　C. 医院∶私立医院∶医生　D. 餐具∶盘子∶筷子</div>
+<div class="a"><b>解析</b>：房子属于建筑（种属），房间是房子的组成部分（组成）。A、B 一级关系都成立，C 是「场所」、D 是「并列」，先排除。<br><b>二级辨析</b>：房间是房子的<b>核心 / 必需组成</b>；车窗不是越野车的核心部件，屏幕是电视机的核心部件 → <b>选 B</b>。</div>
+<div class="tip"><b>看到「人造物」词项（钢琴、房子、玻璃、汽车、镜子）优先试三类关系</b>：功用关系（钢琴∶演奏 → 工具）、组成关系（房间∶房子）、加工关系（玻璃→镜子 / 灯具）。这是天津卷近年反复出现的题眼。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">3</span><span class="ttl">成语结构题</span><span class="sub">天津高频</span></div><div class="card-b">
+<div class="q"><span class="lbl e">题</span>愚公移山∶郑人买履<br>A. 弄巧成拙∶囫囵吞枣　B. 杞人忧天∶庖丁解牛　C. 邯郸学步∶东施效颦　D. 凿壁偷光∶田忌赛马</div>
+<div class="a"><b>解析</b>：题干两词均为<b>主谓宾结构</b>（愚公/移/山，郑人/买/履）。<br>A：弄巧 + 成拙，两个动宾；C：邯郸是地点状语；D：凿壁 + 偷光，两个动宾 → 均排除。<br>B：杞人/忧/天，庖丁/解/牛，都是主谓宾 → <b>选 B</b>。</div>
+<div class="tip"><b>成语题两条路</b>：① 考语义关系（近义/反义/象征）→ 若有多项干扰，结合<b>感情色彩</b>和<b>程度递进</b>；② 考结构类型 → 直接拆主谓宾 / 动宾 / 偏正；③ 涉及典故 → 结合<b>主客体与主要人物</b>。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">4</span><span class="ttl">象征关系 + 词性二级辨析</span><span class="sub">经典天津题</span></div><div class="card-b">
+<div class="q"><span class="lbl e">题</span>荆棘∶困难　A. 布衣∶学生　B. 折柳∶惜别　C. 心腹∶信任　D. 桎梏∶束缚</div>
+<div class="a"><b>解析</b>：荆棘象征困难，且「荆棘」为<b>名词</b>。A 布衣象征平民（非学生）、C 心腹指信任的人（非象征）→ 排除。B 折柳象征惜别、D 桎梏象征束缚，一级关系都成立。<br><b>二级辨析（词性）</b>：折柳是<b>动词</b>，桎梏是<b>名词</b> → <b>选 D</b>。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">5</span><span class="ttl">职业 / 身份二级辨析</span><span class="sub">三词型</span></div><div class="card-b">
+<div class="q"><span class="lbl e">题</span>舞台∶道具∶演员　A. 汽车∶驾驶∶司机　B. 操场∶足球∶学生　C. 商场∶商品∶消费者　D. 工厂∶机器∶工人</div>
+<div class="a"><b>解析</b>：造句「演员在舞台使用道具」。A 缺场所对应，排除；B、C、D 造句均成立。<br><b>二级辨析（是否职业）</b>：演员是<b>职业</b>；学生、消费者是<b>身份</b>；工人是职业 → <b>选 D</b>。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">6</span><span class="ttl">场所唯一性二级辨析</span><span class="sub">反直觉题</span></div><div class="card-b">
+<div class="q"><span class="lbl e">题</span>鸭子∶河　（选项含）飞机∶飞机场　/　火车∶轨道</div>
+<div class="a"><b>解析</b>：鸭子与「河」是场所对应，但<b>不唯一</b>（鸭子还能在岸上）。飞机与飞机场同样不唯一（还能在天上）→ 当选；火车与轨道是唯一对应（在站台上也在轨道上）→ 排除。<br><b>答案：飞机∶飞机场</b>。</div>
+<div class="warn">这类题反直觉：很多人会选「看起来最紧密」的对应，但题干恰恰考「不唯一」。场所类纠结时一定加问一句「场所是否唯一」。</div>
+</div></div>
+
+<div class="card"><div class="card-h"><span class="badge">7</span><span class="ttl">工艺物理 / 化学二级辨析</span><span class="sub">必背</span></div><div class="card-b">
+<div class="q"><span class="lbl e">题</span>冰块∶雕刻∶冰雕　A. 爆竹∶点燃∶烟花　B. 原油∶蒸馏∶煤油　C. 纸张∶剪刀∶窗花　D. 木炭∶燃烧∶灰烬</div>
+<div class="a"><b>解析</b>：题干＝原材料 + <b>工序</b> + 成品，且雕刻是<b>物理变化</b>。<br>A：点燃爆竹得不到烟花，排除；C：剪刀是<b>工具</b>不是工序，排除；D：灰烬是残渣不是成品，且燃烧是化学变化，排除；B：原油经<b>蒸馏</b>（物理变化）得煤油 → <b>选 B</b>。</div>
+<div class="tip"><b>速记</b>：物理＝雕刻、打磨、编织、捆绑、蒸馏、裁剪、切割（无新物质）；化学＝发酵、酿造、燃烧、冶炼、锻造、氧化（有新物质）。这一组几乎每年都考。</div>
+</div></div>
+
+<h3 id="b-s4d">4.4 成语题专攻</h3>
+<table>
+<tr><th style="width:140px">考法</th><th>破题点</th><th>例</th></tr>
+<tr><td class="k">语义关系</td><td>近义 / 反义 / 比喻象征；干扰项多时叠加感情色彩、程度递进</td><td>风驰电掣∶鹅行鸭步（反义）；锐不可当∶铩羽而归（反义）</td></tr>
+<tr><td class="k">结构关系</td><td>拆主谓宾 / 动宾 / 偏正 / 并列，要求结构一致</td><td>愚公移山（主谓宾）vs 凿壁偷光（动宾+动宾）</td></tr>
+<tr><td class="k">典故关系</td><td>主客体、主要人物与次要人物、典故出处时代</td><td>三顾茅庐（刘备为主）</td></tr>
+<tr><td class="k">感情色彩</td><td>褒 / 贬 / 中性，常与近反义捆绑考</td><td>大义凛然（褒）∶卑躬屈膝（贬）</td></tr>
+<tr><td class="k">程度递进</td><td>三词近义且程度依次加深</td><td>疾步∶奔走∶风驰电掣</td></tr>
+</table>
+
+<h3 id="b-s4e">4.5 三词型 / 括号型（天津卷常见形式）</h3>
+<div class="grid2">
+<div class="mini"><div class="mh">三词型 A∶B∶C</div><p>逐对定关系，再整体比结构。常见结构：种属+功能（城市公园∶公共设施∶休闲娱乐）、原理+设备+功能（电磁感应∶发电机∶电能转换）、原材料+工序+成品（冰块∶雕刻∶冰雕）、大类+小类+组成（建筑∶房子∶房间）。</p></div>
+<div class="mini"><div class="mh">括号型 A 对于 ( ) 相当于 ( ) 对于 B</div><p>把选项逐一代入，<b>前后两组关系必须一致</b>。2026 天津真题：风驰电掣 对于 ( ) 相当于 ( ) 对于 锐不可当 → 选「鹅行鸭步；铩羽而归」，前后都是反义关系。常见陷阱是只有前半对、后半不对。</p></div>
+</div>
+<div class="warn"><b>类比推理四条铁律</b>：① 先一级后二级，绝不跳过一级；② 造句要严谨，<b>不脑补额外信息</b>；③ 二级辨析按 4.1 优先级顺序试，试出一个能分的就停；④ 题干是三词型时，注意<b>词项顺序</b>，顺序反了直接排除。</div>
+</section>
+
+<!-- 5 -->
+<section id="b-s5">
+<h2><span class="num">5</span>图形推理天津特色（5 题）</h2>
+<p class="lead">天津图推的总体特征：<b>常规考点打底 + 空间类加码 + 考点细化</b>。近五年集中在数量、位置、样式、六面体，属性类较少；截面图、三视图、立体拼合逐年增多。</p>
+<h4>八条速记（考场按序扫）</h4>
+<table>
+<tr><th style="width:44px">#</th><th style="width:180px">特征 → 考点</th><th>要点</th></tr>
+<tr><td class="k">1</td><td>元素凌乱 → 数量类</td><td>点线角面素；等差、常数、循环、加减、斐波那契都出现过</td></tr>
+<tr><td class="k">2</td><td>五角星 / 月亮 / 切圆 / 「日」变形 → 笔画</td><td>一笔画；「田」变形、字母 A 变形 → 两笔画。最少笔画数 = 奇点数 ÷ 2</td></tr>
+<tr><td class="k">3</td><td>图形工整 → 对称</td><td>对称轴数量与方向；<b>近年偏重对称轴旋转角度</b>、多个小元素对称轴之间的关系</td></tr>
+<tr><td class="k">4</td><td>元素种类数量相同、次序不同 → 遍历</td><td>缺啥补啥</td></tr>
+<tr><td class="k">5</td><td>骨架相同、黑白不同 → 黑白叠加</td><td>有+有=有、无+无=无等规则</td></tr>
+<tr><td class="k">6</td><td>出现 · → △ □ ○ 小元素 → 功能元素</td><td>标记交点、直曲线、长短线、角、面</td></tr>
+<tr><td class="k">7</td><td>六面体展开图</td><td><b>箭头法</b>：用两个面画箭头判断相对方位；唯一非中心对称面用单箭头，多为中心对称面用双面箭头</td></tr>
+<tr><td class="k">8</td><td>截面图 / 三视图 / 立体拼合</td><td>见下表「截不出的截面」</td></tr>
+</table>
+<h4>天津加码：不规则立体「外表面折叠」</h4>
+<div class="row"><span class="lbl tj">特色</span>给一个立体图形，问哪个选项是它的外表面展开图。三种方法：<b>公共边等长法</b>（重合的两条边长度必须相等）、<b>公共点法</b>（题干中有公共点的两条边，展开后仍须相交于一点）、<b>公共边法</b>（数面个数先排除，再核对应）。</div>
+<div class="fbox">
+<b>常见「截不出」的截面</b><br>
+正方体　→ 直角三角形、六边以上多边形<br>
+圆柱　　→ 三条直线围成的图形、梯形<br>
+正四棱锥 → 长方形
+</div>
+<div class="tip"><b>考点细化的三种典型</b>：数点结合内外结构（内外交点个数之差分组）、数面同时关注最大面特性 / 相同面关系、对称性考多个小元素对称轴的位置关系。天津分组分类题常走这条路。</div>
+</section>
+
+<!-- 6 -->
+<section id="b-s6">
+<h2><span class="num">6</span>定义判断天津特色（10 题）</h2>
+<div class="grid2">
+<div class="mini"><div class="mh">单定义为主</div><p>单定义远多于多定义。核心仍是拆「主体、客体、条件、方式、结果」，逐项比对。</p></div>
+<div class="mini"><div class="mh">诗词成语入选项</div><p>天津卷常见：给定义（如「对比联想」），四个选项直接是古诗词或成语。需要文学常识才能判断，纯技巧不管用。</p></div>
+<div class="mini"><div class="mh">领域分布</div><p>法律、经济、社会管理、心理学、自然科学类概念高频；2025 后更强调<b>理解定义整体逻辑</b>，光抠关键词不够。</p></div>
+<div class="mini"><div class="mh">备考动作</div><p>积累常见诗句的含义与情感（尤其含对比、反衬、借代、象征的），并练「定义要点 → 选项逐一打勾」的固定流程。</p></div>
+</div>
+<div class="warn"><b>易错</b>：选项里出现「好像符合但少了某个限定条件」的干扰项；以及问「不属于 / 不符合」时忘了反向选。先看设问再看定义，是这一模块最省时的习惯。</div>
+</section>
+
+<!-- 7 -->
+<section id="b-s7">
+<h2><span class="num">7</span>逻辑判断天津特色（10 题）</h2>
+<table>
+<tr><th style="width:150px">题型</th><th style="width:90px">权重</th><th>天津考法与要点</th></tr>
+<tr><td class="k">削弱 / 加强</td><td>绝对主力</td><td>论点论据拆解、搭桥 / 拆桥、他因削弱、必要条件。选「最能削弱/加强」，要<b>择优</b>不是选「一定对」。</td></tr>
+<tr><td class="k">复言命题 / 翻译推理</td><td>稳定出现</td><td>「如果…那么」「只有…才」「且 / 或」的翻译规则与逆否等价；德摩根律。</td></tr>
+<tr><td class="k">朴素逻辑 / 组合排列</td><td>常出现</td><td>排除法、代入法、最大信息优先、列表法。耗时但可稳拿。</td></tr>
+<tr><td class="k">前提型 / 结论型 / 解释型</td><td>轮换出现</td><td>前提型用搭桥与必要条件；结论型注意「过度推断」；解释型找能同时兼容矛盾双方的选项。</td></tr>
+</table>
+<div class="tip"><b>可能性选项的处理</b>：选「最能加强/削弱」时，若没有直接加强/削弱项，可择优选带可能性的选项；但问「不能削弱/加强」时，凡带可能性的选项一般都不选。这条规则在天津 / 国考通用。</div>
+<div class="warn"><b>常见坑</b>：「否前」「肯后」不必然；「有的」不能推「所有」；诉诸权威、类比不当、样本偏差类选项看着有理但不构成加强。</div>
+</section>
+
+<!-- 8 -->
+<section id="b-s8">
+<h2><span class="num">8</span>其他模块本地化与申论分类</h2>
+<h4>天津市情素材清单（性价比极高的短期记忆点）</h4>
+<div class="grid2">
+<div class="mini"><div class="mh">政治理论</div><p>党的二十大报告核心论断、中国式现代化的特征与本质要求、「十五五」规划重点任务、<b>京津冀协同发展中天津的功能定位</b>、新质生产力、双碳目标。</p></div>
+<div class="mini"><div class="mh">常识判断</div><p>天津历史文化遗产（<b>杨柳青年画</b>）、地域文化、海河治理工程、渤海湾生态保护、自贸区政策、天津港；新修 / 新实施的法律是稳定送分点。</p></div>
+<div class="mini"><div class="mh">资料分析</div><p>材料常取<b>天津港吞吐量、制造业产值、进出口贸易额、京津冀经济统计公报</b>。考点与通用卷一致（增长、比重、平均数、倍数），把上一份《资料分析公式速查手册》练熟即可。</p></div>
+<div class="mini"><div class="mh">言语理解</div><p>材料可能涉及天津城市发展、文化传承、社区养老等本地政策表述；逻辑填空约占四成，实词 / 成语 / 混合辨析各三分之一；主旨意图题占比高。</p></div>
+</div>
+<h4>申论分类与专业科目</h4>
+<table>
+<tr><th style="width:210px">职位类别</th><th>申论 / 专业科目</th></tr>
+<tr><td class="k">市级、区级机关综合管理类</td><td>单独命制；专业技术类职位的申论内容与此相同</td></tr>
+<tr><td class="k">乡镇街道综合管理类</td><td>单独命制，偏基层实务</td></tr>
+<tr><td class="k">行政执法类</td><td>单独命制，偏执法流程与案例</td></tr>
+<tr><td class="k">公安 / 外事 / 审计 / 统计等</td><td>加试专业科目；公安类成绩按行测 40% + 申论 30% + 专业 30% 合成；部分专业技术职位按 25:25:50</td></tr>
+</table>
+<p class="note">申论 150 分钟 / 100 分，通常 3~4 题，含归纳概括、综合分析、提出对策、贯彻执行、文章写作。</p>
+</section>
+
+<!-- 9 -->
+<section id="b-s9">
+<h2><span class="num">9</span>备考优先级与时间分配</h2>
+<table>
+<tr><th style="width:44px">序</th><th style="width:170px">模块</th><th style="width:90px">建议用时</th><th>理由 / 动作</th></tr>
+<tr><td class="k">1</td><td>资料分析 20 题</td><td>25 分钟</td><td>单题分值最高、公式固定，目标正确率 ≥ 85%。每天 1 篇限时练。</td></tr>
+<tr><td class="k">2</td><td>判断推理 35 题</td><td>35 分钟</td><td>题量最大且技巧性最强。<b>类比 10 题目标 8+，靠二级辨析；逻辑判断是主要失分区</b>。</td></tr>
+<tr><td class="k">3</td><td>言语理解 25 题</td><td>20 分钟</td><td>逻辑填空靠易混词积累，主旨题靠转折 / 总结词定位。</td></tr>
+<tr><td class="k">4</td><td>政治理论 + 常识 25 题</td><td>20 分钟</td><td>会就会，不会立刻跳过，别纠结。重点投天津时政与本地政策。</td></tr>
+<tr><td class="k">5</td><td>数量关系 15 题</td><td>20 分钟</td><td>近年难度下调，<b>不要整块放弃</b>；主攻几何、排列组合、基础应用题，代入排除优先。</td></tr>
+</table>
+<div class="fbox">
+<b>类比推理专项训练法</b><br>
+① 每天 20 道天津 / 联考类比真题，每道必须写出「一级关系」；<br>
+② 凡纠结两选项的，<b>按 4.1 优先级逐个试角度，并记录最终用的是第几个角度</b>；<br>
+③ 单独建「学科常识」清单：物理效应↔器件、化学变化↔工艺、成语结构、典故人物；<br>
+④ 一周后统计自己最常漏的 2~3 个二级角度，只补这几个。
+</div>
+<div class="tip"><b>时间观念</b>：类比 10 题建议 5~6 分钟内做完，单题不超过 40 秒。想不出来就按优先级试完前三个角度直接择优，别在一道题上耗掉图推的时间。</div>
+</section>
+
+<!-- 10 -->
+<section id="b-s10">
+<h2><span class="num">10</span>天津卷专属陷阱清单</h2>
+<table>
+<tr><th style="width:44px">#</th><th style="width:180px">陷阱</th><th>破解</th></tr>
+<tr><td class="k">01</td><td>一级关系对了就选</td><td>天津卷大量题目故意留 2 个一级关系都对的选项，<b>必须做二级辨析</b>。</td></tr>
+<tr><td class="k">02</td><td>二级角度乱试</td><td>按词性 → 色彩 → 主体 → 必然或然 → 物理化学 → 功能主次 → 纵向同类的固定顺序，试到能分即停。</td></tr>
+<tr><td class="k">03</td><td>类比题里的学科常识</td><td>电磁感应 / 光电效应 / 压电效应 / 热电效应对应什么器件，发酵与蒸馏哪个是化学变化，必须提前背。</td></tr>
+<tr><td class="k">04</td><td>成语只看意思</td><td>意思分不出时立刻拆结构（主谓宾 / 动宾 / 偏正）或看典故主客体。</td></tr>
+<tr><td class="k">05</td><td>三词型漏看词项顺序</td><td>「先 A 后 B 再 C」与「先 C 后 B 再 A」是不同关系；括号型必须前后两组同时成立。</td></tr>
+<tr><td class="k">06</td><td>场所类凭直觉选「最紧密」</td><td>加问「场所是否唯一」，题干可能恰恰考「不唯一」。</td></tr>
+<tr><td class="k">07</td><td>图形推理只练平面</td><td>天津加码截面图、三视图、立体拼合、不规则立体外表面折叠，单独练公共边等长 / 公共点法。</td></tr>
+<tr><td class="k">08</td><td>定义判断读不懂诗句选项</td><td>积累含对比、反衬、借代、象征的常见诗句；先看清问「属于」还是「不属于」。</td></tr>
+<tr><td class="k">09</td><td>政治理论只背全国时政</td><td>补「京津冀协同发展中天津定位」「天津市情与本地政策」，天津卷会往本地靠。</td></tr>
+<tr><td class="k">10</td><td>数量关系整块放弃</td><td>2025—2026 题量增到 15 且难度下调，基础题占六成，放弃等于白丢 4~5 分。</td></tr>
+</table>
+<div class="warn"><b>最后提醒</b>：政治理论与常识的题量拆分近两年一直在调，考纲与考后回忆版口径不完全一致。<b>上考场第一件事是翻一遍试卷，确认当年各模块实际题量，再调整时间分配</b>，别按去年的数字硬套。</div>
+</section>
+
+</main>
+</div>
+
+<footer>天津市考 · 特色题型与类比推理二级辨析全解　|　考情以当年公告、大纲与真题为准　|　配套阅读：《行测 · 资料分析公式与题型全解》</footer>
+
+<script>
+(function(){
+  var q=document.getElementById('b-q'),tb=document.getElementById('b-qtable'),cnt=document.getElementById('b-cnt');
+  var rows=[].slice.call(tb.tBodies[0].rows);
+  function run(){
+    var v=(q.value||'').trim().toLowerCase(),n=0;
+    rows.forEach(function(r){
+      var hit=!v||r.textContent.toLowerCase().indexOf(v)>-1;
+      r.className=hit?'':'hide'; if(hit)n++;
+    });
+    cnt.textContent=v?(n+' / '+rows.length+' 条'):(rows.length+' 个辨析角度');
+  }
+  q.addEventListener('input',run); run();
+})();
+</script>
+
+</div>
+<script>
+window.printModule=function(k){document.body.className="print-"+k;window.print();setTimeout(function(){document.body.className="";},300);};
+</script>
 </body>
 </html>
