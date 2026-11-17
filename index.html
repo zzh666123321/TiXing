@@ -94,6 +94,21 @@ td.f{f;font-size:12.5px;white-space:nowrap;color:#1a3a5c}
 
 /* misc */
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tpc{border:1px solid var(--line);border-radius:11px;margin:14px 0;overflow:hidden;background:var(--bg)}
+.tpc-h{display:flex;align-items:center;gap:12px;padding:13px 18px;cursor:pointer;background:var(--soft);user-select:none;list-style:none}
+.tpc-h::-webkit-details-marker{display:none}
+.tpc-h:hover{background:var(--soft2)}
+.tpc-n{font-family:Consolas,monospace;font-size:12px;background:var(--amber);color:#fff;border-radius:5px;padding:2px 8px;flex:none}
+.tpc-t{font-weight:600;font-size:15px;color:var(--amber)}
+.tpc-d{margin-left:auto;font-size:12px;color:var(--muted)}
+.tpc-b{padding:6px 18px 18px}
+.tpc-sec{margin-top:14px}
+.tpc-lab{font-size:12px;font-weight:600;color:var(--blue);border-left:3px solid var(--blue);padding-left:9px;margin-bottom:8px}
+.tpc-item{font-size:13px;line-height:1.8;color:var(--ink);padding:5px 0;border-bottom:1px dashed var(--line)}
+.tpc-item b{color:var(--muted);margin-right:6px;font-weight:600}
+.tpc-cases{display:flex;flex-wrap:wrap;gap:7px}
+.tpc-case{display:inline-block;background:var(--soft);border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:12px;color:var(--muted)}
+@media(max-width:860px){.tpc-d{display:none}}
 .mini{border:1px solid var(--line);border-radius:9px;padding:12px 15px;background:var(--soft)}
 .mini .mh{font-weight:600;font-size:13.5px;margin-bottom:6px;color:var(--blue)}
 .mini p{margin:0;font-size:12.5px;color:var(--muted)}
@@ -319,6 +334,107 @@ footer{border-top:1px solid var(--line);padding:18px 30px;text-align:center;colo
 }
 
 
+:root{
+  --ink:#1c2330; --muted:#5c6675; --hint:#8a93a2; --line:#e3e7ee;
+  --bg:#ffffff; --soft:#f7f9fc; --soft2:#eff3f9;
+  --blue:#185fa5; --blue-s:#e6f1fb;
+  --amber:#854f0b; --amber-s:#faeeda;
+  --red:#a32d2d; --red-s:#fcebeb;
+  --green:#0f6e56; --green-s:#e1f5ee;
+  --purple:#534ab7; --purple-s:#eeedfe;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,sans-serif;
+  font-size:14px;line-height:1.75}
+a{color:var(--blue);text-decoration:none}
+code,.f,.mono{font-family:"Cascadia Code",Consolas,"SF Mono",Menlo,monospace}
+
+header{background:var(--bg);border-bottom:1px solid var(--line);padding:22px 30px 18px}
+header h1{margin:0;font-size:22px;font-weight:600;letter-spacing:.5px}
+header p{margin:6px 0 0;color:var(--muted);font-size:13px}
+.hdr-tags{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:12px;padding:3px 10px;border-radius:20px;background:var(--soft2);color:var(--muted)}
+.tag.b{background:var(--blue-s);color:var(--blue)}
+
+.wrap{display:grid;grid-template-columns:216px minmax(0,1fr);gap:36px;max-width:1240px;margin:0 auto;padding:26px 30px 80px}
+nav{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;font-size:13px}
+nav .nt{font-size:12px;color:var(--hint);letter-spacing:1px;margin:0 0 10px}
+nav a{display:block;padding:5px 10px;border-radius:6px;color:var(--muted)}
+nav a:hover{background:var(--soft2);color:var(--blue)}
+nav .grp{margin-top:14px}
+main{min-width:0}
+
+section{margin-bottom:48px;scroll-margin-top:16px}
+h2{font-size:19px;font-weight:600;margin:0 0 6px;padding-bottom:10px;border-bottom:2px solid var(--blue)}
+h2 .num{display:inline-block;min-width:30px;color:var(--blue);font-family:Consolas,monospace}
+.lead{color:var(--muted);font-size:13px;margin:10px 0 20px}
+h3{font-size:15px;font-weight:600;margin:26px 0 10px}
+h4{font-size:14px;font-weight:600;margin:18px 0 8px;color:#2a3446}
+
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 18px}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--soft2);font-weight:600;color:var(--ink);white-space:nowrap}
+tbody tr:nth-child(even){background:var(--soft)}
+tbody tr:hover{background:var(--blue-s)}
+td.k{font-weight:600;color:var(--blue);white-space:nowrap}
+.tbl-scroll{overflow-x:auto}
+
+.fbox{background:var(--blue-s);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;
+  padding:11px 16px;margin:10px 0 14px;font-size:13.5px;line-height:2;color:#103a63;overflow-x:auto}
+.fbox b{font-weight:600;color:var(--blue)}
+.fbox .cm{color:#5b7a99;font-size:12px}
+
+.card{border:1px solid var(--line);border-radius:12px;padding:0;margin:20px 0;overflow:hidden}
+.card-h{background:var(--soft);border-bottom:1px solid var(--line);padding:11px 18px;display:flex;align-items:center;gap:11px}
+.badge{width:28px;height:28px;border-radius:8px;background:var(--blue);color:#fff;
+  display:grid;place-items:center;font-family:Consolas,monospace;font-size:13px;flex:none}
+.card-h .ttl{font-size:15px;font-weight:600}
+.card-h .sub{font-size:12px;color:var(--hint);margin-left:auto}
+.card-b{padding:14px 18px 18px}
+.lbl{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:5px;margin-right:7px;vertical-align:2px}
+.lbl.i{background:var(--blue-s);color:var(--blue)}
+.lbl.f{background:var(--purple-s);color:var(--purple)}
+.lbl.e{background:var(--green-s);color:var(--green)}
+.lbl.s{background:var(--amber-s);color:var(--amber)}
+.lbl.w{background:var(--red-s);color:var(--red)}
+.row{margin:11px 0;line-height:1.85}
+.row.eq{background:var(--soft);border-radius:7px;padding:8px 12px;font-family:Consolas,monospace;font-size:13px;color:#1a3a5c}
+.q{background:var(--green-s);border-radius:8px;padding:10px 14px;font-size:13px;color:#173f33}
+.a{background:var(--soft);border-radius:8px;padding:10px 14px;font-size:13px;margin-top:8px}
+.warn{background:var(--red-s);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:9px 14px;font-size:13px;margin-top:10px;color:#7a2828}
+.tip{background:var(--amber-s);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:9px 14px;font-size:13px;margin-top:10px;color:#6b440b}
+
+.searchbar{display:flex;gap:10px;align-items:center;margin:14px 0 10px}
+.searchbar input{flex:1;padding:9px 13px;border:1px solid var(--line);border-radius:8px;font-size:13px;outline:none;font-family:inherit}
+.searchbar input:focus{border-color:var(--blue)}
+.cnt{font-size:12px;color:var(--hint)}
+.hide{display:none}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini{border:1px solid var(--line);border-radius:9px;padding:12px 15px;background:var(--soft)}
+.mini .mh{font-weight:600;font-size:13.5px;margin-bottom:6px;color:var(--blue)}
+.mini p{margin:0;font-size:12.5px;color:var(--muted)}
+ul.clean{margin:8px 0;padding-left:20px}
+ul.clean li{margin:5px 0}
+.pill{display:inline-block;padding:1px 7px;border:1px solid var(--line);border-radius:5px;font-size:12px;margin:2px 3px 2px 0;background:#fff}
+.note{font-size:12.5px;color:var(--hint)}
+
+/* 申论专用 */
+.essay{border:1px solid var(--line);border-left:4px solid var(--green);border-radius:0 10px 10px 0;
+  background:var(--green-s);padding:13px 17px;margin:10px 0 14px;font-size:13.5px;line-height:2.05;color:#173f33}
+.essay b{color:#0c5342}
+.essay .tg{display:inline-block;font-size:11px;color:#fff;background:var(--green);border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.good{background:var(--green-s);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:9px 14px;font-size:13px;margin-top:10px;color:#14453a}
+.bad{background:var(--red-s);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:9px 14px;font-size:13px;margin-top:10px;color:#7a2828}
+.f-box{background:var(--purple-s);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:11px 16px;margin:10px 0 14px;font-size:13.5px;line-height:2;color:#2c2668}
+.f-box b{color:var(--purple)}
+.f-box .cm{color:#7d76c9;font-size:12px}
+@media(max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);padding:20px 18px 60px;gap:20px}nav{position:static;max-height:none}}
+@media print{header .btn{display:none}nav{display:none}.wrap{display:block;padding:0}.tbl-scroll{overflow:visible}}
+
+
 .tabs{position:sticky;top:0;z-index:60;padding:0;background:rgba(255,255,255,.9);backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid var(--line);box-shadow:0 8px 22px -20px rgba(16,32,64,.55)}
 .tabs-in{max-width:1240px;margin:0 auto;padding:9px 30px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .tabs-brand{font-size:15px;font-weight:650;letter-spacing:.3px;color:var(--ink);white-space:nowrap}
@@ -333,23 +449,40 @@ footer{border-top:1px solid var(--line);padding:18px 30px;text-align:center;colo
 .module.show{display:block;animation:modIn .2s ease}
 @keyframes modIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 .module-a nav,.module-b nav{top:calc(var(--tabh,56px) + 14px);z-index:20}
+.module-d nav{top:calc(var(--tabh,56px) + 62px);z-index:20}
 .module-a section,.module-b section{scroll-margin-top:calc(var(--tabh,56px) + 22px)}
+.module-d section{scroll-margin-top:calc(var(--tabh,56px) + 70px)}
 .module-c .qz-bar{top:calc(var(--tabh,56px) - 3px);z-index:45}
+/* 模块四 吸顶章节进度条 */
+.d-prog{position:sticky;top:var(--tabh,56px);z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(16,32,64,.04)}
+.d-prog-track{height:3px;background:var(--soft2)}
+.d-prog-fill{height:100%;width:0;background:linear-gradient(90deg,#f0a020,var(--amber));transition:width .12s linear}
+.d-prog-inner{max-width:1240px;margin:0 auto;padding:7px 30px;display:flex;align-items:center;gap:12px}
+.d-prog-now{font-size:12.5px;font-weight:700;color:var(--amber);white-space:nowrap;min-width:96px}
+.d-prog-chips{flex:1;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:2px 0}
+.d-prog-chips::-webkit-scrollbar{display:none}
+.d-prog-chips a{font-size:12px;color:var(--muted);text-decoration:none;padding:5px 11px;border-radius:15px;white-space:nowrap;flex:none;background:var(--soft);border:1px solid transparent;transition:background .15s,color .15s}
+.d-prog-chips a:hover{color:var(--amber);background:var(--amber-s)}
+.d-prog-chips a.on{background:var(--amber);color:#fff;font-weight:600;box-shadow:0 1px 5px rgba(240,160,32,.35)}
+.d-prog-pct{font-family:Consolas,monospace;font-size:12px;color:var(--muted);min-width:38px;text-align:right}
+@media(max-width:860px){.d-prog-inner{padding:6px 14px;gap:8px}.d-prog-now{min-width:0;font-size:12px}.d-prog-chips a{padding:4px 9px;font-size:11.5px}.d-prog-pct{font-size:11px;min-width:32px}}
 .module-c .qz-q{scroll-margin-top:calc(var(--tabh,56px) + var(--qzh,58px) + 14px)}
 .mod-bar{max-width:1240px;margin:0 auto;padding:12px 30px;border-top:2px solid var(--blue);background:var(--blue-s);display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--blue)}
 .mod-bar.b{border-top-color:var(--purple);background:var(--purple-s);color:var(--purple)}
 .mod-bar.c{border-top-color:var(--green);background:var(--green-s);color:var(--green)}
+.mod-bar.d{border-top-color:var(--amber);background:var(--amber-s);color:var(--amber)}
 .mod-bar .mno{font-family:Consolas,monospace;font-size:12px;background:var(--blue);color:#fff;border-radius:5px;padding:2px 8px}
 .mod-bar.b .mno{background:var(--purple)}
 .mod-bar.c .mno{background:var(--green)}
+.mod-bar.d .mno{background:var(--amber)}
 .mod-bar .mnote{margin-left:auto;font-weight:400;font-size:12px;color:var(--muted)}
 @media(max-width:860px){.tabs-in{padding:8px 18px;gap:10px}.tabs-brand{font-size:14px}.tabs-brand i{display:none}.tabs-nav{margin-left:0;width:100%}.tab{flex:1;padding:7px 6px;font-size:12.5px}.tab b{display:none}.mod-bar{padding:10px 18px}.mod-bar .mnote{display:none}}
 @media print{
-  .tabs,.mod-bar{display:none!important}
+  .tabs,.mod-bar,.d-prog{display:none!important}
   .module{display:none!important}
   .module.show{display:block!important}
-  .module-a nav,.module-b nav{position:static}
-  .module-a section,.module-b section{scroll-margin-top:0}
+  .module-a nav,.module-b nav,.module-d nav{position:static}
+  .module-a section,.module-b section,.module-d section{scroll-margin-top:0}
   .module{break-before:page}
 }
 
@@ -363,6 +496,7 @@ footer{border-top:1px solid var(--line);padding:18px 30px;text-align:center;colo
       <button class="tab on" type="button" data-m="a"><b>01</b>资料分析</button>
       <button class="tab" type="button" data-m="b"><b>02</b>天津市考</button>
       <button class="tab" type="button" data-m="c"><b>03</b>数量刷题</button>
+      <button class="tab" type="button" data-m="d"><b>04</b>申论写作</button>
     </div>
   </div>
 </header>
@@ -1691,6 +1825,1804 @@ var BK_DATA = [{"id":"e0","name":"2024 广东","grp":"广东","qs":[{"n":"36","s
 </script>
 
 </div>
+<div class="module module-d" id="mod-d">
+<div class="mod-bar d"><span class="mno">04</span>模块四 · 申论大论文<span class="mnote">立意 · 结构 · 素材库 · 国考省考天津市考</span></div>
+
+<header>
+  <h1>申论 · 大论文写作全解（国考 / 省考 / 天津市考）</h1>
+  <p>大作文的本质是<b>「立意 + 结构 + 论证 + 素材」</b>四件事：审题定生死，结构定档次，论证定血肉，素材定底气。本册按「单主题 / 双主题」给出可直接套用的写法公式与完整示例，素材库支持搜索。</p>
+  <div class="hdr-tags">
+    <span class="tag b">单主题 / 双主题</span><span class="tag">总论点 · 分论点公式</span><span class="tag">标题 · 开头 · 结尾</span>
+    <span class="tag">论证段逐句拆解</span><span class="tag">10 大主题素材库</span><span class="tag">天津本地素材</span>
+    <span class="tag b">万能金句 / 影响 / 背景 / 分论点句库</span><span class="tag">规范表达词库</span><span class="tag">七大专题写作包</span>
+    <button class="btn" onclick="printModule('d')">打印 / 存 PDF</button>
+  </div>
+</header>
+
+<div class="d-prog" id="d-prog">
+  <div class="d-prog-track"><div class="d-prog-fill" id="d-prog-fill"></div></div>
+  <div class="d-prog-inner">
+    <span class="d-prog-now" id="d-prog-now">0 总纲</span>
+    <div class="d-prog-chips" id="d-prog-chips">
+      <a href="#d-s0" data-n="0" title="0 总纲：阅卷与定档">总纲</a>
+      <a href="#d-s1" data-n="1" title="1 审题立意">审题</a>
+      <a href="#d-s2" data-n="2" title="2 单主题写法">单主题</a>
+      <a href="#d-s3" data-n="3" title="3 双主题写法">双主题</a>
+      <a href="#d-s4" data-n="4" title="4 总论点写法">总论点</a>
+      <a href="#d-s5" data-n="5" title="5 分论点写法">分论点</a>
+      <a href="#d-s6" data-n="6" title="6 标题库">标题</a>
+      <a href="#d-s7" data-n="7" title="7 开头与结尾">开头结尾</a>
+      <a href="#d-s8" data-n="8" title="8 论证方法">论证</a>
+      <a href="#d-s9" data-n="9" title="9 素材库">素材库</a>
+      <a href="#d-s10" data-n="10" title="10 真题立意示范">真题</a>
+      <a href="#d-s11" data-n="11" title="11 十大失分坑">失分坑</a>
+      <a href="#d-s12" data-n="12" title="12 考场时间分配">时间</a>
+      <a href="#d-s13" data-n="13" title="13 万能金句库">金句</a>
+      <a href="#d-s14" data-n="14" title="14 万能影响句库">影响句</a>
+      <a href="#d-s15" data-n="15" title="15 万能背景句库">背景句</a>
+      <a href="#d-s16" data-n="16" title="16 分论点万能句库">分论点句</a>
+      <a href="#d-s17" data-n="17" title="17 规范表达词库">规范词</a>
+      <a href="#d-s18" data-n="18" title="18 论证案例精讲库">案例</a>
+      <a href="#d-s19" data-n="19" title="19 七大专题写作包">专题包</a>
+    </div>
+    <span class="d-prog-pct" id="d-prog-pct">0%</span>
+  </div>
+</div>
+
+<div class="wrap">
+<nav>
+  <p class="nt">目录</p>
+  <a href="#d-s0">0 总纲：阅卷与定档</a>
+  <a href="#d-s1">1 审题立意：先定生死</a>
+  <a href="#d-s2">2 单主题写法（附全例）</a>
+  <div class="grp"><a href="#d-s3">3 双主题写法（附全例）</a>
+  <a href="#d-s3a">3.1 四种关系判定</a>
+  <a href="#d-s3b">3.2 双主题全流程示例</a></div>
+  <a href="#d-s4">4 总论点写法与正反例</a>
+  <a href="#d-s5">5 分论点写法与段落骨架</a>
+  <a href="#d-s6">6 标题库（两套公式）</a>
+  <a href="#d-s7">7 开头与结尾</a>
+  <a href="#d-s8">8 论证方法与论证段拆解</a>
+  <a href="#d-s9">9 素材库（可搜索）</a>
+  <div class="grp"><a href="#d-s9a">9.1 天津本地素材</a></div>
+  <a href="#d-s10">10 真题立意示范</a>
+  <a href="#d-s11">11 十大失分坑</a>
+  <a href="#d-s12">12 考场时间分配</a>
+  <div class="grp"><a href="#d-s13">13 万能金句库</a>
+  <a href="#d-s14">14 万能影响句库</a>
+  <a href="#d-s15">15 万能背景句库</a>
+  <a href="#d-s16">16 分论点万能句库</a>
+  <a href="#d-s17">17 规范表达词库</a>
+  <a href="#d-s18">18 论证案例精讲库</a>
+  <a href="#d-s19">19 七大专题写作包</a></div>
+</nav>
+
+<main>
+
+<section id="d-s0">
+<h2><span class="num">0</span>总纲：阅卷与定档</h2>
+<p class="lead">先知道对手是谁。大作文一般 40 分（部分省考 35–50），字数 1000–1200，阅卷老师平均每篇 30–60 秒，看的顺序是：标题 → 开头 → 每段第一句 → 结尾。</p>
+<table>
+<tr><th style="width:90px">档次</th><th>典型特征</th><th style="width:110px">大致分数</th></tr>
+<tr><td class="k">一类文</td><td>立意精准、总论点亮明、三个分论点工整且互相支撑、论证有例有析、卷面干净</td><td>32–40</td></tr>
+<tr><td class="k">二类文</td><td>立意基本准确但表述平淡、结构完整、论证以抄材料为主</td><td>24–31</td></tr>
+<tr><td class="k">三类文</td><td>立意跑偏或只写一半、结构松散、大量照抄材料原文</td><td>12–23</td></tr>
+<tr><td class="k">四类文</td><td>立意完全错误、字数严重不足、套作模板痕迹明显</td><td>0–11</td></tr>
+</table>
+<div class="tip"><b>三个硬结论</b>：① 立意错 = 全盘皆输，审题时间值得花 10 分钟；② 阅卷看「段首句」，所以分论点必须<b>写成整句、放在段首</b>；③ 抄材料超过三成必进二类文以下，素材要靠平时积累替换。</div>
+</section>
+
+<section id="d-s1">
+<h2><span class="num">1</span>审题立意：先定生死</h2>
+<p class="lead">大作文题干一般由三部分组成：「给定材料 X 提到……」＋「结合你的理解，自选角度」＋「写一篇议论文章」。立意 = 主题词 + 角度 + 价值观。</p>
+
+<h3>1.1 三步定位法</h3>
+<div class="fbox">
+<b>第一步：划主题词</b>——题干引号里的话或核心短语（如「治慧在基层」「数字时代的选择」）。<br>
+<b>第二步：回材料定位</b>——主题词在材料中出现的「高频段 + 高层人物讲话段 + 首尾段」，这三处藏着命题人的态度。<br>
+<b>第三步：一句话立意</b>——用「主语 + 怎么样 + 达到什么」把立意写成一句完整的话，再拆成总论点。
+</div>
+<div class="row eq">立意一句话公式：核心词（谁/什么）+ 关键动作（要怎么做）+ 落脚点（为了什么价值）</div>
+<div class="q">【例】主题词「基层治理的精度」→ 立意句：基层治理要用好精细化手段（怎么做），把服务做到群众心坎上（落脚点），才能夯实国家治理的根基（拔高）。</div>
+
+<h3>1.2 立意的三个检验标准</h3>
+<ul class="clean">
+<li><b>准</b>：不跑题不偏题——主题词必须原词出现，别自作聪明换词（写「治慧」就别全篇替换成「智慧」）。</li>
+<li><b>全</b>：题干有两个关键词时必须全覆盖，只写一个 = 立意不全，直接二类文以下。</li>
+<li><b>深</b>：从「就事论事」上拔一层——从具体做法上升到理念、从局部上升到全局，最后落到「国家治理 / 人民幸福 / 民族复兴」的价值高地。</li>
+</ul>
+<div class="warn"><b>常见跑偏</b>：只写材料里最热闹的小主题（材料讲快递进村就通篇写快递）——材料是「引子」，题干引号里的话才是「题眼」。</div>
+</section>
+
+<section id="d-s2">
+<h2><span class="num">2</span>单主题写法（附全例）</h2>
+<p class="lead">单主题 = 题干只有一个核心词（如「奋斗」「基层治理」「文化自信」）。核心动作：<b>拆维度</b>——把一个大词拆成三个互相支撑的分论点。</p>
+
+<h3>2.1 四种拆法</h3>
+<table>
+<tr><th style="width:130px">拆法</th><th>思路</th><th style="width:270px">以「基层治理」为例</th></tr>
+<tr><td class="k">层面拆</td><td>理念 → 制度 → 技术 / 手段</td><td>以初心定方向 · 以制度固根本 · 以科技增效能</td></tr>
+<tr><td class="k">主体拆</td><td>政府 → 社会 → 群众（或个人 → 组织 → 国家）</td><td>政府主导绘蓝图 · 多元共治聚合力 · 群众参与强根基</td></tr>
+<tr><td class="k">价值递进</td><td>于个人 → 于社会 → 于国家</td><td>治理有效让群众安居 · 让社会有序 · 让国家长治久安</td></tr>
+<tr><td class="k">领域落点</td><td>落到 2–3 个具体场景</td><td>网格化管理织密防线 · 一站式服务提升体验 · 协商共治激发活力</td></tr>
+</table>
+<div class="tip"><b>选择建议</b>：材料里对策多 → 用「对策拆」；意义多 → 用「价值递进」；什么多就用什么，分论点的燃料永远来自材料。</div>
+
+<h3>2.2 单主题全流程示例：以「奋斗」为题（40 分 / 1100 字框架）</h3>
+<div class="card">
+<div class="card-h"><span class="badge">例</span><span class="ttl">标题 → 总论点 → 三个分论点 → 开头结尾</span><span class="sub">可直接照抄骨架</span></div>
+<div class="card-b">
+<div class="f-box"><b>标题</b>：以奋斗之笔，书写时代答卷<br><span class="cm">公式：以 X 之笔 / 之光 / 之姿 + 动词 + 宏大落点</span></div>
+<div class="f-box"><b>总论点</b>：奋斗是个人成长的阶梯、社会进步的动力、民族复兴的底气——新时代的答卷，要靠一茬接着一茬干的奋斗来书写。</div>
+<div class="row"><span class="lbl e">分论点一</span>以奋斗之笔书写时代答卷，要<b>把个人理想融入时代洪流</b>——从「两弹一星」到北斗组网，一代代人把小我写进大我。</div>
+<div class="row"><span class="lbl e">分论点二</span>以奋斗之笔书写时代答卷，要<b>在攻坚克难中锤炼真本领</b>——黄文秀扎根百色、驻村干部跋山涉水，本领都是难事里磨出来的。</div>
+<div class="row"><span class="lbl e">分论点三</span>以奋斗之笔书写时代答卷，要<b>用实干笃行拒绝空谈</b>——「道虽迩，不行不至」，乡村振兴的蓝图靠一件件实事落地。</div>
+<div class="essay"><span class="tg">开头示例</span>「十年饮冰，难凉热血。」从石库门到天安门，从站起来、富起来到强起来，一部中国近现代史，就是一部不停顿的奋斗史。站在新的历史方位，唯有把奋斗融入血脉、落到实处，方能不负时代、不负人民。</div>
+<div class="essay"><span class="tg">结尾示例</span>征程万里风正劲，重任千钧再出发。让我们以梦想为岸、以奋斗作桨、以实干扬帆，在民族复兴的航程中写下属于我们这一代人的答卷。</div>
+</div>
+</div>
+</section>
+
+<section id="d-s3">
+<h2><span class="num">3</span>双主题写法（附全例）</h2>
+<p class="lead">双主题 = 题干给两个词 / 两句话，要求谈二者关系（如「简与繁」「城市的便利与温度」「传统文化与创新」）。<b>双主题的核心是「关系」，漏写任何一个词都是立意不全。</b></p>
+
+<h3 id="d-s3a">3.1 四种关系判定</h3>
+<table>
+<tr><th style="width:110px">关系</th><th>判定特征</th><th style="width:250px">总论点句式</th><th style="width:230px">例子</th></tr>
+<tr><td class="k">并列互补</td><td>二者都是好的、缺一不可</td><td>A 是根基，B 是翅膀；既要 A，也要 B</td><td>便利（效率）与温度（人文）：既要跑得快，也要暖人心</td></tr>
+<tr><td class="k">递进支撑</td><td>A 是前提 / 手段，B 是目标 / 结果</td><td>以 A 为基 / 为径，成 B 之远 / 之实</td><td>以创新为径，成文化传承之远</td></tr>
+<tr><td class="k">对立统一</td><td>看似矛盾，实则辩证（最常考）</td><td>A 中有 B，B 中有 A；A 是 B 的另一种表达</td><td>简与繁：删繁就简是为了把功夫用在「繁」处服务群众</td></tr>
+<tr><td class="k">条件转化</td><td>处理好 A 才能成就 B，处理不好互相伤害</td><td>把握好 A 的度，方能成就 B</td><td>把握好「快」的节奏，方能守住「好」的成色</td></tr>
+</table>
+<div class="tip"><b>快速判定口诀</b>：看材料里两者是「互相打架」还是「互相成全」——打架就是对立统一，成全就是递进或并列。拿不准就按<b>辩证统一</b>写，最稳、最不容易错。</div>
+
+<h3 id="d-s3b">3.2 双主题全流程示例：以「简与繁」为例</h3>
+<div class="card">
+<div class="card-h"><span class="badge">例</span><span class="ttl">「简与繁」——政务服务中的辩证法</span><span class="sub">对立统一型 · 全框架</span></div>
+<div class="card-b">
+<div class="f-box"><b>审题</b>：材料背景是政务服务改革——流程做「简法」（群众少跑腿），服务做「繁法」（干部多操心）。二者看似相反，实则统一：简的是流程，繁的是服务，落脚点都是群众满意。</div>
+<div class="f-box"><b>标题</b>：简繁之间见初心<br><span class="cm">备选：流程做减法 服务做加法 ／ 于简繁平衡处见治理温度</span></div>
+<div class="f-box"><b>总论点</b>：政务服务的「简」与「繁」是一枚硬币的两面——把流程之简留给群众、把服务之繁留给自己，简繁之间，称量的是政府初心。</div>
+<div class="row"><span class="lbl f">分论点一</span>「简」是手段——简流程、简材料、简环节，让群众少跑腿、数据多跑路。（意义：为何要简）</div>
+<div class="row"><span class="lbl f">分论点二</span>「繁」是担当——把简掉的环节转化为后台的协同、干部的用心，简的背后是更精细的繁。（辩证：简里藏着繁）</div>
+<div class="row"><span class="lbl f">分论点三</span>简繁平衡的标尺是民心——群众满意度是唯一的试金石，简到好处、繁到点上，才是真正的治理现代化。（落脚：价值升华）</div>
+<div class="essay"><span class="tg">开头示例</span>同样是政务服务，有的地方群众跑八个部门盖一章，有的地方「一件事一次办」手机上三分钟办结。一繁一简之间，差的不只是流程，更是理念。把「简」字刻进流程，把「繁」字扛在肩上，简繁之间，见的是初心，称的是民心。</div>
+<div class="essay"><span class="tg">结尾示例</span>简的是环节，不简的是责任；繁的是服务，不繁的是门槛。当每一道流程的减法都对应着一份为民的加法，简繁之间自会写出「人民至上」的大文章。</div>
+<div class="tip"><b>双主题保命写法</b>：三个分论点中，<b>每个分论点都要同时出现两个主题词</b>（或至少两个点成对出现），只写一个词的分论点在阅卷时等于立意不全。</div>
+</div>
+</div>
+</section>
+
+<section id="d-s4">
+<h2><span class="num">4</span>总论点写法与正反例</h2>
+<p class="lead">总论点 = 全文唯一的一句话答案，通常放在开头段末尾，用一句 30–50 字的完整判断句亮出来。</p>
+
+<h3>4.1 三种句式</h3>
+<div class="f-box">
+<b>判断句（最稳）</b>：X 是 …… 的根基 / 动力 / 保障，唯有 X，方能 ……<br>
+<b>对策句（最实用）</b>：做好 X，要以 A 为抓手、以 B 为路径、以 C 为保障。<br>
+<b>比喻句（最出彩）</b>：X 如车之两轮、鸟之双翼；让 X 与 Y 同向而行、同频共振。
+</div>
+
+<h3>4.2 好总论点的四个标准</h3>
+<ul class="clean">
+<li><b>完整</b>：双主题必须两词都在句中；</li>
+<li><b>明确</b>：有判断、有动作，不含糊（避免「我们要重视 X」这种空话）；</li>
+<li><b>可拆</b>：一句话能自然拆成三个分论点；</li>
+<li><b>有高度</b>：落脚到治理现代化 / 高质量发展 / 人民幸福。</li>
+</ul>
+<div class="good"><b>✓ 好</b>：「基层治理既要借科技之力提效，更要怀为民之心增温，让精度与温度共同织密基层治理之网。」——两词齐全、有动作、可拆三点。</div>
+<div class="bad"><b>✗ 差</b>：「基层治理非常重要，我们要多措并举做好基层治理工作。」——零信息量，等于没写。</div>
+<div class="bad"><b>✗ 差</b>：「科技让基层治理更聪明。」——只写了一个主题词，另一个「为民之心 / 温度」丢了，立意不全。</div>
+</section>
+
+<section id="d-s5">
+<h2><span class="num">5</span>分论点写法与段落骨架</h2>
+<p class="lead">分论点是阅卷的重中之重：<b>三个分论点要「结构一致 + 逻辑递进 + 各带主题词」</b>，写成对仗或半对仗的整句，放在每段第一行。</p>
+
+<h3>5.1 三种经典结构</h3>
+<table>
+<tr><th style="width:120px">结构</th><th>逻辑</th><th style="width:290px">示例（主题：文化自信）</th></tr>
+<tr><td class="k">意义并列式</td><td>X 让个人 …／让社会 …／让国家 …</td><td>文化自信滋养精神家园／凝聚社会共识／彰显大国气象</td></tr>
+<tr><td class="k">对策并列式</td><td>要做好 X，须 A／须 B／须 C</td><td>守正创新，让文脉「活」起来／科技赋能，让文物「动」起来／开放交流，让文化「走」出去</td></tr>
+<tr><td class="k">递进式（推荐）</td><td>是什么 → 为什么 → 怎么办</td><td>文化自信是更基础的自尊（是什么）／离开创新传统就会蒙尘（为什么）／以创新激活传统（怎么办）</td></tr>
+</table>
+
+<h3>5.2 分论点的三种句式模板</h3>
+<div class="f-box">
+<b>动宾对仗式</b>：以 A 为笔，绘就 …；以 B 为基，筑牢 …；以 C 为翼，飞向 …<br>
+<b>关键词前置式</b>：文化自信，源于 …；文化自信，成于 …；文化自信，兴于 …<br>
+<b>条件递进式</b>：唯有 X，方能 …；唯有 …，方能 …；唯有 …，方能实现 …
+</div>
+
+<h3>5.3 论证段的内部骨架（每段 250–300 字）</h3>
+<div class="fbox">
+<b>分论点整句（1 行）</b> → <b>阐释句</b>：解释这句话什么意思、为什么成立（1–2 行）<br>
+→ <b>例证</b>：人物事例 / 政策事实 / 材料案例换写（2–3 行，别超过全段一半）<br>
+→ <b>析句</b>：例子说明了什么，扣回分论点（1–2 行，这一步最见功力，没析句=堆例子）<br>
+→ <b>小结回扣</b>：呼应总论点（1 行）
+</div>
+<div class="essay"><span class="tg">示范段落</span><b>文化自信，源于创新表达，让传统「活」在当下。</b>传统文化不是博物馆里的标本，而是流动的活水。故宫文创让六百年紫禁城成为「顶流」，《唐宫夜宴》用一支舞蹈让唐俑「复活」，杨柳青年画借国潮设计走进年轻人的手机屏。它们共同证明：传统只有被重新表达，才能被重新热爱。当古老的文脉接上时代的接口，文化自信便有了最生动的注脚——这正是我们坚定走下去的底气所在。</div>
+<div class="tip">数一下：分论点句 → 阐释 → 三个例子 → 析句回扣，一共 6 句、约 200 字。所有论证段都按这个骨架写，全文结构感直接拉满。</div>
+</section>
+
+<section id="d-s6">
+<h2><span class="num">6</span>标题库（两套公式）</h2>
+<p class="lead">标题 = 总论点的浓缩版。原则：<b>短（≤15 字最好）、亮明主题词、有动作感</b>。以下模板直接替换关键词即可。</p>
+<div class="grid2">
+<div class="mini"><div class="mh">单主题标题八式</div><p>
+① 以 X 之笔，书写时代答卷<br>
+② 让 X 之光照亮复兴之路<br>
+③ 用 X 涵养时代精神<br>
+④ X 是 …，更是 …<br>
+⑤ 以 X 绘就 …新画卷<br>
+⑥ 在 X 中读懂中国<br>
+⑦ 把 X 写在祖国大地上<br>
+⑧ X：从 …走向 …
+</p></div>
+<div class="mini"><div class="mh">双主题标题八式</div><p>
+① A 与 B：一枚硬币的两面<br>
+② 以 A 为基，以 B 为翼<br>
+③ 于 A 处见 B，于 B 处见初心<br>
+④ 让 A 与 B 同频共振<br>
+⑤ A 做减法，B 做加法<br>
+⑥ 以 A 之简，成 B 之繁<br>
+⑦ 把握 A 的度，成就 B 的质<br>
+⑧ A 不忘来路，B 方知去处
+</p></div>
+</div>
+<div class="tip"><b>自检</b>：把标题盖住，只看总论点——如果标题就是总论点的缩写，说明立意一致；如果对不上，改标题。</div>
+</section>
+
+<section id="d-s7">
+<h2><span class="num">7</span>开头与结尾</h2>
+<p class="lead">开头 100–150 字，任务两个：<b>点题 + 亮总论点</b>。结尾 80–120 字，任务：<b>回扣总论点 + 升华</b>。不追求文采惊艳，追求「稳、准、快」。</p>
+
+<h3>7.1 开头四法（每法配完整示例）</h3>
+<div class="row"><span class="lbl i">引言式</span>引用名言 / 领导人讲话 + 释意 + 亮总论点。</div>
+<div class="essay">「政之所兴在顺民心，政之所废在逆民心。」治理的智慧，千年前古人已一语道破——民心是最大的政治。今天，基层治理面对的是千头万绪的诉求、千差万别的场景，唯有既用科技淬炼精度、又用初心涵养温度，方能筑牢国家治理的根基。</div>
+<div class="row"><span class="lbl i">排比式</span>三组排比造势 + 转折点题 + 亮总论点。</div>
+<div class="essay">当一个社区用网格织起安全网，当一条热线把千家诉求办到底，当一次协商让居民从旁观者变成当家人——基层治理的成效，写在千家万户的笑脸上。治理之道，贵在精准、成在有温度：让精度与温度并进，基层之治方能直抵人心。</div>
+<div class="row"><span class="lbl i">案例式</span>材料内外的典型事例切入 + 短评 + 亮总论点。</div>
+<div class="essay">天津港的「智慧零碳」码头上，无人驾驶的岸桥起落有序，全球第一个「智慧零碳」码头在这里建成。一港之变，折射的是中国制造向中国智造的跃迁。创新驱动发展，不是选择题，而是必答题——唯有把创新刻进发展的基因，才能在变局中开新局。</div>
+<div class="row"><span class="lbl i">转折式</span>先列成绩或常识，再「然而」转折，逼出问题 + 总论点。</div>
+<div class="essay">近年来，数字政务突飞猛进，「最多跑一次」渐成常态。然而，也有地方陷入「指尖上的形式主义」：App 层层叠叠，群众却依然「办事跑断腿」。技术的初衷是便民而非扰民——唯有让数字回归服务本位、让政务多些人情温度，数字化才能真正提升群众的获得感。</div>
+
+<h3>7.2 结尾三法</h3>
+<div class="f-box">
+<b>回扣升华式</b>：重申总论点（换说法）+ 从「这件事」升华到「时代 / 复兴」。<br>
+<b>引用收束式</b>：一句压轴名言 + 一句号召。<br>
+<b>展望号召式</b>：描绘图景 + 「让我们……」。
+</div>
+<div class="essay"><span class="tg">回扣升华示例</span>基层治理的「最后一公里」，连着民心，也通向国家治理现代化的远方。让科技更懂人心、让服务更有温度，把每一件小事办好，把每一个网格守牢——这既是基层之治的答卷，更是一个大国走向善治的底气。</div>
+</section>
+
+<section id="d-s8">
+<h2><span class="num">8</span>论证方法与论证段拆解</h2>
+<p class="lead">大论文是议论文，不是散文也不是工作报告。论证 = 摆事实（例证）+ 讲道理（理证）。一段之内两种交替使用，比例为「例 4 : 析 6」。</p>
+<table>
+<tr><th style="width:110px">方法</th><th>用法</th><th style="width:280px">示例句</th></tr>
+<tr><td class="k">例证法</td><td>人物事例 / 数据 / 政策，一句带出、马上分析</td><td>从黄文秀到驻村干部群像，他们把论文写在大地上——正是担当，让蓝图变成实景。</td></tr>
+<tr><td class="k">理证法</td><td>引用原理 / 名言 / 逻辑推演</td><td>「足寒伤心，民寒伤国。」民生无小事，枝叶总关情。</td></tr>
+<tr><td class="k">正反对比</td><td>做得好的 vs 做砸的，一正一反强化观点</td><td>有的地方借数字技术让群众「一次不跑」；有的地方却造出「指尖形式主义」。同是数字化，理念不同，结果两异。</td></tr>
+<tr><td class="k">引用论证</td><td>古语 + 现代阐释，一段最多一句</td><td>「利民之事，丝发必兴。」政务服务的每一道减法，都是在为获得感做加法。</td></tr>
+</table>
+<div class="warn"><b>例子的三个禁忌</b>：① 一个例子讲半页（喧宾夺主）；② 全文只用一个例子（显得没货）；③ 例子之后没有「析句」（阅卷人最反感：例子和论点两张皮）。</div>
+</section>
+
+<section id="d-s9">
+<h2><span class="num">9</span>素材库（可搜索）</h2>
+<p class="lead">10 大高频主题，每个主题给「名言 + 事例 + 适用方向」。考前背熟 5 个主题 = 任何题目都有话可说。支持关键词搜索。</p>
+<div class="searchbar">
+  <input id="d-q" type="text" placeholder="搜索：主题 / 名言关键词 / 人物 / 真题方向，如「创新」「青年」「生态」">
+  <span class="cnt" id="d-cnt"></span>
+</div>
+<div class="tbl-scroll">
+<table id="d-qtable">
+<thead><tr><th style="width:90px">主题</th><th>名言金句</th><th>人物 / 事例</th><th style="width:170px">适用方向</th></tr></thead>
+<tbody>
+<tr><td class="k">基层治理</td><td>「政之所兴在顺民心」；「天下大事，必作于细」</td><td>北京「接诉即办」改革；新时代「枫桥经验」；社区网格员群体</td><td>治理、民生、干部作风</td></tr>
+<tr><td class="k">青年奋斗</td><td>「十年饮冰，难凉热血」（梁启超）；「青年强则国家强」</td><td>黄文秀扎根百色扶贫；北斗团队平均年龄 31 岁；大学生村官与西部计划志愿者</td><td>青年、担当、理想信念</td></tr>
+<tr><td class="k">创新科技</td><td>「苟日新，日日新，又日新」；「创新是引领发展的第一动力」</td><td>天津港智慧零碳码头（全球首个）；C919 大飞机；华为突破封锁造芯</td><td>高质量发展、制造强国、数字中国</td></tr>
+<tr><td class="k">生态文明</td><td>「绿水青山就是金山银山」；「人不负青山，青山定不负人」</td><td>塞罕坝三代人造林；长江「十年禁渔」；浙江「千万工程」</td><td>绿色发展、美丽中国、人与自然</td></tr>
+<tr><td class="k">文化自信</td><td>「求木之长者，必固其根本」；「让收藏在博物馆里的文物活起来」</td><td>故宫文创出圈；河南卫视《唐宫夜宴》；杨柳青年画国潮化；非遗进校园</td><td>文化、传统与现代、文旅融合</td></tr>
+<tr><td class="k">民生温度</td><td>「利民之事，丝发必兴」；「民之所忧，我必念之」</td><td>「一老一小」服务体系；老旧小区加装电梯；「15 分钟便民生活圈」</td><td>服务型政府、共同富裕、城市更新</td></tr>
+<tr><td class="k">乡村振兴</td><td>「民族要复兴，乡村必振兴」；「把论文写在祖国大地上」</td><td>袁隆平杂交水稻；科技特派员制度；直播电商助农「山货出山」</td><td>三农、城乡融合、共同富裕</td></tr>
+<tr><td class="k">数字中国</td><td>「让数据多跑路，让群众少跑腿」；「过不了互联网这一关，就过不了长期执政这一关」</td><td>「一网通办」「跨省通办」；数字乡村试点；AI 辅助基层报表减负</td><td>数字政务、智慧城市、科技与人文</td></tr>
+<tr><td class="k">担当实干</td><td>「空谈误国，实干兴邦」；「道虽迩，不行不至」</td><td>塞罕坝人一代接着一代干；脱贫攻坚 1800 多名同志牺牲在一线；焦裕禄治沙</td><td>作风、落实、基层减负</td></tr>
+<tr><td class="k">诚信法治</td><td>「人无信不立，业无信不兴」；「法者，治之端也」</td><td>社会信用体系建设；「放管服」改革中的告知承诺制；民法典实施</td><td>营商环境、政府自身建设、规则意识</td></tr>
+<tr><td class="k">人才强国</td><td>「功以才成，业由才广」；「聚天下英才而用之」</td><td>天开高教科创园（天津）：高校成果转化「从实验室到生产线」；深圳「孔雀计划」引才</td><td>科技创新、营商环境、区域发展</td></tr>
+<tr><td class="k">底线思维</td><td>「备豫不虞，为国常道」；「于安思危，于治忧乱」</td><td>粮食安全「十八亿亩红线」；安全生产责任制；防灾减灾体系建设</td><td>安全与发展、风险防范、韧性城市</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip"><b>使用方法</b>：一段最多 1–2 个例子，写法是「人 + 事 + 果」一句话带过，马上接析句扣分论点。名言同理：一句就够，引完必须解释它如何支撑观点。</div>
+
+<h3 id="d-s9a">9.1 天津本地素材（天津市考专用加分项）</h3>
+<div class="tip">天津市考阅卷人对本地素材有天然亲近感，用对了是「亮点分」。以下素材均为公开可查的真实素材。</div>
+<table>
+<tr><th style="width:150px">素材</th><th>一句话内容</th><th style="width:190px">适用主题</th></tr>
+<tr><td class="k">天津港「智慧零碳」码头</td><td>全球首个「智慧零碳」码头，无人驾驶岸桥 + 风光储一体化，传统码头转型升级样本</td><td>创新、绿色、智能制造</td></tr>
+<tr><td class="k">天开高教科创园</td><td>依托南开、天大等高校，打通「实验室—生产线」的成果转化通道，孵化一批科技企业</td><td>创新、人才、产学研融合</td></tr>
+<tr><td class="k">「一基地三区」定位</td><td>全国先进制造研发基地、北方国际航运核心区、金融创新运营示范区、改革开放先行区</td><td>高质量发展、开放、制造业立市</td></tr>
+<tr><td class="k">杨柳青年画 / 泥人张 / 风筝魏</td><td>天津非遗三绝，借国潮设计与文创开发重新走进日常生活</td><td>文化传承与创新、文旅融合</td></tr>
+<tr><td class="k">五大道 · 意式风情区</td><td>历史建筑「修旧如旧」活化利用，历史文化街区变成城市名片</td><td>城市更新、历史文化保护</td></tr>
+<tr><td class="k">梁启超与饮冰室（天津）</td><td>梁启超晚年居天津饮冰室，「十年饮冰，难凉热血」的家国情怀尽人皆知</td><td>青年担当、家国情怀</td></tr>
+<tr><td class="k">海河两岸综合开发</td><td>海河两岸旧貌换新颜，桥梁景观带成为市民休闲空间——城市更新与民生结合</td><td>生态文明、城市治理、民生</td></tr>
+<tr><td class="k">老旧小区改造 · 口袋公园</td><td>天津持续推进老旧小区改造、「口袋公园」建设，把边角地变成健身休闲空间</td><td>民生温度、精细化治理</td></tr>
+</table>
+</section>
+
+<section id="d-s10">
+<h2><span class="num">10</span>真题立意示范（高频母题）</h2>
+<p class="lead">历年真题原题表述每年会变，但「母题」高度重复。以下按母题给出「立意 + 三分论点」的一行式示范，考场上按题干关键词对号入座。具体题目以当年度真题为准。</p>
+<table>
+<tr><th style="width:120px">母题</th><th>典型题干关键词</th><th>立意 + 三个分论点（一行式）</th></tr>
+<tr><td class="k">治理与服务</td><td>治理的精度、服务的温度、「最后一公里」</td><td>精度＋温度双轮驱动 → 科技提效／初心增温／民心标尺</td></tr>
+<tr><td class="k">发展与民生</td><td>高质量发展、发展成果由人民共享</td><td>以高质量发展筑基 → 产业升级惠民／公共服务普惠／生态宜居共享</td></tr>
+<tr><td class="k">文化与创新</td><td>传统文化「活起来」、守正创新</td><td>以创新激活传统 → 表达创新／科技赋能／融入生活</td></tr>
+<tr><td class="k">变与不变</td><td>「变的是形式，不变的是初心」类</td><td>形式在变初心不变 → 技术变服务不变／场景变标准不变／时代变使命不变</td></tr>
+<tr><td class="k">青年与时代</td><td>「把青春写进…」「到祖国最需要的地方去」</td><td>青春向未来 → 融入时代找坐标／扎根基层长本领／实干担当显价值</td></tr>
+<tr><td class="k">简与繁／快与慢</td><td>政务服务「减环节」、发展「蹄疾而步稳」</td><td>辩证统一 → 简的是流程繁的是担当／快是干劲稳是定力／平衡点在民心</td></tr>
+<tr><td class="k">数字与人文</td><td>数字政务、智慧城市、「科技的温度」</td><td>数字为体人文为魂 → 技术提效／防止指尖形式主义／保留人的服务</td></tr>
+<tr><td class="k">生态与富裕</td><td>「绿水青山」转化、生态富民</td><td>两山转化 → 生态打底／产业造血／机制护航</td></tr>
+</table>
+<div class="tip"><b>考场上怎么用</b>：先对母题定大方向，再把题干的主题词「原词嵌入」总论点和每个分论点——母题给骨架，题干给血肉。</div>
+</section>
+
+<section id="d-s11">
+<h2><span class="num">11</span>十大失分坑</h2>
+<div class="fbox">
+① 立意不全：双主题只写一个词（最高频死因）。<br>
+② 换词自由：题干「治慧」全篇写成「智慧」，被视为偷换概念。<br>
+③ 大量抄材料：原文整段搬运超三成，直接降档。<br>
+④ 分论点不整句：段首是「首先，我们要……」的口水话，阅卷扫不出结构。<br>
+⑤ 论证两张皮：例子讲完就完，没有析句扣回论点。<br>
+⑥ 中心论点消失：中间段落只谈例子，通篇不见总论点复现。<br>
+⑦ 结构失衡：一个分论点写 400 字，另两个各 100 字。<br>
+⑧ 套作痕迹：背诵的万能开头与题干关键词完全无关，被判模板文。<br>
+⑨ 假大空收尾：结尾堆「中华民族伟大复兴」却不回扣本文论点。<br>
+⑩ 字数不达标或严重超格：低于要求字数 10% 直接降档；超出过多挤占格子甚至写不下。
+</div>
+</section>
+
+<section id="d-s12">
+<h2><span class="num">12</span>考场时间分配（以 60 分钟大作文为例）</h2>
+<div class="row eq">审题立意 8 分钟 → 列提纲 5 分钟（标题 + 总论点 + 三个分论点 + 每段素材）→ 开头 8 分钟 → 三个论证段 12 分钟 × 3 → 结尾 6 分钟 → 通读检查 3 分钟</div>
+<div class="row"><span class="lbl s">节奏</span>先把标题、总论点、三个分论点整句写出来再动笔正文——纲举目张，正文只是「填肉」。写到一半发现立意要调整，改提纲的成本远低于改全文。</div>
+<div class="row"><span class="lbl f">背诵优先级</span>
+<span class="pill">单主题四种拆法</span>
+<span class="pill">双主题四种关系</span>
+<span class="pill">论证段六句骨架</span>
+<span class="pill">开头四法 + 结尾三法</span>
+<span class="pill">素材库 5 大主题</span>
+<span class="pill">天津本地素材 3 条</span>
+<span class="pill">万能金句 20 句</span>
+<span class="pill">万能影响 / 背景句各 10 句</span>
+<span class="pill">分论点万能句 15 句</span>
+<span class="pill">专题开头 / 结尾各 2 个</span>
+</div>
+</section>
+
+<section id="d-s13">
+<h2><span class="num">13</span>万能金句库（可搜索 · 57 句）</h2>
+<p class="lead">考前背 20 句，开头结尾不慌。全部为真言警句 / 领导人金句 / 古诗文，按「励志奋斗 · 家国担当 · 实干笃行」混排，搜索关键词即可调用。</p>
+<div class="searchbar"><input id="d-q13" type="text" placeholder="搜索金句关键词，如：奋斗、艰难、路、实干…"><span class="cnt" id="d-cnt13"></span></div>
+<div class="tbl-scroll"><table id="d-t13"><thead><tr><th style="width:52px">序号</th><th>金句</th><th style="width:150px">适用方向</th></tr></thead><tbody>
+<tr><td class="k">01</td><td>冰心说过：成功的花，人们只惊羡她现时的明艳！然而当初她的芽儿，浸透了奋斗的泪泉，洒遍了牺牲的血雨</td><td>励志·坚持</td></tr>
+<tr><td class="k">02</td><td>历尽天华成此景，人间万事出艰辛</td><td>实干·笃行</td></tr>
+<tr><td class="k">03</td><td>时间不等人！历史不等人！时间属于奋进者！历史属于奋进者！为了实现中华民族伟大复兴的中国梦，我们必须同时间赛跑、同历史并进</td><td>家国·为民</td></tr>
+<tr><td class="k">04</td><td>“艰难方显勇毅，磨砺始得玉成。”</td><td>励志·坚持</td></tr>
+<tr><td class="k">05</td><td>“惟其艰难，才更显勇毅；惟其笃行，才弥足珍贵。”</td><td>励志·坚持</td></tr>
+<tr><td class="k">06</td><td>脚踏人间正道，何惧世事沧桑</td><td>哲理·思辨</td></tr>
+<tr><td class="k">07</td><td>不驰于空想，不鹜于虚声</td><td>哲理·思辨</td></tr>
+<tr><td class="k">08</td><td>茫茫九脉流中国，纵横当有凌云笔</td><td>家国·为民</td></tr>
+<tr><td class="k">09</td><td>志之所趋，无远弗届，穷山距海，不能限也</td><td>励志·坚持</td></tr>
+<tr><td class="k">10</td><td>古人云“图垂成之功者，如挽上滩之舟，莫少停一棹。”</td><td>实干·笃行</td></tr>
+<tr><td class="k">11</td><td>正入万山圈子里，一山放过一山拦。——杨万里</td><td>景物·意象</td></tr>
+<tr><td class="k">12</td><td>征程万里风正劲，重任千钧再出发</td><td>景物·意象</td></tr>
+<tr><td class="k">13</td><td>上坡路难走，力行则将至；顶风船难开，笃志则必达</td><td>励志·坚持</td></tr>
+<tr><td class="k">14</td><td>风雨多经志弥坚，关山初度路犹长</td><td>励志·坚持</td></tr>
+<tr><td class="k">15</td><td>物转星移几度秋，雄心壮志两峥嵘</td><td>励志·坚持</td></tr>
+<tr><td class="k">16</td><td>志不求易者成，事不避难者进事者，生于虑，成于务，失于傲</td><td>励志·坚持</td></tr>
+<tr><td class="k">17</td><td>北宋苏轼《思治论》有云：犯其至难而图其至远</td><td>励志·坚持</td></tr>
+<tr><td class="k">18</td><td>浩渺行无极，扬帆但信风</td><td>实干·笃行</td></tr>
+<tr><td class="k">19</td><td>须与懈怠，或将停滞不前；半点停顿，或将前功尽弃</td><td>实干·笃行</td></tr>
+<tr><td class="k">20</td><td>潮平两岸阔，风正一帆悬</td><td>景物·意象</td></tr>
+<tr><td class="k">21</td><td>沉舟侧畔千帆过，病树前头万木春</td><td>景物·意象</td></tr>
+<tr><td class="k">22</td><td>扬帆起航正当时，砥砺奋进谱华章</td><td>景物·意象</td></tr>
+<tr><td class="k">23</td><td>纵使海浪翻滚，亦能逆身前行；纵然迷雾缭绕，亦现非凡曙光</td><td>实干·笃行</td></tr>
+<tr><td class="k">24</td><td>路虽远，行则将至；事难成，做则必成</td><td>励志·坚持</td></tr>
+<tr><td class="k">25</td><td>不畏山高路远的跋涉者，山川回馈以最奇绝的秀色</td><td>景物·意象</td></tr>
+<tr><td class="k">26</td><td>千淘万漉虽辛苦，吹尽黄沙始到金</td><td>哲理·思辨</td></tr>
+<tr><td class="k">27</td><td>路漫漫其修远兮，吾将上下而求索</td><td>哲理·思辨</td></tr>
+<tr><td class="k">28</td><td>天行健，君子以自强不息</td><td>励志·坚持</td></tr>
+<tr><td class="k">29</td><td>长风破浪会有时，直挂云帆济沧海</td><td>景物·意象</td></tr>
+<tr><td class="k">30</td><td>古之成大事者，不惟有超世之才，亦有坚忍不拔之志</td><td>励志·坚持</td></tr>
+<tr><td class="k">31</td><td>锲而舍之，朽木不折；锲而不舍，金石可镂</td><td>励志·坚持</td></tr>
+<tr><td class="k">32</td><td>为者常成，行者常至</td><td>实干·笃行</td></tr>
+<tr><td class="k">33</td><td>但愿苍生俱饱暖，不辞辛苦出山林</td><td>家国·为民</td></tr>
+<tr><td class="k">34</td><td>志不强者智不达</td><td>励志·坚持</td></tr>
+<tr><td class="k">35</td><td>天下之事常成于困约，而败于奢靡</td><td>家国·为民</td></tr>
+<tr><td class="k">36</td><td>绳锯木断，水滴石穿</td><td>励志·坚持</td></tr>
+<tr><td class="k">37</td><td>精诚所至，金石为开</td><td>实干·笃行</td></tr>
+<tr><td class="k">38</td><td>坚志而勇为，谓之刚。刚，生人之德也</td><td>励志·坚持</td></tr>
+<tr><td class="k">39</td><td>日日行，不怕千万里；常常做，不怕千万事</td><td>实干·笃行</td></tr>
+<tr><td class="k">40</td><td>人生万事须自为，跬步江山即寥廓</td><td>家国·为民</td></tr>
+<tr><td class="k">41</td><td>追风赶月莫停留，平芜尽处是春山</td><td>景物·意象</td></tr>
+<tr><td class="k">42</td><td>路虽远，行则将至；事虽难，做则必成</td><td>励志·坚持</td></tr>
+<tr><td class="k">43</td><td>末路之难，守之若始</td><td>励志·坚持</td></tr>
+<tr><td class="k">44</td><td>逆水行舟，一篙不可放缓；滴水穿石，一滴不可弃滞</td><td>实干·笃行</td></tr>
+<tr><td class="k">45</td><td>日日精进，久久为功</td><td>励志·坚持</td></tr>
+<tr><td class="k">46</td><td>守志如行路，行万里者不中道而辍足</td><td>励志·坚持</td></tr>
+<tr><td class="k">47</td><td>千磨万击还坚劲，任尔东西南北风</td><td>励志·坚持</td></tr>
+<tr><td class="k">48</td><td>天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣</td><td>励志·坚持</td></tr>
+<tr><td class="k">49</td><td>立志欲坚不欲锐，成功在久不在速</td><td>励志·坚持</td></tr>
+<tr><td class="k">50</td><td>黄沙百战穿金甲，不破楼兰终不还</td><td>哲理·思辨</td></tr>
+<tr><td class="k">51</td><td>宝剑锋从磨砺出，梅花香自苦寒来</td><td>励志·坚持</td></tr>
+<tr><td class="k">52</td><td>不经一番寒彻骨，怎得梅花扑鼻香</td><td>励志·坚持</td></tr>
+<tr><td class="k">53</td><td>咬定青山不放松，立根原在破岩中</td><td>景物·意象</td></tr>
+<tr><td class="k">54</td><td>石可破也，而不可夺坚；丹可磨也，而不可夺赤</td><td>励志·坚持</td></tr>
+<tr><td class="k">55</td><td>岁寒，然后知松柏之后凋也</td><td>励志·坚持</td></tr>
+<tr><td class="k">56</td><td>沧海横流安足虑，世事纷纭从君理</td><td>景物·意象</td></tr>
+<tr><td class="k">57</td><td>道虽迩，不行不至；事虽小，不为不成</td><td>实干·笃行</td></tr>
+</tbody></table></div>
+<div class="tip"><b>用法</b>：开头「引言式」直接引一句 + 释意 + 亮总论点；结尾「引用收束式」用一句压轴。一段只引一句，引完必须解释它怎么支撑观点。</div>
+</section>
+<section id="d-s14">
+<h2><span class="num">14</span>万能影响句库（可搜索 · 152 句）</h2>
+<p class="lead">写「意义 / 影响」段的现成弹药，多为「是……的必由之路，是……的关键之举，是……的根本保障」三段式。按 8 大主题分组，论证段缺话时直接套一句。</p>
+<div class="searchbar"><input id="d-q14" type="text" placeholder="搜索主题或关键词，如：民生、乡村、法治、文化、生态…"><span class="cnt" id="d-cnt14"></span></div>
+<div class="tbl-scroll"><table id="d-t14"><thead><tr><th style="width:110px">主题</th><th style="width:46px">#</th><th>万能影响句</th></tr></thead><tbody>
+<tr><td class="k">政治民生类</td><td>1</td><td>事关人民群众的根本利益、事关政府治理能力和治理水平的提升、事关社会主义现代化建设事业的成败。</td></tr>
+<tr><td class="k">政治民生类</td><td>2</td><td>是满足人民群众美好生活需要的必由之路、是建设服务型政府的必经之法、是实现中华民族伟大复兴的必然选择。</td></tr>
+<tr><td class="k">政治民生类</td><td>3</td><td>是践行以民为本理念的必然要求，是维护社会和谐稳定的坚实支撑，是夯实国家治理根基的战略部署。</td></tr>
+<tr><td class="k">政治民生类</td><td>4</td><td>是增进民生幸福质感的长远之策，是破解基层治理难题的有效举措，是凝聚社会共建合力的重要纽带。</td></tr>
+<tr><td class="k">政治民生类</td><td>5</td><td>既是改善民生福祉的核心要义，也是提升群众生活质量的关键支举，还是彰显社会公平正义的根本遵循。</td></tr>
+<tr><td class="k">政治民生类</td><td>6</td><td>是保障基本民生需求的底线工程，是回应群众热切期盼的民心之举，是促进社会和谐稳定的坚实支撑。</td></tr>
+<tr><td class="k">政治民生类</td><td>7</td><td>是破解民生领域短板的有效路径，是兜牢民生保障底线的必然要求，是实现共同富裕目标的重要举措。</td></tr>
+<tr><td class="k">政治民生类</td><td>8</td><td>解决群众“柴米油盐”的务实之举，是回应“衣食住行”的贴心之策，是守护“安危冷暖”的长远之计。</td></tr>
+<tr><td class="k">政治民生类</td><td>9</td><td>是增进民生福祉的核心抓手，是凝聚民心民力的关键纽带，是夯实执政根基的重要工程。</td></tr>
+<tr><td class="k">政治民生类</td><td>10</td><td>是保障特殊群体合法权益的应有之义，是兜牢困难群众基本生活的关键举措，是推进基本公共服务均等化的必然要求。</td></tr>
+<tr><td class="k">政治民生类</td><td>11</td><td>是满足群众多元民生需求的必由之路，是提升民生服务供给效能的必然要求，是实现民生福祉持续增进的必然选择。</td></tr>
+<tr><td class="k">政治民生类</td><td>12</td><td>是推动城乡民生均衡发展的重要抓手，是补齐区域民生服务短板的关键举措，是提升不同群体民生获得感的根本路径。</td></tr>
+<tr><td class="k">政治民生类</td><td>13</td><td>事关民生政策的落地见效，事关民生服务的提质增效，事关民生改革的纵深推进。</td></tr>
+<tr><td class="k">政治民生类</td><td>14</td><td>是守护群众生命健康的坚实防线，是保障群众基本生活的基础工程，是提升群众幸福质感的核心举措。</td></tr>
+<tr><td class="k">政治民生类</td><td>15</td><td>是实现民生领域治理精准高效的重要抓手，是保障民生诉求回应及时有力的关键举措，是推动民生保障体系持续完善的根本支撑。</td></tr>
+<tr><td class="k">政治民生类</td><td>16</td><td>是健全完善基层治理体系的应有之义，是全面提升基层治理效能的关键之举，是切实保障群众安居乐业的固本之策。</td></tr>
+<tr><td class="k">政治民生类</td><td>17</td><td>是夯实基层治理根基的固本之策，是提升社会治理水平的关键之举，是实现治理现代化的必由之路。</td></tr>
+<tr><td class="k">政治民生类</td><td>18</td><td>是化解基层矛盾纠纷的务实举措，是维护社会和谐稳定的重要基石，是凝聚共建共治共享合力的关键路径。</td></tr>
+<tr><td class="k">政治民生类</td><td>19</td><td>是破解治理“堵点”的有效路径，是打通服务“断点”的关键抓手，是消除民生“痛点”的核心举措。</td></tr>
+<tr><td class="k">政治民生类</td><td>20</td><td>是加快数字化治理转型的重要支撑，是优化精细化治理服务的核心路径，是提升智能化治理效能的关键举措。</td></tr>
+<tr><td class="k">政治民生类</td><td>21</td><td>是健全自治法治德治融合体系的重要支撑，是夯实基层组织建设根基的核心任务，是拓宽群众基层治理参与渠道的关键抓手。</td></tr>
+<tr><td class="k">政治民生类</td><td>22</td><td>是推动治理资源下沉落地的务实之举，是保障基层权力规范有序运行的关键抓手，是促进治理成果公平公正共享的根本保障。</td></tr>
+<tr><td class="k">政治民生类</td><td>23</td><td>是应对基层治理新挑战的战略选择，是适应社会结构新变化的必然要求，是回应群众美好生活新期待的关键之举。</td></tr>
+<tr><td class="k">政治民生类</td><td>24</td><td>是推动跨域治理协同顺畅的重要保障，是提升突发公共事件处置效能的关键抓手，是筑牢治理风险防控坚实底线的根本举措。</td></tr>
+<tr><td class="k">政治民生类</td><td>25</td><td>是构建现代化治理格局的基础工程，是提升政府治理能力的核心支撑，是实现长治久安的战略保障。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>1</td><td>关系到社会主义新农村的建设成效，关系到农业农村的现代化进程，关系到巩固拓展脱贫攻坚成果同乡村振兴的有效衔接。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>2</td><td>是深化农村改革、激发农村发展活力的重大举措，是推进农业农村现代化的重要支撑，是筑牢乡村振兴发展根基的关键之举。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>3</td><td>实施乡村振兴战略，是推动高质量发展的必然要求，是破解新时代我国社会主要矛盾的有效抓手，是健全现代社会治理格局的固本之策，是实现中华民族伟大复兴的必然要求。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>4</td><td>是推进巩固拓展脱贫攻坚成果同乡村振兴有效衔接的核心任务，是统筹缩小城乡发展差距、促进城乡融合的关键举措，是夯实农业强国建设根基命脉的根本支撑。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>5</td><td>关系到农村集体经济的发展壮大，关系到城乡融合发展的均衡协调推进，关系到全体人民共同富裕的实现进程。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>6</td><td>是激活乡村内生发展动力的核心引擎，是改善农村人居环境的关键路径，是传承乡土文化根脉的重要依托。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>7</td><td>是筑牢农业高质高效根基的核心支撑，是擦亮乡村宜居宜业底色的关键举措，是实现农民富裕富足愿景的根本保障。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>8</td><td>是破解“三农”发展瓶颈的根本之策，是提升乡村基层治理效能的战略抓手，是筑牢国家安全根基的重要支撑。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>9</td><td>关系到乡村产业体系的健全完善，关系到乡村人才队伍的引育壮大，关系到乡村治理能力的全面提升。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>10</td><td>是守护乡村生态本底的必然要求，是弘扬乡风文明新风尚的关键举措，是夯实党的执政根基的民心工程。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>11</td><td>是推动农村基础设施提档升级的关键举措，是推进农村基本公共服务均等覆盖的核心抓手，是维护农村社会大局和谐稳定的根本保障。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>12</td><td>是推动农业现代化转型的核心支撑，是推动农村数字化发展的重要动力，是实现农民全面发展的长远之谋。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>13</td><td>是推动巩固拓展脱贫攻坚成果同乡村振兴有效衔接的关键抓手，是缩小城乡发展差距的关键一招，是加快建设农业强国的必由之路。</td></tr>
+<tr><td class="k">乡村振兴类</td><td>14</td><td>是培育乡村发展新动能的战略选择，是打造宜居宜业和美乡村的核心抓手，是实现中华民族伟大复兴的基础工程。</td></tr>
+<tr><td class="k">行政执法类</td><td>1</td><td>是涵养政治文明的客观要求，是推动经济繁荣的必要支撑，是维护社会和谐的重要保障，是建设社会主义现代化强国的核心内容。</td></tr>
+<tr><td class="k">行政执法类</td><td>2</td><td>是推进国家治理现代化的重要保障，是适应经济发展新常态的现实需要，是守护人民幸福安康的内在要求。</td></tr>
+<tr><td class="k">行政执法类</td><td>3</td><td>是维护群众合法权益的客观要求，是守护社会和谐稳定的必要支撑，是推进法治政府建设的核心要义；</td></tr>
+<tr><td class="k">行政执法类</td><td>4</td><td>全面推进依法治国、建设社会主义法治国家，是社会发展的必然趋势，是社会主义社会的本质要求，是汲取历史经验教训后的科学抉择；是新时代培育和践行社会主义核心价值观的重要保障，也是中国共产党带领全国各族人民建设富强民主文明和谐美丽的社会主义现代化强国、实现中华民族伟大复兴中国梦的题中应有之义。</td></tr>
+<tr><td class="k">行政执法类</td><td>5</td><td>全面依法治国是国家治理领域一场广泛而深刻的革命，关乎党的执政兴国，关乎人民的幸福安康，关乎党和国家的长治久安。</td></tr>
+<tr><td class="k">行政执法类</td><td>6</td><td>是坚守社会公平正义价值追求的内在支撑，是完善中国特色社会主义法律体系的重要保障，是夯实国家治理现代化根基的核心工程。</td></tr>
+<tr><td class="k">行政执法类</td><td>7</td><td>是规范权力运行、扎紧制度笼子的关键举措，是坚守公平正义、守护民生底线的根本保障，是厚植法治根基、推进治理现代化的重要支撑。</td></tr>
+<tr><td class="k">行政执法类</td><td>8</td><td>是严守法治底线、规范行政权力运行的必然要求，是维护合法权益、彰显为民服务温度的核心路径，是夯实建设根基、推进法治政府发展的重要保障。</td></tr>
+<tr><td class="k">行政执法类</td><td>9</td><td>是提升政府公信力、塑造良好形象的重要抓手，是优化营商环境、激活发展动能的关键支撑，是推进社会治理法治化、提升治理效能的根本路径。</td></tr>
+<tr><td class="k">行政执法类</td><td>10</td><td>是破解执法不规范突出问题的务实举措，是回应群众法治期盼、凝聚社会民心的关键抓手，是筑牢社会长治久安根基的根本保障。</td></tr>
+<tr><td class="k">行政执法类</td><td>11</td><td>是推动依法治国方略落地见效的核心支撑，是促进依法行政要求走深走实的关键举措，是彰显法治文明进步鲜明底色的时代标尺。</td></tr>
+<tr><td class="k">行政执法类</td><td>12</td><td>是维护市场经济公平公正秩序的坚实保障，是激发市场主体创新创业活力的制度支撑，是畅通经济社会循环发展格局的法治依托。</td></tr>
+<tr><td class="k">行政执法类</td><td>13</td><td>是化解基层矛盾纠纷、畅通多元调处的有效路径，是密切党群干群关系、凝聚基层合力的重要纽带，是提升基层治理效能、推进治理现代化的核心抓手。</td></tr>
+<tr><td class="k">行政执法类</td><td>14</td><td>是守护社会公共利益、践行责任担当的内在要求，是防范化解执法风险、坚守底线思维的关键举措，是保障社会安定有序、巩固发展格局的战略支撑。</td></tr>
+<tr><td class="k">行政执法类</td><td>15</td><td>是弘扬社会主义法治精神的实践载体，是厚植全社会法治信仰的关键路径，是凝聚法治中国建设磅礴力量的坚实支撑。</td></tr>
+<tr><td class="k">行政执法类</td><td>16</td><td>是健全执法标准化体系的制度支撑，是提升执法工作整体效能的关键变革，是坚守执法为民初心使命的根本保障。</td></tr>
+<tr><td class="k">行政执法类</td><td>17</td><td>是破解执法“温差”“落差”现实难题的迫切需要，是锚定执法公平公正核心目标的关键举措，是夯实法治国家建设基层根基的重要支撑。</td></tr>
+<tr><td class="k">文化类</td><td>1</td><td>文化可以引领时代风尚、刻写民族希望、诏示国家未来。</td></tr>
+<tr><td class="k">文化类</td><td>2</td><td>文化是时代前进的号角、文化能代表一个时代的风貌、文化能引领一个时代的风气。</td></tr>
+<tr><td class="k">文化类</td><td>3</td><td>文化是一个国家一个民族的灵魂、是华夏民族积淀数千年的瑰宝，是中华民族最基本的基因。</td></tr>
+<tr><td class="k">文化类</td><td>4</td><td>是传承中华文脉历史使命的根本举措、是凝聚民族精神思想根基的有力支撑、是提升国家软实力战略布局的坚实保障。</td></tr>
+<tr><td class="k">文化类</td><td>5</td><td>是凝聚民族精神的强大动力，是建设文化强国的战略支撑，是实现民族复兴的必经之路。</td></tr>
+<tr><td class="k">文化类</td><td>6</td><td>是延续文化根脉的强大动力，是守护文化多样性的战略支撑，是实现活态传承的必经之路。</td></tr>
+<tr><td class="k">文化类</td><td>7</td><td>文化塑造民族精神品格，凝聚时代奋进力量，托举国家复兴梦想。</td></tr>
+<tr><td class="k">文化类</td><td>8</td><td>文化是文明传承的基因密码，是精神凝聚的核心纽带，是发展赋能的不竭源泉。</td></tr>
+<tr><td class="k">文化类</td><td>9</td><td>是传承文化遗产的必然要求，是推动文化创新的关键之举，是树立文化自信的根本保障。</td></tr>
+<tr><td class="k">文化类</td><td>10</td><td>是滋养民众心灵的精神沃土，是涵养社会风尚的核心载体，是引领文明进步的重要旗帜。</td></tr>
+<tr><td class="k">文化类</td><td>11</td><td>文化承载历史记忆，传递价值理念，开创未来图景。</td></tr>
+<tr><td class="k">文化类</td><td>12</td><td>是破解文化发展瓶颈的关键路径，是激活文化产业活力的核心引擎，是提升文化影响力的战略选择。</td></tr>
+<tr><td class="k">文化类</td><td>13</td><td>是赓续红色基因、传承精神血脉的责任所在，是守护文化根脉、弘扬传统精粹的价值追求，是包容互鉴交流、吸收世界文明的胸怀体现。</td></tr>
+<tr><td class="k">文化类</td><td>14</td><td>文化能温润心灵、凝聚共识、汇聚伟力，文化能赋能发展、彰显特色、赢得未来。</td></tr>
+<tr><td class="k">文化类</td><td>15</td><td>是建设文化强国的核心支撑，是满足人民精神需求的关键举措，是增强民族凝聚力的根本保障。</td></tr>
+<tr><td class="k">文化类</td><td>16</td><td>是提升文化软实力的战略抉择，是增强国际话语权的必然要求，是展现中国良好形象的关键之举。</td></tr>
+<tr><td class="k">文化类</td><td>17</td><td>文化是民族生存的精神根基，是国家发展的精神旗帜，是文明延续的精神纽带。</td></tr>
+<tr><td class="k">文化类</td><td>18</td><td>是推动文化双创的动力源泉，是促进文旅融合的关键抓手，是实现文化惠民的重要载体。</td></tr>
+<tr><td class="k">文化类</td><td>19</td><td>是培育社会主义核心价值观的实践载体，是筑牢中华民族共有精神家园的思想根基，是引领社会文明新风尚的重要支撑。</td></tr>
+<tr><td class="k">文化类</td><td>20</td><td>文化能跨越时空、连接心灵、凝聚力量，文化能赋能产业、点亮生活、书写华章。</td></tr>
+<tr><td class="k">文化类</td><td>21</td><td>是守护文化多样性的重要责任，是推动文明交流互鉴的桥梁纽带，是彰显中华文化魅力的核心路径。</td></tr>
+<tr><td class="k">生态类</td><td>1</td><td>是推动从“既要金山银山，也要绿水青山”到“绿水青山就是金山银山”观念转变的关键之举，是转变经济发展方式的现实路径，是实现可持续发展实践的坚实保障。</td></tr>
+<tr><td class="k">生态类</td><td>2</td><td>既是引领经济新常态的重要保障、又是体现大国担当的现实需要，更是改善民生福祉的内在要求。</td></tr>
+<tr><td class="k">生态类</td><td>3</td><td>既是解决生态矛盾的客观要求、又是保障人民美好生活前景的必要条件、也是实现伟大复兴中国梦的核心要义。</td></tr>
+<tr><td class="k">生态类</td><td>4</td><td>是守护“绿水青山”生存根基的关键支撑，是实现“双碳目标”发展转型的固本之策，是构建“人与自然和谐共生”文明形态的根本遵循。</td></tr>
+<tr><td class="k">生态类</td><td>5</td><td>是推动经济社会转型的行动指南、是践行“两山理论”生动实践的有力支撑，是构建人类命运共同体大国担当的现实路径。</td></tr>
+<tr><td class="k">生态类</td><td>6</td><td>是坚守生态保护红线的底线要求，是筑牢环境质量安全的坚固防线，是夯实民族永续发展的生态根基。</td></tr>
+<tr><td class="k">生态类</td><td>7</td><td>既是破解生态环境瓶颈的迫切之举，又是推动绿色转型发展的战略之选，更是保障子孙后代福祉的长远之策。</td></tr>
+<tr><td class="k">生态类</td><td>8</td><td>事关践行生态优先的发展导向，事关落实绿色低碳的转型路径，事关实现生态惠民的价值追求。</td></tr>
+<tr><td class="k">生态类</td><td>9</td><td>既是守护生物多样性的核心使命，又是修复生态系统功能的关键举措，更是传承生态文明的责任担当。</td></tr>
+<tr><td class="k">生态类</td><td>10</td><td>是打通“绿水青山”向“金山银山”转化路径的核心抓手，是激活生态产品价值实现机制的内生动力，是构建生态与经济协同发展格局的重要支撑。</td></tr>
+<tr><td class="k">生态类</td><td>11</td><td>既是应对全球气候变化的主动作为，又是提升生态治理能力的内在要求，更是彰显生态文明建设成效的重要标志。</td></tr>
+<tr><td class="k">生态类</td><td>12</td><td>是改善人居环境、回应民生期盼的现实需要，是提升生态福祉、增添幸福质感的必然要求，是筑牢生态安全、守护发展根基的重要屏障。既是推动产业绿色升级的必由之路，又是培育绿色低碳产业的核心抓手，更是实现高质量发展的重要支撑。</td></tr>
+<tr><td class="k">生态类</td><td>13</td><td>既是守护蓝天白云、清水绿岸的现实需要，又是培育绿色生产生活方式的内在驱动，更是建设美丽中国的核心要义。</td></tr>
+<tr><td class="k">生态类</td><td>14</td><td>事关践行“山水林田湖草沙是生命共同体”的系统理念，事关推进生态保护修复的实践成效，事关实现生态系统良性循环的长远目标</td></tr>
+<tr><td class="k">生态类</td><td>15</td><td>既是保障粮食安全的生态基础，又是守护饮用水源的安全屏障，更是维系生态平衡的关键支撑。</td></tr>
+<tr><td class="k">生态类</td><td>16</td><td>事关提升全社会生态环保意识的思想引领，事关凝聚绿色发展共识的行动合力，事关培育生态文明新风的文化滋养。</td></tr>
+<tr><td class="k">生态类</td><td>17</td><td>既是破解资源环境约束的战略突破，又是推动循环经济发展的关键路径，更是实现可持续发展的核心要义。</td></tr>
+<tr><td class="k">生态类</td><td>18</td><td>是彰显我国生态文明建设制度优势的生动体现，是为全球生态治理贡献中国方案的务实行动，是推动构建地球生命共同体的大国担当。</td></tr>
+<tr><td class="k">经济类</td><td>1</td><td>是推动经济健康发展的务实举措，是增进人民民生福祉的必由之路，是实现第二个百年奋斗目标的必然要求。</td></tr>
+<tr><td class="k">经济类</td><td>2</td><td>是驱动经济发展的强大动力，是建设现代化经济体系的战略支撑，是实现高质量发展的关键路径。</td></tr>
+<tr><td class="k">经济类</td><td>3</td><td>是激活各类要素潜能的强大动力，是加快构建新发展格局的战略支撑，是推动经济发展范式转型的必由之路。</td></tr>
+<tr><td class="k">经济类</td><td>4</td><td>是畅通国内国际经济循环的强大动力，是稳固经济增长基本盘的战略支撑，是加快构建新发展格局的必由之路。</td></tr>
+<tr><td class="k">经济类</td><td>5</td><td>是夯实实体经济发展根基的务实举措，是充分激发市场主体活力的关键路径，是实现经济行稳致远的必然要求。</td></tr>
+<tr><td class="k">经济类</td><td>6</td><td>是推动产业迭代转型升级的强大动力，是加快培育新质生产力的战略支撑，是抢占国际经济竞争高地的必由之路。</td></tr>
+<tr><td class="k">经济类</td><td>7</td><td>是深化供给侧结构性改革的务实举措，是提升供给体系质量效能的关键路径，是畅通供需良性循环的必然要求。</td></tr>
+<tr><td class="k">经济类</td><td>8</td><td>是推进高水平对外开放的强大动力，是深度融入全球经济体系的战略支撑，是提升国际合作竞争优势的必由之路。</td></tr>
+<tr><td class="k">经济类</td><td>9</td><td>是持续优化经济结构的务实举措，是加快转变发展方式的关键路径，是实现经济可持续发展的必然要求。</td></tr>
+<tr><td class="k">经济类</td><td>10</td><td>是充分激活民间投资活力的强大动力，是不断拓宽经济增长空间的战略支撑，是稳定宏观经济大盘的必由之路。</td></tr>
+<tr><td class="k">经济类</td><td>11</td><td>是推动数字经济与实体经济深度融合的务实举措，是培育经济发展新增长点的关键路径，是提升经济创新能力的必然要求。</td></tr>
+<tr><td class="k">经济类</td><td>12</td><td>是增强产业链供应链韧性安全的强大动力，是筑牢国家经济安全防线的战略支撑，是实现自主可控发展的必由之路。</td></tr>
+<tr><td class="k">经济类</td><td>13</td><td>是促进区域经济协调协同发展的务实举措，是缩小区域发展差距的关键路径，是构建全域联动发展格局的必然要求。</td></tr>
+<tr><td class="k">经济类</td><td>14</td><td>是深化财税金融体制改革的强大动力，是提升资源配置效率效能的战略支撑，是激发经济发展内生动力的必由之路。</td></tr>
+<tr><td class="k">经济类</td><td>15</td><td>是大力发展绿色低碳经济的务实举措，是加快推动发展方式绿色转型的关键路径，是实现生态经济协同共赢的必然要求。</td></tr>
+<tr><td class="k">经济类</td><td>16</td><td>是充分挖掘内需消费潜力的强大动力，是畅通国内大循环主体地位的战略支撑，是稳定经济持续增长的必由之路。</td></tr>
+<tr><td class="k">经济类</td><td>17</td><td>是培育壮大优质企业集群的务实举措，是做强市场中坚发展力量的关键路径，是提升国家经济整体实力的必然要求。</td></tr>
+<tr><td class="k">经济类</td><td>18</td><td>是加快推进农业农村现代化的强大动力，是夯实国家粮食安全根基的战略支撑，是促进城乡融合发展的必由之路。</td></tr>
+<tr><td class="k">经济类</td><td>19</td><td>是提升经济治理体系效能的务实举措，是破除发展体制机制障碍的关键路径，是实现经济治理现代化的必然要求。</td></tr>
+<tr><td class="k">科技类</td><td>1</td><td>是突破“卡脖子”技术、掌握战略主动的核心抓手，是培育新质生产力、积蓄发展动能的关键支撑，是抢占未来产业制高点、提升国家竞争力的根本保障。</td></tr>
+<tr><td class="k">科技类</td><td>2</td><td>是打破外部技术垄断、实现战略突围的重要路径，是布局核心专利、赢得竞争主动的务实举措，是构建自主创新体系、筑牢安全根基的制度保障。</td></tr>
+<tr><td class="k">科技类</td><td>3</td><td>是激活传统制造业“智改数转”动能的强大引擎，是构建新兴产业集群发展生态的核心载体，是推动产业链价值链向高端攀升的关键支撑。</td></tr>
+<tr><td class="k">科技类</td><td>4</td><td>是争夺全球科技话语权的战略抉择，是掌控未来产业规则制定权的必由之路，是支撑创新型国家建设的坚实根基。</td></tr>
+<tr><td class="k">科技类</td><td>5</td><td>是推动要素驱动向创新驱动根本转变的核心动力，是实现人口红利向人才红利价值跃升的关键路径，是促进发展模式从速度规模向质量效益转型的必然要求。</td></tr>
+<tr><td class="k">科技类</td><td>6</td><td>是强化基础研究、保障原始创新源头供给的根本依托，是攻坚关键核心技术、提升突破实效的重要抓手，是加速创新成果转化、增强落地效能的实践路径。</td></tr>
+<tr><td class="k">科技类</td><td>7</td><td>是持续提升实验室创新策源能力的核心支撑，是深度构建产学研协同创新生态的务实举措，是充分释放科技人才队伍创新活力的制度保障。</td></tr>
+<tr><td class="k">科技类</td><td>8</td><td>是推动数字技术与实体经济深度融合的强大动能，是提升智能产业迭代升级质效的关键抓手，是稳步增强数字经济核心竞争力的战略支撑。</td></tr>
+<tr><td class="k">科技类</td><td>9</td><td>是实现绿色低碳技术创新突破的核心动力，是保障“双碳”目标如期实现的关键支撑，是推动绿色发展模式全面构建的必由之路。</td></tr>
+<tr><td class="k">科技类</td><td>10</td><td>是抢占人工智能、量子科技等前沿赛道的战略抉择，是主动引领未来科技发展方向的核心举措，是重塑全球科技竞争格局的重要支撑。</td></tr>
+<tr><td class="k">科技类</td><td>11</td><td>是推动科技金融服务精准适配的务实路径，是培育壮大科技型中小企业的重要保障，是助力创新型领军企业做强做优的核心支撑。</td></tr>
+<tr><td class="k">科技类</td><td>12</td><td>是强化知识产权保护、筑牢创新屏障的关键举措，是激发创新主体积极性、主动性的核心动力，是持续优化完善科技创新生态的根本保障。</td></tr>
+<tr><td class="k">科技类</td><td>13</td><td>是推动区域创新高地加速崛起的战略抓手，是促进创新资源要素高效流动的重要载体，是提升全国创新体系整体效能的核心支撑。</td></tr>
+<tr><td class="k">科技类</td><td>14</td><td>是推动航天、深海等战略高技术跨越式发展的强大引擎，是坚实保障国家战略安全的核心支撑，是充分彰显大国科技实力的重要标志。</td></tr>
+<tr><td class="k">科技类</td><td>15</td><td>是纵深推进科技体制改革的必然要求，是持续完善创新治理体系的核心路径，是为释放创新活力提供制度保障的关键支撑。</td></tr>
+<tr><td class="k">科技类</td><td>16</td><td>是助力青年科技人才成长成才的重要平台，是集聚培育科技领军人才的核心载体，是梯次构建创新人才梯队的战略支撑。</td></tr>
+<tr><td class="k">科技类</td><td>17</td><td>是培育构建技术开源生态的务实举措，是参与制定引领技术标准的战略抉择，是深度参与全球科技合作的重要路径。</td></tr>
+<tr><td class="k">科技类</td><td>18</td><td>是推动新型基础设施迭代升级的核心动力，是助力智慧社会建设提速增效的重要支撑，是以科技全面提升治理能力的必由之路。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>1</td><td>是人生前行的指路明灯，照亮前行方向；是攻坚克难的精神铠甲，抵御外界诱惑；是安身立命的根本底色，筑牢成长根基</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>2</td><td>能涵养高尚品格，让人行得端正；能凝聚奋进力量，让人走得坚定；能指引人生航向，让人行稳致远。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>3</td><td>是迷茫时的清醒剂，让人不迷失方向；是困境时的强心针，让人不畏惧挑战；是浮躁时的定心丸，让人不随波逐流。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>4</td><td>秉持正确价值观，方能守住初心不改；秉持正确价值观，方能担当使命不怠；秉持正确价值观，方能砥砺奋斗不息。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>5</td><td>能提升思想境界，让人格局开阔；能规范行为举止，让人品行端正；能激发内生动力，让人奋勇争先。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>6</td><td>可明辨是非曲直，不被乱象迷惑；可坚守原则底线，不被利益裹挟；可保持清醒坚定，不被浮躁干扰。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>7</td><td>让精神更有信仰，让行动更有力量，让人生更有方向。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>8</td><td>好的价值观，赋予人直面困难的勇气，赋予人坚守初心的定力，赋予人追求卓越的动力。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>9</td><td>正向价值观，是修身立德的基石，是干事创业的保障，是成就人生的支撑。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>10</td><td>以正确价值观立身，方能行有所止；以正确价值观立业，方能事有所成；以正确价值观立心，方能心有所向。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>11</td><td>错误的价值观，会让人迷失方向、丧失初心；会让人急功近利、浮躁不安；会让人突破底线、误入歧途。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>12</td><td>不良的价值导向，会扭曲是非观念，混淆善恶边界；会侵蚀精神根基，动摇理想信念；会败坏社会风气，影响公平正义。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>13</td><td>功利化的价值追求，会让人变得自私自利、冷漠无情；会让人贪图安逸、畏难避事；会让人投机取巧、不愿实干。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>14</td><td>浮躁虚荣的心态，会让人沉迷表象、忽视本质；会让人盲目攀比、陷入内耗；会让人急于求成、半途而废。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>15</td><td>错误的价值取向，会消解奋斗精神，让人躺平摆烂；会弱化责任担当，让人推诿敷衍；会腐蚀道德操守，让人失德失范。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>16</td><td>拜金享乐的思想，会让人唯利是图、见利忘义；会让人贪图享受、不思进取；会让人精神空虚、灵魂荒芜。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>17</td><td>极端利己的观念，会破坏人际信任，引发矛盾隔阂；会损害公共利益，漠视他人疾苦；会背离社会公德，败坏文明风尚。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>18</td><td>短视狭隘的认知，会让人只顾眼前、不顾长远；会让人只求私利、不顾大局；会让人逃避责任、不敢担当。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>19</td><td>随波逐流的心态，会让人丧失主见、人云亦云；会让人放弃原则、妥协退让；会让人浑浑噩噩、碌碌无为。</td></tr>
+<tr><td class="k">人生道理类话题万能影响素材（好的道理）</td><td>20</td><td>弄虚作假的风气，会透支个人信誉，难以立足长远；会破坏社会诚信，引发信任危机；会违背公平原则，损害发展根基。</td></tr>
+</tbody></table></div>
+<div class="warn"><b>切忌整段照抄</b>：每段最多取一句，替换其中 1–2 个词贴合题干主题词，再接自己的析句。整段搬运会撞车、也会被视为模板文。</div>
+</section>
+<section id="d-s15">
+<h2><span class="num">15</span>万能背景句库（可搜索 · 100 句）</h2>
+<p class="lead">开头的「背景 / 大势」就靠它铺垫：先摆时代大势与政策依据，再转折到本题问题，最后亮总论点。按 9 大主题分组。</p>
+<div class="searchbar"><input id="d-q15" type="text" placeholder="搜索主题，如：生态、法治、乡村、民生、经济、文化、科技…"><span class="cnt" id="d-cnt15"></span></div>
+<div class="tbl-scroll"><table id="d-t15"><thead><tr><th style="width:100px">主题</th><th style="width:46px">#</th><th>背景 / 大势句</th></tr></thead><tbody>
+<tr><td class="k">生态</td><td>1</td><td>绿色，是生命的颜色，更是当代中国发展最鲜明的底色。《中华人民共和国国民经济和社会发展第十四个五年规划和2035 年远景目标纲要》提出，推动绿色发展，促进人与自然和谐共生。</td></tr>
+<tr><td class="k">生态</td><td>2</td><td>当前，我国已进入生态文明建设的关键期、攻坚期和窗口期。</td></tr>
+<tr><td class="k">生态</td><td>3</td><td>生态文明建设是关系中华民族永续发展的根本大计，绿水青山就是金山银山的理念，已经成为全党全社会的共识和行动。在强国建设、民族复兴的新征程上，推动绿色发展、建设美丽中国，是中国式现代化的本质要求。</td></tr>
+<tr><td class="k">生态</td><td>4</td><td>中国式现代化是人与自然和谐共生的现代化，尊重自然、顺应自然、保护自然，是全面建设社会主义现代化国家的内在要求。当前，我国生态文明建设进入了以降碳为重点战略方向、推动减污降碳协同增效、促进经济社会发展全面绿色转型、实现生态环境质量改善由量变到质变的关键时期。</td></tr>
+<tr><td class="k">生态</td><td>5</td><td>生态兴则文明兴，生态衰则文明衰。纵观人类文明发展史，生态环境变化直接影响文明兴衰演替，新时代以来，我国以前所未有的力度推进生态文明建设，生态环境保护发生历史性、转折性、全局性变化，为中华民族永续发展筑牢了生态根基。</td></tr>
+<tr><td class="k">生态</td><td>6</td><td>环境就是民生，青山就是美丽，蓝天也是幸福。随着经济社会发展和人民生活水平提高，人民群众对优美生态环境的需求日益增长，从“盼温饱”到“盼环保”，从“求生存”到“求生态”，良好生态环境已经成为最普惠的民生福祉。</td></tr>
+<tr><td class="k">生态</td><td>7</td><td>绿色发展是新发展理念的重要组成部分，是解决我国生态环境问题的根本出路。完整、准确、全面贯彻新发展理念，加快推动生产方式和生活方式绿色低碳转型，协同推进降碳、减污、扩绿、增长，是实现高质量发展的必然选择。</td></tr>
+<tr><td class="k">生态</td><td>8</td><td>双碳目标是我国基于推动构建人类命运共同体的责任担当和实现可持续发展的内在要求作出的重大战略决策。稳妥有序推进碳达峰碳中和，推动能源清洁低碳安全高效利用，为全球气候治理贡献中国智慧和中国方案，是新时代生态文明建设的重要任务。</td></tr>
+<tr><td class="k">生态</td><td>9</td><td>生态环境保护和经济发展是辩证统一、相辅相成的，保护生态环境就是保护生产力，改善生态环境就是发展生产力。践行绿水青山就是金山银山的理念，推动生态产品价值实现，把生态优势转化为发展优势，走出一条生态优先、绿色发展的新路子。</td></tr>
+<tr><td class="k">生态</td><td>10</td><td>污染防治攻坚战是生态文明建设的重大举措，新时代以来，我国蓝天、碧水、净土保卫战取得重大成果，但生态环境保护结构性、根源性、趋势性压力尚未根本缓解。持续深入打好污染防治攻坚战，不断改善生态环境质量，是人民群众的热切期盼。</td></tr>
+<tr><td class="k">生态</td><td>11</td><td>生态安全是国家安全的重要组成部分，是经济社会持续健康发展的重要保障。统筹发展和安全，筑牢国家生态安全屏障，加强生态保护和修复，守住自然生态安全边界，是实现中华民族永续发展的底线要求。</td></tr>
+<tr><td class="k">生态</td><td>12</td><td>建设美丽中国是全面建设社会主义现代化国家的重要目标，生态文明建设人人有责、人人共建、人人共享。在新征程上，牢固树立社会主义生态文明观，推动形成全社会共同参与的生态环境保护大格局，才能让天更蓝、山更绿、水更清、环境更优美。二，法治类背景素材库：</td></tr>
+<tr><td class="k">法治</td><td>1</td><td>党的十七届四中全会以来，全面依法治国深入推进，法制观念深入人心，依法治国，全民守法已经成为社会共识。</td></tr>
+<tr><td class="k">法治</td><td>2</td><td>“立善法于天下，则天下治；立善法于一国，则一国治。”以习近平同志为核心的党中央对全面依法治国高度重视，从关系党和国家长治久安的战略高度来定位法治、布局法治、厉行法治，把全面依法治国放在党和国家事业发展全局中来谋划，来推进。</td></tr>
+<tr><td class="k">法治</td><td>3</td><td>法治兴则国兴，法治强则国强。行政执法是行政机关履行政府职能、管理经济社会事务的主要方式，是全面依法治国的关键环节，严格规范公正文明执法，是建设法治政府、维护社会公平正义的核心要求。</td></tr>
+<tr><td class="k">法治</td><td>4</td><td>行政执法工作面广量大，一头连着政府，一头连着群众，直接关系到群众的获得感、幸福感、安全感，直接关系到党和政府的公信力。新时代新征程，推动行政执法提质增效，是推进国家治理体系和治理能力现代化的重要抓手。</td></tr>
+<tr><td class="k">法治</td><td>5</td><td>全面依法治国是国家治理的一场深刻革命，法治政府建设是全面依法治国的重点任务和主体工程，而行政执法体制改革则是法治政府建设的关键突破口。当前，深化综合行政执法改革，提升执法效能，是时代发展的必然要求。</td></tr>
+<tr><td class="k">法治</td><td>6</td><td>执法为民是行政执法的根本宗旨。我们的执法权来自人民、服务人民，始终坚持以人民为中心的发展思想，把维护人民群众的合法权益作为执法工作的出发点和落脚点，是行政执法工作始终不变的初心使命。</td></tr>
+<tr><td class="k">法治</td><td>7</td><td>基层是行政执法的主战场，绝大多数行政执法行为发生在基层，基层执法能力直接关系到法治政府建设的成效。推动执法重心下移、资源下沉，提升基层执法队伍的专业化、规范化水平，是打通法治政府建设“最后一公里”的核心任务。</td></tr>
+<tr><td class="k">法治</td><td>8</td><td>法律的生命力在于实施，法律的权威也在于实施。行政执法是法律法规实施的主要渠道，只有坚持有法必依、执法必严、违法必究，坚决维护法律的尊严和权威，才能让法治成为社会共识和行为准则。</td></tr>
+<tr><td class="k">法治</td><td>9</td><td>新时代以来，我国行政执法体制改革持续深化，执法规范化水平显著提升，但与此同时，执法不规范、不透明、不文明等问题仍时有发生，破解执法难题、补齐执法短板，推动行政执法高质量发展，是当前法治建设的重要课题。三，乡村振兴类背景素材库：</td></tr>
+<tr><td class="k">乡村振兴</td><td>1</td><td>没有几亿农民的富裕是不完全的富裕，没有农村的现代化是不完整的现代化，没有乡村的振兴是不完全的振兴。</td></tr>
+<tr><td class="k">乡村振兴</td><td>2</td><td>民族要复兴，乡村必振兴。党的二十大报告中指出，全面建设社会主义现代化国家，最艰巨最繁重的任务依然在农村。</td></tr>
+<tr><td class="k">乡村振兴</td><td>3</td><td>2020 年，xxx 在中央农村工作会议上指出，脱贫攻坚取得胜利后，要全面推进乡村振兴，这是“三农”工作重心的历史性转移。</td></tr>
+<tr><td class="k">乡村振兴</td><td>4</td><td>党的二十大对全面推进乡村振兴作出了新部署，吹响了实现农业农村现代化的奋进号角，为做好当前及今后一个时期的“三农”工作提供了基本遵循。从打赢脱贫攻坚战到全面推进乡村振兴，新时代的中国正在描绘更加美好的时代画卷。</td></tr>
+<tr><td class="k">乡村振兴</td><td>5</td><td>党的二十大报告强调，加快建设农业强国，扎实推动乡村产业、人才、文化、生态、组织振兴。</td></tr>
+<tr><td class="k">乡村振兴</td><td>6</td><td>当前，乡村振兴战略作为“三农”工作的总抓手，已从脱贫攻坚的成果巩固，转向农业农村现代化的全面推进。在城乡发展差距仍较明显、农业基础依然薄弱的背景下。</td></tr>
+<tr><td class="k">乡村振兴</td><td>7</td><td>民族要复兴，乡村必振兴。全面建设社会主义现代化国家，最艰巨最繁重的任务依然在农村，最广泛最深厚的基础依然在农村，全面推进乡村振兴、加快建设农业强国，是新时代新征程“三农”工作的总抓手。</td></tr>
+<tr><td class="k">乡村振兴</td><td>8</td><td>农业强国是社会主义现代化强国的根基，保障粮食和重要农产品稳定安全供给始终是建设农业强国的头等大事。在强国建设、民族复兴的新征程上，牢牢守住十八亿亩耕地红线，全方位夯实粮食安全根基，是必须坚守的底线任务。</td></tr>
+<tr><td class="k">乡村振兴</td><td>9</td><td>脱贫攻坚战取得全面胜利后，“三农”工作的重心历史性转向全面推进乡村振兴。当前，巩固拓展脱贫攻坚成果、加快农业农村现代化、建设宜居宜业和美乡村，是新征程上赋予我们的重大历史使命。</td></tr>
+<tr><td class="k">乡村振兴</td><td>10</td><td>乡村振兴是包括产业振兴、人才振兴、文化振兴、生态振兴、组织振兴的全面振兴。破解城乡发展不平衡、农村发展不充分的矛盾，推动城乡融合发展，让农业成为有奔头的产业，让农民成为有吸引力的职业，让农村成为安居乐业的美丽家园，是乡村振兴的核心目标。四：民生类背景素材库：</td></tr>
+<tr><td class="k">民生</td><td>1</td><td>党的二十大报告将“坚持以人民为中心的发展思想”明确为前进道路上必须牢牢把握的五条重大原则之一，提出“维护人民根本利益，增进民生福祉，不断实现发展为了人民、发展依靠人民、发展成果由人民共享，让现代化建设成果更多更公平惠及全体人民”。</td></tr>
+<tr><td class="k">民生</td><td>2</td><td>党的十九届六中全会指出：“党的根基在人民、血脉在人民、力量在人民，人民是党执政兴国的最大底气。民心是最大的政治，正义是最强的力量。党的最大政治优势是密切联系群众，党执政后的最大危险是脱离群众。”</td></tr>
+<tr><td class="k">民生</td><td>3</td><td>习近平总书记指出：“我的执政理念，概括起来说就是：为人民服务，担当起该担当的责任。”</td></tr>
+<tr><td class="k">民生</td><td>4</td><td>在二十大报告中，习近平总书记着重指出，必须坚持在发展中保障和改善民生，鼓励共同奋斗创造美好生活，不断实现人民对美好生活的向往。</td></tr>
+<tr><td class="k">民生</td><td>5</td><td>党的二十大报告指出，完善社会治理体系，健全共建共治共享的社会治理制度，提升社会治理效能。社会治理现代化是国家治理体系的重要组成部分，是中国式现代化在社会领域的具体体现，是国家现代化建设的重要组成部分。</td></tr>
+<tr><td class="k">民生</td><td>6</td><td>当前在治理环境日趋复杂、群众需求多元多变的背景下，</td></tr>
+<tr><td class="k">民生</td><td>7</td><td>民生是人民幸福之基、社会和谐之本。新时代以来，我国民生保障水平持续提升，民生福祉不断增进，人民群众对美好生活的向往，始终是我们一切工作的出发点和落脚点。</td></tr>
+<tr><td class="k">民生</td><td>8</td><td>江山就是人民，人民就是江山。让老百姓过上好日子，是我们党一切工作的根本目的，从就业创业到教育医疗，从养老保障到住房安居，民生工作千头万绪，连着千家万户的幸福安康。</td></tr>
+<tr><td class="k">民生</td><td>9</td><td>中国式现代化是全体人民共同富裕的现代化，增进民生福祉是发展的根本目的。当前，我国社会主要矛盾已经转化为人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾，补齐民生短板、破解民生难题，是时代发展的必然要求。</td></tr>
+<tr><td class="k">民生</td><td>10</td><td>民之所望，政之所向。随着经济社会的持续发展，人民群众的民生需求已经从“有没有”转向“好不好”，从基本生存保障转向高品质生活追求，对民生工作提出了更高标准、更全维度的要求。</td></tr>
+<tr><td class="k">民生</td><td>11</td><td>民生无小事，枝叶总关情。从“一老一小”的照护保障，到困难群众的兜底帮扶，从基层公共服务的均等化供给，到民生领域改革的纵深推进，每一件民生实事，都关乎群众的获得感、幸福感、安全感。</td></tr>
+<tr><td class="k">民生</td><td>12</td><td>共同富裕是社会主义的本质要求，是人民群众的共同期盼。在全面建成小康社会的基础上，着力解决发展不平衡不充分问题，缩小城乡、区域、收入差距，让发展成果更多更公平惠及全体人民，是新征程上的重要使命。</td></tr>
+<tr><td class="k">民生</td><td>13</td><td>社会保障是民生安全网、社会稳定器。当前，我国社会保障体系建设进入提质增效的关键阶段，健全覆盖全民、统筹城乡、公平统一、安全规范、可持续的多层次社会保障体系，是增进民生福祉、实现共同富裕的重要制度保障。</td></tr>
+<tr><td class="k">民生</td><td>14</td><td>治国有常，利民为本。纵观百年党史，我们党始终与人民心连心、同呼吸、共命运，始终把为民造福作为最大的政绩，在新征程上，始终坚守为民初心，用心用情用力解决好群众急难愁盼问题，才能不断夯实党的执政根基。</td></tr>
+<tr><td class="k">民生</td><td>15</td><td>民生连着民心，民心凝聚民力。面对复杂多变的内外环境，只有始终把民生工作放在突出位置，以持续不断的民生投入、精准务实的惠民举措，让群众的日子越过越红火，才能凝聚起攻坚克难、奋勇前进的磅礴力量。五：经济类背景素材库：</td></tr>
+<tr><td class="k">经济</td><td>1</td><td>当前，我国已经由高速增长阶段转向高质量发展阶段，经济长期向好，物质基础丰富，人力资源丰富，市场空间广阔，发展韧性强劲。</td></tr>
+<tr><td class="k">经济</td><td>2</td><td>当前，我国经济已由高速增长阶段转向高质量发展阶段，正处于转变发展方式、优化经济结构、转换增长动力的攻关期</td></tr>
+<tr><td class="k">经济</td><td>3</td><td>在世界经济复苏乏力、保护主义抬头、地缘冲突加剧的背景下，我国经济发展面临“需求收缩、供给冲击、预期转弱”三重压力。</td></tr>
+<tr><td class="k">经济</td><td>4</td><td>发展是党执政兴国的第一要务，高质量发展是全面建设社会主义现代化国家的首要任务。当前，我国经济发展步入转型升级的关键阶段，以新质生产力赋能高质量发展，是时代赋予的核心命题。</td></tr>
+<tr><td class="k">经济</td><td>5</td><td>世界百年未有之大变局加速演进，全球产业链供应链深度重构，国内经济发展面临需求收缩、供给冲击、预期转弱三重压力，在变局中开新局、于危机中育先机，推动经济行稳致远，是必须答好的时代考卷。</td></tr>
+<tr><td class="k">经济</td><td>6</td><td>实体经济是一国经济的立身之本，是财富创造的根本源泉，是国家强盛的重要支柱。在现代化建设的新征程上，坚持把发展经济的着力点放在实体经济上，筑牢现代化经济体系的根基，是实现高质量发展的必然选择。</td></tr>
+<tr><td class="k">经济</td><td>7</td><td>构建以国内大循环为主体、国内国际双循环相互促进的新发展格局，是立足实现第二个百年奋斗目标、统筹发展和安全作出的战略决策。当前，畅通国民经济循环、激发内需潜力、提升产业链供应链韧性，是经济工作的核心抓手。</td></tr>
+<tr><td class="k">经济</td><td>8</td><td>改革开放是决定当代中国命运的关键一招，也是决定实现“两个一百年”奋斗目标、实现中华民族伟大复兴的关键一招。新时代新征程，持续深化市场化改革、扩大高水平对外开放，为经济发展注入源源不断的动力活力。</td></tr>
+<tr><td class="k">经济</td><td>9</td><td>新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征的先进生产力质态。当前，加快发展新质生产力，推动经济发展质量变革、效率变革、动力变革，是抢占未来发展制高点的核心举措。</td></tr>
+<tr><td class="k">经济</td><td>10</td><td>我国经济已由高速增长阶段转向高质量发展阶段，正处在转变发展方式、优化经济结构、转换增长动力的攻关期。在这一关键阶段，完整、准确、全面贯彻新发展理念，是破解发展难题、增强发展动力、厚植发展优势的根本遵循。六：文化类背景素材库</td></tr>
+<tr><td class="k">文化</td><td>1</td><td>文化兴则国运兴，文化强则民族强。当前，我国公共文化服务水平不断提高，文化事业和文化产业繁荣发展。</td></tr>
+<tr><td class="k">文化</td><td>2</td><td>习近平总书记指出，全面建设社会主义现代化国家，必须坚持中国特色社会主义文化发展道路，增强文化自信，围绕举旗帜、聚民心、育新人、兴文化、展形象建设社会主义文化强国，发展面向现代化、面向世界、面向未来的，民族的科学的大众的社会主义文化，激发全民族文化创新创造活力，增强实现中华民族伟大复兴的精神力量。</td></tr>
+<tr><td class="k">文化</td><td>3</td><td>改革开放几十年，随着中国国力的增强、国际地位的提升，中国传统文化的挖掘和传播也迎来了春天/党的十八大以来，我国大力传承和弘扬中华民族优秀传统文化，进一步促进传统文化与现代文明融合，推动一系列文明风尚建设，不断荡涤社会陋习和不良风气。步人新时代，生活富足、法治进步，我们的精神文明同样“水涨船高”。</td></tr>
+<tr><td class="k">文化</td><td>4</td><td>在实现中华民族伟大复兴的征程中，文化既是凝聚民族精神的根基，也是激发创新活力的源泉。当前，我国正从“文化资源大国”向“文化强国”迈进。</td></tr>
+<tr><td class="k">文化</td><td>5</td><td>文化兴则国运兴，文化强则民族强。没有高度的文化自信，没有文化的繁荣兴盛，就没有中华民族伟大复兴。在强国建设、民族复兴的新征程上，推进文化自信自强、建设社会主义文化强国，是我们必须肩负的时代使命。</td></tr>
+<tr><td class="k">文化</td><td>6</td><td>中华优秀传统文化是中华民族的根和魂，是我们在世界文化激荡中站稳脚跟的根基。新时代新征程，坚持把马克思主义基本原理同中国具体实际相结合、同中华优秀传统文化相结合，传承中华文脉、赓续历史血脉，是文化建设的根本遵循。</td></tr>
+<tr><td class="k">文化</td><td>7</td><td>中国式现代化是物质文明和精神文明相协调的现代化，物质贫困不是社会主义，精神贫乏也不是社会主义。在全面建设社会主义现代化国家的进程中，推动社会主义文化繁荣发展，丰富人民精神世界，是中国式现代化的本质要求。</td></tr>
+<tr><td class="k">文化</td><td>8</td><td>文化自信是更基础、更广泛、更深厚的自信，是一个国家、一个民族发展中最基本、最深沉、最持久的力量。当前，世界百年未有之大变局加速演进，思想文化领域交流交融交锋更加频繁，坚定文化自信，是我们应对一切风险挑战的精神底气。</td></tr>
+<tr><td class="k">文化</td><td>9</td><td>社会主义核心价值观是当代中国精神的集中体现，是凝聚中国力量的思想道德基础。以社会主义核心价值观为引领，铸牢全体人民共同的思想根基，凝聚起全社会团结奋进的磅礴力量，是文化建设的核心任务。</td></tr>
+<tr><td class="k">文化</td><td>10</td><td>人民是文化建设的主体，也是文化成果的最终享有者和受益者。坚持以人民为中心的创作导向和工作导向，大力发展文化事业和文化产业，完善公共文化服务体系，不断满足人民群众日益增长的精神文化需求，是文化建设的根本宗旨。</td></tr>
+<tr><td class="k">文化</td><td>11</td><td>中华文脉绵延不绝、生生不息，承载着中华民族的集体记忆和精神基因。推动中华优秀传统文化创造性转化、创新性发展，让收藏在博物馆里的文物、陈列在广阔大地上的遗产、书写在古籍里的文字都活起来，是新时代文化建设的重要使命。</td></tr>
+<tr><td class="k">文化</td><td>12</td><td>文旅融合是新时代文化发展和旅游发展的大趋势，文化是旅游的灵魂，旅游是文化的载体。推动文化和旅游深度融合发展，以文塑旅、以旅彰文，既能让人民群众在山水游历中感悟文化魅力，也能为文化繁荣发展注入新的活力。</td></tr>
+<tr><td class="k">文化</td><td>13</td><td>一个国家的文化软实力，从根本上说，取决于其核心价值观的生命力、凝聚力、感召力。在全球化背景下，加快构建中国话语和中国叙事体系，讲好中国故事、传播好中国声音，展现可信、可爱、可敬的中国形象，是文化强国建设的重要内容。</td></tr>
+<tr><td class="k">文化</td><td>14</td><td>文明因交流而多彩，因互鉴而丰富。中华文明始终以开放包容的姿态兼收并蓄、博采众长，新时代新征程，坚持不忘本来、吸收外来、面向未来，在文明交流互鉴中推动中华文化繁荣发展，为人类文明进步作出新的更大贡献。七，政治类背景素材库：</td></tr>
+<tr><td class="k">政治</td><td>1</td><td>百年征程波澜壮阔，初心使命历久弥坚。站在新的历史方位，坚持和加强党的全面领导、推进党的建设新的伟大工程，始终是中国式现代化行稳致远的根本政治保证。</td></tr>
+<tr><td class="k">政治</td><td>2</td><td>治国必先治党，党兴才能国强。当前，世界百年未有之大变局加速演进，国内改革发展稳定任务艰巨繁重，推进全面从严治党向纵深发展、以党的自我革命引领社会革命，是时代赋予的重大政治命题。</td></tr>
+<tr><td class="k">政治</td><td>3</td><td>中国式现代化是中国共产党领导的社会主义现代化，党的领导直接关系中国式现代化的根本方向、前途命运、最终成败。在强国建设、民族复兴的新征程上，始终把政治建设摆在首位，是我们应对一切风险挑战的定盘星。</td></tr>
+<tr><td class="k">政治</td><td>4</td><td>江山就是人民，人民就是江山。我们党自成立之日起，就把为中国人民谋幸福、为中华民族谋复兴作为自己的初心使命，始终坚持立党为公、执政为民，这是我们党永葆生机活力的根本所在。</td></tr>
+<tr><td class="k">政治</td><td>5</td><td>国家治理体系和治理能力现代化，是中国式现代化的重要题中之义。面对新时代新征程的新任务新要求，不断完善中国特色社会主义制度、提升治理效能，是实现长治久安、高质量发展的必然要求。</td></tr>
+<tr><td class="k">政治</td><td>6</td><td>旗帜鲜明讲政治，是我们党作为马克思主义政党的根本要求。在复杂多变的内外环境中，始终坚守政治忠诚、站稳政治立场、强化政治担当，是全体党员干部必须恪守的根本准则。</td></tr>
+<tr><td class="k">政治</td><td>7</td><td>民心是最大的政治，正义是最强的力量。新时代以来，我们党以“得罪千百人、不负十四亿”的使命担当祛疴治乱，党风政风为之一新，党心民心空前凝聚，为各项事业发展筑牢了坚实的政治根基。</td></tr>
+<tr><td class="k">政治</td><td>8</td><td>大道至简，实干为要。强国建设、民族复兴的宏伟蓝图，绝非轻轻松松、敲锣打鼓就能实现，必须以过硬的政治能力、务实的工作作风、强烈的责任担当，一步一个脚印把美好愿景变为现实。</td></tr>
+<tr><td class="k">政治</td><td>9</td><td>民主是全人类的共同价值，是中国共产党和中国人民始终不渝坚持的重要理念。全过程人民民主作为最广泛、最真实、最管用的民主，为国家发展汇聚了磅礴的民意力量、提供了坚实的制度保障。</td></tr>
+<tr><td class="k">政治</td><td>10</td><td>打铁必须自身硬。在长期执政的历史条件下，永葆党的先进性和纯洁性，不断提高党的执政能力和领导水平，是我们党团结带领全国各族人民应对风险挑战、开创美好未来的核心前提。八、科技创新背景素材库：</td></tr>
+<tr><td class="k">科技创新</td><td>1</td><td>当今世界，新一轮科技革命和产业变革突飞猛进，国际形势正经历深刻复杂的演变。在激烈的国际竞争中，我们要开辟发展新领域新赛道、塑造发展新动能新优势，从根本上说，还是要依靠科技创新-科技立则民族立，科技强则国家强。</td></tr>
+<tr><td class="k">科技创新</td><td>2</td><td>当前，全球科技创新进入密集活跃期，人工智能、量子信息、生物技术等前沿领域加速突破，全球创新版图深度重构，我国既面临“跟跑并跑”的赶超机遇，也存在关键领域“卡脖子”的风险挑战。</td></tr>
+<tr><td class="k">科技创新</td><td>3</td><td>科技是国家强盛之基，创新是民族进步之魂。高水平科技自立自强是国家发展的战略支撑，是全面建设社会主义现代化国家的核心驱动力，在强国建设、民族复兴的新征程上，加快建设科技强国，是我们必须肩负的时代使命。</td></tr>
+<tr><td class="k">科技创新</td><td>4</td><td>当前，新一轮科技革命和产业变革加速演进，全球科技创新进入空前密集活跃的时期，科技竞争成为国际战略博弈的主要战场，实现高水平科技自立自强，是我们在日趋激烈的国际竞争中赢得主动、赢得未来的关键。</td></tr>
+<tr><td class="k">科技创新</td><td>5</td><td>创新是引领发展的第一动力，新质生产力的核心要素是科技创新，以科技创新推动产业创新，是发展新质生产力、实现高质量发展的核心路径。在经济转型升级的关键阶段，强化科技创新的核心引领作用，是抢占未来发展制高点的必然选择。</td></tr>
+<tr><td class="k">科技创新</td><td>6</td><td>关键核心技术是要不来、买不来、讨不来的。面对全球科技格局的深刻调整和外部技术封锁打压，坚决打赢关键核心技术攻坚战，实现高水平科技自立自强，是统筹发展和安全、牢牢掌握发展主动权的根本保障。</td></tr>
+<tr><td class="k">科技创新</td><td>7</td><td>中国式现代化离不开科技现代化，科技现代化是中国式现代化的重要支撑和核心标志。新时代以来，我国科技创新能力实现系统性、整体性跃升，进入创新型国家行列，为全面建设社会主义现代化国家奠定了坚实的科技基础。</td></tr>
+<tr><td class="k">科技创新</td><td>8</td><td>科技创新的最终目的是服务于经济社会发展和广大人民群众。坚持科技为民，把科技创新同国家发展需要、人民美好生活期盼紧密结合起来，让科技创新成果更多更公平惠及全体人民，是科技创新工作始终不变的初心和方向。</td></tr>
+<tr><td class="k">科技创新</td><td>9</td><td>科技创新永无止境，开放合作是科技发展的必然趋势。在全球化背景下，坚持自主创新与开放合作相结合，积极融入全球创新网络，在开放合作中提升自身科技创新能力，为人类科技进步和共同发展贡献中国智慧和中国力量。九、宏观背景素材库：</td></tr>
+<tr><td class="k">宏观</td><td>1</td><td>百年初心历久弥坚，百年征程波澜壮阔。时代大潮中，xx 的宏伟蓝图已经磅礴展开。</td></tr>
+<tr><td class="k">宏观</td><td>2</td><td>当今世界正处于百年未有之大变局，中华民族伟大复兴进入关键时期，我国发展面临前所未有的挑战/</td></tr>
+<tr><td class="k">宏观</td><td>3</td><td>百年变局交织世纪疫情，面对风高浪急的国际环境和艰巨繁重的国内改革发展稳定任务。</td></tr>
+<tr><td class="k">宏观</td><td>4</td><td>当前，世界百年未有之大变局加速演进，全球产业链深度重构、科技革命浪潮奔涌、地缘格局深刻调整，我国正处于实现中华民族伟大复兴的关键时期，既面临“船到中流浪更急”的风险挑战，也迎来“登高望远天地宽”的战略机遇。</td></tr>
+<tr><td class="k">宏观</td><td>5</td><td>当前，世界之变、时代之变、历史之变正以前所未有的方式展开。</td></tr>
+<tr><td class="k">宏观</td><td>6</td><td>当前，国内环境深刻变化，世界格局动荡不安，我国面临着难得的历史机遇，也经历着一系列重大风险考验/</td></tr>
+<tr><td class="k">宏观</td><td>7</td><td>当前，国际环境波谲云诡，改革发展稳定任务依然艰巨繁重。但机遇与挑战并存，困难与希望同在。</td></tr>
+<tr><td class="k">宏观</td><td>8</td><td>当前，经济快速发展，社会急剧转型。</td></tr>
+<tr><td class="k">宏观</td><td>9</td><td>当前，我国经济社会发展进入新阶段，新时代新征程上，解决xx 问题具有强烈的现实紧迫性。</td></tr>
+<tr><td class="k">宏观</td><td>10</td><td>当今世界，新一轮科技革命和产业变革突飞猛进，国际形势正经历复杂深刻的演变。</td></tr>
+<tr><td class="k">宏观</td><td>11</td><td>当前和今后一个时期，我国发展仍然处于重要战略机遇期，但机遇和挑战都有新的发展变化。当今世界正经历百年未有之大变局，新一轮科技革命和产业变革深入发展，国际力量对比深刻调整，和平与发展仍然是时代主题，人类命运共同体理念深入人心。同时，国际环境日趋复杂，不稳定性不确定性明显增加，新冠肺炎疫情影响广泛深远，世界经济陷入低迷期，经济全球化遭遇逆流，全球能源供需版图深刻变革，国际经济政治格局复杂多变，世界进入动荡变革期，单边主义、保护主义、霸权主义对世界和平与发展构成威胁。</td></tr>
+</tbody></table></div>
+<div class="tip"><b>开头三段式</b>：背景句（1–2 句）＋ 问题/转折（1 句）＋ 总论点（1 句）。背景别写太长，100–150 字内必须亮观点。</div>
+</section>
+<section id="d-s16">
+<h2><span class="num">16</span>分论点万能句库（可搜索 · 150 句）</h2>
+<p class="lead">专攻论证段的「段首句 / 析句」，多为「……让……，……让……，更让……」的排比递进句，自带正反对比。按行政执法、民生服务、治理、基层治理、乡村振兴 5 类分组。</p>
+<div class="searchbar"><input id="d-q16" type="text" placeholder="搜索：执法、治理、服务、乡村、智慧、数字…"><span class="cnt" id="d-cnt16"></span></div>
+<div class="tbl-scroll"><table id="d-t16"><thead><tr><th style="width:100px">类别</th><th style="width:46px">#</th><th>万能分论点句</th></tr></thead><tbody>
+<tr><td class="k">行政执法</td><td>1</td><td>行政执法的温度，影响着群众对法治的感知，影响着政府与群众的距离，更影响着社会治理的效能。</td></tr>
+<tr><td class="k">行政执法</td><td>2</td><td>执法规范的程度，关系着法律权威的树立，关系着市场秩序的稳定，更关系着公平正义的彰显。</td></tr>
+<tr><td class="k">行政执法</td><td>3</td><td>柔性执法的推进，化解了执法中的矛盾，温暖了群众的心田，更凝聚了社会治理的合力。</td></tr>
+<tr><td class="k">行政执法</td><td>4</td><td>执法“一刀切”的做法，忽视了不同群体的诉求，激化了基层治理的冲突，更违背了执法为民的初衷。</td></tr>
+<tr><td class="k">行政执法</td><td>5</td><td>智慧执法的普及，提升了行政执法的效率，降低了执法资源的消耗，更增强了监管的精准度。</td></tr>
+<tr><td class="k">行政执法</td><td>6</td><td>协同执法的深化，打破了部门之间的壁垒，避免了重复执法的乱象，更保障了执法工作的协同性。</td></tr>
+<tr><td class="k">行政执法</td><td>7</td><td>阳光执法的落实，保障了群众的知情权，强化了社会的监督权，更维护了行政执法的公正性。</td></tr>
+<tr><td class="k">行政执法</td><td>8</td><td>执法不文明的行为，损害了群众的合法权益，削弱了政府的公信力，更破坏了法治建设的根基。</td></tr>
+<tr><td class="k">行政执法</td><td>9</td><td>说理式执法的推广，拉近了执法者与群众的距离，赢得了群众对执法的认同，更促进了社会的和谐共治。</td></tr>
+<tr><td class="k">行政执法</td><td>10</td><td>执法队伍素养的提升，改善了行政执法的质量，提升了执法决策的科学性，更增强了群众的获得感。</td></tr>
+<tr><td class="k">行政执法</td><td>11</td><td>容错纠错机制的完善，减轻了执法人员的顾虑，鼓励了执法方式的创新，更激发了执法工作的活力。</td></tr>
+<tr><td class="k">行政执法</td><td>12</td><td>跨区域执法的协同，解决了地域执法的难题，打击了跨域违法的行为，更维护了社会秩序的统一。</td></tr>
+<tr><td class="k">行政执法</td><td>13</td><td>执法流程的简化，减少了市场主体的负担，提高了政务服务的效率，更优化了营商环境的建设。</td></tr>
+<tr><td class="k">行政执法</td><td>14</td><td>过度执法的现象，侵犯了群众的正当权益，扭曲了执法的价值导向，更影响了社会的稳定和谐。</td></tr>
+<tr><td class="k">行政执法</td><td>15</td><td>精准执法的实施，聚焦了民生领域的痛点，破解了基层治理的难点，更回应了群众的迫切期盼。</td></tr>
+<tr><td class="k">行政执法</td><td>16</td><td>执法监督的强化，约束了执法人员的权力，规范了行政执法的行为，更筑牢了法治监督的防线。</td></tr>
+<tr><td class="k">行政执法</td><td>17</td><td>新业态执法的创新，适应了经济发展的趋势，保障了新兴行业的秩序，更推动了产业的健康发展。</td></tr>
+<tr><td class="k">行政执法</td><td>18</td><td>执法理念的转变，从“管理”转向“服务”，从“刚性”转向“柔性”，更契合了新时代治理的要求。</td></tr>
+<tr><td class="k">行政执法</td><td>19</td><td>农村执法的加强，守护了乡村的生态环境，保障了农民的合法权益，更助力了乡村振兴的推进。</td></tr>
+<tr><td class="k">行政执法</td><td>20</td><td>执法公信力的提升，增强了群众对政府的信任，提升了法律的社会认同，更促进了法治社会的构建。</td></tr>
+<tr><td class="k">行政执法</td><td>21</td><td>执法不作为的问题，纵容了违法违规的行为，损害了公共利益的安全，更辜负了群众的殷切期望。</td></tr>
+<tr><td class="k">行政执法</td><td>22</td><td>联合执法的开展，整合了不同部门的资源，形成了执法监管的合力，更提高了违法打击的力度。</td></tr>
+<tr><td class="k">行政执法</td><td>23</td><td>执法透明度的提高，消除了群众对执法的疑虑，提升了行政执法的公开性，更保障了社会的公平正义。</td></tr>
+<tr><td class="k">行政执法</td><td>24</td><td>未成年人保护执法的强化，净化了校园周边的环境，守护了未成年人的成长，更筑牢了未来发展的根基。</td></tr>
+<tr><td class="k">行政执法</td><td>25</td><td>执法方式的优化，让执法更有温度，让治理更有精度，更让群众更有幸福感。</td></tr>
+<tr><td class="k">行政执法</td><td>26</td><td>生态环保执法的严格，守护了绿水青山的生态，保障了可持续发展的大局，更满足了群众对美好环境的需求。</td></tr>
+<tr><td class="k">行政执法</td><td>27</td><td>执法标准化的建设，统一了执法的尺度标准，规范了执法的操作流程，更提升了行政执法的权威性。</td></tr>
+<tr><td class="k">行政执法</td><td>28</td><td>民生领域执法的发力，解决了群众的急难愁盼，维护了基本的民生权益，更夯实了社会稳定的基础。</td></tr>
+<tr><td class="k">行政执法</td><td>29</td><td>执法与司法衔接的顺畅，提高了案件处理的效率，保障了法律实施的连贯，更维护了法律体系的统一。</td></tr>
+<tr><td class="k">行政执法</td><td>30</td><td>行政执法的创新变革，推动了治理能力的提升，促进了社会秩序的优化，更书写了基层善治的新篇章。</td></tr>
+<tr><td class="k">民生服务</td><td>1</td><td>优质民生服务，是化解基层矛盾的“缓冲带”，是凝聚社会共识的“黏合剂”，是维护社会稳定的“压舱石”。</td></tr>
+<tr><td class="k">民生服务</td><td>2</td><td>完善民生服务，让政策红利直达末梢，让群众需求精准响应，让发展成果全民共享。</td></tr>
+<tr><td class="k">民生服务</td><td>3</td><td>民生服务的温度，藏在窗口办事的耐心里，显在政策落实的效率里，落在群众满意的笑容里。</td></tr>
+<tr><td class="k">民生服务</td><td>4</td><td>精细化民生服务，破解了“急难愁盼”的堵点，填补了“服务空白”的盲点，打通了“最后一公里”的断点。</td></tr>
+<tr><td class="k">民生服务</td><td>5</td><td>民生服务的升级，推动治理从“政府供给”转向“群众需求”，从“粗放管理”转向“精准滴灌”，从“线下奔波”转向“线上直达”。</td></tr>
+<tr><td class="k">民生服务</td><td>6</td><td>健全就业服务，稳住了千家万户的生计，提振了劳动者的信心，夯实了经济发展的根基。</td></tr>
+<tr><td class="k">民生服务</td><td>7</td><td>优化养老服务，温暖了长者的晚年时光，减轻了家庭的照护压力，彰显了社会的文明温度。</td></tr>
+<tr><td class="k">民生服务</td><td>8</td><td>强化医疗服务，筑牢了抵御疾病的防线，守护了群众的生命健康，托起了家庭的幸福希望。</td></tr>
+<tr><td class="k">民生服务</td><td>9</td><td>民生服务的均等化，拉近了城乡发展的差距，保障了群体间的公平，促进了社会的和谐共进。</td></tr>
+<tr><td class="k">民生服务</td><td>10</td><td>数字化民生服务，让数据多跑路，让群众少跑腿，让服务更高效。</td></tr>
+<tr><td class="k">民生服务</td><td>11</td><td>普惠性民生服务，为困难群体撑起了“保障伞”，为普通民众织密了“安全网”，为社会发展守住了“民生线”。</td></tr>
+<tr><td class="k">民生服务</td><td>12</td><td>民生服务的创新，体现了“人民至上”的理念，彰显了“守正创新”的智慧，展现了“务实担当”的作风。</td></tr>
+<tr><td class="k">民生服务</td><td>13</td><td>教育服务的完善，点亮了孩子的成长梦想，减轻了家庭的养育负担，积蓄了国家的发展后劲。</td></tr>
+<tr><td class="k">民生服务</td><td>14</td><td>民生服务的广度，决定了保障覆盖的范围，影响了社会公平的程度，关系到共同富裕的进程。</td></tr>
+<tr><td class="k">民生服务</td><td>15</td><td>基层民生服务，是政策落地的“最后一站”，是民情民意的“前沿哨位”，是治理效能的“检验窗口”。</td></tr>
+<tr><td class="k">民生服务</td><td>16</td><td>贴心的民生服务，化解了群众的“心头忧”，温暖了群众的“心中暖”，赢得了群众的“心底信”。</td></tr>
+<tr><td class="k">民生服务</td><td>17</td><td>民生服务的精准度，体现在对需求的精准识别上，落实在对问题的精准解决上，彰显在对效果的精准评估上。</td></tr>
+<tr><td class="k">民生服务</td><td>18</td><td>生态民生服务的提升，让天更蓝，让水更清，让群众的生活品质更高。</td></tr>
+<tr><td class="k">民生服务</td><td>19</td><td>民生服务的标准化，避免了“冷热不均”的现象，确保了“一视同仁”的待遇，维护了“公平公正”的原则。</td></tr>
+<tr><td class="k">民生服务</td><td>20</td><td>应急民生服务的提速，缩短了风险响应的时间，降低了群众损失的程度，增强了城市发展的韧性。</td></tr>
+<tr><td class="k">民生服务</td><td>21</td><td>民生服务的透明度，保障了群众的知情权，提升了政府的公信力，确保了民生资金的高效用。</td></tr>
+<tr><td class="k">民生服务</td><td>22</td><td>托育服务的发展，解决了家长的“带娃难”，呵护了幼儿的“健康长”，支撑了人口的“均衡增”。</td></tr>
+<tr><td class="k">民生服务</td><td>23</td><td>民生服务的持续优化，让城市更有吸引力，让人才更愿留下来，让发展更具竞争力。</td></tr>
+<tr><td class="k">民生服务</td><td>24</td><td>交通民生服务的升级，畅通了城乡循环的脉络，便利了群众出行的脚步，激活了区域发展的动能。</td></tr>
+<tr><td class="k">民生服务</td><td>25</td><td>对特殊群体的民生服务，彰显了社会的温情，传递了政策的暖意，诠释了文明的内涵。</td></tr>
+<tr><td class="k">民生服务</td><td>26</td><td>民生服务的协同化，打破了部门间的壁垒，整合了服务资源的优势，提升了群众办事的体验。</td></tr>
+<tr><td class="k">民生服务</td><td>27</td><td>前瞻性的民生服务，能预判潜在的需求，防范未来的风险，铺垫长远的发展。</td></tr>
+<tr><td class="k">民生服务</td><td>28</td><td>民生服务的反馈机制，是校准服务偏差的“导航仪”，是倾听群众呼声的“传声筒”，是推动服务升级的“催化剂”。</td></tr>
+<tr><td class="k">民生服务</td><td>29</td><td>农村民生服务的改善，缩小了城乡的差距，激活了乡村的活力，夯实了振兴的基础。</td></tr>
+<tr><td class="k">民生服务</td><td>30</td><td>高质量的民生服务，是国家治理能力的体现，是人民幸福生活的保障，是民族复兴路上的支撑。</td></tr>
+<tr><td class="k">治理</td><td>1</td><td>治理有力，能让社会秩序更井然，能让公共服务更优质，能让群众生活更安心；</td></tr>
+<tr><td class="k">治理</td><td>2</td><td>治理低效，会让矛盾纠纷难化解，会让资源配置显失衡，会让发展活力受抑制；</td></tr>
+<tr><td class="k">治理</td><td>3</td><td>科学治理，可推动政策落地更精准，可促进城乡发展更协调，可保障公平正义更彰显；</td></tr>
+<tr><td class="k">治理</td><td>4</td><td>粗放治理，易导致环境破坏难修复，易造成公共资源遭浪费，易引发民生诉求被忽视；</td></tr>
+<tr><td class="k">治理</td><td>5</td><td>智慧治理，能让数据流通更顺畅，能让决策制定更科学，能让治理效能再提升；</td></tr>
+<tr><td class="k">治理</td><td>6</td><td>滞后治理，会让风险隐患难预判，会让突发状况难应对，会让治理成本徒增加；</td></tr>
+<tr><td class="k">治理</td><td>7</td><td>协同治理，可凝聚多方合力破难题，可打通部门壁垒提效率，可构建共治格局强根基；</td></tr>
+<tr><td class="k">治理</td><td>8</td><td>分散治理，易出现责任推诿扯不清，易造成工作重复无实效，易形成治理盲区留隐患；</td></tr>
+<tr><td class="k">治理</td><td>9</td><td>依法治理，能让权力运行受约束，能让社会行为有规范，能让公平正义有保障；</td></tr>
+<tr><td class="k">治理</td><td>10</td><td>人治主导，会让规则权威遭削弱，会让办事流程变随意，会让群众信任渐流失；</td></tr>
+<tr><td class="k">治理</td><td>11</td><td>精细治理，可让服务供给更贴心，可让问题解决更及时，可让治理覆盖无死角；</td></tr>
+<tr><td class="k">治理</td><td>12</td><td>笼统治理，易导致政策执行打折扣，易造成服务供给不精准，易引发群众诉求难满足；</td></tr>
+<tr><td class="k">治理</td><td>13</td><td>系统治理，能统筹发展与安全，能兼顾当前与长远，能平衡局部与全局；</td></tr>
+<tr><td class="k">治理</td><td>14</td><td>片面治理，会顾此失彼留短板，会急功近利埋隐患，会因小失大损全局；</td></tr>
+<tr><td class="k">治理</td><td>15</td><td>民主治理，可汇聚民智促决策，可倾听民意优服务，可凝聚民心强共识；</td></tr>
+<tr><td class="k">治理</td><td>16</td><td>封闭治理，易脱离实际犯错误，易堵塞言路失民心，易固步自封难进步；</td></tr>
+<tr><td class="k">治理</td><td>17</td><td>创新治理，能破解老旧难题开新局，能激活发展动能添活力，能顺应时代潮流谋发展；</td></tr>
+<tr><td class="k">治理</td><td>18</td><td>守旧治理，会墨守成规难突破，会应对新题无良方，会落后时代遭淘汰；</td></tr>
+<tr><td class="k">治理</td><td>19</td><td>廉洁治理，能净化政治生态正风气，能赢得群众信赖树形象，能保障治理效能不打折；</td></tr>
+<tr><td class="k">治理</td><td>20</td><td>腐败治理，会侵蚀公共利益损民生，会破坏公平公正乱秩序，会动摇治理根基失民心；</td></tr>
+<tr><td class="k">治理</td><td>21</td><td>基层治理，可筑牢平安防线护稳定，可畅通民意渠道解民忧，可夯实治理根基强底盘；</td></tr>
+<tr><td class="k">治理</td><td>22</td><td>基层薄弱，会让矛盾上行增压力，会让服务缺位失民心，会让治理大厦遇风险；</td></tr>
+<tr><td class="k">治理</td><td>23</td><td>跨界治理，能破解区域壁垒促协同，能整合跨界资源提效能，能应对跨界难题保平安；</td></tr>
+<tr><td class="k">治理</td><td>24</td><td>跨界缺位，会让跨界问题难解决，会让资源整合受阻碍，会让协同发展遇瓶颈；</td></tr>
+<tr><td class="k">治理</td><td>25</td><td>长效治理，可固化治理成果防反弹，可完善治理机制提质效，可保障发展稳定可持续；</td></tr>
+<tr><td class="k">治理</td><td>26</td><td>临时治理，会治标不治本留后患，会反复折腾耗资源，会让治理成效难持久；</td></tr>
+<tr><td class="k">治理</td><td>27</td><td>包容治理，能尊重差异促和谐，能保障权益护公平，能凝聚合力共发展；</td></tr>
+<tr><td class="k">治理</td><td>28</td><td>排他治理，会激化矛盾添隔阂，会损害权益失公平，会瓦解合力阻发展；</td></tr>
+<tr><td class="k">治理</td><td>29</td><td>数字治理，能让办事流程更便捷，能让监管执法更精准，能让治理服务更智能；</td></tr>
+<tr><td class="k">治理</td><td>30</td><td>数字滞后，会让数据壁垒难打破，会让治理手段显陈旧，会让服务体验打折扣。</td></tr>
+<tr><td class="k">基层治理</td><td>1</td><td>基层治理到位，能让邻里矛盾少发生，能让民生服务更贴心，能让社区氛围更和谐；</td></tr>
+<tr><td class="k">基层治理</td><td>2</td><td>基层治理薄弱，会让民生诉求难落地，会让公共事务遭搁置，会让群众信任渐流失；</td></tr>
+<tr><td class="k">基层治理</td><td>3</td><td>精细基层治理，可让服务覆盖无死角，可让问题解决不拖延，可让群众满意再提升；</td></tr>
+<tr><td class="k">基层治理</td><td>4</td><td>粗放基层治理，易导致政策执行打折扣，易造成资源配置不合理，易引发民怨积少成多；</td></tr>
+<tr><td class="k">基层治理</td><td>5</td><td>协同基层治理，能凝聚村社合力破难题，能打通服务壁垒提效率，能构建共治共享新格局；</td></tr>
+<tr><td class="k">基层治理</td><td>6</td><td>分散基层治理，会出现责任推诿扯不清，会造成工作重复无实效，会形成治理盲区留隐患；</td></tr>
+<tr><td class="k">基层治理</td><td>7</td><td>智慧基层治理，可让数据跑腿减负担，可让决策制定更科学，可让治理效能再升级；</td></tr>
+<tr><td class="k">基层治理</td><td>8</td><td>滞后基层治理，易让风险隐患早萌芽，易让突发状况难应对，易让治理成本徒增加；</td></tr>
+<tr><td class="k">基层治理</td><td>9</td><td>民主基层治理，能倾听群众真实心声，能汇聚民间智慧良策，能凝聚民心共识强根基；</td></tr>
+<tr><td class="k">基层治理</td><td>10</td><td>封闭基层治理，会脱离实际拍脑袋，会堵塞言路失民心，会固步自封难进步；</td></tr>
+<tr><td class="k">基层治理</td><td>11</td><td>法治基层治理，可让村规民约有权威，可让矛盾化解有依据，可让公平正义有保障；</td></tr>
+<tr><td class="k">基层治理</td><td>12</td><td>人治基层治理，易导致办事流程变随意，易造成权益保障不到位，易引发群众不满积怨；</td></tr>
+<tr><td class="k">基层治理</td><td>13</td><td>暖心基层治理，能让特殊群体受关爱，能让困难群众得帮扶，能让社区温情暖人心；</td></tr>
+<tr><td class="k">基层治理</td><td>14</td><td>冷漠基层治理，会让群众诉求无人应，会让急难愁盼无人管，会让干群关系渐疏远；</td></tr>
+<tr><td class="k">基层治理</td><td>15</td><td>高效基层治理，可让办事流程更便捷，可让政策落地更迅速，可让发展活力再释放；</td></tr>
+<tr><td class="k">基层治理</td><td>16</td><td>低效基层治理，易让好政策悬半空，易让民生事拖成难题，易让发展机遇白白丢；</td></tr>
+<tr><td class="k">基层治理</td><td>17</td><td>务实基层治理，能聚焦群众急难愁盼，能破解基层突出问题，能夯实治理工作硬基础；</td></tr>
+<tr><td class="k">基层治理</td><td>18</td><td>形式基层治理，会搞表面文章走过场，会让实际问题仍存在，会让群众失望又寒心；</td></tr>
+<tr><td class="k">基层治理</td><td>19</td><td>清廉基层治理，可净化基层政治生态，可守护集体公共利益，可赢得群众真心信赖；</td></tr>
+<tr><td class="k">基层治理</td><td>20</td><td>失范基层治理，易滋生微腐败坏风气，易损害群众切身利益，易动摇基层治理根基；</td></tr>
+<tr><td class="k">基层治理</td><td>21</td><td>多元基层治理，能吸纳社会组织参与，能整合多方资源赋能，能丰富服务供给形式；</td></tr>
+<tr><td class="k">基层治理</td><td>22</td><td>单一基层治理，会让服务能力受局限，会让治理手段显陈旧，会让群众需求难满足；</td></tr>
+<tr><td class="k">基层治理</td><td>23</td><td>前瞻基层治理，可提前预判风险隐患，可提前完善配套措施，可提前化解潜在矛盾；</td></tr>
+<tr><td class="k">基层治理</td><td>24</td><td>被动基层治理，会被问题推着往前走，会被风险牵着鼻子走，会让治理工作陷被动；</td></tr>
+<tr><td class="k">基层治理</td><td>25</td><td>文化基层治理，能弘扬文明新风尚，能培育社区凝聚力，能让邻里相处更和睦；</td></tr>
+<tr><td class="k">基层治理</td><td>26</td><td>无魂基层治理，易导致村风民风失引导，易造成社区文化无活力，易让邻里关系变淡漠；</td></tr>
+<tr><td class="k">基层治理</td><td>27</td><td>坚实基层治理，能筑牢平安建设防线，能保障生产生活有序，能让群众安居又乐业；</td></tr>
+<tr><td class="k">基层治理</td><td>28</td><td>松散基层治理，会让治安隐患难消除，会让公共秩序遭扰乱，会让群众生活不安心；</td></tr>
+<tr><td class="k">基层治理</td><td>29</td><td>创新基层治理，可探索服务新模式，可破解老旧治理难题，可顺应时代发展新需求；</td></tr>
+<tr><td class="k">基层治理</td><td>30</td><td>守旧基层治理，会墨守成规难突破，会应对新题无良方，会落后时代遭淘汰。</td></tr>
+<tr><td class="k">乡村振兴</td><td>1</td><td>让乡村产业从“单打独斗”变“集群发展”，让农民收入从“单一微薄”变“多元丰厚”，让乡村经济从“被动输血”变“主动造血”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>2</td><td>让返乡人才“有用武之地”，让本土人才“有成长空间”，让青年人才“有扎根底气”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>3</td><td>让农耕文化“活起来”，让民俗风情“火起来”，让乡村文脉“传下去”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>4</td><td>让荒山变青山，让浊水变清水，让乡村变景区。</td></tr>
+<tr><td class="k">乡村振兴</td><td>5</td><td>让基层组织“强起来”，让治理效能“提上来”，让群众人心“聚起来”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>6</td><td>让公路通到家门口，让网络覆盖全村组，让水电保障无顾虑。</td></tr>
+<tr><td class="k">乡村振兴</td><td>7</td><td>让乡村学校“有好老师”，让乡村医院“有好设备”，让乡村老人“有好照料”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>8</td><td>让种粮有“好收益”，让务工有“好岗位”，让创业有“好环境”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>9</td><td>让城乡要素“双向流动”，让城乡服务“差距缩小”，让城乡发展“齐头并进”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>10</td><td>让农业生产“靠科技”，让耕种收割“省人力”，让农产品质“更优质”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>11</td><td>让矛盾纠纷“早化解”，让乡村治安“无死角”，让治理服务“更精准”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>12</td><td>让田园风光“成卖点”，让民俗体验“受追捧”，让乡村旅游“旺起来”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>13</td><td>让生态产品“卖好价”，让绿色发展“成共识”，让生态红利“惠全民”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>14</td><td>让村民精神“不空虚”，让乡村风气“更淳朴”，让集体荣誉感“倍增强”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>15</td><td>让闲置土地“活起来”，让闲置农房“火起来”，让沉睡资源“转起来”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>16</td><td>让乡村教育“不掉队”，让孩子成长“有希望”，让知识改变“人生路”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>17</td><td>让小病“不出村”，让慢病“能管理”，让大病“有保障”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>18</td><td>让养老“不孤单”，让晚年“有尊严”，让生活“有滋味”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>19</td><td>让陈规陋习“退出去”，让文明新风“树起来”，让乡村形象“亮起来”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>20</td><td>让农产品“卖得远”，让电商服务“沉到底”，让农户经营“更省心”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>21</td><td>让农产品“有标准”，让乡村品牌“有口碑”，让市场竞争力“再提升”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>22</td><td>让就业岗位“送上门”，让增收渠道“多起来”，让生活底气“足起来”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>23</td><td>让金融活水“润乡村”，让创业贷款“不难办”，让产业发展“有资金”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>24</td><td>让村庄规划“有特色”，让民居建设“更宜居”，让公共空间“更实用”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>25</td><td>让农产品“卖原粮”变“卖产品”，让产业链“短而散”变“长而全”，让附加值“低水平”变“高水平”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>26</td><td>让数字技术“助耕种”，让线上服务“惠民生”，让乡村治理“更智慧”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>27</td><td>让村庄“无垃圾”，让河水“变清澈”，让庭院“有绿意”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>28</td><td>让农户“抱成团”，让产业“聚成链”，让发展“拧成绳”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>29</td><td>让技能培训“接地气”，让人才成长“有路径”，让乡村发展“有支撑”。</td></tr>
+<tr><td class="k">乡村振兴</td><td>30</td><td>让政策红利“持续享”，让发展活力“不断涌”，让乡村未来“更可期”。</td></tr>
+</tbody></table></div>
+<div class="tip"><b>正反对照是加分项</b>：写「治理有力」时顺带一句「治理低效会……」，一正一反把道理说透，比单面论述更有说服力。</div>
+</section>
+<section id="d-s17">
+<h2><span class="num">17</span>规范表达词库（可搜索 · 439 条）</h2>
+<p class="lead">申论的本质是「把大白话换成规范词」。本库把材料里的口语化描述一一对应到规范表述——归纳概括题直接用来踩点，大作文用来提升语言档次。搜关键词或规范词即可。</p>
+<div class="searchbar"><input id="d-q17" type="text" placeholder="搜索规范词或材料描述，如：营销、加工、监管、数字、人才、文化…"><span class="cnt" id="d-cnt17"></span></div>
+<div class="tbl-scroll"><table id="d-t17"><thead><tr><th style="width:180px">规范词</th><th>材料中的对应表述（看到这些就往上靠）</th></tr></thead><tbody>
+<tr><td class="k">拓展营销渠道</td><td>创新发展线下销售渠道的同时，还要利用网络建立线上销售体系，并鼓励发展直供销售、直播带货等新方式</td></tr>
+<tr><td class="k">初加工</td><td>对小麦进行清理、配麦、磨粉、筛理、分级、包装等简单加工处理，制成小麦面粉</td></tr>
+<tr><td class="k">精深加工</td><td>将茶叶进一步加工为抹茶、茶菜肴、保健品、化妆品等</td></tr>
+<tr><td class="k">绿色技术</td><td>为避免环境遭到污染和破坏，要推广应用‘无公害化’技术、工艺和产品</td></tr>
+<tr><td class="k">优化生产区域布局</td><td>引导各茶区调整优化产业布局，科学划定绿茶、红茶、乌龙茶等主要茶品生产优势区</td></tr>
+<tr><td class="k">提升生产能力</td><td>自从提高了茶园的管理智能化和采摘机械化水平后，今年的茶叶产量比去年增加了5%</td></tr>
+<tr><td class="k">加强组织领导</td><td>茶叶主产省要制定促进茶产业健康发展的总体规划或指导意见，推动建立省级领导担任茶全产业链‘链长’的制度</td></tr>
+<tr><td class="k">加强政策支持</td><td>对符合条件的经营主体予以必要的信贷保险支持，按照相关政策要求，满足相关主体用地需求</td></tr>
+<tr><td class="k">加强市场监管</td><td>严格市场准入，规范生产经营主体的市场行为，依法打击违法行为，加强市场秩序维护</td></tr>
+<tr><td class="k">强化科学技术支撑</td><td>促进科研单位、推广机构和龙头企业合作，集中攻关关键技术，研发推广先进装备</td></tr>
+<tr><td class="k">促进全链条融合</td><td>引导各茶区统筹协调茶产业各环节各主体建设茶全产业链重点链和典型县</td></tr>
+<tr><td class="k">文旅融合</td><td>开发‘茶旅+民宿’茶旅+研学’等新业态</td></tr>
+<tr><td class="k">加强人才队伍建设</td><td>建立健全科研人员校企、院企共建双聘机制；加强茶产业推广技术人才培养；培育一批茶产业领军人才、技术团队和企业家</td></tr>
+<tr><td class="k">产品定制</td><td>根据不同用户特定的需求，提供相应产品</td></tr>
+<tr><td class="k">市场化</td><td>企业的生产要素（资本、劳动、土地和企业家）和产品的获取、交易都由市场提供和决定</td></tr>
+<tr><td class="k">集约化</td><td>集合要素优势，节约生产成本，提高单位生产效益</td></tr>
+<tr><td class="k">专业化</td><td>教师要胜任班主任的角色，就必须具备相应的心理学、教育学、管理学等多方面的知识，同时还要不断地学习，不断地了解学生的情况，</td></tr>
+<tr><td class="k">数字化</td><td>利用计算机、通信、网络等技术统计信息</td></tr>
+<tr><td class="k">智能化</td><td>在物联网、大数据等新技术的支持下，无人驾驶汽车、扫地机器人等越来越多的新产品问世</td></tr>
+<tr><td class="k">精细化</td><td>具体量化和细化，要‘精到点上，细到实处’</td></tr>
+<tr><td class="k">线上线下联动</td><td>不仅要保证面对面教学有序进行，还需利用互联网、移动设备等进行网上教学，二者共同发力</td></tr>
+<tr><td class="k">数据共享</td><td>某部门收集到的信息数据可以被其他部门使用</td></tr>
+<tr><td class="k">人才支撑</td><td>优先满足脱贫地区对高素质教师的补充需求，鼓励和引导各方面人才向国家乡村振兴重点帮扶县基层流动</td></tr>
+<tr><td class="k">股份制</td><td>以入股方式把分散的、属于不同人所有的生产要素集中起来，统一使用，合理经营，自负盈亏，按股分红</td></tr>
+<tr><td class="k">复合型人才</td><td>多才多艺，能够在很多领域大显身手的人</td></tr>
+<tr><td class="k">龙头企业</td><td>具有突出影响力、具有标杆性的企业</td></tr>
+<tr><td class="k">提高自主创新能力</td><td>以前都是使用其他国家和地区的技术，现在我们可以靠自己了，不用再看别国的脸色</td></tr>
+<tr><td class="k">法治化</td><td>让法治精神渗透到国家和社会治理中</td></tr>
+<tr><td class="k">国际化</td><td>某企业的生产经营活动不局限于国内,而是面向世界经济舞台</td></tr>
+<tr><td class="k">优化营商环境</td><td>加快完善企业在开设、经营、贸易活动等方面发展条件</td></tr>
+<tr><td class="k">增强公共服务供给</td><td>支持中部省份共建共享一批产教融合实训基地，支持建设若干区域医疗中心，推进国家级文化产业示范园区建设</td></tr>
+<tr><td class="k">创新社会治理</td><td>信息时代，要打破传统思维，推动政府部门业务数据互联共享，打造智慧城市、智慧社区</td></tr>
+<tr><td class="k">协调发展</td><td>统筹推进城市提升和乡村振兴</td></tr>
+<tr><td class="k">城乡融合发展</td><td>推进以城带乡、以工促农，促进城市与乡村统一、协调发展</td></tr>
+<tr><td class="k">推进城市品质提升</td><td>实施城市更新行动，推进城市生态修复、功能完善工程，优化城市空间和建筑布局，推动城市基础设施体系化网络化建设</td></tr>
+<tr><td class="k">加强共保联治</td><td>强化全民共治，协同开展大气污染联防联控，推进重点行业大气污染深度治理，共同解决区域环境突出问题</td></tr>
+<tr><td class="k">金融支持</td><td>支持鼓励类产业企业上市融资，引导各类金融机构加强对中部地区的支持</td></tr>
+<tr><td class="k">财税支持</td><td>中央财政加大对中部地区转移支付力度，对在投资总额内进口的自用设备按现行规定免征关税</td></tr>
+<tr><td class="k">提升装备水平</td><td>不断进行各种仪器设备的更新、换代，并购进新技术设备</td></tr>
+<tr><td class="k">强化防疫监管</td><td>全面落实重大动物疫病防控政府属地管理责任和部门监管责任，强化重大动物疫情监测</td></tr>
+<tr><td class="k">加强队伍建设</td><td>我市公开招聘高校毕业博士生23 人，硕士生78 人，同时面向周边省市聘请5 名双语教学专家，极力保障全市双语教学、教研工</td></tr>
+<tr><td class="k">加强良种培育与推广</td><td>加快推进育种场和扩繁场标准化建设，提高种畜禽繁殖效率和良种利用、供应能力</td></tr>
+<tr><td class="k">加强市场引导</td><td>加强畜牧业生产和畜禽产品市场动态跟踪监测，及时、准确发布信息，科学引导生产和消费</td></tr>
+<tr><td class="k">标准化</td><td>每一项操作程序都要严格统一规范，按照科学、安全的标准执行</td></tr>
+<tr><td class="k">普及技术</td><td>广泛推广这一种植方法和技巧</td></tr>
+<tr><td class="k">风险预警监测</td><td>我们要早识别、早发现、早处置隐患，做到密切监视、检测可能发生的危险和灾祸</td></tr>
+<tr><td class="k">资源化利用</td><td>将养殖废弃物直接作为原料进行利用</td></tr>
+<tr><td class="k">无害化处理</td><td>对疫病死亡的畜禽进行处理，使其变废为宝，避免其影响人民身体健康、污染环境</td></tr>
+<tr><td class="k">资源共享</td><td>利用互联网技术，打破了过去偏远地区无法享受优秀教师、优质课程和医疗服务的壁垒</td></tr>
+<tr><td class="k">增设课程</td><td>以前都没有国画国学这样的课程，现在开设很多</td></tr>
+<tr><td class="k">专业群建设</td><td>将中医领域中专业院校集合起来，给予优惠扶持政策，加强发展</td></tr>
+<tr><td class="k">强化教学职能</td><td>引导中医药高校完善教学体系，承担中医药教学的职责</td></tr>
+<tr><td class="k">师承教育</td><td>通过老一辈文化传承人培养新一代传承人的方式将文化继承、传承下午</td></tr>
+<tr><td class="k">扩大师带徒范围</td><td>原本师傅培养学徒的范畴较窄，现在拓宽了很多</td></tr>
+<tr><td class="k">扩大师带徒数量</td><td>提高师傅培养学徒的名额</td></tr>
+<tr><td class="k">人才激励</td><td>通过一系列奖励措施，激发人才主动性</td></tr>
+<tr><td class="k">高层次人才</td><td>专业技术过硬，在国内外相关领域影响力较强的人</td></tr>
+<tr><td class="k">审批改革</td><td>完善制度，精简审查批示事项、程序、流程等，提高审查批示效率</td></tr>
+<tr><td class="k">尊重规律</td><td>不违背自然，按照内在规律行事</td></tr>
+<tr><td class="k">分类注册</td><td>按照不同领域的药品分别匹配相应的注册程序</td></tr>
+<tr><td class="k">政府投入</td><td>地方政府加大对乡村建设的资金投资</td></tr>
+<tr><td class="k">社会投入</td><td>鼓励企业、社会组织等民间主体，加大对中医药发展的投资</td></tr>
+<tr><td class="k">产业集聚</td><td>把与高新技术相关的产业全都汇聚一起，谋求战略发展</td></tr>
+<tr><td class="k">特色发展</td><td>根据当地的特有风情、特有资源，发展独一无二的产业</td></tr>
+<tr><td class="k">成果转化</td><td>将高校中的研究成果应用到生产生活领域之中</td></tr>
+<tr><td class="k">应保尽保</td><td>只要是具有历史价值，在文化遗产保护名单之内的文物都应被各部门积极保护</td></tr>
+<tr><td class="k">真实性保护</td><td>在保护文化遗产的过程中，注重保留其中的‘原汁原味’</td></tr>
+<tr><td class="k">完整性保护</td><td>在保护乡村历史文化遗产的过程中，要注意整体的保护，不能顾此失彼</td></tr>
+<tr><td class="k">活态遗产</td><td>至今仍保持着原初或历史过程中的使用功能的城乡建成环境遗产，如：历史文化名城名镇名村、历史文化街区、传统村落等以原住居民为</td></tr>
+<tr><td class="k">文化符号</td><td>汉语、书法、北京故宫、长城、苏州园林、孔子、道教、孙子兵法、兵马俑、莫高窟、唐帝国、丝绸、瓷器、京剧等代表中国文化的‘标</td></tr>
+<tr><td class="k">创造性转化</td><td>改造文物不是简单的复制、黏贴，而是在原来的基础上，添加新时代的元素</td></tr>
+<tr><td class="k">民生改善</td><td>通过一系列措施，民众的住房、医疗、养老、教育等条件有了很大地改善</td></tr>
+<tr><td class="k">多方参与</td><td>除了传统手艺人的参与，政府的主导外，普通群众、企业、慈善机构等都积极投入进来</td></tr>
+<tr><td class="k">以用促保</td><td>当地政府过去对文物重‘保’轻‘用’，如今观念转变了，更强调在利用中实现保护</td></tr>
+<tr><td class="k">乡村特色标识</td><td>利用乡村独有人文遗产，打造乡村旅游亮点，增加当地的知名度</td></tr>
+<tr><td class="k">时代记忆</td><td>文物能见证历史，是某一阶段历史兴衰更替的见证</td></tr>
+<tr><td class="k">加大文物开放</td><td>许多博物馆将馆藏品正式向公众开放，并扩大开放范围</td></tr>
+<tr><td class="k">公共文化设施</td><td>书籍、图书馆、博物馆、美术馆、科技馆、纪念馆、体育场馆、工人文化宫、青少年宫等</td></tr>
+<tr><td class="k">工业遗产</td><td>作坊、车间、仓库、码头、工具、器具、机械等文物</td></tr>
+<tr><td class="k">服务标准化</td><td>对医保服务的条件、内容、事项等都做了规定，要求所有工作人员按照规定行事</td></tr>
+<tr><td class="k">办理时限最短</td><td>实现以最短的时间办完业务</td></tr>
+<tr><td class="k">办事流程最简</td><td>追求‘极简主义’，删除办事中的冗长、冗余内容</td></tr>
+<tr><td class="k">适时调整/动态调整</td><td>根据发展的不同阶段，及时修正目标、规划、方案等</td></tr>
+<tr><td class="k">支付自由</td><td>无论是现金支付，还是刷卡支付，亦或是支付宝、微信支付，都是允许的</td></tr>
+<tr><td class="k">就近办理</td><td>外地居民可以选择在附近的医疗服务点办理业务</td></tr>
+<tr><td class="k">服务下沉</td><td>某地主动将服务窗口‘下沉’到100 多个自然村,实行驻村、上门办证服务</td></tr>
+<tr><td class="k">互联互通</td><td>各个平台之间打破壁垒，实现信息共享、共联</td></tr>
+<tr><td class="k">完善法规</td><td>根据发展的最新情况，及时修正法律法规</td></tr>
+<tr><td class="k">依法严厉打击</td><td>按照相关规定，对违法行为进行严惩</td></tr>
+<tr><td class="k">事中监管</td><td>在业务办理过程中进行监督管理，将所有问题及时解决掉</td></tr>
+<tr><td class="k">多元主体合作</td><td>政府、社区、企业等互相配合共同为停车设施建设‘保驾护航’</td></tr>
+<tr><td class="k">停车信息共享</td><td>打造停车互联互通平台，及时向群众推送附近停车场的停车空位数量、停车收费标准等内容</td></tr>
+<tr><td class="k">电子支付</td><td>市民通过支付宝、微信‘扫一扫’即可线上完成停车付费</td></tr>
+<tr><td class="k">挖掘资源潜力</td><td>合理调度、合理安排，充分开发现有停车场、停车位的使用空间，极大满足群众的停车需求</td></tr>
+<tr><td class="k">设施利用效率</td><td>科学规划停车场规模，避免大部分停车场‘ 闲下来’</td></tr>
+<tr><td class="k">吸引社会资本</td><td>通过招标方式招引有意向的中小微企业和个人投资停车场建设</td></tr>
+<tr><td class="k">可持续</td><td>确保停车场的车流量能够持续‘饱和’</td></tr>
+<tr><td class="k">要素市场化配置</td><td>以市场需求为导向，实现技术、资金、技术等生产要素充分合理‘流动’</td></tr>
+<tr><td class="k">公平开放环境</td><td>解除停车市场的进入‘ 门槛’，鼓励符合要求的主体参与建设</td></tr>
+<tr><td class="k">动态调整</td><td>根据发展形势的变化持续调整XXX 政策的内容</td></tr>
+<tr><td class="k">摸清底数</td><td>实地走访，了解清楚停车场的数量、规模等</td></tr>
+<tr><td class="k">差异化</td><td>根据不同地区的文化特色，建设与众不同风格的停车场</td></tr>
+<tr><td class="k">集约发展</td><td>通过引进现代技术和改善停车管理，充分发挥现有停车资源的使用效率</td></tr>
+<tr><td class="k">合理安排资金</td><td>根据项目建设的资金缺口情况来调拨资金</td></tr>
+<tr><td class="k">不同时长停车需要</td><td>有的车主只要停车1 小时，有的车主要求停车6 小时，有的车主甚至要停1 天</td></tr>
+<tr><td class="k">兼顾相关方利益</td><td>充分考虑投资方、消费者的切身利益</td></tr>
+<tr><td class="k">强化日常维护</td><td>相关部门会在平时的工作中加大对设备的维修力度</td></tr>
+<tr><td class="k">排水防涝设施</td><td>地下水管、截水沟、排水沟等设施</td></tr>
+<tr><td class="k">开展隐患排查</td><td>消防部门加强对消防栓进行安全‘疏漏’摸排</td></tr>
+<tr><td class="k">加强安全事故防范</td><td>加大对安全风险的预警，并做好相关的预防</td></tr>
+<tr><td class="k">实行洪涝“联排联调”</td><td>联合省、市、县、村的力量，调度内部人力、物力等资源，进行洪涝治理工作</td></tr>
+<tr><td class="k">加强风险监测预警</td><td>在每个观测站装备监测设备，对可能的洪涝进行预测，并提供预警</td></tr>
+<tr><td class="k">按需配备</td><td>根据不同地区群众的需要情况安排相应的物资</td></tr>
+<tr><td class="k">加大宣传教育力度</td><td>通过微博、微信、抖音等平台，普及自救、互救的知识与技能</td></tr>
+<tr><td class="k">防灾避险</td><td>预防灾害的发生，规避风险的产生</td></tr>
+<tr><td class="k">自救能力</td><td>在危险状态下能自己突破困境</td></tr>
+<tr><td class="k">多部门统筹协调</td><td>公安、环保、医疗等部门整体部署、互相配合，共同推进……</td></tr>
+<tr><td class="k">多渠道筹措资金</td><td>通过工商资本投资、村集体牵头融资、农民入股等方式筹集资金</td></tr>
+<tr><td class="k">城市公共空间</td><td>城市街道、广场、居住区户外场地、公园、体育场地等</td></tr>
+<tr><td class="k">盘活土地资源</td><td>原来的土地是闲置的、荒废的，现在都利用起来了，产生了经济效益</td></tr>
+<tr><td class="k">明确职责分工</td><td>明文规定各部门的协作责任，避免‘多头管理’</td></tr>
+<tr><td class="k">科学立法</td><td>在制定、完善法律的过程中，以客观规律、实际情况为依托</td></tr>
+<tr><td class="k">依照法定程序</td><td>办事需要依据法律规定的流程、程序来，不能‘天马行空’</td></tr>
+<tr><td class="k">严格执法</td><td>在执行法规过程中，做到严厉、严谨、细致，坚持不放松、不走样</td></tr>
+<tr><td class="k">强化执法意识</td><td>通过多渠道宣传，提高执法人员按照法律规定进行执法的意识</td></tr>
+<tr><td class="k">提高行政能力</td><td>对行政人员加强培训，提高其处理行政事务的速度、质量</td></tr>
+<tr><td class="k">公正司法</td><td>在司法活动的过程和结果中体现平等、公允</td></tr>
+<tr><td class="k">全民守法</td><td>努力让守法成为全民自觉意识和自觉行动</td></tr>
+<tr><td class="k">针对性</td><td>根据消费者的自身特点，提供需要的服务</td></tr>
+<tr><td class="k">实效性</td><td>提高产品的实际效果</td></tr>
+<tr><td class="k">推动文化创造性转化</td><td>吸收现代文明中的优秀原色，丰富传统文化，让传统文化与时俱进，实现更新发展</td></tr>
+<tr><td class="k">以人民为中心</td><td>始终将人民的利益放在心上</td></tr>
+<tr><td class="k">挖掘文化精华</td><td>将文化中的优秀内容‘刨’出来</td></tr>
+<tr><td class="k">落实普法责任</td><td>明确普法机构、组织的职责，并督促其严格落实</td></tr>
+<tr><td class="k">实现共建共享</td><td>打破地区间的‘封闭’，让不同地区共同参与建设，分享彼此信息</td></tr>
+<tr><td class="k">示范带动</td><td>领导干部、党员严格规范自己的行为，以起到模范引领作用</td></tr>
+<tr><td class="k">喜闻乐见</td><td>让群众喜欢听，乐意看</td></tr>
+<tr><td class="k">分级分类明确</td><td>确定不同地区、不同级别、不同系统、不同岗位的领导干部需要学习哪种、哪些法律</td></tr>
+<tr><td class="k">完善配套制度</td><td>在全民普法的过程中，要不断调整、健全相关条例、章程，让普法工作更好地开展</td></tr>
+<tr><td class="k">知行合一</td><td>学习认识法治内容，并指导自己严格遵守</td></tr>
+<tr><td class="k">加强法治培训</td><td>开展讲座、课程等，培养相关人员的法治素养，</td></tr>
+<tr><td class="k">乡规民约</td><td>乡村群众集体制定公约，用于自我约束、自我管理</td></tr>
+<tr><td class="k">法不责众</td><td>面对众多群众一起违法的行为，法律不好给予惩处</td></tr>
+<tr><td class="k">正向激励</td><td>对遵纪守法的群众给予一定的物质或精神嘉奖，带动其继续努力</td></tr>
+<tr><td class="k">崇法向善</td><td>敬畏法律、遵守法律，一心助人为乐，做个好人</td></tr>
+<tr><td class="k">实时普法</td><td>与时俱进，更新与当今时代、当今阶段相适应的普法知识</td></tr>
+<tr><td class="k">公开征求意见</td><td>面向所有群众，征集他们对XXXX 的看法、建议</td></tr>
+<tr><td class="k">扩大社会参与</td><td>以前只有领导干部参与普法，现在普通群众、社团成员也可参与其中</td></tr>
+<tr><td class="k">全员普法</td><td>对某辖区内的所有民众进行普法教育</td></tr>
+<tr><td class="k">全程普法</td><td>法治宣传教育要贯穿在立法、执法、司法的全过程</td></tr>
+<tr><td class="k">公益普法</td><td>很多社会组织做普法广告，不计回报提升全民法治素养</td></tr>
+<tr><td class="k">畅通参与普法的途径</td><td>以前，群众只能通过电视、广播参与普法教育，现在只要‘指尖一点’就能收到抖音、快手、学习强国等平台发送的普法知识</td></tr>
+<tr><td class="k">精准普法/针对性普法</td><td>结合不同年龄段、不同兴趣爱好的群体特点，安排相适宜的普法活动</td></tr>
+<tr><td class="k">个性化普法</td><td>借助‘短视频’等不同于以往的法律宣传产品进行法治教育，避免重复、雷同。</td></tr>
+<tr><td class="k">规范化</td><td>在汉语普通话里，存在一些语音、语法等方面的分歧，这些都需要通过明文规定、宣传教育等方式进行统一</td></tr>
+<tr><td class="k">程序化</td><td>自从管理者明确了各项工作的步骤、流程，并要求执行人员依此完成工作后，工作效率大大提高了</td></tr>
+<tr><td class="k">公信力</td><td>虚假新闻不仅使媒体失去了信誉，更会失去社会公众的信任和认同</td></tr>
+<tr><td class="k">执行力</td><td>每次领导安排完工作任务，他都能积极反应，第一时间就去落实工作，工作效率很高</td></tr>
+<tr><td class="k">依法决策</td><td>根据相关法律法规章程，对这件事情进行思考、判断，从而做出决定</td></tr>
+<tr><td class="k">行政调解</td><td>通过当地政府的说服教育，小张和小刘打算和解，这下彻底解决了二人的纠纷矛盾</td></tr>
+<tr><td class="k">形成监督合力</td><td>推动党内监督与人大监督、民主监督、行政监督、司法监督、群众监督、舆论监督等各类监督有机贯通、相互协调，发挥各主体监督作用</td></tr>
+<tr><td class="k">加强制约</td><td>强化对权力运行的限制和约束</td></tr>
+<tr><td class="k">加强监督</td><td>对所属各基层单位,疫情期间落实中央八项规定精神,严防‘ 四风’问题反弹,进行了监视﹑督促和管理</td></tr>
+<tr><td class="k">政务公开</td><td>将政府网站打造成更加全面的信息公开平台、更加合理的政策发布解读和舆论引导平台、更加及时的回应关切和便民服务平台</td></tr>
+<tr><td class="k">信息化</td><td>在政治、经济、文化和社会生活的各个领域中普遍地采用信息技术</td></tr>
+<tr><td class="k">培育新动能</td><td>研究新技术、发展新产业、培育新业态、创新新模式等，以此促进经济高质发展</td></tr>
+<tr><td class="k">加大研发投入</td><td>某企业今年的研发费用是往年的3 倍之多，真是下了血本谋发展</td></tr>
+<tr><td class="k">核心竞争力</td><td>一个企业在激烈的市场竞争中脱颖而出的能力</td></tr>
+<tr><td class="k">细分领域</td><td>在原来的领域中在细化出更小的领域，如在健康领域中在细分出医疗、养生等领域</td></tr>
+<tr><td class="k">行业龙头企业</td><td>在某一行业中具有突出影响力、具有标杆性的企业</td></tr>
+<tr><td class="k">立足资源禀赋</td><td>依据当地的特有自然资源，当地特有优势而选择发展道路</td></tr>
+<tr><td class="k">特色产业</td><td>产业不能千篇一律，而要具有本地特质</td></tr>
+<tr><td class="k">自主创新</td><td>依靠自己的力量进行发明创造</td></tr>
+<tr><td class="k">科技成果转化</td><td>将科学研究成果应用到生产过程中</td></tr>
+<tr><td class="k">找准定位</td><td>大学生要剖析自己的优、劣势，清晰求职方向，避免好高骛远</td></tr>
+<tr><td class="k">减少行政干预</td><td>放松对相关企业发展的行政管控，赋予其平等发展的权力</td></tr>
+<tr><td class="k">高污染</td><td>企业对周边环境的污染远远超过标准</td></tr>
+<tr><td class="k">高耗能</td><td>企业在生产过程中会消耗过多的能源</td></tr>
+<tr><td class="k">高排放</td><td>企业在生产过程中排放的气体大大超过标准值</td></tr>
+<tr><td class="k">工业绿色升级</td><td>对钢铁、石化、化工、有色、建材、纺织、造纸、皮革等行业实施改造，推行产品绿色设计，推行清洁生产</td></tr>
+<tr><td class="k">绿色物流</td><td>推广绿色低碳运输工具，货物运输包装推广运用环保材料，尽量降低物品运输对环境的污染</td></tr>
+<tr><td class="k">绿色低碳生活方式</td><td>厉行节约，坚决制止餐饮浪费行为，积极引导绿色出行</td></tr>
+<tr><td class="k">促进绿色产品消费</td><td>政府加大支持力度，对企业和市民购买绿色低碳环保的产品给予一定的优惠</td></tr>
+<tr><td class="k">农业绿色发展</td><td>鼓励发展生态种植、生态养殖，发展生态循环农业</td></tr>
+<tr><td class="k">服务业绿色发展</td><td>促进商贸企业绿色升级，加快信息服务业绿色转型，推进会展业绿色发展</td></tr>
+<tr><td class="k">市场导向</td><td>企业以市场需求为中心进行生产经营活动</td></tr>
+<tr><td class="k">强化法律法规支撑</td><td>推动完善各方面法律法规制度，为XX 提供保障</td></tr>
+<tr><td class="k">财税扶持</td><td>落实相关所得税、增值税等优惠政策</td></tr>
+<tr><td class="k">加强统筹协调</td><td>主管部门要强化指导规划，各有关部门要加强协同配合，形成工作合力</td></tr>
+<tr><td class="k">深化国际合作</td><td>加强与世界各个国家和地区的政策沟通、技术交流、项目协作</td></tr>
+<tr><td class="k">营造良好氛围。基层治理</td><td>新闻媒体要讲好中国故事，大力宣传我国优秀传统文化，在社会上形成崇德向善的气氛</td></tr>
+<tr><td class="k">社会参与</td><td>鼓励广大群众、社会组织积极参与经济、政治、文化、社会工作等活动</td></tr>
+<tr><td class="k">资源配置</td><td>根据不同乡村的发展需求调配相应的人力、物力、财力</td></tr>
+<tr><td class="k">公益性组织</td><td>志愿协会、爱心协会、公益团体等致力于公益事业的组织</td></tr>
+<tr><td class="k">村民自治</td><td>根据法律规定，当地村民自己参与管理本村事务</td></tr>
+<tr><td class="k">拓宽群众反映意见渠道</td><td>除了设立举报箱、举报热线之外，现在还新设微信、邮箱等，收集群众意见</td></tr>
+<tr><td class="k">村务公开</td><td>将村里的各项事务‘公之于众’</td></tr>
+<tr><td class="k">法治素养</td><td>现在的群众大多了解了基本的法律法规，既能遵法守法，还能运用法律保护自己</td></tr>
+<tr><td class="k">公序良俗</td><td>绝大部分村民都能符合善良风俗，不违反基本的公共秩序</td></tr>
+<tr><td class="k">应急知识普及</td><td>通过媒体媒介宣传避险、自救、他救等应急技巧</td></tr>
+<tr><td class="k">陈规陋习</td><td>过去的‘天价彩礼’‘厚葬’‘婚闹’‘赌博’等陈旧不合理的习惯</td></tr>
+<tr><td class="k">规范权责</td><td>出台诸多条例，明确基层干部的权力与责任</td></tr>
+<tr><td class="k">完善激励办法</td><td>某企业逐步将赋权、升职或者股权等作为激励手段，让激励更全面</td></tr>
+<tr><td class="k">综合考核</td><td>考核干部不仅要看业务素质，还要看道德水平、政治素养、服务意识等</td></tr>
+<tr><td class="k">容错纠错</td><td>包容因缺乏经验而出现失误或者未达到预期效果的领导干部，并及时纠正其中的问题，获得长远发展</td></tr>
+<tr><td class="k">专门培养规划</td><td>针对特定项目，计划开展培训教育，培养项目所需的人才</td></tr>
+<tr><td class="k">明确岗位职责</td><td>对某职位该做什么事做了相应规定</td></tr>
+<tr><td class="k">严格配备标准</td><td>按照事先定好的人员安排要求，组织相关人员去不同的岗位</td></tr>
+<tr><td class="k">健全准入机制</td><td>完善一系列制度，提高进入某一行业的人员水准</td></tr>
+<tr><td class="k">健全退出机制</td><td>完善一系列制度，让某一行业退出人员获得权益保障</td></tr>
+<tr><td class="k">优化队伍结构</td><td>提高年轻人员在队伍中的占比</td></tr>
+<tr><td class="k">事有人干</td><td>单位中的活基本上都是安排到人，不会没人来干</td></tr>
+<tr><td class="k">创新评价</td><td>过去人员评判是由内部人员投票决定，现在改变了，要由第三方直接接入</td></tr>
+<tr><td class="k">勤俭精神</td><td>乡镇扶贫干部不仅工作勤劳，还生活节约</td></tr>
+<tr><td class="k">奋斗精神</td><td>新青年不畏艰苦条件，努力克服困难，加油干</td></tr>
+<tr><td class="k">创新精神</td><td>某企业与时俱进，坚持研发新产品</td></tr>
+<tr><td class="k">奉献精神</td><td>将自己献给祖国，保卫祖国一方平安</td></tr>
+<tr><td class="k">资源整合</td><td>将房屋、人力等各种资源合并，形成合力</td></tr>
+<tr><td class="k">社会化</td><td>人们通过各种方式逐渐学习社会知识、技能与规范，逐渐融入社会</td></tr>
+<tr><td class="k">联建共育</td><td>不同社会主体共同建设基地，参与青少年培养</td></tr>
+<tr><td class="k">加强宣传力度</td><td>利用宣传栏、宣传手册、网络媒介等，大肆推广养生知识</td></tr>
+<tr><td class="k">净化网络环境</td><td>清除网络中的‘乌烟瘴气’内容，让网络虚拟世界‘焕然一新’</td></tr>
+<tr><td class="k">强化意识</td><td>通过宣传，深化对XXX 重要性的认识</td></tr>
+<tr><td class="k">课程教学改革</td><td>改变过去幼小教育课程过于关注知识内容的局限，转而注重素质发展</td></tr>
+<tr><td class="k">减缓教学进度</td><td>之前要求一个课本单元要3 个课时上完，现在明显放缓很多</td></tr>
+<tr><td class="k">游戏化</td><td>老师们把游戏贯穿在教育的全过程，让学生在轻松环境下接受知识</td></tr>
+<tr><td class="k">生活化</td><td>授课要贴近学生的日常生活，不能脱离了</td></tr>
+<tr><td class="k">综合化</td><td>不单单注重智力学习，还注重孩子的德、体、美、劳等发展</td></tr>
+<tr><td class="k">体验式学习</td><td>引导学生在实践中感知知识、学习道理</td></tr>
+<tr><td class="k">家园校共育</td><td>家长、幼儿园、小学学校共同参与幼童的培养</td></tr>
+<tr><td class="k">缓解家长焦虑</td><td>通过聊天、谈话等形式疏导家长过于担心、忧虑孩子成长的紧张心理</td></tr>
+<tr><td class="k">违反教育规律</td><td>‘填鸭式’教育违背了‘ 因材施教’的教育初衷</td></tr>
+<tr><td class="k">开展专项治理</td><td>针对某类突出治安问题，在一定时期内集中人员、集中精力开展集中打击或整治</td></tr>
+<tr><td class="k">免试就近入学</td><td>不用考试就能去离家相对较近的学校上学</td></tr>
+<tr><td class="k">幼小协同合作</td><td>幼儿园与小学互相协作，共同做好幼小衔接工作</td></tr>
+<tr><td class="k">过于重视知识准备</td><td>幼升小的过程中，很多学校看重幼童的知识储备，却忽视其他素养</td></tr>
+<tr><td class="k">超标教学</td><td>教学内容超过教育大纲要求</td></tr>
+<tr><td class="k">超前学习</td><td>部分幼儿园实施‘抢跑教育’，将小学的知识提前上了</td></tr>
+<tr><td class="k">教科研支持</td><td>加强教育教研、科学研究等方面的支持</td></tr>
+<tr><td class="k">整合多方资源</td><td>联合家长、学校、教育部门等力量，共同参与幼小衔接工作</td></tr>
+<tr><td class="k">提升教育水平</td><td>通过变革教学方式，加强农村中小学科学教育基础设施建设和配备，推进信息技术与科学教育深度融合等方式提高学校教育质量</td></tr>
+<tr><td class="k">推进科普工作</td><td>相关部门要引导中小学充分利用科技馆、博物馆等场所广泛开展各类学习实践活动，普及科学知识</td></tr>
+<tr><td class="k">教育资源</td><td>农村中小学在师资质量和数量、在校生数、基础设施等方面与城市中小学仍存在较大差距</td></tr>
+<tr><td class="k">职业精神</td><td>从事不同职业的人们除了要具备相应的工作技能外，还应当做到敬业、勤业，做到诚实守信、办事公道、服务群众、奉献社会</td></tr>
+<tr><td class="k">发挥示范引领作用</td><td>领导干部要做到时时带头、事事表率</td></tr>
+<tr><td class="k">基础设施</td><td>紧急避险平台、消防和人防设施、紧急医疗救护设施</td></tr>
+<tr><td class="k">实施专项行动</td><td>为营造有利于青少年健康成长的网络环境，国家互联网信息办公室决定在全国范围内开展‘护苗2015•网上行动’</td></tr>
+<tr><td class="k">社会责任</td><td>企业在创造利润的同时，还要承担对消费者和环境的责任</td></tr>
+<tr><td class="k">加强统筹规划</td><td>要培养‘一盘棋’的整体思维，对工作进行统一的安排和计划</td></tr>
+<tr><td class="k">加强宏观指导</td><td>市委宣传部要负责部署全局性的思想政治工作任务，并在方针政策上指导市文化局的工作</td></tr>
+<tr><td class="k">拓展交流渠道</td><td>通过开展丰富的活动，增加了各方沟通互动的机会</td></tr>
+<tr><td class="k">压减作业总量</td><td>以前，小学一、二年级的学生为了完成家庭作业，都没时间玩耍，而今后，学校规定将减少小学一、二年级家庭书面作业</td></tr>
+<tr><td class="k">压减作业时长</td><td>—</td></tr>
+<tr><td class="k">提高作业设计质量</td><td>发挥作业诊断、巩固、学情分析等功能，系统设计符合年龄特点和学习规律、体现素质教育导向的基础性作业</td></tr>
+<tr><td class="k">满足多样化需求</td><td>能够满足操作简单、实时监控、互联互通、传输顺畅等方面的教学需要</td></tr>
+<tr><td class="k">提高服务质量</td><td>通过多种方式，为城乡居民提供人性化、便捷化的文化服务</td></tr>
+<tr><td class="k">拓展课后服务渠道</td><td>除了由本校教师提供课后服务外，也可聘请退休教师、具备资质的社会专业人员，或利用少年宫、青少年活动中心等校外活动场所</td></tr>
+<tr><td class="k">提升教学质量</td><td>学校要健全教学管理规程，优化教学方式，强化教学管理，提升学生在校学习效率，保证教学效果</td></tr>
+<tr><td class="k">宣传引导</td><td>通过开展讲座，对居民进行预防电信诈骗的说明讲解，使人们掌握预防电信诈骗的方法</td></tr>
+<tr><td class="k">专项治理</td><td>建立专门工作机构，按照‘双减’工作目标任务，开展全面排查整治</td></tr>
+<tr><td class="k">家校社协同</td><td>要明晰家校育人责任，密切家校沟通，同时推动社区家庭教育指导中心、服务站点建设，推进协同育人共同体建设</td></tr>
+<tr><td class="k">明确工作责任。科技发展</td><td>每个岗位都有相对应的工作内容及承担的责任范围</td></tr>
+<tr><td class="k">激励政策</td><td>部署实施提高制造业企业研发费用加计扣除比例等政策，引导企业创新</td></tr>
+<tr><td class="k">行业自律</td><td>旅游行业要加强对国家相关法律法规政策的遵守和贯彻，更好地约束自身行为</td></tr>
+<tr><td class="k">提供全方位服务</td><td>该企业一直秉持‘顾客至上’的理念，提供的服务都尽可能满足顾客所需，并在各个方面提升服务水平</td></tr>
+<tr><td class="k">创新服务模式</td><td>为满足市民的文化需求，市图书馆举办了一系列新颖的活动，比如开设书院、开展故事绘本课堂等</td></tr>
+<tr><td class="k">信息共享</td><td>实现了不同地区之间信息的联系、传递和互通</td></tr>
+<tr><td class="k">人才队伍建设</td><td>建设人才培养基地，培养一批高素质、高水平的专业人才和服务团队</td></tr>
+<tr><td class="k">财税优惠政策</td><td>规定中提到，科技中介机构提供技术转让取得的收入，免征增值税，同时，部分科技中介机构，减按15%的税率征收企业所得税</td></tr>
+<tr><td class="k">资金扶持</td><td>对创建为国家技术转移示范机构、国家技术转移人才培养基地的，给予不超过100 万元支持</td></tr>
+<tr><td class="k">加强机构自身建设</td><td>科技中介机构要建立与市场经济体制相适应的运行机制和管理体制，建立健全内部规章制度，自觉遵守法律法规、行规行约</td></tr>
+<tr><td class="k">分类评价</td><td>对基础研究成果、应用研究成果等不同类型的科技成果，采取不同的评价方式</td></tr>
+<tr><td class="k">定量评价</td><td>通过授课天数、工龄、发表论文篇数等数据，对教师能力水平进行描述和判断</td></tr>
+<tr><td class="k">定性评价</td><td>通过观察、分析、归纳与描述，对学生日常表现进行评审和比较</td></tr>
+<tr><td class="k">信息（数据）互联互通</td><td>通过建立医疗服务平台，多家医院之间共享‘急、重、难’病人的相关资料</td></tr>
+<tr><td class="k">多主体参与</td><td>需要社会、家庭、学校等多方加入进来</td></tr>
+<tr><td class="k">行业标准</td><td>某个行业范围内统一的技术要求</td></tr>
+<tr><td class="k">弄虚作假</td><td>耍花招欺骗消费者</td></tr>
+<tr><td class="k">利益输送</td><td>公职人员利用职权将公共利益转换成私人利益</td></tr>
+<tr><td class="k">加强科技成果转化</td><td>将研发的新技术变成成品、样机，使得技术得到全面应用</td></tr>
+<tr><td class="k">评奖周期</td><td>将每年一次的科技奖项评奖，延长到2 至3 年一次</td></tr>
+<tr><td class="k">减轻负担。农业发展</td><td>收入的增加，使小张照顾父母的压力减少了一些</td></tr>
+<tr><td class="k">系统治理</td><td>用系统论的思想，统筹治水和治山、治水和治林、治水和治田</td></tr>
+<tr><td class="k">分区施策</td><td>针对不同类别的对象，实施不同的对策</td></tr>
+<tr><td class="k">全面保护</td><td>改变过去单一性的保护，从每个角度着手进行保护</td></tr>
+<tr><td class="k">因地制宜</td><td>根据自身特色、自身情况，制定适宜的成长办法</td></tr>
+<tr><td class="k">长效性</td><td>多措并举，持续长期保障消费者权益保障</td></tr>
+<tr><td class="k">促进增收</td><td>发展乡镇企业，吸纳农民就业，提高其收入水平</td></tr>
+<tr><td class="k">全民参与</td><td>拓宽参与渠道，让人人都能参与进来</td></tr>
+<tr><td class="k">技术研发</td><td>加大对科技创新研究的投入</td></tr>
+<tr><td class="k">人才培养</td><td>将乡村农技人员送去高校受教育，学习技术本领</td></tr>
+<tr><td class="k">产学研融合</td><td>把企业生产与院所研究、高校教育等融为一体</td></tr>
+<tr><td class="k">完善法律法规</td><td>根据实际变化情况，修订修正当前法律法规</td></tr>
+<tr><td class="k">依法打击</td><td>根据法律规定，对违法行为给予惩罚</td></tr>
+<tr><td class="k">加大投入</td><td>增加扶持技术研发，提高经费投入比例</td></tr>
+<tr><td class="k">便利出行</td><td>延长公交到乡村，解决村民‘跋山涉水’去城里的苦恼</td></tr>
+<tr><td class="k">发挥示范带动作用</td><td>乡贤以身作则带动身边的群众爱护环境、帮助需要帮助的人</td></tr>
+<tr><td class="k">提供培训机会</td><td>开展技能帮带活动，为失业的乡民提供技术培训服务</td></tr>
+<tr><td class="k">按时足额发放报酬</td><td>按照合同规定的时间，向员工下发本月的工资薪酬，不拖延、不克扣</td></tr>
+<tr><td class="k">改善劳动条件</td><td>改变过去厂房中的黑暗、潮湿等恶劣环境，并配备食堂餐厅、体育休闲场所等，让劳动者劳动之余放松自己</td></tr>
+<tr><td class="k">跨区域信息共享</td><td>不同省份、不同城市在信息平台发布招工需求，让不同地区的待就业群众知晓</td></tr>
+<tr><td class="k">资源禀赋</td><td>某地区的劳动力、资本、土地、技术、管理等的生产要素充足</td></tr>
+<tr><td class="k">文化特色</td><td>某地区的乡土文化‘与众不同’</td></tr>
+<tr><td class="k">市场化运作</td><td>成立专门的运营管理企业，按照市场的需求或市场发展趋势来定位的发展方向，行政不进行过多干预</td></tr>
+<tr><td class="k">全产业链</td><td>覆盖从田间到餐桌所需要的种植、采购、加工、品牌推广、销售、运输等多个生产环节，形成完全生产链条</td></tr>
+<tr><td class="k">增加就业岗位</td><td>通过开办乡村工厂或扶贫车间，向村民提供更多工作岗位</td></tr>
+<tr><td class="k">公共基础设施</td><td>建设医疗机构、教育机构、道路桥梁等设施</td></tr>
+<tr><td class="k">以工代赈</td><td>政府投入受赈济地区实施基础设施建设，让受赈济地区的困难群众参加劳动并获得报酬</td></tr>
+<tr><td class="k">人居环境整治</td><td>以农村垃圾、污水治理和村容村貌提升为主攻方向,开展优化环境的执法整治活动</td></tr>
+<tr><td class="k">就地创业</td><td>鼓励返乡村民在家乡创办企业</td></tr>
+<tr><td class="k">自主创业</td><td>村民依靠自己的资本、资源、信息、技术、经验来创办企业</td></tr>
+<tr><td class="k">多渠道就业</td><td>加快推动网络零售、移动出行、线上教育培训、互联网医疗、在线娱乐等行业发展，创造居家就业或远程办公或兼职就业等岗位，让群众</td></tr>
+<tr><td class="k">节能减排</td><td>生产时使用高新技术，降低能源的消耗，减少污染物的排放</td></tr>
+<tr><td class="k">净污分离/洁污分离</td><td>房间设计时往往把卫生间布置与厨房餐厅等空间布置分开，不过于靠近</td></tr>
+<tr><td class="k">无障碍设施</td><td>无障碍扶手、无障碍沐浴凳、盲文标识</td></tr>
+<tr><td class="k">适老化</td><td>房屋建造时要充分考虑老年人的身体机能及行动特点</td></tr>
+<tr><td class="k">乡土风貌/乡村风貌</td><td>经过几年的发展，某村庄的人文特征、精神风采慢慢凸显</td></tr>
+<tr><td class="k">地方特色/当地特色</td><td>某地具有独一无二的特点，让人眼前一亮</td></tr>
+<tr><td class="k">发展民宿产业/发展民宿业态</td><td>在打开知名度后，C 村倡导经营诸多农家乐、民宿等产业</td></tr>
+<tr><td class="k">传承传统文化</td><td>某村建设文化展览馆，让更多的人到这里感受这里的文化</td></tr>
+<tr><td class="k">闲置农房</td><td>村里有很多不用的村屋、农舍等</td></tr>
+<tr><td class="k">基础设施/配套设施</td><td>在村庄改造之后，还要对周边的卫生院、学校、站所、公园等进行建设</td></tr>
+<tr><td class="k">乱搭乱建</td><td>未经过申请批准，就私自在房屋周围建有公共隐患的建筑或临时建筑</td></tr>
+<tr><td class="k">传统能源</td><td>煤炭、石油、天然气等能源</td></tr>
+<tr><td class="k">清洁能源</td><td>水力发电、风力发电、太阳能、生物能（沼气）、地热能或海潮能等能源</td></tr>
+<tr><td class="k">绿色低碳转型</td><td>在生产中，改变能源使用模式，用绿色能源替代传统能源，减少碳的排放</td></tr>
+<tr><td class="k">改善人居环境</td><td>推广垃圾分类，禁止乱埋乱倒，让村庄更加整洁，让村民居住舒适</td></tr>
+<tr><td class="k">全覆盖</td><td>村庄改造原来只涉及几个村，现在周边的所有村庄都在进行改造</td></tr>
+<tr><td class="k">决策共谋</td><td>党员干部与群众代表彼此协商，商讨更加合理的政策</td></tr>
+<tr><td class="k">加强人才队伍建设。人才培养</td><td>建立健全科研人员校企、院企共建双聘机制；加强茶产业推广技术人才培养；培育一批茶产业领军人才、技术团队和企业家</td></tr>
+<tr><td class="k">培养高素质农民队伍</td><td>实施现代农民培育计划，加强农民在线教育培训，提高农民素质、业务能力</td></tr>
+<tr><td class="k">带头人培育</td><td>加强对农民合作社骨干的培训,尤其是家庭农场经营者、农民合作社带头人</td></tr>
+<tr><td class="k">农村社会工作人才队伍建设</td><td>大力培育乡村社会工作服务类社会组织，加大乡村本土社会工作专业人才培养力度</td></tr>
+<tr><td class="k">农村经营管理人才队伍建设</td><td>充实农村经营管理队伍，加强农村土地承包经营纠纷调解仲裁人才培养，加强农村集体经济组织人才培养</td></tr>
+<tr><td class="k">法律人才队伍建设</td><td>加强乡村法律服务人才培训</td></tr>
+<tr><td class="k">科技推广人才</td><td>村里最近来了一批‘土专家’，专门教大家养殖技术</td></tr>
+<tr><td class="k">农村电商人才培育</td><td>通过开展电商专家下乡活动，对这方面人才开展线上线下相结合的培训</td></tr>
+<tr><td class="k">乡村教师队伍建设</td><td>加大乡村骨干教师培养力度，精准培养本土化优秀教师</td></tr>
+<tr><td class="k">乡村卫生健康人才队伍建设</td><td>推进乡村基层医疗卫生机构公开招聘，落实乡村医生各项补助，鼓励免费定向培养一批源于本乡本土的大学生乡村医生</td></tr>
+<tr><td class="k">发挥培训机构作用</td><td>支持XX 培训学校（机构）对本土人才的培养</td></tr>
+<tr><td class="k">打造劳务输出品牌</td><td>某地人口众多，为了让劳务输出名号更响亮，着力开辟英山裁缝、麻城海员、团风泥匠、黄州电工等4 大劳务品牌</td></tr>
+<tr><td class="k">打破界限</td><td>破除技能人才与技术人才评价体系之间的‘ 隔阂’</td></tr>
+<tr><td class="k">拓宽发展通道</td><td>职称评审、岗位晋升时有计划地面向技术技能人才进行倾斜，并放宽提拔、升迁条件</td></tr>
+<tr><td class="k">唯论文</td><td>职称评价时只看重发表论文的数量、质量</td></tr>
+<tr><td class="k">唯学历</td><td>职称评价时只看重个人获得的文聘、学历</td></tr>
+<tr><td class="k">唯资历</td><td>职称评价时只看重员工在单位中的资质、工作年限</td></tr>
+<tr><td class="k">唯奖项</td><td>职称评价时只看重员工获得的重要奖项个数</td></tr>
+<tr><td class="k">立足岗位需要</td><td>根据某一岗位所缺人员的具体情况招聘相关人才</td></tr>
+<tr><td class="k">激励措施</td><td>设置物质奖励调动工作积极性</td></tr>
+<tr><td class="k">提高待遇水平</td><td>让某一行业人员的工资高一些、多一些</td></tr>
+<tr><td class="k">“高精尖缺”人才</td><td>文凭高、技术精、掌握尖端科学知识和技术，且较为稀缺的人才</td></tr>
+<tr><td class="k">教育一体化发展</td><td>在教育软件、教育硬件、教育水平等层面上，尽力消除城乡教育不均衡问题，让城乡教育共同发展</td></tr>
+<tr><td class="k">教育协同发展</td><td>让中职、高职、本科层次的职业教育衔接起来，达到共荣共存、彼此促进的局面</td></tr>
+<tr><td class="k">传统专业升级</td><td>结合新经济、新技术、新职业，对文史类、哲学类、冶金类、地质类、数理化等基础学科专业进行更新</td></tr>
+<tr><td class="k">产教联合</td><td>把产业生产与教学密切结合，相互支持，相互促进</td></tr>
+<tr><td class="k">校企育人</td><td>学校采取与企业合作的方式，有针对性地为企业培养人才，体现为学校与企业联合招生、协同培育</td></tr>
+<tr><td class="k">分类培训。体育发展</td><td>根据不同岗位、不同工作内容、不同工作标准，对招聘的新员工进行针对性的培养培训</td></tr>
+<tr><td class="k">加大健身场地设施供给</td><td>小区中锻炼的场所、设备越来越多了</td></tr>
+<tr><td class="k">盘活空闲土地</td><td>把闲置的土地租赁给健身场馆，实现土地价值</td></tr>
+<tr><td class="k">公益性用地</td><td>学校、医院、图书馆、公园等非盈利项目用地</td></tr>
+<tr><td class="k">土地复合利用</td><td>综合利用土地各项功能</td></tr>
+<tr><td class="k">推广体育科普作品</td><td>通过广播、电视、微信、微博等渠道，向大众推广参与体育、科学健身的知识</td></tr>
+<tr><td class="k">降低准入门槛</td><td>以前进入某一行业需要严格学历，现在放宽了很多</td></tr>
+<tr><td class="k">强化全民健身激励</td><td>给予积极参与健身的居民一定的精神或物质奖励</td></tr>
+<tr><td class="k">创新人才培养模式</td><td>以前培训人才主要依赖人工教授，现在可以用互联网技术代替部分人工，让培养方式焕然一新</td></tr>
+<tr><td class="k">畅通培养渠道</td><td>以前培养人才只是依靠学校教育，现在增加了职业教育、成人教育、拓展培训等</td></tr>
+<tr><td class="k">社会力量参与</td><td>除了当地政府外，知名企业、慈善组织、热心民众等都积极参与</td></tr>
+<tr><td class="k">个人信息保护</td><td>严格保护群众的基本信息，防止外泄</td></tr>
+<tr><td class="k">智慧化</td><td>应用智能技术，无需借助人工就能提供满足人各种需求的服务</td></tr>
+<tr><td class="k">信息发布及时</td><td>事故发生之后，当地政府立即在各大平台向市民说明事故发生情况</td></tr>
+<tr><td class="k">部门联合</td><td>不同部门之间互相配合、互相帮助</td></tr>
+<tr><td class="k">鼓励扶持政策</td><td>出台优惠政策，扶持小微企业运营发展</td></tr>
+<tr><td class="k">多元融资筹资</td><td>通过贷款、发债、发股票、私募股权等方式筹集资金</td></tr>
+<tr><td class="k">单一发展方式</td><td>某地乡村旅游除了农家乐，就没有其他形式了</td></tr>
+<tr><td class="k">公共服务均衡发展</td><td>缩小城乡之间的医疗、养老、教育等公共服务的差距</td></tr>
+<tr><td class="k">服务适老化</td><td>充分考虑到老年人的身体机能及行动特点而提供服务</td></tr>
+<tr><td class="k">普及知识</td><td>向广大市民输出养身、科学等常识</td></tr>
+<tr><td class="k">消费新模式</td><td>以前消费都要去实体店，现在在网上就行，太方便了</td></tr>
+<tr><td class="k">多样化产品</td><td>某企业生产的产品涉及众多领域，有家纺，也有皮鞋，还有服饰等</td></tr>
+<tr><td class="k">加大打击力度</td><td>组织周边警力，大力整治扰乱市场秩序的违法犯罪行为</td></tr>
+<tr><td class="k">因企施策</td><td>根据企业自身发展的特点、优势、不足等，实施对应的措施</td></tr>
+<tr><td class="k">政社分开</td><td>政府放开对社会组织在人事权、财政权等方面的控制，给予社会组织发展的主动权</td></tr>
+<tr><td class="k">权责明确</td><td>某部门的权力划分清晰，同时，对应的部门责任也明确了</td></tr>
+<tr><td class="k">依法自治</td><td>当地村民根据法律政策规定，解决村公共事务、重大民生问题</td></tr>
+<tr><td class="k">运用科技手段</td><td>某市卫健委与公安系统建立起‘卫健警务—新型冠状病毒防控系统’，对新型肺炎可能的传染源及时跟踪、辨别和处置，这一技术有效提</td></tr>
+<tr><td class="k">动态管理</td><td>某企业根据市场变化，随时改进、修订经营业务，使企业活动与管理保持一定弹性</td></tr>
+<tr><td class="k">退出机制</td><td>随着事业单位分类改革实施方案的公布，大学和公立医院从编制上被取消，下一步将从中小学教师队伍中摘掉‘铁饭碗’</td></tr>
+<tr><td class="k">整合资源</td><td>将保护区内部非物质文化遗产资源和农业、旅游、自然生态环境等资源条件充分融合</td></tr>
+<tr><td class="k">媒体融合</td><td>把报纸、电视台等传统媒体，与互联网、手机、等新兴媒体传播通道有效结合起来</td></tr>
+<tr><td class="k">加强交流合作</td><td>希望两地常来常往，拓宽合作领域,推动两地经济社会发展互惠共赢</td></tr>
+<tr><td class="k">交流先进经验</td><td>在会上，各地就体育场馆建设及运营等方面的成功的、高水平的做法进行了交流</td></tr>
+<tr><td class="k">文化认同</td><td>现在越来越多的外国人能够真正了解、接受中华文化了</td></tr>
+<tr><td class="k">学术交流</td><td>会上，各眼科医院院长分别就眼部治疗等相关内容进行了讲解，其他参会人员也一同交流了相关的知识、经验</td></tr>
+<tr><td class="k">工业遗产。乡村振兴</td><td>作坊、车间、仓库、码头、工具、器具、机械等文物</td></tr>
+<tr><td class="k">总体规划</td><td>结合当地的自然环境、资源条件、历史情况、现状特点等，整体统筹部署当地发展</td></tr>
+<tr><td class="k">有序推进</td><td>按步骤、按计划的推进规划</td></tr>
+<tr><td class="k">分工负责</td><td>在XXX 管理过程中，各部门根据自身职责处理各自相应的事务</td></tr>
+<tr><td class="k">分类指导</td><td>对不同种类的学生群提供有差异的学习指导、辅导等</td></tr>
+<tr><td class="k">适用性</td><td>研发的新技术可以运用在多个生产领域</td></tr>
+<tr><td class="k">实事求是</td><td>源于实际，不弄虚作假，不夸大其词</td></tr>
+<tr><td class="k">树立典型</td><td>精选具有代表性的人物或案例，供各方学习</td></tr>
+<tr><td class="k">不定期推介</td><td>随机选择时间向学生推送学习内容</td></tr>
+<tr><td class="k">及时收集</td><td>第一时间搜集群众的反馈</td></tr>
+<tr><td class="k">定期评估</td><td>每隔一周就需要对工作的质量、进度、问题等进行评价、评议</td></tr>
+<tr><td class="k">经济效益</td><td>从事某一事业发展，能创造巨大经济价值，促进GDP 增长</td></tr>
+<tr><td class="k">社会效益</td><td>做某一事业能对社会公共服务、民生事业产生重要推动作用</td></tr>
+<tr><td class="k">创新监管手段</td><td>将网络技术应用到监管工作之中，彻底颠覆了过去传统的监管手段</td></tr>
+<tr><td class="k">社会监督</td><td>社会团体、企业、媒体、群众等主体，共同监管政府部门工作</td></tr>
+<tr><td class="k">乡村特色产业</td><td>我们村的土壤含大量硒，产出的黄桃是富硒产品，基于这一特点，我们开始大批引进、种植黄桃，走产业化的路子</td></tr>
+<tr><td class="k">提高竞争力</td><td>该企业通过努力，最终使自己的商品在设计、功能、质量等方面都远超同类商品，深受顾客喜爱</td></tr>
+<tr><td class="k">提高抗风险能力</td><td>使企业在面临危机时能够轻松应付</td></tr>
+<tr><td class="k">稳定就业</td><td>政府出台了一系列复工复产优惠政策，确保人们不因疫情原因而出现失业、下岗现象</td></tr>
+<tr><td class="k">按需设岗</td><td>根据企业发展的实际需要，设置并确定岗位类别、岗位等级、各类岗位内部结构比例等</td></tr>
+<tr><td class="k">改善办学条件</td><td>某省不断加大教育投资，在校舍建设、师资补强等方面持续发力</td></tr>
+<tr><td class="k">对口支援</td><td>新冠疫情发生后，国家卫生健康委统筹安排重庆、黑龙江对孝感实施援助</td></tr>
+<tr><td class="k">财政投入</td><td>财政部门加大在教育、医疗等方面的支出</td></tr>
+<tr><td class="k">金融服务</td><td>继续发挥再贷款作用，完善针对脱贫人口的小额信贷政策，鼓励个人申请创业担保贷款，加大对脱贫地区优势特色产业信贷和保险支持力</td></tr>
+<tr><td class="k">人才支持</td><td>优先满足脱贫地区对高素质教师的补充需求，鼓励和引导各方面人才向国家乡村振兴重点帮扶县基层流动</td></tr>
+<tr><td class="k">考核机制。医疗建设</td><td>按照一定的指标、要求对各级领导干部的工作实绩、工作态度等进行监督考查</td></tr>
+<tr><td class="k">预防为主</td><td>在安全生产上，积极主动做好日常监管和宣传教育很重要，以避免在出现事故时防不胜防</td></tr>
+<tr><td class="k">支付方式</td><td>可以用现金付款，也可以用微信或支付宝付款</td></tr>
+<tr><td class="k">分级诊疗</td><td>逐步实现基层首诊、双向转诊、急慢分治、上下联动</td></tr>
+<tr><td class="k">促进优质医疗资源均衡布局</td><td>将公立医院建设重点放在新城区，以及中心城区人口相对集中的医疗资源薄弱区域</td></tr>
+<tr><td class="k">资源扩容</td><td>由于原有优质教育资源已远不能满足老百姓的需求，该市实施了实验小学易地新建工程、部分中小学新建工程</td></tr>
+<tr><td class="k">破除信息壁垒</td><td>彻底摒弃神秘行政和信息专享的传统思想，将权责一致、公开透明的理念深植到每个行政机关工作人员的内心，增强信息公开意识和信息</td></tr>
+<tr><td class="k">传统服务方式</td><td>医疗机构要针对老年人等群体运用智能技术困难的问题，保留原有的挂号、缴费等形式</td></tr>
+<tr><td class="k">改善群众服务体验</td><td>推广多学科诊疗、日间手术等服务模式，使百姓在就医时有更舒适的感受</td></tr>
+<tr><td class="k">优化线上线下支付流程</td><td>通过改善结算模式，在结算的各环节取消、合并、压缩了一些事项，使网上付款、手机付款、现金付款等方式更便捷</td></tr>
+<tr><td class="k">完善标准体系</td><td>优化化妆品相关国家标准、行业标准、团体标准、企业标准等</td></tr>
+<tr><td class="k">精细化管理</td><td>在企业运营管理中，要实现管理标准的具体量化和细化，要‘精到点上，细到实处’</td></tr>
+<tr><td class="k">职业化</td><td>企业员工要在行为、素养、技能等方面符合相关职业规范和标准</td></tr>
+<tr><td class="k">创新方式</td><td>企业不断突破，改变了传统的管理模式，以新颖的手段寻求更大市场空间</td></tr>
+<tr><td class="k">信息化追溯</td><td>构建电子信息平台，整合产品的类别、厂家、生产日期、有效期、批号等信息，实现产品来源可查、去向可追</td></tr>
+<tr><td class="k">技术支撑</td><td>制定数据网络、计算机应用等生产规章制度与管理办法，保障系统的生产安全</td></tr>
+<tr><td class="k">政府购买服务</td><td>当地政府把城区环卫服务外包给专业环卫公司</td></tr>
+<tr><td class="k">教育引导</td><td>通过给青少年讲授网络使用安全的相关知识，不断引领指导青少年提升网络安全素养，正确使用网络</td></tr>
+<tr><td class="k">增强积极性</td><td>通过此次学习教育活动，村干部的干劲更足了，人人都铆足了劲</td></tr>
+<tr><td class="k">主动性</td><td>以前，部分农民存在‘等靠要’的思想，现在能够发挥主观能动性，不断学习，以寻求脱贫致富的好方法</td></tr>
+<tr><td class="k">创造性</td><td>对工作有新颖的、突破性的想法</td></tr>
+</tbody></table></div>
+<div class="tip"><b>使用心法</b>：一个规范词背后是一类材料信号。看到「调整布局、划定优势区」就写「优化生产区域布局」；看到「加工成抹茶、保健品」就写「精深加工」。平时按主题各记 10 个，考场自然往外冒。</div>
+</section>
+<section id="d-s18">
+<h2><span class="num">18</span>论证案例精讲库（38 例 · 可搜索）</h2>
+<p class="lead">38 个「分论点 + 例证」的完整示范，覆盖严格执法、柔性执法、科技赋能、协同治理、监督问责等高频角度。每条都是「分论点整句 → 具体案例 → 回扣升华」的缩微版论证段，可直接拆用。</p>
+<div class="searchbar"><input id="d-q18" type="text" placeholder="搜索：柔性、科技、监督、协同、普法、风险…"><span class="cnt" id="d-cnt18"></span></div>
+<div class="tbl-scroll"><table id="d-t18"><thead><tr><th style="width:250px">分论点</th><th>例证与说理</th></tr></thead><tbody>
+<tr><td class="k">严格执法是维护法律权威的基石严格执法意味着对任何违法违规行为都绝不姑息迁就。就如在打击食品造假上，监管部门一旦发现有商家生产销售假冒伪劣食品，严格依据《食品安全法》等相关法规，从查封生产窝点、没收违法所得，到给予严厉罚款、吊销许可证等，一系列强硬举措让违法者付出沉重代价。正是这般严格，让法律条文不再是一纸空文，彰显出法律的不可侵犯性，使民众深知法律底线不可触碰，从而在全社会筑牢维护法律权威的坚固防线。</td><td></td></tr>
+<tr><td class="k">人性化执法能提升民众对执法的认同感某交警在处理一位送突发疾病孩子就医而闯红灯的家长时，并未直接开罚单，而是先帮忙引导交通，确保快速安全抵达医院，随后再耐心向其解释闯红灯虽事出有因但仍属违法，给予警告教育。这种人性化做法，既考虑了特殊情况又普及了法规知识，让当事人及民众感受到执法的温度。相比生硬处罚，人性化执法更易被接受，民众也会因此更愿意配合执法工作，主动遵守法规，增强对执法的认同感。</td><td></td></tr>
+<tr><td class="k">规范执法程序可避免执法乱象税务稽查工作需严格遵循程序，比如先下达规范的检查通知书，按规定组建稽查小组，在检查过程中保障企业合法的陈述申辩权，依据准确的税法条款核算应纳税额等。若程序不规范，随意跳过环节或滥用权力，就可能出现错查、误罚等情况。规范执法程序，恰似给执法工作套上“紧箍咒”，让每一步都有章可循，保障执法的公正性、准确性，杜绝权力寻租等乱象滋生。</td><td></td></tr>
+<tr><td class="k">提升执法人员专业素养利于精准执法市场监管执法人员需熟悉众多法律法规及各类商品标准等专业知识。以查处假冒化妆品为例，具备专业素养的执法者，能精准辨别真伪，从成分、包装、生产许可等多方面找到破绽，对照相关质量法规迅速做出判断并依法处理。若专业不足，面对复杂情况就易误判、漏判。所以不断提升执法人员专业素养，能确保执法精准到位，有效打击违法，维护市场正常秩序。</td><td></td></tr>
+<tr><td class="k">借助科技助力执法能提高执法效率生态环境执法中运用无人机巡查，可轻松抵达偏远工厂上空，快速监测废气排放、污水偷排等情况，相比人工排查效率大幅提高。像过去难以发现的隐藏在山谷里的违规排污口，无人机凭借高清摄像头和热成像技术能及时锁定。借助科技手段打破了人力、空间限制，能在更短时间内掌握违法线索，让执法行动更迅速，违法者无处遁形，极大提升了整体执法效率。</td><td></td></tr>
+<tr><td class="k">部门协同执法可攻克复杂执法难题在治理河流污染时，环保部门负责检测水质、确定污染源，水利部门调控水流、协助截污，城管部门监管沿岸垃圾倾倒等。各部门各司其职又紧密配合，共享信息，联合行动。单一部门面对复杂的跨领域污染问题往往力不从心，但通过协同作战，能汇聚多方力量，全面整治，有效解决河水污染这一难题，可见协同执法对攻克复杂执法任务、实现高效治理起着关键作用。</td><td></td></tr>
+<tr><td class="k">透明执法有助于树立良好执法形象城管部门在拆除违建过程中，提前公示违建认定依据、拆除计划，拆除时邀请居民代表、媒体现场监督，解答疑问。全程透明公开，让群众清楚看到执法是依规行事，没有暗箱操作。如此一来，群众消除误解，理解并认可执法工作，一改往日对城管的负面印象。透明执法展现了公正公平，在民众心中树立起了执法部门依法办事、值得信赖的良好形象。</td><td></td></tr>
+<tr><td class="k">执法中加强普法能从根源减少违法交警在查处酒驾时，除了按规定处罚，还会现场给酒驾者及围观群众讲解酒驾危害、相关法律条款，并用真实案例警示众人。很多人起初对酒驾违法认识不足，经这样的普法，深刻意识到严重性，不敢再犯，周边群众也受教育自觉遵守交规。执法与普法结合，让民众懂法进而守法，从思想根源上减少违法冲动，远比单纯处罚更能营造良好法治环境。</td><td></td></tr>
+<tr><td class="k">因地制宜执法贴合实际更有成效山区林业执法面临地域广、交通不便等难题，执法部门便发动熟悉山路的护林员，利用他们日常巡查反馈非法狩猎、滥伐等线索，再针对性执法。同时，根据不同村落对山林资源利用习惯，开展个性化普法宣传，引导合法利用。这种贴合山区实际的执法方式，充分考虑地域特点和民众情况，能精准打击违法，有效保护林业资源，让执法更接地气、更见成效。</td><td></td></tr>
+<tr><td class="k">完善执法监督机制保障执法公正性卫生执法部门构建内外监督体系，内部用执法记录仪、案卷评查规范执法行为，外部邀请人大代表、群众监督并设举报渠道。一次查处非法行医诊所时，内部监督确保执法流程合规，外部监督使执法全程受大众审视。有监督机制“保驾护航”，执法人员不敢懈怠，严格依法办事，避免权力滥用，切实保障了每一次执法的公正性，让执法经得起考验。</td><td></td></tr>
+<tr><td class="k">创新执法方式能应对新兴违法问题随着网络直播兴起，出现诸多乱象。文化执法部门创新采用智能监测系统，实时分析直播间画面、语音，识别低俗、虚假宣传等违规内容，精准锁定违规直播间并快速处理。传统执法手段难跟上网络直播快速变化节奏，创新方式利用科技优势，能及时捕捉新型违法“苗头”，高效规范行业发展，为应对层出不穷的新兴违法问题提供了有效范例。</td><td></td></tr>
+<tr><td class="k">柔性执法利于构建和谐执法关系景区工作人员发现游客践踏草坪，没有严厉呵斥罚款，而是微笑上前提醒，递上环保宣传册，邀请一起参与护草小活动，还送上景区小纪念品。游客感受到尊重与善意，欣然改正行为并向他人宣传爱护景区。柔性执法以温和方式引导规范行为，避免了对立冲突，让执法充满人情味，民众更易接受，进而营造出和谐友好的执法关系，使执法工作更顺畅开展。</td><td></td></tr>
+<tr><td class="k">重视执法反馈能优化执法工作综合执法部门整治完市容后，通过线上问卷、线下走访收集商户和居民意见。商户反馈执法时间影响经营，居民提出部分区域卫生清理不彻底。部门据此调整执法时间，增加重点区域清洁频次。重视反馈让执法部门了解实际问题，及时做出改进，使后续执法更贴合需求，更得民心，不断提升执法质量与效果。</td><td></td></tr>
+<tr><td class="k">执法中数据应用提升决策科学性交通执法部门收集各路口车流量、事故率、违法频次等数据，分析发现某路口早晚高峰事故频发且违法多。基于数据，合理调配警力，设置潮汐车道，调整信号灯时长。若缺乏数据支撑，决策易盲目。数据应用让执法部门精准把握交通状况，科学制定策略，有效改善路况，提升交通执法的针对性与有效性。</td><td></td></tr>
+<tr><td class="k">强化执法的事前预防作用可降低违法发生率消防部门不只是在火灾发生后去调查处理，更重视事前预防。定期对商场、学校等场所开展消防检查，督促整改隐患，同时组织消防安全培训和演练。像通过检查发现某商场疏散通道堵塞问题，责令其整改到位，并模拟火灾场景培训员工应急逃生技能。做好事前预防，将隐患消除在萌芽状态，民众消防安全意识提高，违法违规行为减少，比事后补救更能保障公共安全。</td><td></td></tr>
+<tr><td class="k">执法人员的责任意识是高质量执法的内在动力在环保执法一线，有执法人员无论严寒酷暑，只要接到污染举报，立刻赶赴现场，认真细致排查，哪怕线索模糊也绝不放过蛛丝马迹。他们深知肩负守护环境的重任，秉持强烈的责任意识，对每一个违法排污行为严肃对待。正是这份责任，驱使他们克服困难，严格执法，保障执法质量，为守护绿水青山贡献力量，也让我们看到责任意识在推动高质量执法中的关键作用。</td><td></td></tr>
+<tr><td class="k">建立执法案例库便于指导后续执法工作某城市执法部门将各类典型执法案例整理成库，涵盖城管、交通、市场监管等多领域。比如在处理相似的流动摊贩占道经营问题时，新入职的执法人员可参考以往成功案例里的沟通技巧、处罚依据及后续引导办法。案例库为执法人员提供了丰富经验借鉴，帮助他们快速准确应对类似情况，规范执法行为，提高执法效率，让执法工作更具科学性和连贯性。</td><td></td></tr>
+<tr><td class="k">开展联合执法演练能提升协同作战能力公安、消防、医疗等多部门会定期开展应对突发公共安全事件的联合执法演练。在模拟火灾救援演练中，公安负责现场秩序维护，消防实施灭火和被困人员解救，医疗及时救治伤员。通过反复演练，各部门熟悉彼此职责、配合流程，增强默契。一旦遇到真实情况，就能迅速联动，高效应对，最大限度保障人民生命财产安全，凸显联合执法演练对提升协同作战能力的重要意义。</td><td></td></tr>
+<tr><td class="k">执法中的应急处置能力关乎社会稳定在遇到突发的食品中毒事件时，市场监管、卫生健康等部门迅速启动应急处置机制。市场监管部门第一时间封存涉事食品，追溯源头；卫生健康部门全力救治患者，开展流行病学调查。各部门高效行动，控制事态发展，稳定群众情绪。若应急处置能力不足，就会导致恐慌蔓延，后果不堪设想。所以不断提升执法部门的应急处置能力，对维护社会稳定至关重要。</td><td></td></tr>
+<tr><td class="k">严格执法标准可促进市场公平竞争在反不正当竞争执法中，严格按照《反不正当竞争法》设定的标准，对虚假宣传、商业诋毁等行为进行判定和处罚。比如，某企业通过夸大产品功效进行虚假宣传来抢占市场份额，执法部门严格对照标准，查实后给予严厉制裁，让违规企业失去不当优势。严格执法标准，能营造公平有序的市场环境，使各企业凭实力、靠质量竞争，推动市场经济健康发展。</td><td></td></tr>
+<tr><td class="k">执法中保护举报人权益能鼓励社会监督税务部门高度重视保护举报人权益，对举报企业偷税漏税的举报人，严格保密其信息，防止被举报人打击报复。同时，按照规定给予举报人相应奖励。正因举报人权益得到保障且有奖励激励，越来越多的人愿意站出来提供违法线索，形成全社会参与监督的良好氛围，助力执法部门更及时准确地查处违法，让税收征管等执法工作更高效开展。</td><td></td></tr>
+<tr><td class="k">执法人员的沟通能力有助于顺利执法城管执法人员在劝导街边违规摆摊的小贩时，运用良好的沟通能力，先耐心倾听小贩难处，再以平和语气讲解城市管理规定以及违规摆摊对交通、环境的影响，提出合理的摆摊建议。小贩感受到被尊重理解，大多能配合执法，主动前往指定地点经营。可见，执法人员善于沟通，能化解矛盾，减少对抗，让执法过程更顺利，提高执法的实际效果。</td><td></td></tr>
+<tr><td class="k">优化执法资源配置能提高整体效能交通执法部门根据不同路段车流量、事故率等情况，合理调配警力。将更多警力分配到交通繁忙、违法多发的主干道，而在车流量少的支路适当减少人力投入。同时，利用电子警察等设备辅助执法。通过这样优化资源配置，既保障了重点区域的执法力度，又避免资源浪费，使有限的执法资源发挥出最大效能，提升交通管理的整体效果。</td><td></td></tr>
+<tr><td class="k">执法中的回访机制能巩固执法成果市场监管部门在处理完消费者投诉某商家商品质量问题后，会定期回访消费者了解商品后续使用情况，同时回访商家查看整改措施落实情况。对仍存在问题的商家督促其继续整改，对整改到位的予以肯定。回访机制让执法工作形成闭环，确保问题彻底解决，防止违法违规行为反弹，进一步巩固执法成果，维护良好的市场消费环境。</td><td></td></tr>
+<tr><td class="k">定期开展执法效果评估利于持续改进城市综合执法部门每季度会对市容市貌、环境卫生等执法效果进行评估，通过对比整治前后的数据、实地查看、群众满意度调查等方式，了解执法工作成效与不足。如发现部分街区乱停乱放现象反弹，就分析原因，调整执法策略，增加巡逻频次。定期评估为执法工作提供改进方向，促使执法不断优化，持续提升执法质量。</td><td></td></tr>
+<tr><td class="k">执法中的风险预判可降低执法风险在拆除大型违建工程前，城管执法部门联合相关专家对拆除过程可能面临的风险，如建筑物坍塌风险、周边人员安全风险等进行全面预判，制定详细应对方案，包括设置警戒区、提前疏散人员、安排专业拆除设备等。有了风险预判和应对措施，在实际执法中能有效避免意外发生，保障执法人员和周边群众安全，降低执法过程中的各类风险。</td><td></td></tr>
+<tr><td class="k">提升执法的信息化水平便于信息共享如今各地行政执法部门加快信息化建设，像搭建统一的执法信息平台，公安、交通、市场监管等部门可将案件信息、企业信用信息等上传共享。交警查处酒驾时能通过平台快速查询当事人是否存在其他违法记录，市场监管部门在检查企业时也能参考公安部门对其涉及的治安情况反馈。信息化水平提升，打破信息孤岛，方便各部门协同执法，提高执法的精准性和全面性。</td><td></td></tr>
+<tr><td class="k">执法中遵循比例原则确保执法适度城管在处理小商贩轻微占道经营问题时，会根据实际情况选择合适的执法方式。若只是偶尔占道且未造成严重影响，采取警告、引导规范摆放的方式，而非一律高额罚款或没收经营工具。遵循比例原则，就是要求执法手段与违法行为的性质、情节及危害程度相适应，避免过度执法，保障执法的合理性、适度性，维护相对人的合法权益。</td><td></td></tr>
+<tr><td class="k">加强执法队伍的廉政建设保障执法公正廉洁行政执法队伍通过开展廉政教育活动，学习违纪违法案例，签订廉政承诺书等方式，筑牢拒腐防变的思想防线。例如，某执法人员面对商家的贿赂，想起廉政教育内容，坚守原则拒绝并依法处理该商家违法问题。加强廉政建设，能杜绝执法人员以权谋私，保证执法过程公正廉洁，让民众信任执法，维护执法部门的公信力。</td><td></td></tr>
+<tr><td class="k">执法中注重证据收集是准确执法的关键在知识产权执法中，查处商标侵权案件时，执法人员需要严谨收集各种证据，包括侵权产品实物、销售记录、商标标识对比等。只有证据充分且符合法定要求，才能准确判定侵权行为成立，依据相关法律进行处罚。若证据不足或存在瑕疵，就可能导致错判，无法有效打击侵权，让违法者逍遥法外。所以注重证据收集，是确保执法准确、公正的重要环节。</td><td></td></tr>
+<tr><td class="k">提高执法的主动性可及时遏制违法苗头安全生产执法部门主动深入各类工厂、矿山等企业，常态化开展安全隐患排查，而不是等事故发生后才行动。在一次检查中，执法人员提前发现某工厂消防设施老化、工人违规操作等隐患，当即责令整改，避免了可能发生的安全事故。主动执法能尽早察觉违法违规的潜在风险，及时采取措施，将问题扼杀在萌芽状态，保障企业生产安全和社会稳定。</td><td></td></tr>
+<tr><td class="k">执法中的跨区域合作能打击跨地域违法在打击非法贩卖假药案件中，由于假药销售往往涉及多个省市，各地药品监管部门开展跨区域合作。通过共享线索、联合调查、统一行动，追踪假药生产源头、销售网络，不管假药贩子如何跨地域逃窜，都能被一网打尽。跨区域合作打破地域限制，整合各地执法资源，形成强大打击合力，有效应对跨地域违法犯罪行为，维护全国药品市场安全。</td><td></td></tr>
+<tr><td class="k">执法中的文化建设有助于凝聚团队力量行政执法部门积极开展文化建设，打造特色的团队文化，如提炼体现公正、担当的部门精神，组织团队拓展活动等。以某城管大队为例，通过定期的文化建设活动，队员之间增进了解，增强归属感和责任感，在执法工作中更能相互配合、齐心协力，共同应对难题，展现出强大的团队凝聚力，推动执法工作高效开展。</td><td></td></tr>
+<tr><td class="k">完善执法的申诉机制保障相对人合法权益税务执法中，若纳税人对税务部门作出的处罚决定不服，可通过完善的申诉机制，在规定时间内提出申诉，税务部门会依法重新审核案件，听取纳税人陈述申辩理由，组织听证等。申诉机制给予相对人表达异议、维护自身权益的渠道，确保执法过程中可能出现的错误能被纠正，让执法更公平公正，避免权力滥用伤害群众利益。</td><td></td></tr>
+<tr><td class="k">执法中的激励机制能激发执法人员积极性行政执法部门建立科学合理的激励机制，对执法表现优秀、查处重大案件、群众满意度高的执法人员给予表彰、晋升、奖励等。在市场监管部门，那些在打击假冒伪劣产品工作中成绩突出的人员获得嘉奖后，工作热情更高，也带动其他同事积极投入执法工作，整个部门形成你追我赶的良好氛围，大大提高了执法工作的积极性和效率。</td><td></td></tr>
+<tr><td class="k">执法中运用大数据分析实现精准监管市场监管部门利用大数据分析系统，收集整合各类企业的注册信息、经营数据、投诉举报情况等海量数据。通过分析发现某些行业在特定时段容易出现虚假宣传、质量问题等违法现象，便针对这些重点行业、时段加大监管力度，精准出击。大数据分析让执法部门能提前洞察违法趋势，精准定位监管对象，实现有的放矢的精准监管，提升执法效能。</td><td></td></tr>
+<tr><td class="k">执法人员的服务意识提升执法亲和力交警在指挥交通时，不仅严格规范车辆行人通行秩序，还主动为问路的群众耐心指路，帮助老人小孩安全过马路，提供便民服务。这种服务意识让民众感受到交警不只是在执行管理任务，更是在为大家服务，使执法充满亲和力，拉近了与群众的距离，群众也会更自觉配合交通管理工作，提升执法工作的整体效果。</td><td></td></tr>
+<tr><td class="k">合理设置执法权限可避免职责不清在城市管理综合执法改革中，明确划分城管部门与其他相关部门的执法权限，比如规定城管负责市容环境卫生、市政设施管理等方面的执法，而环保部门专注于大气、水等环境污染防治执法。合理设置权限，各部门清楚职责范围，避免出现多头执法或相互推诿的情况，让执法工作有序开展，提高执法效率和质量。</td><td></td></tr>
+</tbody></table></div>
+</section>
+<section id="d-s19">
+<h2><span class="num">19</span>七大专题写作包（开头 · 结尾 · 名言 · 事例）</h2>
+<p class="lead">7 个最热押题专题，每个配「开头参考 + 结尾参考 + 领导人名言 + 30 个事例」。考场上先定专题，再按「开头背 2 个、结尾背 2 个、名言背 5 句」的节奏调用，事例按「人＋事＋果」一句带过。</p>
+<div class="searchbar"><input id="d-q19" type="text" placeholder="搜索专题关键词，如：营商、科技、绿色、产业、数字、文化…"><span class="cnt" id="d-cnt19"></span></div>
+<details class="tpc" open>
+<summary class="tpc-h"><span class="tpc-n">01</span><span class="tpc-t">营商环境</span><span class="tpc-d">简政放权 · 放管服 · 市场化法治化国际化 · 公平竞争</span></summary>
+<div class="tpc-b">
+<div class="tpc-sec"><div class="tpc-lab">开头参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 在经济全球化深入发展的当下，区域间的经济竞争愈发激烈，而营商环境已成为竞争的关键要素。良好的营商环境如同肥沃的土壤，滋养着各类市场主体茁壮成长。从企业的设立到发展壮大，从项目的引进到落地实施，都离不开优质营商环境的支撑。然而，当前部分地区仍存在审批繁琐、监管不当等问题，制约着经济的活力与发展。因此，优化营商环境，是提升区域竞争力、推动经济高质量发展的必然选择。</div>
+<div class="tpc-item"><b>2.</b> 营商环境，是一个地区经济软实力和综合竞争力的集中体现。它不仅关系到市场主体的兴衰、生产要素的集聚，更关乎经济社会发展的质量和速度。近年来，我国高度重视营商环境建设，取得了显著成效。但与国际先进水平相比，仍存在一定差距。诸如政策落实不到位、市场准入门槛高等问题，依然困扰着企业。故而，持续优化营商环境，打造市场化、法治化、国际化的营商环境，已刻不容缓。</div>
+<div class="tpc-item"><b>3.</b> “水深则鱼悦，城强则贾兴。”营商环境的优劣，直接影响着企业的投资意愿和发展信心。在当前经济形势复杂多变的背景下，优化营商环境成为稳定经济增长、激发市场活力的关键举措。无论是传统产业的转型升级，还是新兴产业的培育发展，都需要良好的营商环境作为保障。只有不断优化营商环境，才能吸引更多优质资源，推动经济实现可持续发展。</div>
+<div class="tpc-item"><b>4.</b> 良好的营商环境是经济发展的“助推器”，是企业成长的“催化剂”。在全面建设社会主义现代化国家的新征程中，优化营商环境具有重要的战略意义。它不仅能够提高政府服务效能，增强市场主体的获得感，还能促进各类市场主体公平竞争，推动经济结构优化升级。尽管各地在优化营商环境方面做了大量工作，但仍存在一些亟待解决的问题，需要我们深入思考和积极应对。</div>
+<div class="tpc-item"><b>5.</b> 营商环境是市场经济的培育之土，是市场主体的生命之水。随着我国经济由高速增长阶段转向高质量发展阶段，对营商环境的要求也越来越高。优化营商环境，不仅是深化“放管服”改革的重要内容，也是推动经济高质量发展的内在要求。当前，一些地方在营商环境方面还存在体制机制不健全、政策执行不到位等问题，严重影响了市场主体的积极性和创造性。因此，必须下大力气优化营商环境。</div>
+<div class="tpc-item"><b>6.</b> 在全球经济竞争日益激烈的今天，营商环境已成为吸引投资、促进创新的重要因素。一个地区的营商环境好不好，企业最有发言权。良好的营商环境能够降低企业的制度性交易成本，提高企业的运营效率，增强企业的竞争力。然而，当前我国部分地区的营商环境仍存在一些短板，如行政审批流程繁琐、政策缺乏稳定性等。因此，优化营商环境，提升企业的满意度和获得感，是摆在我们面前的重要任务。</div>
+<div class="tpc-item"><b>7.</b> 营商环境是经济发展的重要基础，是一个地区的重要软实力。优化营商环境，对于激发市场活力、推动经济高质量发展具有重要意义。从简化行政审批手续到加强知识产权保护，从提高政务服务水平到完善市场监管机制，每一个环节都关系到营商环境的优劣。尽管我国在优化营商环境方面取得了一定成绩，但仍需不断努力，解决存在的问题，打造更加优质的营商环境。</div>
+<div class="tpc-item"><b>8.</b> “栽下梧桐树，引得凤凰来。”优化营商环境，就是要打造吸引企业投资兴业的“梧桐树”。在新时代，经济发展面临着新的机遇和挑战，优化营商环境成为应对挑战、抓住机遇的关键。良好的营商环境能够吸引人才、技术、资金等要素集聚，促进产业升级和创新发展。然而，当前一些地方的营商环境还不能满足企业的需求，需要我们加大改革力度，优化营商环境，为经济发展注入新的动力。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">结尾参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 优化营商环境，没有最好，只有更好。我们需以“咬定青山不放松”的决心，持续深化改革，破除体制机制障碍。从政策制定到执行，从政务服务到市场监管，全方位提升营商环境质量。让良好的营商环境成为企业成长的沃土、经济发展的引擎，吸引更多优质资源汇聚，推动经济行稳致远，书写高质量发展的崭新篇章。</div>
+<div class="tpc-item"><b>2.</b> 营商环境是经济发展的生命线。优化营商环境的征程中，我们已迈出坚实步伐，取得一定成效。但仍需清醒认识到，改革永无止境。要不断创新服务方式，提升服务效能，打造市场化、法治化、国际化的一流营商环境。让企业轻装上阵，激发市场主体活力，为实现经济社会的持续繁荣注入源源不断的动力。</div>
+<div class="tpc-item"><b>3.</b> 优化营商环境，是一场攻坚战，也是一场持久战。我们要以钉钉子精神，一锤接着一锤敲，一件接着一件干。持续优化政务环境、市场环境、法治环境，让企业在公平竞争中发展壮大，让创新创造活力充分迸发。相信在不懈努力下，营商环境必将更加优良，经济发展必将更具韧性和活力。</div>
+<div class="tpc-item"><b>4.</b> 良好的营商环境是企业的期盼，更是经济高质量发展的保障。我们要始终坚持以企业需求为导向，以改革创新为动力，不断优化营商环境。强化政策协同，提升服务水平，营造稳定、公平、透明、可预期的发展环境。让营商环境成为吸引投资、促进创新的金字招牌，推动经济在新征程中破浪前行。</div>
+<div class="tpc-item"><b>5.</b> 优化营商环境，关乎企业兴衰、经济发展、民生福祉。我们要站在全局和战略高度，深化对优化营商环境重要性的认识。持续推进“放管服”改革，加强事中事后监管，提升政务服务便利化水平。以营商环境的优化升级，推动经济结构调整和转型升级，实现经济社会发展新跨越。</div>
+<div class="tpc-item"><b>6.</b> 营商环境优，则市场活力足；市场活力足，则经济发展强。我们要以时不我待的紧迫感和使命感，全力优化营商环境。打破思维定式，勇于探索创新，破解制约企业发展的难题。让营商环境成为经济发展的强大支撑，助力企业在市场竞争中脱颖而出，为实现中华民族伟大复兴的中国梦贡献力量。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">领导人名言警句 · 精选</div>
+<div class="tpc-item"><b>1.</b> “营商环境只有更好，没有最好”：出自2018年11月5日习近平主席在首届中国国际进口博览会开幕式上的主旨演讲。</div>
+<div class="tpc-item"><b>2.</b> “法治是最好的营商环境”：习近平总书记在中央全面依法治国委员会第二次会议上提出。</div>
+<div class="tpc-item"><b>3.</b> “持续建设市场化、法治化、国际化一流营商环境”：习近平总书记在参加十四届全国人大二次会议江苏代表团审议时强调。</div>
+<div class="tpc-item"><b>4.</b> “要继续深化改革，坚持‘两个毫不动摇’，优化营商环境”。</div>
+<div class="tpc-item"><b>5.</b> “要以高水平安全保障高质量发展，依法维护社会主义市场经济秩序，提升法治化营商环境建设水平”。</div>
+<div class="tpc-item"><b>6.</b> “要依法保护企业家合法权益，加强产权和知识产权保护，形成长期稳定发展预期，鼓励创新、宽容失败，营造激励企业家干事创业的浓厚氛围”。</div>
+<div class="tpc-item"><b>7.</b> “要更多提供优质公共服务，支持企业家以恒心办恒业，扎根中国市场，深耕中国市场”。</div>
+<div class="tpc-item"><b>8.</b> “各级领导干部要为民营企业解难题、办实事，构建亲清政商关系”。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">典型事例 · 精选</div><div class="tpc-cases">
+<span class="tpc-case">简化行政审批，优化政务环境：深圳市推行“秒批”改革，企业设立登记等多项审批事项实现秒级审批。通过数据共享和流程优化，减少企业办事时间和成本，如某科技企业办理注册登记，原本需多日，现瞬间完成，极大提高了办事效率，激发了市场活力，彰显了政务环境优化对营商的促进作用。</span>
+<span class="tpc-case">加强法治保障，维护市场秩序：上海建立知识产权保护中心，快速处理侵权案件。某文创企业的原创设计遭抄袭，该中心迅速介入，依法惩处侵权方，维护了企业合法权益。这体现了法治保障在优化营商环境中的关键作用，为企业创新营造了良好氛围，让企业安心发展。</span>
+<span class="tpc-case">降低企业成本，增强企业活力：重庆市出台减税降费政策，为制造业企业减轻负担。某汽车制造企业受益于税费减免，将资金投入研发和设备更新，推出新款车型，提升了市场竞争力。降成本举措有效增强了企业活力，促进了产业升级和经济发展。</span>
+<span class="tpc-case">提升服务效能，打造亲清政商关系：杭州市政府部门主动上门服务企业，建立企业服务专员制度。服务专员为某互联网企业解决了办公场地、人才落户等问题，助力企业快速成长。这种贴心服务拉近了政企距离，营造了良好的政商环境，推动企业蓬勃发展。</span>
+<span class="tpc-case">完善基础设施，吸引企业投资：贵州省大力发展大数据产业，加强数据中心等基础设施建设。吸引了众多知名企业如苹果、华为等落户。完善的基础设施为企业提供了良好的发展条件，促进了当地经济结构调整和转型升级，展现了基础设施对营商环境的支撑作用。</span>
+<span class="tpc-case">推进数字政务，提高办事便捷度：浙江省推广“最多跑一次”改革，实现政务服务数字化。企业和群众办事可网上办、掌上办，如办理营业执照变更，通过政务平台提交材料，无需多次跑腿。数字政务提升了办事便捷度，优化了营商环境，提高了政府服务效能。</span>
+<span class="tpc-case">强化金融支持，解决企业融资难题：苏州市设立专项产业引导基金，为创新型企业提供资金支持。某生物医药企业获得基金投资后，加速研发进程，成功推出创新药物，打破了国外技术垄断。金融支持为企业解决了资金瓶颈，促进了创新发展和产业升级。</span>
+<span class="tpc-case">优化人才政策，吸引高端人才：深圳市出台人才住房和补贴政策，吸引了大量高端人才。某科技企业凭借当地良好的人才政策，招聘到了顶尖研发人才，提升了企业创新能力，推出了具有竞争力的产品。优化人才政策为企业发展提供了智力支持，优化了营商环境。</span>
+<span class="tpc-case">加强市场监管，营造公平竞争环境：北京市加强对互联网平台的监管，打击不正当竞争行为。对一些平台的垄断和不正当竞争行为进行查处，维护了市场秩序，让中小企业获得公平竞争机会，促进了互联网行业健康发展，优化了营商环境。</span>
+<span class="tpc-case">推动政策落实，增强企业获得感：南京市建立政策落实督查机制，确保惠企政策落地见效。某制造业企业及时享受到了税收优惠和技改补贴政策，用于设备更新和技术创新，提高了生产效率。政策落实增强了企业获得感，提升了企业对营商环境的满意度。</span>
+<span class="tpc-case">深化放管服改革，激发市场活力：广州市放宽市场准入，简化企业开办流程。新设立企业数量大幅增长，如某初创企业在短时间内完成注册登记，迅速开展业务。深化放管服改革降低了市场门槛，激发了市场主体的活力和创造力，优化了营商环境。</span>
+<span class="tpc-case">打造产业园区，促进产业集聚：合肥市打造集成电路产业园区，提供完善的配套设施和政策支持。吸引了众多集成电路企业入驻，形成产业集群。产业园区促进了企业间的交流合作和资源共享，提升了产业竞争力，优化了当地营商环境。</span>
+<span class="tpc-case">优化税收服务，减轻企业负担：厦门市推出税收优惠政策宣传辅导服务，帮助企业了解并享受政策。某软件企业在税务部门辅导下，充分享受税收减免，将资金用于研发投入，开发出更优质的软件产品。优化税收服务减轻了企业负担，促进了企业发展。</span>
+<span class="tpc-case">加强信用体系建设，规范市场行为：杭州市建立企业信用评价体系，对守信企业给予奖励，对失信企业进行惩戒。某守信企业凭借良好信用获得了银行贷款优惠和政府项目优先参与权，而失信企业则受到限制。信用体系建设规范了市场行为，营造了良好的营商环境。</span>
+<span class="tpc-case">提升政务公开水平，增强政策透明度：成都市通过政府网站、政务新媒体等平台，及时公开政策文件和办事指南。企业能够准确了解政策信息，提前规划生产经营活动。提升政务公开水平增强了政策透明度，让企业办事更有方向，优化了营商环境。</span>
+</div></div>
+</div></details>
+<details class="tpc" open>
+<summary class="tpc-h"><span class="tpc-n">02</span><span class="tpc-t">科技创新</span><span class="tpc-d">科技自立自强 · 新质生产力 · 卡脖子 · 创新驱动</span></summary>
+<div class="tpc-b">
+<div class="tpc-sec"><div class="tpc-lab">开头参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 科技，如同一盏明灯，照亮了人类前行的道路。回首往昔，工业革命的轰鸣开启了现代文明的篇章；看今朝，互联网的普及让世界紧密相连。科技创新不仅改变了我们的生活方式，更重塑了全球的经济格局。在这个机遇与挑战并存的时代，谁掌握了科技创新的主动权，谁就能在未来的竞争中脱颖而出，引领时代的发展潮流。</div>
+<div class="tpc-item"><b>2.</b> 当历史的车轮驶入21世纪，科技创新以前所未有的速度和规模改变着世界。从神舟飞天到蛟龙入海，从5G技术的广泛应用到新能源汽车的蓬勃发展，科技创新的成果如繁星般闪耀。它不仅是提升国家竞争力的关键因素，更是解决人类面临的诸多难题的希望所在。我们必须紧紧抓住科技创新这一“牛鼻子”，推动经济社会的高质量发展。</div>
+<div class="tpc-item"><b>3.</b> 创新是一个民族进步的灵魂，是一个国家兴旺发达的不竭动力。在当今时代，科技创新已成为各国竞争的焦点。无论是在经济领域，还是在社会发展的各个方面，科技创新都发挥着举足轻重的作用。它犹如一把利剑，劈开了发展道路上的重重障碍，为我们开辟出一片广阔的新天地。我们应积极拥抱科技创新，让创新的活力在中华大地竞相迸发。</div>
+<div class="tpc-item"><b>4.</b> 科技兴则民族兴，科技强则国家强。在人类历史的长河中，每一次重大的科技创新都带来了生产力的巨大飞跃和社会的深刻变革。如今，我们正处在一个科技飞速发展的时代，人工智能、大数据、生物技术等新兴技术层出不穷。面对这一历史机遇，我们必须坚定信心，加大科技创新投入，培养高素质创新人才，为实现中华民族伟大复兴的中国梦提供强大的科技支撑。</div>
+<div class="tpc-item"><b>5.</b> 随着时代的发展，科技创新已成为推动社会进步的强大引擎。从农业时代的刀耕火种到工业时代的机器轰鸣，再到信息时代的智能互联，科技创新不断改写着人类的历史。在全球一体化的今天，科技创新更是国与国之间竞争的核心领域。我们要充分认识到科技创新的重要性，积极营造良好的创新环境，激发全社会的创新创造活力。</div>
+<div class="tpc-item"><b>6.</b> 科技创新，是人类智慧的结晶，也是推动社会发展的关键力量。在现代社会，科技的进步无处不在，从日常生活中的智能手机到医疗领域的精准治疗，从交通出行的自动驾驶到航空航天的探索未知。科技创新不仅提高了我们的生活质量，还为经济发展注入了新的活力。我们要以科技创新为引领，推动经济社会的全面进步，实现人类的美好未来。</div>
+<div class="tpc-item"><b>7.</b> “惟创新者进，惟创新者强，惟创新者胜。”在当今激烈的国际竞争中，科技创新能力已成为衡量一个国家综合实力的重要标志。从芯片技术的突破到新能源的开发利用，从生物医药的创新研究到航空航天的不断探索，科技创新的每一次进步都凝聚着无数科研人员的心血。我们要大力弘扬创新精神，鼓励科技创新，让创新成为国家发展的强大动力。</div>
+<div class="tpc-item"><b>8.</b> 科技，是推动社会发展的第一生产力。在过去的几十年里，科技创新取得了举世瞩目的成就，让我们的生活发生了翻天覆地的变化。从互联网的普及到电子商务的兴起，从智能家居的出现到虚拟现实技术的应用，科技创新正以惊人的速度改变着我们的生活方式和生产方式。在新的历史起点上，我们要继续加大科技创新力度，推动经济社会的持续健康发展。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">结尾参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 科技创新，是国家强盛之基，民族进步之魂。展望未来，我们要以时不我待的紧迫感、舍我其谁的责任感，持续加大科技创新投入，培育创新人才，完善创新机制。让科技创新的光芒照亮前行的道路，驱动中国这艘巨轮在新时代的浪潮中破浪前行，驶向中华民族伟大复兴的光辉彼岸，也为人类文明进步贡献更多中国智慧与力量。</div>
+<div class="tpc-item"><b>2.</b> 科技兴则国兴，科技强则国强。在科技创新的征程中，我们已取得了诸多辉煌成就，但也面临着诸多挑战。路漫漫其修远兮，吾将上下而求索。我们要坚定不移地走自主创新之路，突破关键核心技术，让科技创新成为经济社会发展的强劲引擎。相信在全体中华儿女的共同努力下，中国必将在世界科技舞台上绽放更加璀璨的光彩，创造更加美好的未来。</div>
+<div class="tpc-item"><b>3.</b> 历史的车轮滚滚向前，科技创新的步伐从未停歇。从过去的跟跑、并跑，到如今在部分领域的领跑，中国正以昂扬的姿态迈向科技强国。我们要珍惜来之不易的成果，继续弘扬创新精神，激发全社会创新活力。让科技创新的种子在中华大地生根发芽、茁壮成长，结出累累硕果，不断提升我国的综合国力和国际竞争力，续写中华民族的辉煌篇章。</div>
+<div class="tpc-item"><b>4.</b> 科技创新，是推动社会进步的强大动力，是解决人类难题的希望之光。在全球化的今天，我们面临着诸多全球性挑战，如气候变化、公共卫生等。唯有依靠科技创新，加强国际合作，才能共同应对这些挑战。让我们携手共进，以科技创新为桥梁，构建人类命运共同体，为人类的可持续发展开辟更加广阔的前景。</div>
+<div class="tpc-item"><b>5.</b> 当我们站在新的历史起点，科技创新已成为时代赋予我们的使命。我们要抓住机遇，迎接挑战，勇于创新，敢于突破。让科技创新深度融入经济社会的各个领域，提升人民群众的生活品质，推动产业升级转型。相信在科技创新的引领下，中国的明天将更加美好，中华民族伟大复兴的中国梦必将早日实现。</div>
+<div class="tpc-item"><b>6.</b> 科技创新，是打开未来之门的钥匙。在科技飞速发展的时代，我们不能有丝毫懈怠。要持续加大对基础研究的投入，培育创新文化，营造良好的创新生态。让每一个创新的火花都能绽放光芒，每一个创新的成果都能转化为现实生产力。以科技创新驱动发展，向着建设世界科技强国的目标奋勇前进，书写属于我们这一代人的辉煌。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">领导人名言警句 · 精选</div>
+<div class="tpc-item"><b>1.</b> 科学技术从来没有像今天这样深刻影响着国家前途命运，从来没有像今天这样深刻影响着人民生活福祉。</div>
+<div class="tpc-item"><b>2.</b> 中国要强盛、要复兴，就一定要大力发展科学技术，努力成为世界主要科学中心和创新高地。</div>
+<div class="tpc-item"><b>3.</b> 自力更生是中华民族自立于世界民族之林的奋斗基点，自主创新是我们攀登世界科技高峰的必由之路。</div>
+<div class="tpc-item"><b>4.</b> 创新从来都是九死一生，但我们必须有“亦余心之所善兮，虽九死其犹未悔”的豪情。</div>
+<div class="tpc-item"><b>5.</b> 只有把关键核心技术掌握在自己手中，才能从根本上保障国家经济安全、国防安全和其他安全。</div>
+<div class="tpc-item"><b>6.</b> 创新决胜未来，改革关乎国运。</div>
+<div class="tpc-item"><b>7.</b> 自主创新是开放环境下的创新，绝不能关起门来搞，而是要聚四海之气、借八方之力。</div>
+<div class="tpc-item"><b>8.</b> 创新之道，唯在得人。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">典型事例 · 精选</div><div class="tpc-cases">
+<span class="tpc-case">科技创新推动产业升级：宁德时代专注锂电池研发，创新电池技术，提高能量密度与安全性。其产品广泛应用于新能源汽车，助力汽车产业电动化转型，推动上下游产业协同发展，提升了我国在全球新能源领域的竞争力，成为行业领军者。</span>
+<span class="tpc-case">科技创新助力医疗突破：我国科研团队创新研发新冠疫苗，从毒株分离到临床试验，运用先进生物技术。快速研制出安全有效的疫苗，为全球抗疫提供有力支撑，展现了科技创新在守护生命健康、应对公共卫生危机方面的关键作用。</span>
+<span class="tpc-case">科技创新赋能农业变革：极飞科技推出农业无人机，集成智能飞控与精准喷洒技术。可高效完成播种、施肥、植保等作业，大幅提升农业生产效率，降低人力成本，让传统农业向智慧农业加速转变，保障粮食安全。</span>
+<span class="tpc-case">科技创新丰富文化体验：腾讯利用数字技术打造“数字故宫”小程序，通过3D建模、AR导览等创新形式，让用户线上领略故宫魅力。打破时空限制，传播传统文化，推动文化产业与科技深度融合，带来全新文化体验。</span>
+<span class="tpc-case">科技创新引领交通飞跃：大疆创新的无人机技术应用于交通管理，可空中巡查路况、疏导交通。在大型活动、节假日等交通高峰时段，快速获取交通信息，辅助决策，提升交通管理效率，缓解拥堵，保障出行顺畅。</span>
+<span class="tpc-case">科技创新促进教育公平：作业帮借助AI技术打造智能学习平台，提供个性化学习方案。覆盖海量学习资源，让偏远地区学生也能享优质教育，缩小城乡教育差距，以科技之力推动教育公平，助力学生成长。</span>
+<span class="tpc-case">科技创新守护生态环境：碧水源研发膜处理技术，用于污水处理与水资源再生。高效去除污染物，实现污水资源化利用，在黑臭水体治理、饮用水净化等方面成效显著，以科技创新助力生态文明建设。</span>
+<span class="tpc-case">科技创新提升社会治理：阿里云利用大数据和云计算，打造城市大脑系统。整合城市交通、安防、政务等数据，实现智能决策与精准治理，提升城市运行效率，增强市民生活幸福感，为社会治理现代化提供新路径。</span>
+<span class="tpc-case">科技创新催生新兴业态：美团创新“互联网+生活服务”模式，通过外卖、到店、民宿等业务，连接商家与消费者。创造大量就业机会，满足多样化生活需求，推动生活服务业数字化转型，引领消费新潮流。</span>
+<span class="tpc-case">科技创新保障国家安全：航天科工研发的反无人机系统，运用雷达探测、光电识别等技术，精准发现并处置“低慢小”无人机威胁。在重大活动安保、边境防控等场景发挥重要作用，为国家安全筑牢科技防线。</span>
+<span class="tpc-case">科技创新助力能源转型：隆基绿能专注太阳能光伏技术创新，提升光伏电池转换效率。降低光伏发电成本，推动太阳能广泛应用，加速能源结构从传统化石能源向清洁能源转变，助力实现“双碳”目标。</span>
+<span class="tpc-case">科技创新提升航天实力：天问一号火星探测器集成多项创新技术，如自主导航、遥感探测等。成功实现火星环绕、着陆和巡视探测，使我国在行星探测领域取得重大突破，彰显科技创新对航天事业的强大推动。</span>
+<span class="tpc-case">科技创新推动材料革新：中复神鹰攻克碳纤维制备技术难题，创新工艺提升产品性能。其碳纤维广泛应用于航空航天、体育器材等领域，打破国外垄断，推动我国高性能材料产业发展，增强产业竞争力。</span>
+<span class="tpc-case">科技创新保护文化遗产：敦煌研究院运用数字化技术，对莫高窟壁画进行高清采集与虚拟展示。通过创新保护手段，留存珍贵文化遗产，同时借助数字展览让更多人领略敦煌文化魅力，实现文化遗产的永续传承。</span>
+<span class="tpc-case">科技创新变革金融服务：蚂蚁集团推出的支付宝，以移动支付为基础，创新金融服务模式。提供便捷支付、理财、信贷等服务，普及金融知识，提升金融服务的覆盖率和可得性，推动普惠金融发展。</span>
+</div></div>
+</div></details>
+<details class="tpc" open>
+<summary class="tpc-h"><span class="tpc-n">03</span><span class="tpc-t">绿色发展</span><span class="tpc-d">两山理论 · 双碳 · 绿色发展 · 美丽中国</span></summary>
+<div class="tpc-b">
+<div class="tpc-sec"><div class="tpc-lab">开头参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 当工业化的浪潮席卷全球，经济的飞速发展带来了物质的极大丰富，却也在不经意间给我们的地球家园留下了创伤。资源短缺、环境污染、生态失衡等问题日益严峻，如同高悬的达摩克利斯之剑。在这样的时代背景下，绿色发展成为了破解困局、实现可持续发展的必由之路。它不仅关乎当下的生活品质，更决定着子孙后代的未来福祉，是我们必须肩负起的历史使命。</div>
+<div class="tpc-item"><b>2.</b> “绿水青山就是金山银山。”绿色发展理念，深刻揭示了经济发展与生态保护的辩证关系。在追求经济增长的道路上，我们不能再以牺牲环境为代价。如今，人们对美好生活的向往，不仅是物质的富足，更是环境的优美、生态的和谐。从城市的绿色空间打造，到乡村的生态产业发展，绿色发展正以蓬勃之势，引领着我们走向一个经济繁荣、生态良好、人民幸福的新时代。</div>
+<div class="tpc-item"><b>3.</b> 环顾当今世界，绿色发展已成为全球共识。随着气候变化对人类生存和发展的威胁日益加剧，各国纷纷将绿色发展纳入国家战略。在中国，生态文明建设被摆在突出位置，绿色发展贯穿于经济社会发展的各领域和全过程。从推动能源结构调整，到加强污染防治攻坚，从倡导绿色生活方式，到促进人与自然和谐共生，绿色发展的理念正逐渐深入人心，化为生动实践。</div>
+<div class="tpc-item"><b>4.</b> 曾几何时，我们陶醉于工业文明带来的巨大成就，却忽视了对自然的敬畏和保护。如今，雾霾笼罩、河流污染、土壤退化等问题不断警示着我们，传统的发展模式已难以为继。绿色发展，是对过去发展方式的深刻反思，也是对未来发展道路的重新抉择。它是一场涉及生产方式、生活方式、思维方式和价值观念的革命性变革，唯有坚定不移地走绿色发展之路，才能实现经济社会发展与生态环境保护的双赢。</div>
+<div class="tpc-item"><b>5.</b> 生态兴则文明兴，生态衰则文明衰。绿色发展，是人类文明进步的重要标志。在历史的长河中，无数文明因生态破坏而衰落，也有许多国家和地区因重视生态保护而实现可持续发展。在新时代，我们正处在一个关键的历史节点，必须以绿色发展为引领，推动经济社会全面绿色转型，让美丽中国的画卷徐徐展开，让中华民族永续发展的根基更加坚实。</div>
+<div class="tpc-item"><b>6.</b> 随着人们生活水平的不断提高，对优美生态环境的需求愈发迫切。清新的空气、干净的水源、安全的食品，这些曾经被视为理所当然的自然馈赠，如今却变得弥足珍贵。绿色发展，正是满足人民群众对美好生活向往的必然要求。它不仅能改善生态环境质量，还能培育新的经济增长点，推动产业升级，实现经济、社会、环境的协调发展。</div>
+<div class="tpc-item"><b>7.</b> 在经济全球化的今天，绿色发展已成为国际竞争的新优势。那些在绿色技术、绿色产业、绿色标准等方面占据领先地位的国家，将在未来的全球经济格局中赢得更大的话语权。中国作为负责任的大国，积极推动绿色发展，不仅是自身可持续发展的需要，也是对全球生态环境保护的重要贡献。我们要以绿色发展为契机，提升国际竞争力，展现大国担当。</div>
+<div class="tpc-item"><b>8.</b> 从“盼温饱”到“盼环保”，从“求生存”到“求生态”，人民群众的需求发生了深刻变化。绿色发展，正是顺应这一时代潮流的必然选择。它要求我们在经济发展的过程中，充分考虑生态环境的承载能力，实现经济活动与生态系统的良性互动。只有这样，我们才能为人民群众创造更加美好的生活环境，让绿色成为美丽中国最鲜明的底色。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">结尾参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 绿色发展，是一场关乎民族未来的深刻变革，是实现可持续发展的必由之路。我们要以坚定的决心、不懈的努力，将绿色发展理念贯穿于经济社会发展的方方面面。让绿色成为发展的底色，让创新为绿色赋能，推动产业升级、生态改善、民生幸福。相信在全社会的共同努力下，我们定能绘就一幅天更蓝、水更清、山更绿的美丽画卷，实现中华民族永续发展的伟大梦想。</div>
+<div class="tpc-item"><b>2.</b> 绿色发展的征程，道阻且长，行则将至。我们已经迈出了坚实的步伐，取得了初步的成效，但仍需不断前行。要持续深化绿色发展实践，加强科技创新，完善制度保障，培育绿色文化。让绿色发展成为全社会的自觉行动，汇聚起磅礴力量，共同守护我们的绿水青山，创造更加美好的生活，为子孙后代留下宝贵的生态财富。</div>
+<div class="tpc-item"><b>3.</b> 绿色发展，不仅是对当下环境问题的回应，更是对未来发展的担当。在新时代，我们要立足新发展阶段，贯彻新发展理念，构建新发展格局，坚定不移地走绿色发展之路。推动经济社会发展全面绿色转型，促进人与自然和谐共生。让绿色发展引领我们走向高质量发展的新境界，让中国成为全球生态文明建设的重要参与者、贡献者、引领者。</div>
+<div class="tpc-item"><b>4.</b> 当绿色发展成为时代的主旋律，我们的经济将更具活力，我们的社会将更加和谐，我们的家园将愈发美丽。我们要紧紧抓住绿色发展的机遇，积极应对挑战，不断探索创新。以绿色发展为引擎，驱动产业升级，提升生态品质，增进民生福祉。相信在绿色发展的引领下，我们定能书写出无愧于时代、无愧于人民的壮丽篇章。</div>
+<div class="tpc-item"><b>5.</b> 绿色发展，是实现中华民族伟大复兴中国梦的重要支撑。我们要始终坚持生态优先、绿色发展，将绿色发展理念融入到每一个决策、每一项行动中。加强生态保护修复，推动绿色产业发展，倡导绿色生活方式。让绿色发展成为中华民族永续发展的坚实根基，为实现国家富强、民族振兴、人民幸福的宏伟目标注入强大动力。</div>
+<div class="tpc-item"><b>6.</b> 回顾绿色发展的历程，我们收获了经验，也看到了希望。展望未来，我们要以更高的标准、更严的要求、更实的举措，深入推进绿色发展。强化绿色发展的制度保障，激发全社会的绿色创新活力，提升全民的绿色发展意识。让绿色发展的成果更多更公平地惠及全体人民，共同创造一个绿色、低碳、循环的美好未来。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">领导人名言警句 · 精选</div>
+<div class="tpc-item"><b>1.</b> “绿水青山就是金山银山”。</div>
+<div class="tpc-item"><b>2.</b> “保护生态环境就是保护生产力，改善生态环境就是发展生产力”。</div>
+<div class="tpc-item"><b>3.</b> “像保护眼睛一样保护生态环境，像对待生命一样对待生态环境”。</div>
+<div class="tpc-item"><b>4.</b> “良好生态环境是最普惠的民生福祉”。</div>
+<div class="tpc-item"><b>5.</b> “生态环境保护是功在当代、利在千秋的事业”。</div>
+<div class="tpc-item"><b>6.</b> “用最严格制度最严密法治保护生态环境”。</div>
+<div class="tpc-item"><b>7.</b> “山水林田湖草是生命共同体，要统筹兼顾、整体施策、多措并举”。</div>
+<div class="tpc-item"><b>8.</b> “绿色发展是高质量发展的底色，新质生产力本身就是绿色生产力”。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">典型事例 · 精选</div><div class="tpc-cases">
+<span class="tpc-case">绿色产业助力经济转型：浙江安吉曾经“靠山吃山”导致生态恶化，后大力发展白茶种植、乡村旅游等绿色产业。如今，白茶飘香，乡村游火热，生态优势转化为经济优势，实现了从“卖石头”到“卖风景”“卖文化”的转变，成为绿色发展的典范。</span>
+<span class="tpc-case">科技创新推动绿色能源：晶科能源不断创新光伏技术，提高太阳能电池转换效率。其生产的高效光伏组件广泛应用于国内外光伏电站，减少了对传统化石能源的依赖，降低碳排放，为全球绿色能源发展提供了有力支撑，助力能源结构绿色转型。</span>
+<span class="tpc-case">绿色建筑打造宜居环境：上海的被动房示范项目，采用高效保温、自然通风等技术，极大降低了建筑能耗。室内环境舒适宜人，能源消耗仅为传统建筑的几分之一，既减少了碳排放，又为居民提供了健康、舒适的居住空间，引领绿色建筑发展潮流。</span>
+<span class="tpc-case">生态农业保障粮食安全：山东寿光发展生态循环农业，利用蔬菜秸秆制作有机肥，采用生物防治病虫害。不仅提高了蔬菜品质和产量，保障了粮食安全，还减少了化肥农药使用，保护了土壤生态环境，实现了农业绿色可持续发展。</span>
+<span class="tpc-case">绿色交通引领出行变革：北京大力推广新能源公交车，优化公交线路布局。新能源公交车零排放、低噪音，有效减少了尾气污染。同时，共享单车的普及让市民出行“最后一公里”更绿色便捷，改善了城市空气质量，推动了绿色交通发展。</span>
+<span class="tpc-case">循环经济实现资源高效利用：贵屿镇曾是电子垃圾污染重灾区，后通过建立循环经济园区，运用先进技术拆解处理电子垃圾，回收贵金属和塑料等资源。既解决了污染问题，又实现了资源的高效循环利用，探索出一条绿色发展新路径。</span>
+<span class="tpc-case">湿地保护维护生态平衡：江苏盐城积极保护黄海湿地，建立自然保护区，恢复湿地生态系统。这里成为众多候鸟的栖息地，生物多样性得到有效保护。湿地还发挥着净化水质、调节气候等生态功能，促进了区域生态平衡和绿色发展。</span>
+<span class="tpc-case">绿色金融助力环保产业：兴业银行推出绿色金融产品，为污水处理、风力发电等环保项目提供贷款支持。通过金融手段引导资金流向绿色产业，推动了环保产业的发展壮大，助力企业绿色转型，实现经济与环境效益双赢。</span>
+<span class="tpc-case">城市绿化提升生态品质：深圳持续推进城市绿化建设，打造多个城市公园和绿道。城市绿地面积增加，改善了空气质量，缓解了热岛效应，为市民提供了休闲娱乐的好去处，提升了城市生态品质和居民生活幸福感。</span>
+<span class="tpc-case">绿色消费引领生活新风尚：随着环保意识增强，越来越多消费者选择购买环保产品。如无磷洗衣粉、可降解塑料制品等。绿色消费倒逼企业改进生产工艺，减少环境污染，推动了整个产业链向绿色可持续方向发展。</span>
+<span class="tpc-case">森林碳汇助力碳中和：塞罕坝林场经过多年植树造林，森林覆盖率大幅提高。大片森林吸收大量二氧化碳，成为重要的碳汇。不仅改善了当地生态环境，还为我国实现碳中和目标贡献了力量，展现了绿色发展的生态价值。</span>
+<span class="tpc-case">绿色制造推动产业升级：格力电器推行绿色制造，采用节能生产设备和工艺，研发节能环保家电产品。其生产的空调等产品能效等级高，减少了能源消耗和环境污染，推动了家电产业向绿色、高端方向升级。</span>
+<span class="tpc-case">河长制促进水资源保护：浙江率先推行河长制，各级河长负责河流治理和保护。通过加强污染源管控、河道清淤等措施，许多河流的水质得到明显改善，水生态系统逐步恢复，保障了水资源的可持续利用，推动了绿色发展。</span>
+<span class="tpc-case">绿色照明节约能源资源：在城市公共照明领域，许多地方推广使用LED节能灯具。LED灯具能耗低、寿命长，相比传统灯具可大幅节约电能。同时，智能照明控制系统的应用实现了按需照明，进一步提高了能源利用效率，促进了绿色发展。</span>
+<span class="tpc-case">生态旅游带动乡村振兴：江西婺源凭借优美的自然风光和古村落文化，发展生态旅游。游客纷至沓来，带动了餐饮、住宿等相关产业发展，增加了农民收入。同时，当地注重生态保护，实现了生态效益与经济效益的良性循环，助力乡村振兴。</span>
+</div></div>
+</div></details>
+<details class="tpc" open>
+<summary class="tpc-h"><span class="tpc-n">04</span><span class="tpc-t">产业升级</span><span class="tpc-d">制造业升级 · 智改数转 · 新质生产力 · 产业链</span></summary>
+<div class="tpc-b">
+<div class="tpc-sec"><div class="tpc-lab">开头参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 在全球经济竞争日益激烈的当下，产业升级已成为各国提升竞争力的关键举措。从传统制造业向高端智能制造转型，从劳动密集型产业向技术密集型产业迈进，产业升级的浪潮正深刻改变着经济格局。然而，我国在产业升级过程中，也面临着技术创新不足、人才短缺等诸多挑战。如何把握机遇，应对挑战，实现产业的高质量升级，是我们亟待解决的重要课题。</div>
+<div class="tpc-item"><b>2.</b> 随着科技的飞速发展，新一轮产业变革正加速演进。大数据、人工智能、物联网等新兴技术的广泛应用，为产业升级带来了前所未有的机遇。但与此同时，传统产业也面临着产能过剩、附加值低等困境。在这样的时代背景下，推动产业升级，不仅是适应科技发展潮流的必然选择，也是实现经济可持续发展的内在要求。我们需深入思考产业升级的路径和方法，以在全球经济竞争中占据一席之地。</div>
+<div class="tpc-item"><b>3.</b> 产业，乃经济发展之根基。产业升级，则是经济迈向高质量发展的必由之路。回顾历史，每一次产业升级都带来了生产力的巨大飞跃和经济结构的深刻变革。如今，在经济全球化和数字化的双重驱动下，我国产业正处于转型升级的关键时期。我们既要看到产业升级带来的机遇，也要正视面临的困难和挑战，积极探索适合国情的产业升级之路，推动经济实现质的提升。</div>
+<div class="tpc-item"><b>4.</b> “穷则变，变则通，通则久。”在经济发展的进程中，产业升级是适应时代变化、实现可持续发展的必然趋势。当前，我国经济已由高速增长阶段转向高质量发展阶段，对产业升级提出了更高要求。传统产业亟需通过技术创新、模式创新等实现转型升级，新兴产业则需加快培育和发展壮大。只有坚定不移地推进产业升级，才能不断提升我国产业的核心竞争力，实现经济的长远发展。</div>
+<div class="tpc-item"><b>5.</b> 当今世界，科技革命和产业变革风起云涌。产业升级作为推动经济发展的核心动力，正成为各国竞争的焦点。在我国，产业升级对于优化经济结构、提高经济发展质量、增强国际竞争力具有至关重要的意义。然而，在推进产业升级的过程中，我们也面临着资源环境约束、创新能力不足等问题。因此，我们必须以创新为引领，加快产业升级步伐，推动经济发展方式的转变。</div>
+<div class="tpc-item"><b>6.</b> 产业升级，是经济发展的永恒主题。从农业社会到工业社会，再到如今的信息社会，每一次产业的变革和升级都极大地推动了人类社会的进步。在新时代，我国经济发展进入新常态，传统产业发展面临诸多瓶颈，新兴产业发展方兴未艾。加快产业升级，既是适应经济发展新常态的必然要求，也是实现经济可持续发展的重要保障。我们应抓住机遇，积极推动产业升级，为经济发展注入新的活力。</div>
+<div class="tpc-item"><b>7.</b> 在经济全球化的背景下，产业升级已成为提升国家综合实力的关键因素。我国作为世界制造业大国，产业体系完备，但也存在着产业层次不高、创新能力不强等问题。随着国内外经济形势的变化，产业升级的紧迫性日益凸显。我们必须加快推进产业升级，提高产业的智能化、绿色化、服务化水平，实现产业的高端化发展，提升我国在全球产业链和价值链中的地位。</div>
+<div class="tpc-item"><b>8.</b> 产业升级是实现经济高质量发展的重要支撑。随着我国经济发展进入新阶段，劳动力成本上升、资源环境压力加大等问题日益突出，传统产业发展模式难以为继。与此同时，新技术、新产业、新业态、新模式不断涌现，为产业升级带来了新的机遇。我们要顺应时代发展潮流，积极推动产业升级，培育新的经济增长点，实现经济发展质量变革、效率变革、动力变革。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">结尾参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 产业升级，绝非一蹴而就，而是一场持久的征程。在这条道路上，我们已迈出坚实步伐，见证了科技赋能产业的变革，也体会到创新驱动发展的力量。未来，需持续深化改革，强化政策引导，培育高素质人才，以创新为桨，以科技为帆。让产业升级的巨轮在经济发展的海洋中破浪前行，驶向高质量发展的彼岸，为实现中华民族伟大复兴的中国梦筑牢坚实的产业根基。</div>
+<div class="tpc-item"><b>2.</b> 产业升级，是时代赋予我们的使命，也是经济发展的必然选择。如今，我们正处于产业变革的关键时期，机遇与挑战并存。我们要坚定信心，勇于创新，充分发挥市场的决定性作用和政府的引导作用。推动传统产业转型升级，培育新兴产业茁壮成长。相信在全社会的共同努力下，产业升级必将取得丰硕成果，为经济社会的繁荣发展注入源源不断的动力，书写产业发展的崭新篇章。</div>
+<div class="tpc-item"><b>3.</b> 回顾产业升级的历程，我们有突破的喜悦，也有面临困难的思索。展望未来，我们更应明确方向，坚定不移地走产业升级之路。聚焦核心技术攻关，促进产业融合发展，提升产业的智能化、绿色化、服务化水平。以产业升级引领经济结构优化，以经济结构优化推动经济高质量发展。让产业升级成为经济发展的强劲引擎，助力我国在全球经济竞争中脱颖而出，实现经济的可持续发展和民族的伟大复兴。</div>
+<div class="tpc-item"><b>4.</b> 产业升级的号角已然吹响，我们必须以时不我待的紧迫感和使命感，积极投身其中。强化科技创新驱动，完善产业生态体系，加强国际合作与交流。在产业升级的过程中，不断提升我国产业的核心竞争力，提高产业附加值，增强产业的抗风险能力。让产业升级的成果更多更公平地惠及全体人民，为人民群众创造更加美好的生活，为国家的繁荣富强奠定坚实基础。</div>
+<div class="tpc-item"><b>5.</b> 产业升级是经济发展的永恒主题，是实现国家富强、民族振兴的重要支撑。在新的历史起点上，我们要深入贯彻新发展理念，加快构建新发展格局。以创新为引领，以改革为动力，推动产业升级向更高水平迈进。培育新动能，打造新优势，推动产业发展从量的扩张向质的提升转变。相信在不懈的努力下，产业升级必将开创经济发展的新局面，为实现中华民族伟大复兴的中国梦贡献强大的产业力量。</div>
+<div class="tpc-item"><b>6.</b> 产业升级之路，任重而道远。但我们坚信，只要我们坚定信心，勇于探索，敢于实践，就一定能够克服困难，取得成功。我们要加大对产业升级的支持力度，营造良好的政策环境和市场氛围。鼓励企业创新发展，激发全社会的创造力和活力。通过产业升级，推动经济发展方式的转变，实现经济的绿色、低碳、可持续发展，让产业升级成为经济发展的亮丽名片。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">领导人名言警句 · 精选</div>
+<div class="tpc-item"><b>1.</b> “制造业是我国的立国之本、强国之基”。</div>
+<div class="tpc-item"><b>2.</b> “深入实施制造业重大技术改造升级和大规模设备更新工程，推动制造业高端化、智能化、绿色化发展，让传统产业焕发新的生机活力”。</div>
+<div class="tpc-item"><b>3.</b> “加快科技创新成果向现实生产力转化，加快构建产业新体系”。</div>
+<div class="tpc-item"><b>4.</b> “传统产业改造升级，也能发展新质生产力”。</div>
+<div class="tpc-item"><b>5.</b> “要根据本地的资源禀赋、产业基础、科研条件等，有选择地推动新产业、新模式、新动能发展，用新技术改造提升传统产业，积极促进产业高端化、智能化、绿色化”。</div>
+<div class="tpc-item"><b>6.</b> “积极培育新能源、新材料、先进制造、电子信息等战略性新兴产业，积极培育未来产业，加快形成新质生产力，增强发展新动能”。</div>
+<div class="tpc-item"><b>7.</b> “发展新质生产力不是忽视、放弃传统产业，要防止一哄而上、泡沫化，也不要搞一种模式”。</div>
+<div class="tpc-item"><b>8.</b> “高质量发展是全面建设社会主义现代化国家的首要任务”。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">典型事例 · 精选</div><div class="tpc-cases">
+<span class="tpc-case">科技创新驱动制造业升级：华为公司坚持自主创新，投入大量资源进行5G技术研发。凭借领先的通信技术，不仅提升了自身在全球通信设备市场的竞争力，还推动了智能制造业发展，如助力汽车制造实现车联网升级，让生产更智能、产品更具科技含量，展现了科技创新对产业升级的强大驱动力。</span>
+<span class="tpc-case">数字化助力传统零售业转型：苏宁易购从传统零售向智慧零售转型，利用大数据分析消费者需求，实现精准营销。线上线下融合，打造数字化门店，消费者可线上下单、门店自提。通过数字化升级，苏宁拓展了业务范围，提升了服务质量，在电商冲击下成功转型，是传统零售业升级的典型案例。</span>
+<span class="tpc-case">绿色发展引领能源产业变革：宁德时代专注于锂电池研发生产，推动新能源汽车产业发展。其高性能电池提高了电动汽车续航里程，减少了对传统燃油的依赖。同时，宁德时代注重电池回收利用，发展循环经济，实现了能源产业的绿色升级，为应对气候变化、实现可持续发展贡献力量。</span>
+<span class="tpc-case">产业融合促进文化产业升级：故宫博物院将文化与创意产业融合，开发出众多文创产品。以故宫建筑、文物等为元素，设计出文具、饰品、生活用品等。这些产品不仅传承了故宫文化，还创造了巨大经济效益，带动了文化产业升级，让传统文化在现代社会焕发出新活力。</span>
+<span class="tpc-case">智能化推动农业现代化进程：山东寿光利用物联网、大数据等技术发展智慧农业。智能温室可自动调节温度、湿度和光照，精准施肥灌溉。无人机用于农作物监测和植保，提高了农业生产效率和质量，实现了从传统农业向现代化、智能化农业的升级，保障了粮食安全和农民增收。</span>
+<span class="tpc-case">互联网+助力服务业创新发展：滴滴出行借助互联网平台，整合出租车、私家车等资源，提供便捷出行服务。通过大数据优化派单算法，提高车辆利用率和乘客满意度。同时，拓展了代驾、顺风车等业务，推动了交通运输服务业的升级，改变了人们的出行方式。</span>
+<span class="tpc-case">品牌建设提升传统产业附加值：波司登从传统羽绒服制造企业转型为时尚品牌。通过提升设计水平，选用高品质面料，加强品牌营销，波司登羽绒服不仅在国内市场份额提升，还走向国际市场。品牌建设使波司登摆脱低价竞争，实现了传统服装产业的升级，提高了产品附加值。</span>
+<span class="tpc-case">大数据赋能金融产业升级：蚂蚁金服利用大数据技术，构建信用评估体系，为小微企业和个人提供便捷金融服务。通过分析海量数据，精准评估风险，推出小额贷款、移动支付等创新业务。大数据让金融服务更高效、更普惠，推动了金融产业的数字化升级，提升了金融服务实体经济的能力。</span>
+<span class="tpc-case">工业互联网推动制造业高质量发展：富士康打造工业互联网平台，实现生产过程数字化、智能化。通过连接设备、采集数据，实时监控生产状态，优化生产流程。工业互联网提高了生产效率，降低了成本，提升了产品质量，使富士康从传统代工企业向智能制造企业升级，增强了在全球制造业的竞争力。</span>
+<span class="tpc-case">新能源汽车产业带动上下游升级：特斯拉的崛起带动了锂电池、自动驾驶技术等上下游产业发展。锂电池企业加大研发投入，提升电池性能和安全性；芯片企业研发自动驾驶芯片，推动汽车智能化。新能源汽车产业的发展促进了相关产业技术升级和创新，形成了完整的产业链生态，推动了整个汽车产业的升级转型。</span>
+<span class="tpc-case">人工智能助力医疗产业变革：科大讯飞将人工智能技术应用于医疗领域，开发出智能语音电子病历系统、辅助诊断系统等。医生可通过语音输入病历，系统还能辅助诊断疾病，提高了医疗效率和准确性。人工智能为医疗产业带来新的发展机遇，推动了医疗服务的智能化升级，改善了患者就医体验。</span>
+<span class="tpc-case">产业集群推动区域产业升级：浙江义乌形成了小商品产业集群，涵盖生产、销售、物流等环节。众多企业集聚，实现了资源共享、协同创新。通过产业集群，义乌小商品不断升级换代，从低端制造向高端设计、品牌营销转变，提升了区域产业竞争力，成为全球知名的小商品之都。</span>
+<span class="tpc-case">电商平台促进农产品产业升级：拼多多开展“多多农园”项目，与农户合作，通过电商平台将农产品直接销售给消费者。减少了中间环节，提高了农民收入。同时，引导农户标准化种植，打造农产品品牌，促进了农产品产业从传统种植向品牌化、电商化升级，助力乡村振兴。</span>
+<span class="tpc-case">数字化转型提升物流产业效率：京东物流打造智能化仓储和配送体系，利用机器人、无人机等技术提高物流效率。智能仓储实现货物自动分拣、存储，无人机可进行偏远地区配送。数字化转型让京东物流在快递行业竞争中脱颖而出，推动了物流产业从传统人力作业向智能化、自动化升级。</span>
+<span class="tpc-case">技术引进加速传统产业升级：中国高铁在发展初期引进国外先进技术，通过消化吸收再创新，实现了从追赶到超越。如今，中国高铁技术领先全球，不仅在国内大规模建设高铁网络，还出口到多个国家。技术引进推动了中国铁路产业升级，提升了中国在高端装备制造领域的国际地位。</span>
+</div></div>
+</div></details>
+<details class="tpc" open>
+<summary class="tpc-h"><span class="tpc-n">05</span><span class="tpc-t">数字经济</span><span class="tpc-d">数字中国 · 数实融合 · 数字经济 · 智慧治理</span></summary>
+<div class="tpc-b">
+<div class="tpc-sec"><div class="tpc-lab">开头参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 当今时代，数字技术浪潮汹涌澎湃，数字经济已成为全球经济发展的新引擎。从电子商务的蓬勃兴起，到大数据、人工智能的广泛应用，数字经济正以前所未有的速度改变着生产生活方式。它不仅推动了产业升级，还创造了巨大的经济价值和社会效益。然而，在数字经济快速发展的同时，也面临着数据安全、隐私保护等诸多挑战。如何在机遇与挑战并存的当下，促进数字经济健康有序发展，成为亟待探讨的重要课题。</div>
+<div class="tpc-item"><b>2.</b> 随着互联网的普及和信息技术的飞速发展，数字经济如一颗璀璨的新星，照亮了经济发展的新路径。在数字经济的驱动下，传统产业加速转型升级，新兴业态层出不穷。无论是智能制造提升生产效率，还是在线教育打破时空限制，都彰显了数字经济的强大生命力。但我们也应清醒地认识到，数字经济发展中还存在着数字鸿沟、创新能力不足等问题。因此，深入剖析数字经济，探寻其可持续发展之道意义重大。</div>
+<div class="tpc-item"><b>3.</b> 数字经济，作为新时代经济发展的重要形态，正深刻改变着世界经济格局。在全球范围内，各国纷纷将发展数字经济作为提升国家竞争力的重要战略。在中国，数字经济规模不断扩大，成为经济增长的重要支撑。从移动支付的便捷到共享经济的繁荣，数字经济已融入人们生活的方方面面。然而，数字经济的发展并非一帆风顺，规范市场秩序、加强监管等任务依然艰巨。我们需积极应对，推动数字经济行稳致远。</div>
+<div class="tpc-item"><b>4.</b> 在信息爆炸的时代，数字经济以其创新性、融合性和高成长性，成为经济发展的新动能。它打破了传统产业的边界，促进了产业融合发展，催生了众多新业态、新模式。数字经济的发展不仅提升了经济效率，还为社会创造了大量就业机会。但与此同时，数据垄断、网络安全等问题也逐渐凸显。如何平衡发展与监管，充分发挥数字经济的潜力，是摆在我们面前的重要任务。</div>
+<div class="tpc-item"><b>5.</b> 互联网、大数据、云计算、区块链等数字技术的迅猛发展，孕育了数字经济这一全新的经济形态。数字经济正深刻影响着生产、分配、交换和消费等各个环节，为经济社会发展带来了新的机遇和挑战。一方面，它推动了经济的高质量发展，提高了资源配置效率；另一方面，也面临着数字伦理、数字治理等方面的难题。我们必须准确把握数字经济发展趋势，积极应对挑战，实现数字经济的可持续发展。</div>
+<div class="tpc-item"><b>6.</b> 数字经济时代已然来临，它如同一场深刻的变革，重塑着经济社会的面貌。在数字经济的引领下，企业数字化转型步伐加快，创新活力不断激发。从数字化办公提高工作效率，到数字营销拓展市场空间，数字经济为企业发展带来了新的机遇。然而，数字经济发展中也存在着区域发展不平衡、人才短缺等问题。我们要以战略眼光和创新思维，推动数字经济更好地服务于经济社会发展。</div>
+<div class="tpc-item"><b>7.</b> 当数字化的浪潮席卷而来，数字经济成为推动经济增长和社会进步的关键力量。在全球经济竞争日益激烈的背景下，数字经济的发展水平已成为衡量一个国家综合实力的重要标志。中国在数字经济领域取得了显著成就，电子商务、数字金融等领域走在世界前列。但我们也不能忽视数字经济发展中存在的问题，如数据确权不清、平台经济规范不足等。唯有不断完善，才能在数字经济的赛道上保持领先。</div>
+<div class="tpc-item"><b>8.</b> 数字经济，作为信息技术与经济深度融合的产物，正引领着经济发展的新潮流。它以数据为关键生产要素，以创新为核心驱动力，推动着经济结构的优化升级。在数字经济的推动下，传统制造业向智能化转型，服务业向数字化拓展。然而，数字经济的快速发展也带来了一些新的问题，如算法歧视、数字经济泡沫等。我们需要加强研究，制定科学合理的政策，促进数字经济健康发展。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">结尾参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 数字经济，作为时代发展的强劲引擎，已深刻融入经济社会的肌理。我们在享受其带来的高效与便捷时，也应正视数据安全、数字鸿沟等问题。未来，需以创新为驱动，以监管为保障，持续深化数字技术与实体经济融合，促进数字经济均衡发展。让数字经济在规范中前行，在创新中壮大，为经济高质量发展注入源源不断的动力，绘就新时代经济发展的绚丽篇章。</div>
+<div class="tpc-item"><b>2.</b> 数字经济浪潮奔涌，它改变了生产生活，重塑了经济格局。从技术创新到模式变革，数字经济潜力无限。但也面临着隐私保护、行业垄断等挑战。我们要秉持开放、创新、包容的理念，完善政策法规，加强国际合作，鼓励技术突破。让数字经济的阳光照亮每一个角落，推动全球经济协同共进，向着数字文明的美好未来加速迈进。</div>
+<div class="tpc-item"><b>3.</b> 回顾数字经济的发展历程，创新始终是其蓬勃发展的核心密码。展望前路，机遇与挑战并存。我们要持续提升数字技术自主创新能力，培育高素质数字人才，拓展数字经济应用场景。同时，强化数字治理，营造公平竞争的市场环境。相信在全社会的共同努力下，数字经济必将绽放更加璀璨的光芒，为实现中华民族伟大复兴的中国梦提供坚实支撑。</div>
+<div class="tpc-item"><b>4.</b> 数字经济的发展，是一场没有终点的赛跑。在这条赛道上，我们已取得阶段性成果，但仍需快马加鞭。要加快构建数字经济新发展格局，推动数字技术与各产业深度融合，提升产业链供应链的数字化水平。还要加强数字经济国际合作，分享发展经验，共同应对全球性挑战。让数字经济成为引领世界经济复苏和增长的关键力量，创造更多发展奇迹。</div>
+<div class="tpc-item"><b>5.</b> 数字经济，正以势不可挡之势重塑世界。从城市到乡村，从传统产业到新兴业态，处处都有数字经济的身影。我们要抓住数字经济发展的战略机遇，加速数字化转型，推动经济社会全面进步。同时，注重数据要素的合理配置与安全保护，让数字经济发展成果惠及全体人民。在数字经济的驱动下，向着实现共同富裕的目标稳步前行。</div>
+<div class="tpc-item"><b>6.</b> 数字经济时代，数据成为关键生产要素，技术创新日新月异。我们在积极拥抱数字经济的同时，不能忽视其带来的风险与挑战。要建立健全数字经济治理体系，加强数据安全监管，促进数字经济健康有序发展。以数字经济为依托，推动产业升级，提升国家竞争力，让中国在全球数字经济竞争中占据领先地位，书写辉煌篇章。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">领导人名言警句 · 精选</div>
+<div class="tpc-item"><b>1.</b> 不断做强做优做大我国数字经济，发挥数字技术对经济发展的放大、叠加、倍增作用。</div>
+<div class="tpc-item"><b>2.</b> 要抓住数字经济发展机遇，加快建设数字中国。</div>
+<div class="tpc-item"><b>3.</b> 数字经济具有高创新性、强渗透性、广覆盖性，是构建现代化经济体系的重要引擎。</div>
+<div class="tpc-item"><b>4.</b> 要推动互联网、大数据、人工智能和实体经济深度融合，建设数字中国、智慧社会。</div>
+<div class="tpc-item"><b>5.</b> 加快发展数字经济，促进数字经济和实体经济深度融合，打造具有国际竞争力的数字产业集群。</div>
+<div class="tpc-item"><b>6.</b> 激发数字经济活力，增强数字政府效能，优化数字社会环境，构建数字合作格局，筑牢数字安全屏障。</div>
+<div class="tpc-item"><b>7.</b> 数字技术、数字经济是世界科技革命和产业变革的先机，是新一轮国际竞争重点领域，我们要抓住先机、抢占未来发展制高点。</div>
+<div class="tpc-item"><b>8.</b> 把握数字化、网络化、智能化方向，推动制造业、服务业、农业等产业数字化。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">典型事例 · 精选</div><div class="tpc-cases">
+<span class="tpc-case">数字经济推动制造业智能化转型：富士康通过引入工业互联网和大数据技术，打造“熄灯工厂”。智能机器人精准作业，生产效率大幅提高，次品率显著降低。数据驱动的生产管理，让富士康在全球制造业竞争中脱颖而出，展现了数字经济对传统制造业的重塑力量。</span>
+<span class="tpc-case">数字技术赋能农业现代化：阿里云助力黑龙江建三江农场实现智慧农业。利用卫星遥感、物联网技术，实时监测土壤、气象数据，精准灌溉施肥。无人机植保提高效率，农产品质量提升，数字经济让传统农业迈向精准、高效的现代化之路。</span>
+<span class="tpc-case">电商平台促进数字经济与服务业融合：美团作为生活服务电商平台，整合餐饮、住宿、旅游等资源。通过大数据分析用户需求，精准推送服务，商家实现数字化运营。不仅方便了消费者，还带动了线下服务业的数字化转型，推动了数字经济与服务业深度融合。</span>
+<span class="tpc-case">数字经济催生新就业形态：抖音等短视频平台兴起，催生了大量新职业。主播、短视频剪辑师、运营专员等岗位涌现，许多年轻人凭借创意和技能实现就业创业。数字经济打破传统就业模式，为社会创造了多元化的就业机会，缓解了就业压力。</span>
+<span class="tpc-case">互联网医疗彰显数字经济民生价值：微医平台汇聚众多优质医疗资源，患者可在线挂号、问诊、购药。偏远地区患者也能享受到专家诊疗服务，提高了医疗服务的可及性。数字经济让医疗更便捷高效，切实改善了民生福祉。</span>
+<span class="tpc-case">在线教育推动教育公平与创新：疫情期间，钉钉在线课堂助力全国学校“停课不停学”。偏远地区学生通过网络与城市学生同上优质课程，打破了教育资源的地域限制。数字技术为教育创新提供了平台，促进了教育公平，推动教育行业数字化变革。</span>
+<span class="tpc-case">数字经济助力智慧城市建设：杭州利用城市大脑实现交通智能管理。通过大数据分析路况，优化信号灯配时，实时疏导交通。城市大脑还应用于环境监测、公共安全等领域，提升城市治理的智能化水平，让城市生活更美好。</span>
+<span class="tpc-case">区块链技术保障数字经济安全：蚂蚁集团运用区块链技术打造跨境汇款平台。汇款过程透明可追溯，交易时间从几天缩短至几分钟，且安全性大幅提高。区块链技术为数字经济中的金融交易、数据存储等提供了可靠的安全保障。</span>
+<span class="tpc-case">数字经济促进文化产业创新发展：腾讯动漫平台汇聚海量原创动漫作品，通过数字化传播吸引大量用户。创作者获得更多曝光机会，实现商业变现。数字经济打破了文化产业的传播壁垒，激发了文化创新活力，推动文化产业繁荣。</span>
+<span class="tpc-case">大数据助力企业精准营销：淘宝借助大数据分析用户购物行为、偏好等数据。商家根据分析结果精准推送商品信息，提高营销效果。数据驱动的精准营销，降低了企业成本，提升了用户购物体验，体现了数字经济在商业领域的价值。</span>
+<span class="tpc-case">人工智能提升数字经济生产效率：京东的智能仓库运用人工智能技术，实现货物的自动化分拣、存储和运输。机器人高效作业，减少人力成本，提高物流效率。人工智能为数字经济下的物流行业带来变革，提升了整体生产效率。</span>
+<span class="tpc-case">数字经济推动传统零售数字化转型：苏宁易购从传统零售向智慧零售转型，线上线下融合发展。通过数字化门店、电商平台和物流体系，实现商品、用户、场景的数字化连接。数字经济让传统零售企业适应新的市场环境，重焕生机。</span>
+<span class="tpc-case">数字经济促进跨境贸易便利化：阿里巴巴国际站搭建数字化贸易平台，提供在线交易、物流、金融等一站式服务。中小企业借助平台拓展海外市场，降低贸易成本，提高贸易效率。数字经济打破了跨境贸易的时空限制，推动全球贸易数字化发展。</span>
+<span class="tpc-case">云计算助力企业降低运营成本：华为云为企业提供云计算服务，企业无需大量投资硬件设施，可按需使用计算资源。节省了建设和维护成本，且能快速部署应用。云计算成为数字经济下企业降低成本、提高灵活性的重要支撑。</span>
+<span class="tpc-case">数字经济带动乡村产业振兴：拼多多开展“多多农园”项目，通过数字平台连接农户与消费者。帮助贫困地区农产品上行，打造特色农产品品牌。数字经济激活了乡村产业，增加农民收入，助力乡村振兴战略实施。</span>
+</div></div>
+</div></details>
+<details class="tpc" open>
+<summary class="tpc-h"><span class="tpc-n">06</span><span class="tpc-t">文化自信与文化双创</span><span class="tpc-d">文化自信 · 创造性转化创新性发展 · 文脉传承</span></summary>
+<div class="tpc-b">
+<div class="tpc-sec"><div class="tpc-lab">开头参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 文化，是一个民族的灵魂，文化自信则是民族前行的精神支撑。在当今时代，创造性转化，创新性发展（文化双创）浪潮汹涌，为文化发展注入新活力。从文创产品的推陈出新，到文化产业模式的变革创新，文化双创不断拓展着文化的边界。然而，在多元文化冲击下，坚定文化自信成为文化双创的根基。只有以文化自信为引领，文化双创才能在传承中创新，在创新中发展，让中华文化绽放更加璀璨的光芒。</div>
+<div class="tpc-item"><b>2.</b> “求木之长者，必固其根本；欲流之远者，必浚其泉源。”文化自信便是中华文化源远流长的根本与泉源。如今，文化双创蓬勃兴起，从互联网文化产业的繁荣到传统手工艺的创新传承，文化双创为文化发展带来无限可能。但无论如何创新创业，都不能脱离文化自信的深厚土壤。唯有筑牢文化自信，文化双创才能行稳致远，推动中华文化在新时代实现创造性转化和创新性发展。</div>
+<div class="tpc-item"><b>3.</b> 在全球化的时代背景下，多元文化相互碰撞。文化自信，作为一个国家、一个民族发展中最基本、最深沉、最持久的力量，显得尤为重要。与此同时，文化双创如同一股强劲的东风，推动着文化产业的变革与发展。从创意十足的文化主题公园，到独具匠心的文化电商平台，文化双创成果丰硕。我们应在文化自信的指引下，充分发挥文化双创的作用，让中华文化在世界文化之林站稳脚跟。</div>
+<div class="tpc-item"><b>4.</b> 文化是民族的记忆，文化自信是对这份记忆的珍视与传承。当下，文化双创热潮涌动，为文化的传承与发展开辟了新路径。无论是非遗文化的创新演绎，还是新兴文化业态的蓬勃兴起，都彰显了文化双创的魅力。但文化双创的根基在于文化自信，只有坚定文化自信，才能挖掘文化内涵，激发创新活力，让文化双创真正成为推动文化繁荣的强大动力。</div>
+<div class="tpc-item"><b>5.</b> 随着经济社会的发展，文化在综合国力竞争中的地位日益凸显。文化自信是提升文化软实力的关键，而文化双创则是实现文化繁荣的重要途径。从影视文化的创新突破，到文化旅游的深度融合，文化双创不断创造出文化发展的新亮点。我们要以文化自信为依托，大力推进文化双创，让中华文化展现出时代风采，提升国家文化竞争力。</div>
+<div class="tpc-item"><b>6.</b> “文化兴则国运兴，文化强则民族强。”文化自信是实现中华民族伟大复兴的精神支撑。在新时代，文化双创为文化强国建设注入新动能。从文化创意产品的走俏市场，到数字文化产业的异军突起，文化双创成果显著。但我们必须清醒认识到，文化双创要以文化自信为引领，坚守中华文化立场，传承中华文化基因，推动中华文化创新发展。</div>
+<div class="tpc-item"><b>7.</b> 文化自信，源于对自身文化价值的充分肯定和对文化生命力的坚定信念。在文化产业蓬勃发展的今天，文化双创成为推动文化发展的重要引擎。从传统艺术的创新表达，到文化科技的深度融合，文化双创带来了文化发展的新机遇。只有以文化自信为基石，文化双创才能在创新中传承，在传承中发展，为文化强国建设贡献力量。</div>
+<div class="tpc-item"><b>8.</b> 在多元文化交融的时代，文化自信是保持民族文化独特性的关键。而文化双创则为文化的传承与创新提供了新的载体和方式。从创意设计产业的兴起，到文化演艺市场的创新发展，文化双创丰富了文化的表现形式。我们要在文化自信的引领下，积极推动文化双创，让中华文化在世界文化舞台上绽放独特魅力。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">结尾参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 文化双创，为文化发展注入创新活力；文化自信，为文化前行筑牢精神根基。在新的时代征程中，我们要以文化自信引领文化双创，以文化双创彰显文化自信。让创新的火花在文化的沃土里绽放，让自信的光芒照亮文化的前行之路。如此，方能推动中华文化不断繁荣兴盛，让中华民族以更加自信的姿态屹立于世界民族之林，续写文化强国的壮丽篇章。</div>
+<div class="tpc-item"><b>2.</b> 文化的繁荣，离不开双创的驱动；民族的自信，根植于文化的深厚底蕴。文化双创与文化自信相辅相成，共同推动着中华文化的发展。我们应持续深化文化双创实践，不断坚定文化自信信念。传承精华，守正创新，让中华文化在新时代焕发出新的生机与活力，为实现中华民族伟大复兴的中国梦凝聚起强大的精神力量，向着文化复兴的宏伟目标奋勇前进。</div>
+<div class="tpc-item"><b>3.</b> 文化双创是文化发展的引擎，文化自信是文化进步的支撑。在多元文化相互激荡的当下，我们要以文化自信为帆，以文化双创为桨，在文化发展的海洋中破浪前行。挖掘文化内涵，创新文化形式，传播文化价值。让中华文化的魅力在世界舞台上充分展现，让文化自信成为中华民族最基本、最深沉、最持久的力量，铸就中华文化新的辉煌。</div>
+<div class="tpc-item"><b>4.</b> 文化自信赋予文化双创以灵魂，文化双创赋予文化自信以活力。回首往昔，中华文化历经沧桑而绵延不绝；展望未来，我们更应坚定文化自信，勇毅推进文化双创。在传承中创新，在创新中发展，培育更多优质的文化双创成果，增强中华文化的凝聚力和影响力。让文化自信引领我们走向文化繁荣的新时代，实现中华民族的文化复兴。</div>
+<div class="tpc-item"><b>5.</b> 文化双创与文化自信，如鸟之双翼、车之两轮。文化双创推动文化创新发展，文化自信保障文化根脉传承。我们要在文化双创的实践中厚植文化自信，在文化自信的引领下深化文化双创。激发全社会的文化创造活力，丰富文化产品和服务供给，提升国家文化软实力。让中华文化在新时代绽放出更加绚丽的光彩，为人类文明进步作出更大贡献。</div>
+<div class="tpc-item"><b>6.</b> 文化自信是文化双创的基石，文化双创是文化自信的彰显。在文化发展的道路上，我们要坚定不移地坚定文化自信，积极主动地推进文化双创。整合文化资源，创新文化业态，打造文化品牌。以文化的繁荣发展提升民族的自信心和自豪感，让中华文化成为世界文化宝库中一颗璀璨的明珠，照亮人类文化发展的征程。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">领导人名言警句 · 精选</div>
+<div class="tpc-item"><b>1.</b> 文化自信是更基础、更广泛、更深厚的自信，是更基本、更深沉、更持久的力量。</div>
+<div class="tpc-item"><b>2.</b> 中国有坚定的道路自信、理论自信、制度自信，其本质是建立在5000多年文明传承基础上的文化自信。</div>
+<div class="tpc-item"><b>3.</b> 要把文化自信融入全民族的精神气质与文化品格中，养成昂扬向上的风貌和理性平和的心态。</div>
+<div class="tpc-item"><b>4.</b> 我们说要坚定中国特色社会主义道路自信、理论自信、制度自信，说到底是要坚定文化自信。</div>
+<div class="tpc-item"><b>5.</b> 在5000多年文明发展中孕育的中华优秀传统文化，在党和人民伟大斗争中孕育的革命文化和社会主义先进文化，积淀着中华民族最深层的精神追求，代表着中华民族独特的精神标识。</div>
+<div class="tpc-item"><b>6.</b> 中华优秀传统文化是推进文化创新的自信之源。</div>
+<div class="tpc-item"><b>7.</b> 社会主义先进文化是推进文化创新的自信之向。</div>
+<div class="tpc-item"><b>8.</b> 创新创造是文化的生命力所在，是文化自信自强的必然要求。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">典型事例 · 精选</div><div class="tpc-cases">
+<span class="tpc-case">文化自信为文化双创提供精神源泉：故宫博物院凭借对中华传统文化的自信，开展文化双创。推出众多精美文创产品，如故宫口红、朝珠耳机等。将传统文化元素与现代生活巧妙融合，既传承了文化，又满足了市场需求，实现了文化价值与经济价值的统一，彰显了文化自信在文化双创中的引领作用。</span>
+<span class="tpc-case">文化双创推动文化自信更加坚定：河南卫视创新推出《唐宫夜宴》等节目，运用现代科技手段，如5G、AR等，展现唐朝文化魅力。节目爆火后，引发大众对传统文化的关注与热爱，使人们更加坚定文化自信，同时也证明了文化双创能让传统文化焕发生机，增强文化自信的底气。</span>
+<span class="tpc-case">文化自信助力文化双创开拓国际市场：大疆无人机不仅在技术上领先，还融入了中国文化元素，如外观设计中的东方美学理念。凭借对自身文化和科技实力的自信，大疆产品畅销全球，在国际市场上展现了中国文化与科技融合的魅力，通过文化双创拓展了国际影响力，提升了文化自信。</span>
+<span class="tpc-case">文化双创丰富文化自信的内涵：字节跳动旗下的抖音平台，鼓励创作者挖掘各地特色文化，如少数民族文化、传统手工艺等。众多创作者通过短视频展示文化魅力，传承文化精髓，让更多人了解和认同多元文化，丰富了文化自信的内涵，同时也体现了文化双创对文化传承与发展的促进作用。</span>
+<span class="tpc-case">文化自信引领文化双创模式创新：浙江乌镇以江南水乡文化自信为依托，打造乌镇戏剧节这一文化双创模式。汇聚国内外优秀戏剧作品和人才，将传统文化与现代戏剧艺术相结合，创新了文化交流与传播模式，吸引了大量游客和艺术爱好者，推动了当地文化产业发展，增强了文化自信。</span>
+<span class="tpc-case">文化双创增强文化自信的传播力：李子柒通过制作精美的短视频，展示中国传统田园生活和美食文化。从播种收割到烹饪美食，从传统手工艺到乡村节庆，她的作品在国内外广泛传播，让世界看到了中国传统文化的魅力，增强了文化自信的传播力，也体现了文化双创在文化传播中的独特作用。</span>
+<span class="tpc-case">文化自信促进文化双创人才培养：中国美术学院秉持对中华文化的自信，鼓励学生在艺术创作中融入传统文化元素。培养出许多优秀的文创人才，他们设计出的作品，如具有中国风的动漫形象、文创产品等，推动了文化双创发展，同时也证明了文化自信能为文化双创培养高素质人才。</span>
+<span class="tpc-case">文化双创提升文化自信的影响力：故宫博物院举办的各类国际文化交流活动，如与国外博物馆联合展览等，将中国文化精品推向世界。通过文化双创，创新了文化交流形式，提升了中国文化在国际上的影响力，使文化自信在国际舞台上更加坚定，展现了中华文化的独特魅力。</span>
+<span class="tpc-case">文化自信激发文化双创的创造力：敦煌研究院凭借对敦煌文化的自信，开展数字化保护与文创开发。通过数字技术让莫高窟壁画“活”起来，开发出一系列敦煌文创产品，如壁画书签、丝巾等。激发了文化双创的创造力，让古老的敦煌文化在新时代焕发出新的生机与活力。</span>
+<span class="tpc-case">文化双创夯实文化自信的根基：腾讯游戏推出的《王者荣耀》，融入了众多中国历史文化元素，如英雄角色、故事背景等。通过游戏这一文化双创形式，让玩家在娱乐中了解和感受中国传统文化，吸引了大量年轻人关注传统文化，夯实了文化自信的根基，促进了文化传承。</span>
+<span class="tpc-case">文化自信为文化双创注入动力：景德镇以陶瓷文化自信为动力，推动陶瓷文化双创。不仅传承传统制瓷工艺，还鼓励创新设计，推出了许多具有现代审美和文化内涵的陶瓷作品。吸引了众多艺术家和游客，带动了当地文化产业发展，体现了文化自信对文化双创的强大推动作用。</span>
+<span class="tpc-case">文化双创彰显文化自信的魅力：苏州昆剧院创新演出形式，推出沉浸式昆曲体验活动。让观众身临其境地感受昆曲的魅力，传承和弘扬了这一古老的戏曲艺术。通过文化双创，彰显了中华文化的深厚底蕴和独特魅力，增强了人们对传统文化的自信。</span>
+<span class="tpc-case">文化自信引领文化双创的方向：中国国家博物馆凭借对中华文化的自信，推出“国博衍艺”文创品牌。以馆藏文物为灵感，设计开发文创产品，从传统书画到青铜器元素，产品兼具文化性与实用性。引领了文化双创的方向，让更多人通过文创产品感受中华文化的魅力。</span>
+<span class="tpc-case">文化双创促进文化自信的传承：陕西历史博物馆推出的“唐妞”系列文创产品，以唐仕女俑为原型，通过可爱的卡通形象和创意设计，让古老的历史文化走进现代生活。吸引了大量游客购买收藏，促进了文化自信的传承，使更多人了解和喜爱中国古代文化。</span>
+<span class="tpc-case">文化自信推动文化双创的发展升级：上海迪士尼乐园融入了中国传统文化元素，如十二生肖、传统建筑风格等。在国际化的主题乐园中展现中国文化特色，推动了文化双创的发展升级。既满足了游客的多元需求，又传播了中国文化，增强了文化自信，实现了文化与商业的双赢。</span>
+</div></div>
+</div></details>
+<details class="tpc" open>
+<summary class="tpc-h"><span class="tpc-n">07</span><span class="tpc-t">文化双创（文化传承）</span><span class="tpc-d">文化传承 · 文物活化 · 文旅融合 · 文明互鉴</span></summary>
+<div class="tpc-b">
+<div class="tpc-sec"><div class="tpc-lab">开头参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 在时代的浪潮汹涌澎湃之处，文化如同一座灯塔，既照亮了历史的长河，也指引着未来的方向。如今，文化双创的理念应运而生，恰似春风拂过古老的文化大地，它鼓励在传承经典的深厚土壤中播撒创新的种子，让文化在传统与现代的交融碰撞中，绽放出崭新的活力与魅力，开启文化繁荣发展的新征程。</div>
+<div class="tpc-item"><b>2.</b> 当全球化的大幕拉开，各种文化相互激荡、交融。文化双创，以其独特的姿态登上时代舞台，它绝非对传统文化的简单复刻，而是秉持着创造性转化与创新性发展的使命，运用现代的视角与技术手段，深入挖掘传统文化的精髓，为其注入新的生命力，使其在现代社会中重焕光彩，进而在世界文化之林中独树一帜。</div>
+<div class="tpc-item"><b>3.</b> 从古老的诗词歌赋到现代的网络文学，从传统的手工艺到时尚的文创产品，文化的演变从未停止。文化双创，正是顺应这一发展潮流的关键举措。它犹如一把神奇的钥匙，解锁传统文化的现代价值，在保留文化基因的同时，赋予其符合当代审美的形式与内涵，让文化在跨越时空的旅程中，与现代生活紧密相连，奏响文化传承与创新的和谐乐章。</div>
+<div class="tpc-item"><b>4.</b> 文化，是一个民族的灵魂与根基；创新，则是推动文化发展的强大引擎。在当今社会，文化双创成为时代的迫切需求。它要求我们以敏锐的洞察力和大胆的创造力，梳理传统文化的脉络，摒弃其中不合时宜的部分，融入现代社会的理念与元素，使文化在传承中创新，在创新中传承，为民族文化的复兴提供源源不断的动力。</div>
+<div class="tpc-item"><b>5.</b> 回首历史，中华民族的文化源远流长、博大精深，犹如一座蕴藏无尽宝藏的矿山。文化双创，便是那挖掘宝藏的有力工具。它鼓励我们以现代的思维方式和科技手段，深入这座矿山，提炼出珍贵的文化元素，将其加工成符合当代人需求的文化产品和服务，让古老的文化在现代社会中焕发出耀眼的光芒，彰显民族文化的自信与自豪。</div>
+<div class="tpc-item"><b>6.</b> 在数字化浪潮席卷全球的今天，文化领域也迎来了前所未有的变革机遇。文化双创在这一背景下凸显出其重要意义，它借助互联网、大数据、人工智能等先进技术，为传统文化的传播与创新开辟了新的路径。让古老的传说借助虚拟现实技术重现人间，让传统的艺术通过数字平台走向世界，使文化在科技的助力下实现华丽转身。</div>
+<div class="tpc-item"><b>7.</b> 文化犹如繁星点点，照亮了人类文明的夜空。而文化双创则是让繁星更加璀璨的魔法。它倡导在尊重传统文化的基础上，突破传统的束缚，进行大胆的创新尝试。无论是对传统戏曲的现代改编，还是对古老建筑文化的创意性开发，都旨在让文化以全新的面貌融入现代生活，吸引更多人关注和参与文化的传承与发展，让文化的星空更加绚丽多彩。</div>
+<div class="tpc-item"><b>8.</b> 当现代社会的快节奏生活让人们逐渐远离传统文化的滋养时，文化双创成为重建文化与生活联系的桥梁。它通过对传统文化资源的整合与创新，将文化元素巧妙地融入日常用品、旅游体验、娱乐活动等方方面面，使人们在不经意间感受文化的魅力，在潜移默化中传承文化的基因，让文化真正成为生活中不可或缺的一部分。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">结尾参考 · 精选</div>
+<div class="tpc-item"><b>1.</b> 文化双创之路，是传承与创新交织的康庄大道。我们需以坚定的信念、不懈的努力，让传统文化在现代创新的熔炉中凤凰涅槃。唯有如此，方能使文化双创成为民族精神传承的有力保障，成为国家文化软实力提升的核心引擎，在世界文化的舞台上，奏响属于中华民族的华丽乐章，让文化之光永远闪耀。</div>
+<div class="tpc-item"><b>2.</b> 总之，文化双创不是一时的风潮，而是持久的使命。政府应持续完善政策扶持体系，社会各界需积极参与其中，从教育机构到文化企业，从民间艺人到广大民众。当全社会形成文化双创的强大合力，我们必将构建起富有活力与魅力的现代文化生态，让文化的力量深深扎根于民族灵魂，引领我们走向文化繁荣、民族复兴的辉煌未来。</div>
+<div class="tpc-item"><b>3.</b> 展望未来，文化双创将继续书写文化发展的壮丽篇章。我们要以开放包容的心态拥抱世界文化，以独具匠心的创意诠释本土文化。在文化的交流与碰撞中，让文化双创的成果成为连接各国人民心灵的桥梁，为构建人类命运共同体注入深厚的文化底蕴，使文化的多元之花在全球绽放得更加绚烂。</div>
+<div class="tpc-item"><b>4.</b> 综上所述，文化双创是文化进步的阶梯。我们要注重培养创新型文化人才，加大对文化创新项目的投入。让每一个文化创意都能在这片沃土上茁壮成长，转化为实实在在的文化产品和服务。当文化双创的活力充分释放，文化将真正成为推动社会发展、提升人类精神境界的强大动力，推动人类走向更加文明、和谐的明天。</div>
+<div class="tpc-item"><b>5.</b> 文化双创的征程没有终点，只有一个个新的起点。我们要在传承传统文化的基础上，不断探索创新的边界。通过科技与文化的深度融合，艺术与生活的完美结合，让文化双创的成果惠及每一个人。在时代的浪潮中，让文化双创成为文化传承与发展的不朽航标，引领人类在文化的海洋中破浪前行。</div>
+<div class="tpc-item"><b>6.</b> 守护文化双创的成果，就是守护民族文化的未来。我们要鼓励全社会形成尊重文化创新、参与文化创造的良好氛围。从城市到乡村，从学校到社区，让文化双创成为人们生活的一部分。当文化双创的理念深入人心，民族文化将在创新中永葆生机，在传承中历久弥新，为子孙后代留下无尽的文化宝藏。</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">领导人名言警句 · 精选</div>
+<div class="tpc-item"><b>1.</b> “要推动中华优秀传统文化创造性转化、创新性发展，以时代精神激活中华优秀传统文化的生命力。”</div>
+<div class="tpc-item"><b>2.</b> “我们要善于把弘扬优秀传统文化和发展现实文化有机统一起来，紧密结合起来，在继承中发展，在发展中继承。”</div>
+<div class="tpc-item"><b>3.</b> “中华优秀传统文化是中华民族的精神命脉，是涵养社会主义核心价值观的重要源泉，也是我们在世界文化激荡中站稳脚跟的坚实根基。要推动中华优秀传统文化创造性转化、创新性发展。”</div>
+<div class="tpc-item"><b>4.</b> “以古人之规矩，开自己之生面”，实现中华文化的创造性转化和创新性发展。</div>
+<div class="tpc-item"><b>5.</b> “让文物说话、把历史智慧告诉人们，激发我们的民族自豪感和自信心，坚定全体人民振兴中华、实现中国梦的信心和决心。”这体现对文化资源创造性利用的理念。</div>
+<div class="tpc-item"><b>6.</b> “要系统梳理传统文化资源，让收藏在禁宫里的文物、陈列在广阔大地上的遗产、书写在古籍里的文字都活起来。”这为文化双创在文化资源挖掘利用方面提供了方向。</div>
+<div class="tpc-item"><b>7.</b> “把跨越时空、超越国度、富有永恒魅力、具有当代价值的文化精神弘扬起来，把继承传统优秀文化又弘扬时代精神、立足本国又面向世界的当代中国文化创新成果传播出去。”</div>
+<div class="tpc-item"><b>8.</b> “优秀传统文化是一个国家、一个民族传承和发展的根本，如果丢掉了，就割断了精神命脉。我们要善于把弘扬优秀传统文化和发展现实文化有机统一起来，紧密结合起来，在继承中发展、在发展中继承。”</div>
+</div>
+<div class="tpc-sec"><div class="tpc-lab">典型事例 · 精选</div><div class="tpc-cases">
+</div></div>
+</div></details>
+</section>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var q=document.getElementById('d-q'),tb=document.getElementById('d-qtable'),cnt=document.getElementById('d-cnt');
+  var rows=[].slice.call(tb.tBodies[0].rows);
+  function run(){
+    var v=(q.value||'').trim().toLowerCase(),n=0;
+    rows.forEach(function(r){
+      var hit=!v||r.textContent.toLowerCase().indexOf(v)>-1;
+      r.className=hit?'':'hide'; if(hit)n++;
+    });
+    cnt.textContent=v?(n+' / '+rows.length+' 条'):(rows.length+' 条素材');
+  }
+  q.addEventListener('input',run); run();
+})();
+</script>
+
+</div>
+<script>
+(function(){
+  [13,14,15,16,17,18].forEach(function(n){
+    var q=document.getElementById('d-q'+n), tb=document.getElementById('d-t'+n), cnt=document.getElementById('d-cnt'+n);
+    if(!q||!tb||!cnt) return;
+    var rows=[].slice.call(tb.tBodies[0].rows);
+    function run(){
+      var v=(q.value||'').trim().toLowerCase(), shown=0;
+      rows.forEach(function(r){var hit=!v||r.textContent.toLowerCase().indexOf(v)>-1;r.className=hit?'':'hide';if(hit)shown++;});
+      cnt.textContent=v?(shown+' / '+rows.length+' 条'):(rows.length+' 条素材');
+    }
+    q.addEventListener('input',run); run();
+  });
+  // 19 专题包：按专题卡片过滤
+  (function(){
+    var q=document.getElementById('d-q19'), cnt=document.getElementById('d-cnt19');
+    if(!q||!cnt) return;
+    var dts=[].slice.call(document.querySelectorAll('#d-s19 .tpc'));
+    function run(){
+      var v=(q.value||'').trim().toLowerCase(), shown=0;
+      dts.forEach(function(dt){
+        var hit=!v||dt.textContent.toLowerCase().indexOf(v)>-1;
+        dt.style.display=hit?'':'none'; if(hit)shown++;
+      });
+      cnt.textContent=v?(shown+' / '+dts.length+' 个专题'):(dts.length+' 个专题');
+    }
+    q.addEventListener('input',run); run();
+  })();
+})();
+</script>
+<script>
+/* 模块四：吸顶章节进度条（当前章节高亮 + 阅读进度 + 点击跳转） */
+(function(){
+  var bar=document.getElementById('d-prog');
+  if(!bar) return;
+  var fill=document.getElementById('d-prog-fill'),
+      now=document.getElementById('d-prog-now'),
+      pct=document.getElementById('d-prog-pct'),
+      chips=[].slice.call(document.querySelectorAll('#d-prog-chips a')),
+      main=document.querySelector('#mod-d main'),
+      mod=document.getElementById('mod-d');
+  var names={0:'总纲：阅卷与定档',1:'审题立意',2:'单主题写法',3:'双主题写法',4:'总论点写法',5:'分论点写法',6:'标题库',7:'开头与结尾',8:'论证方法',9:'素材库',10:'真题立意示范',11:'十大失分坑',12:'考场时间分配',13:'万能金句库',14:'万能影响句库',15:'万能背景句库',16:'分论点万能句库',17:'规范表达词库',18:'论证案例精讲库',19:'七大专题写作包'};
+  var secs=chips.map(function(a){return document.getElementById('d-s'+a.getAttribute('data-n'));});
+  var ticking=false, curN=-1;
+  function update(){
+    ticking=false;
+    if(!mod.classList.contains('show')) return;
+    var tabh=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tabh'))||56;
+    var line=tabh+96; // 判定线：进度条下方一点
+    var active=0;
+    for(var i=0;i<secs.length;i++){
+      var s=secs[i];
+      if(s && s.getBoundingClientRect().top<=line) active=i;
+    }
+    if(active!==curN){
+      curN=active;
+      chips.forEach(function(a,i){a.classList.toggle('on',i===active);});
+      now.textContent=active+' '+(names[active]||'');
+      var c=chips[active];
+      if(c && c.scrollIntoView){
+        var box=c.parentNode, cl=box.scrollLeft, ct=c.offsetLeft, cw=c.offsetWidth, bw=box.clientWidth;
+        if(ct<cl||ct+cw>cl+bw){box.scrollTo({left:Math.max(0,ct-bw/2+cw/2),behavior:'smooth'});}
+      }
+    }
+    // 整体阅读进度：以 main 顶部到主体末尾为 100%
+    var mr=main.getBoundingClientRect(), total=main.offsetHeight-(window.innerHeight-tabh-50);
+    var passed=tabh+50-mr.top, p=total>0?passed/total:0;
+    p=Math.max(0,Math.min(1,p));
+    fill.style.width=(p*100).toFixed(1)+'%';
+    pct.textContent=Math.round(p*100)+'%';
+  }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  chips.forEach(function(a){a.addEventListener('click',function(){setTimeout(update,350);});});
+  // 模块切换过来时刷新
+  var origShow=window.showModule;
+  window.showModule=function(k,noScroll){if(origShow)origShow(k,noScroll);if(k==='d')setTimeout(update,120);};
+  setTimeout(update,200);
+})();
+</script>
 <script>
 (function(){
   var tabs=document.querySelectorAll(".tab");
@@ -1714,7 +3646,7 @@ var BK_DATA = [{"id":"e0","name":"2024 广东","grp":"广东","qs":[{"n":"36","s
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(syncH);}
   setInterval(syncH,1500);
   for(var i=0;i<tabs.length;i++){(function(t){t.addEventListener("click",function(){show(t.getAttribute("data-m"));});})(tabs[i]);}
-  var h=(location.hash||"").match(/^#mod-([abc])$/);
+  var h=(location.hash||"").match(/^#mod-([abcd])$/);
   show(h?h[1]:"a",true);
   window.showModule=show;
   window.printModule=function(k){show(k,true);setTimeout(function(){window.print();},60);};
